@@ -37,6 +37,12 @@ export function createMapPointPopupV152({
   const rows = compact && allRows ? allRows.filter((row) => !["country", "name"].includes(row.key)).slice(0, 3) : allRows;
   // A card that shows 소재지 already says where it is; the note would repeat it.
   const locationShown = Boolean(rows?.some((row) => row.key === "location" && !row.missing));
+  // V164-3: the short card says where and from whom from the card itself when
+  // the drawn feature does not carry those lines (Bangladesh A-023 sites).
+  const locationRow = allRows?.find((row) => row.key === "location" && !row.missing);
+  const sourceRow = allRows?.find((row) => row.key === "source" && !row.missing);
+  const location = publicTextV126(properties.locationLabelV151) || (compact && locationRow ? locationRow.value.replace(/\s·\s개편 후 34개 기준.*$/u, "") : "");
+  const sourceLine = mapSourceLineV148(properties) || (compact && sourceRow ? sourceRow.value.split(" · ")[0] : "");
   return createMapFeaturePopupV148({
     elementId: layer.elementId,
     selectionKey: String(properties.selectionKey ?? properties.recordId ?? ""),
@@ -44,15 +50,13 @@ export function createMapPointPopupV152({
     dataset: publicMapLayerTitleV126(layer.elementId, layer.publicShortTitle),
     primary,
     facts: mapFactsV148(layer, properties).filter((fact) => fact.key !== "sourceLabel"),
-    source: mapSourceLineV148(properties),
+    source: sourceLine,
     rows: rows?.map((row) => ({ key: row.key, label: row.label, value: row.value, missing: row.missing })),
     iconSvg: category ? mapIconSvg(category.iconId, { size: 16, color: "#20343a" }) : undefined,
     note:
       [
         properties.approximate ? "소재 지역의 대표 위치" : "",
-        !locationShown && publicTextV126(properties.locationLabelV151)
-          ? `소재 ${publicTextV126(properties.locationLabelV151)}`
-          : "",
+        !locationShown && location ? `소재 ${location}` : "",
       ]
         .filter(Boolean)
         .join(" · ") || undefined,

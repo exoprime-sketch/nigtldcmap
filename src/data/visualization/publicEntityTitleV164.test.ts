@@ -62,3 +62,20 @@ describe("V164-3 B-028 basin field name in titles", () => {
     expect(resolvePublicEntityTitleV131(entity).title).not.toMatch(/MAIN_BAS/u);
   });
 });
+
+describe("power plant titles (V164-3)", () => {
+  it("titles a Bangladesh plant whose name field holds its capacity with the name its note states", () => {
+    const row = {
+      ...entityOf("A-023", "510", { admin1_name_en: "Khulna Division" }),
+      note: "CTIS-16 발전효율 기술 — 원천이 표기한 설비 종류를 근거로 부여함(근거유형: 원천 자체 분류). [발전소명: Khulna (KPCL-2)] GPPD ID: WRI1019881 · 원천: Bangladesh Power Development Board",
+    } as VietnamEntityV124;
+    expect(resolvePublicEntityTitleV131(row).title).toBe("Khulna (KPCL-2)");
+  });
+
+  it("keeps a plant's own name and never invents one", () => {
+    const named = { ...entityOf("A-023", "A Luoi", {}), note: "[발전소ID: WRI1030864] 명칭: A Luoi · 준공연도: 2012.0" } as VietnamEntityV124;
+    expect(resolvePublicEntityTitleV131(named).title).toBe("A Luoi");
+    const bare = entityOf("A-023", "54", {});
+    expect(resolvePublicEntityTitleV131(bare).title).not.toBe("");
+  });
+});

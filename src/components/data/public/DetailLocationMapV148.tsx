@@ -56,7 +56,7 @@ import type { MiniMapLegendV152 } from "../../map/miniMapEngineV152";
 import { TRANSMISSION_VOLTAGE_CLASSES_V152 as LINE_CLASSES_V152 } from "../../../map/layers/lineLayer";
 import type { MapCameraV151 } from "../../../types/map";
 import FacilityCardV153 from "./FacilityCardV153";
-import { facilityCardSpecV153 } from "../../../data/visualization/facilityCardV153";
+import { facilityCardSpecV153, featureRecordIdsV164, spatialFacilityEntityV164 } from "../../../data/visualization/facilityCardV153";
 import { LAYER_COLORS } from "../../../map/layers/colors";
 
 type IconKitV152 = typeof import("../../map/mapIconKitV152");
@@ -69,7 +69,7 @@ import { countryAssetPathV158 } from "../../../data/countryContext";
 
 /** The site's own secondary button, for the fallback and the retry (a bare <button> rendered unstyled). */
 const BUTTON_CLASS_V163 = "cdp-button cdp-button--secondary";
-type Runtime = { layer: CountryMapLayerV122; base: VietnamMapGeoJsonV124; outline: VietnamMapGeoJsonV124 | null; geometry?: VietnamMapGeoJsonV124; data?: VietnamSpatialLayerAssetV124; records: CountryEntityV122[] };
+type Runtime = { layer: CountryMapLayerV122; base: VietnamMapGeoJsonV124; outline: VietnamMapGeoJsonV124 | null; geometry?: VietnamMapGeoJsonV124; data?: VietnamSpatialLayerAssetV124; records: CountryEntityV122[]; facilityRecords?: CountryEntityV122[] };
 // Resolved against PUBLIC_URL so the GitHub Pages subpath build finds it too.
 const BASE = publicAssetUrlV128(countryAssetPathV158("VNM", "geometry/vnm-adm1-63.geojson"));
 // V151-2: the national outline (63 provinces dissolved, display simplification) as the coast stroke.
@@ -133,7 +133,12 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
         layer.geometryUrl ? Promise.resolve(EMPTY_RECORDS) : loadCountryElementEntitiesV122(countryIso3, layer.entityJoinV157_2?.hostElementId || elementId)
           .then((r) => (layer.entityJoinV157_2 ? applyNationalMineJoinV157_2(r.records, layer.entityJoinV157_2) : r.records)),
       ]);
-      if (!cancelled) setRuntime({ layer, base, outline, geometry, data, records });
+      // V164-3: a facility drawn from a spatial asset (Bangladesh A-023) reads with the facility card, from its
+      // record; the records are not drawn, and the map never waits for them.
+      const facilityRecords = layer.geometryUrl && facilityCardSpecV153(elementId)
+        ? await loadCountryElementEntitiesV122(countryIso3, elementId).then((r) => r.records).catch(() => EMPTY_RECORDS)
+        : undefined;
+      if (!cancelled) setRuntime({ layer, base, outline, geometry, data, records, facilityRecords });
     }).catch(() => { if (!cancelled) setError(true); });
     return () => { cancelled = true; };
   }, [elementId, countryIso3, retry]);
@@ -297,6 +302,10 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
   const current = model.options.find((o) => o.id === picked);
   const point = model.points.find((r) => r.recordId === picked);
   const feature = geometry ? model.features.find((f, i) => String(f.id ?? i) === picked) : undefined;
+  const featureRecord = feature && feature.geometry.type === "Point" && runtime.facilityRecords?.length
+    ? featureRecordIdsV164(feature.properties.recordIds ?? feature.properties.recordId).map((id) => runtime.facilityRecords!.find((r) => r.recordId === id)).find(Boolean)
+    : undefined;
+  const facility = point || (featureRecord && feature ? spatialFacilityEntityV164({ elementId, countryIso3, properties: feature.properties as Record<string, unknown>, entity: featureRecord }) : null);
   const selectedFacts = mapFactsV148(layer, point?.normalizedAttributes || feature?.properties || {}).filter((f) => f.key !== "sourceLabel").slice(0, 5);
   const periods = model.variable?.periods || layer.selectors.periods;
   const handoff = detailMapHandoffV148(layer, slice, selection);
@@ -341,7 +350,7 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
           layer={layer}
           selected={slice}
           dimensions={selection.dimensions}
-          data={{ spatial: geometry ? { geometry, data } : undefined, records: runtime.records }}
+          data={{ spatial: geometry ? { geometry, data } : undefined, records: runtime.records, facilityRecords: runtime.facilityRecords }}
           label={`${layer.publicShortTitle} 확대·이동 지도`}
           onCameraChange={(camera) => { cameraRef.current = camera; }}
           onEngineLegend={setEngineLegend}
@@ -406,7 +415,7 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
       {!compact && <div className="detail-map148-selection">
         <label>지역·대상 선택<select aria-label="작은 지도 지역·대상 선택" value={picked} onChange={(e) => setPicked(e.target.value)}><option value="">지도 또는 목록에서 선택</option>{model.options.map((o) => <option key={o.id} value={o.id}>{o.label}</option>)}</select></label>
         {current ? <><h4>{current.label}</h4>{current.value !== null && <p className="detail-map148-value">{formatPublicNumberV126(current.value, units)} {units}</p>}{current.sourceRegion && <p className="detail-map148-note">{formatRegionTextV162({ country: countryIso3, raw: current.sourceRegion })} 단위로 제공된 값입니다.</p>}
-          {point && facilityCardSpecV153(elementId) ? <FacilityCardV153 elementId={elementId} entity={point} compact /> : <dl>{selectedFacts.map((f) => <div key={f.key}><dt>{f.label}</dt><dd>{/^https?:\/\//.test(f.value) ? <a href={f.value} target="_blank" rel="noreferrer">공식 원문</a> : f.value}</dd></div>)}</dl>}
+          {facility && facilityCardSpecV153(elementId) ? <FacilityCardV153 elementId={elementId} entity={facility} compact /> : <dl>{selectedFacts.map((f) => <div key={f.key}><dt>{f.label}</dt><dd>{/^https?:\/\//.test(f.value) ? <a href={f.value} target="_blank" rel="noreferrer">공식 원문</a> : f.value}</dd></div>)}</dl>}
           {point && <p className="detail-map148-note">{[mapIndicatorSourceV148(point.indicatorId, publicSourceOrganizationV136_1(point.provenance.sourceOrg) || ""), point.provenance.referenceYear].filter(Boolean).join(" · ")}</p>}
         </> : <p className="detail-map148-note">위치를 선택하면 지역 값이나 대상의 주요 정보를 확인할 수 있습니다.</p>}
         {["B-023", "B-025", "B-028"].includes(elementId) && <p className="detail-map148-note">관측지점 또는 대표 위치입니다. 유역 경계와 영향 범위를 나타내지 않습니다.</p>}

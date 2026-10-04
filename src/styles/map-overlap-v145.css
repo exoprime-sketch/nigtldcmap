@@ -89,3 +89,25 @@
   outline: 3px solid #087e77;
   outline-offset: 2px;
 }
+
+/* V164-3: the clicked site's popup stays open until the reader closes it (×,
+   a click elsewhere on the map or a new selection). Unlike the hover popup it
+   takes the pointer, so passing over sites under it does not cover it. */
+.cdp-map-canvas.is-visible .cdp-map-pinned-popup-v164 .maplibregl-popup-content {
+  pointer-events: auto;
+  padding-right: 28px;
+}
+
+.cdp-map-pinned-popup-v164 .maplibregl-popup-close-button {
+  width: 26px;
+  height: 26px;
+  font-size: 19px;
+  line-height: 24px;
+  color: #24483c;
+  border-radius: 0 6px 0 6px;
+}
+
+.cdp-map-pinned-popup-v164 .maplibregl-popup-close-button:focus-visible {
+  outline: 2px solid #1f6f54;
+  outline-offset: -2px;
+}

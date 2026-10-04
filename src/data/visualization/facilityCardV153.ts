@@ -1,9 +1,13 @@
 import { publicMapFactValueV163 } from "../map/mapFactValueLabelsV163";
 import { formatRegionName, formatRegionTextV162 } from "../geo/regionNameV161";
+import { publicTextV126 } from "./publicFieldPolicyV126";
 import type { VietnamEntityV124 } from "../vietnam/vietnamTypesV124";
 import { POWER_PLANT_SOURCES_V141, powerPlantCapacityMwV141, powerPlantFuelV141, powerPlantSourceKeyV141 } from "../map/powerPlantFactsV141";
 import { formatPublicNumberV126 } from "./publicNumberFormatV126";
+import { NUMBER_ONLY_NAME_V164, powerPlantStatedEntityV164 } from "../map/powerPlantStatedV164";
 import { publicRecordNoteV161, publicSourceUrlV126 } from "./publicFieldPolicyV126";
+
+export { powerPlantStatedEntityV164 };
 
 /**
  * V153: one label-form card for every facility, organisation and project.
@@ -154,6 +158,13 @@ function formatField(field: FacilityCardFieldV153, entity: VietnamEntityV124): F
       const suffix = former && former !== current ? ` · 개편 후 34개 기준 · 구 ${formerNamed}` : " · 개편 후 34개 기준";
       return { key: field.key, label: field.label, value: `${named}${suffix}`, missing: false };
     }
+    // V164-3: a record that states its level-1 unit in English (Bangladesh
+    // "Dhaka Division", assigned by the delivery from the point's own
+    // coordinates) reads "다카 (Dhaka Division)" like a Viet Nam province does.
+    const statedUnit = text(attributes.admin1_name_en) || text(attributes.admin1NameEn);
+    if (statedUnit) {
+      return { key: field.key, label: field.label, value: formatRegionName({ country: entity.countryIso3 || "VNM", raw: statedUnit }), missing: false };
+    }
     const fallback = field.sources.map((source) => text(readSource(entity, source))).find(Boolean);
     // V163-T3: an unknown location is 미기재, not asserted to be outside every
     // province (the map can place the same point inside one).
@@ -163,7 +174,8 @@ function formatField(field: FacilityCardFieldV153, entity: VietnamEntityV124): F
     // A-023: the registry's own name and year, then the row's link.
     const key = powerPlantSourceKeyV141(entity.indicatorId || "");
     const registry = POWER_PLANT_SOURCES_V141[key]?.label || null;
-    const href = publicSourceUrlV126(text(attributes.sourceUrl)) || undefined;
+    // V164-3: a record without its own link points at the registry it came from.
+    const href = publicSourceUrlV126(text(attributes.sourceUrl)) || publicSourceUrlV126(text(entity.provenance?.sourceUrl)) || undefined;
     const sourceName = text(attributes.sourceName);
     const parts = [registry, sourceName && sourceName !== registry ? sourceName : null].filter(Boolean);
     if (!parts.length && !href) return missing;
@@ -198,9 +210,10 @@ function formatField(field: FacilityCardFieldV153, entity: VietnamEntityV124): F
 }
 
 /** The card's rows for one entity, in the dataset's declared order. */
-export function facilityCardRowsV153(elementId: string, entity: VietnamEntityV124): FacilityCardRowV153[] {
+export function facilityCardRowsV153(elementId: string, entityIn: VietnamEntityV124): FacilityCardRowV153[] {
   const spec = FACILITY_CARD_SPECS_V153[elementId];
   if (!spec) return [];
+  const entity = elementId === "A-023" ? powerPlantStatedEntityV164(entityIn) : entityIn;
   const rows = spec.fields.map((field) => formatField(field, entity));
   // V163-T3: a record whose name field repeats its type (A-025 "Power (coal)")
   // has no name of its own - the row reads 미기재 rather than the type twice.
@@ -212,4 +225,70 @@ export function facilityCardRowsV153(elementId: string, entity: VietnamEntityV12
 
 export function facilityCardSpecV153(elementId: string): FacilityCardSpecV153 | null {
   return FACILITY_CARD_SPECS_V153[elementId] || null;
+}
+
+/** A spatial feature's list of the records it draws ("[\"bgd-…-00029\"]" or an array). */
+export function featureRecordIdsV164(value: unknown): string[] {
+  if (Array.isArray(value)) return value.map(String).filter(Boolean);
+  const raw = typeof value === "string" ? value.trim() : "";
+  if (!raw) return [];
+  if (raw.startsWith("[")) {
+    try {
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed.map(String).filter(Boolean) : [];
+    } catch {
+      return [];
+    }
+  }
+  return [raw];
+}
+
+/**
+ * V164-3: the record behind a facility drawn from a country's spatial asset
+ * (Bangladesh A-023 plants come from the delivery's GeoJSON, Viet Nam's from
+ * its records), so both countries' plants read with one label-form card -
+ * 국가 · 명칭 · 발전원 · 소유·운영 · 설비용량 · 가동 연도 · 소재지 · 자료 출처.
+ *
+ * The drawn feature names the plant, its fuel and its capacity; the record
+ * adds what the feature does not carry (its level-1 unit, owner, year, link).
+ * A field neither states stays 미기재 - nothing is filled in.
+ */
+export function spatialFacilityEntityV164(input: {
+  elementId: string;
+  countryIso3: string;
+  properties: Record<string, unknown>;
+  entity?: VietnamEntityV124 | null;
+}): VietnamEntityV124 | null {
+  if (!FACILITY_CARD_SPECS_V153[input.elementId]) return null;
+  const { properties, entity } = input;
+  const featureName = publicTextV126(properties.name);
+  const recordName = entity ? publicTextV126(entity.name) : null;
+  // The delivery's record name can be a figure (BGD A-023 "54" is a capacity).
+  const name =
+    featureName && !NUMBER_ONLY_NAME_V164.test(featureName)
+      ? featureName
+      : recordName && !NUMBER_ONLY_NAME_V164.test(recordName)
+      ? recordName
+      : featureName || recordName || "";
+  const stated = (value: unknown) => (value === null || value === undefined || value === "" ? undefined : value);
+  const attributes: Record<string, unknown> = { ...(entity?.normalizedAttributes || {}) };
+  const assign = (key: string, value: unknown) => {
+    if (stated(attributes[key]) === undefined && stated(value) !== undefined) attributes[key] = value;
+  };
+  assign("capacityMw", properties.capacityMw ?? properties.mw);
+  assign("primaryFuel", properties.primaryFuel);
+  assign("fuelType", properties.fuelType ?? properties.kindLabel);
+  assign("owner", properties.owner);
+  assign("commissioningYear", properties.commissioningYear);
+  assign("adm1Name34", properties.adm1Name34);
+  return {
+    ...(entity || {}),
+    recordId: entity?.recordId || String(properties.selectionKey ?? properties.featureId ?? ""),
+    elementId: input.elementId,
+    countryIso3: entity?.countryIso3 || input.countryIso3,
+    name,
+    indicatorId: entity?.indicatorId ?? null,
+    normalizedAttributes: attributes,
+    provenance: entity?.provenance || ({} as VietnamEntityV124["provenance"]),
+  } as VietnamEntityV124;
 }

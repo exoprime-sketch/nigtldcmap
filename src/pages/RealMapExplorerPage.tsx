@@ -68,7 +68,7 @@ import {
 import type {
   VietnamMapGeoJsonV124,
 } from "../data/vietnam/vietnamDataLoaderV124";
-import { POWER_PLANT_SOURCES_V141 } from "../data/map/powerPlantFactsV141";
+import { POWER_PLANT_SOURCES_V141, powerPlantFuelV141 } from "../data/map/powerPlantFactsV141";
 import { prepareLayerRecordsV138, attributeText } from "../data/map/prepareLayerRecordsV148";
 import { applyNationalMineJoinV157_2 } from "../data/map/entityAttributeJoinV157_2";
 import { mapFactsV148, mapIndicatorSourceV148, powerCapacitySummaryV148 } from "../data/map/mapPresentationV148";
@@ -77,7 +77,7 @@ import { createMapPointPopupV152 } from "../components/map/mapPointPopupV152";
 import MapIconLegendV152 from "../components/map/MapIconLegendV152";
 import { MapIconBadgeV152 } from "../components/map/MapIconSpriteV152";
 import FacilityCardV153 from "../components/data/public/FacilityCardV153";
-import { facilityCardSpecV153 } from "../data/visualization/facilityCardV153";
+import { facilityCardSpecV153, featureRecordIdsV164, spatialFacilityEntityV164 } from "../data/visualization/facilityCardV153";
 import { A023_CAPACITY_BADGE_RADIUS_V152 } from "../map/layers/pointIconLayer";
 import {
   attachMapIconMissingHandlerV152,
@@ -1331,7 +1331,9 @@ function publicPowerPlantFactsV132(
       : null;
   return {
     capacity,
-    fuel: publicMapFactV132(properties.fuelType ?? properties.primaryFuel),
+    // V164-3: the registry's English fuel ("Gas", "Oil") reads with the card's
+    // Korean label, as the facility card says it.
+    fuel: publicMapFactV132(powerPlantFuelV141(properties)),
     status: publicPowerPlantStatusV132(properties.status),
     year: publicMapFactV132(properties.referenceYear),
   };
@@ -1451,6 +1453,86 @@ function countryMapInfoTargetV163(
   };
 }
 
+/** V164-3: the refs behind the map's popups (hover and the clicked site's pinned one). */
+interface MapPopupRefsV164 {
+  hover: { current: MapLibrePopup | null };
+  hoverOwner: { current: string | null };
+  pinned: { current: MapLibrePopup | null };
+  pinnedKey: { current: string | null };
+}
+
+/** Close the clicked site's popup. */
+function unpinMapPopupV164(refs: Pick<MapPopupRefsV164, "pinned" | "pinnedKey">): void {
+  const popup = refs.pinned.current;
+  refs.pinned.current = null;
+  refs.pinnedKey.current = null;
+  popup?.remove();
+}
+
+/**
+ * V164-3: keep the clicked site's popup open. The hover popup closes when the
+ * pointer leaves the site; the reader asked for the clicked one to stay. It
+ * opens after the click has finished, so the same click does not close it
+ * (closeOnClick), and a later click elsewhere on the map, its × button or a
+ * new selection closes it.
+ */
+function pinMapPopupV164(
+  map: MapLibreMap,
+  refs: MapPopupRefsV164,
+  lngLat: [number, number] | { lng: number; lat: number },
+  content: HTMLElement | null,
+  key: string
+): void {
+  unpinMapPopupV164(refs);
+  refs.hover.current?.remove();
+  refs.hover.current = null;
+  refs.hoverOwner.current = null;
+  if (!content) return;
+  content.dataset.testid = "map-pinned-popup-v164";
+  content.dataset.pinned = "true";
+  refs.pinnedKey.current = key;
+  window.setTimeout(() => {
+    if (refs.pinnedKey.current !== key || refs.pinned.current) return;
+    const popup = new maplibregl.Popup({
+      closeButton: true,
+      closeOnClick: true,
+      offset: 10,
+      focusAfterOpen: false,
+      className: "cdp-map-pinned-popup-v164",
+    })
+      .setLngLat(lngLat)
+      .setDOMContent(content)
+      .addTo(map);
+    const closeButton = popup.getElement()?.querySelector(".maplibregl-popup-close-button");
+    closeButton?.setAttribute("aria-label", "정보 창 닫기");
+    closeButton?.setAttribute("title", "닫기");
+    popup.on("close", () => {
+      if (refs.pinned.current !== popup) return;
+      refs.pinned.current = null;
+      refs.pinnedKey.current = null;
+    });
+    refs.pinned.current = popup;
+  }, 0);
+}
+
+/** The facility card's record for a site drawn from a spatial asset, or null while its record is not read. */
+function spatialFacilityForFeatureV164(
+  records: Map<string, CountryEntityV122>,
+  countryIso3: string,
+  elementId: string,
+  properties: Record<string, unknown>
+): CountryEntityV122 | null {
+  if (!facilityCardSpecV153(elementId)) return null;
+  const entity =
+    featureRecordIdsV164(properties.recordIds ?? properties.recordId)
+      .map((recordId) => records.get(`${countryIso3}:${elementId}:${recordId}`))
+      .find(Boolean) || null;
+  // Until the site's record is read the card would print 미기재 for facts the
+  // record states; the layer's own popup stands in until then.
+  if (!entity) return null;
+  return spatialFacilityEntityV164({ elementId, countryIso3, properties, entity });
+}
+
 export default function RealMapExplorerPage({
   onOpenElement,
   onOpenDataFinder,
@@ -1465,6 +1547,16 @@ export default function RealMapExplorerPage({
   const mapRef = useRef<MapLibreMap | null>(null);
   const popupRef = useRef<MapLibrePopup | null>(null);
   const popupOwnerRef = useRef<string | null>(null);
+  // V164-3: the popup of the site the reader clicked stays open (closed by its
+  // × button, a click elsewhere on the map, or a new selection); the hover
+  // popup above keeps following the pointer.
+  const pinnedPopupRefV164 = useRef<MapLibrePopup | null>(null);
+  const pinnedKeyRefV164 = useRef<string | null>(null);
+  // V164-3: the records behind facilities drawn from a spatial asset
+  // (Bangladesh A-023), so their popup and panel read the facility card.
+  const facilityRecordsRefV164 = useRef<Map<string, CountryEntityV122>>(new Map());
+  const [facilityRecordsTickV164, setFacilityRecordsTickV164] = useState(0);
+
   const handlersRef = useRef<Record<string, LayerHandlers>>({});
   const mountedKeysRef = useRef<Set<string>>(new Set());
   const renderSignaturesRef = useRef<Record<string, string>>({});
@@ -2787,6 +2879,19 @@ export default function RealMapExplorerPage({
                 ...current,
                 [elementId]: { geometry, data },
               }));
+              // V164-3: a facility layer drawn from a spatial asset also reads
+              // its records for the facility card; the map never waits for them.
+              if (facilityCardSpecV153(elementId)) {
+                const loadingCountryV164 = countryIso3;
+                void loadCountryElementEntitiesV122(loadingCountryV164, elementId)
+                  .then((payload) => {
+                    payload.records.forEach((record) =>
+                      facilityRecordsRefV164.current.set(`${loadingCountryV164}:${elementId}:${record.recordId}`, record)
+                    );
+                    setFacilityRecordsTickV164((tick) => tick + 1);
+                  })
+                  .catch((reason: unknown) => console.warn("Facility records unavailable", reason));
+              }
             })
           : Promise.reject(
               new Error(
@@ -3098,6 +3203,26 @@ export default function RealMapExplorerPage({
             );
           }
           setAnalysisPanelOpen(true);
+          // V164-3: a clicked site keeps its popup - the facility card for a
+          // facility, else the popup the pointer showed. Areas and lines open
+          // the panel only.
+          const clickedGeometryV164 = event.features?.[0]?.geometry;
+          if (clickedGeometryV164?.type === "Point") {
+            const facilityV164 = spatialFacilityForFeatureV164(facilityRecordsRefV164.current, countryIso3, elementId, properties);
+            const hoverContentV164 = popupRef.current?.getElement()?.querySelector(".maplibregl-popup-content > [data-testid]");
+            const contentV164 = facilityV164
+              ? createMapPointPopupV152({ layer, properties, primary: isPrimary, entity: facilityV164 })
+              : hoverContentV164 instanceof HTMLElement
+              ? (hoverContentV164.cloneNode(true) as HTMLElement)
+              : null;
+            pinMapPopupV164(
+              map,
+              { hover: popupRef, hoverOwner: popupOwnerRef, pinned: pinnedPopupRefV164, pinnedKey: pinnedKeyRefV164 },
+              [...clickedGeometryV164.coordinates] as [number, number],
+              contentV164,
+              `${elementId}:${String(properties.selectionKey ?? properties.featureId ?? "")}`
+            );
+          }
         };
         const popupOwnerKey = `${runtimeKey(countryIso3, elementId)}:${interactiveLayerId}`;
         const onEnter = (event: MapLayerMouseEvent) => {
@@ -3137,6 +3262,34 @@ export default function RealMapExplorerPage({
             return;
           }
           const properties = event.features?.[0]?.properties || {};
+          // V164-3: the clicked site's popup is already open; no second one.
+          const hoverKeyV164 = `${elementId}:${String(properties.selectionKey ?? properties.featureId ?? "")}`;
+          if (pinnedKeyRefV164.current === hoverKeyV164) {
+            popupRef.current?.remove();
+            popupRef.current = null;
+            popupOwnerRef.current = popupOwnerKey;
+            return;
+          }
+          // V164-3: a facility drawn from a spatial asset (Bangladesh A-023)
+          // reads with the facility card, as the record-drawn ones do.
+          const hoveredGeometryV164 = event.features?.[0]?.geometry;
+          const facilityV164 =
+            hoveredGeometryV164?.type === "Point"
+              ? spatialFacilityForFeatureV164(facilityRecordsRefV164.current, countryIso3, elementId, properties)
+              : null;
+          if (facilityV164 && hoveredGeometryV164?.type === "Point") {
+            popupRef.current?.remove();
+            popupOwnerRef.current = popupOwnerKey;
+            popupRef.current = new maplibregl.Popup({
+              closeButton: false,
+              closeOnClick: false,
+              offset: 10,
+            })
+              .setLngLat([...hoveredGeometryV164.coordinates] as [number, number])
+              .setDOMContent(createMapPointPopupV152({ layer, properties, primary: isPrimary, entity: facilityV164 }))
+              .addTo(map);
+            return;
+          }
           const rawLength = properties.lengthKm ?? properties.length;
           const parsedLength =
             rawLength === null || rawLength === undefined || rawLength === ""
@@ -3384,6 +3537,18 @@ export default function RealMapExplorerPage({
           );
         }
         setAnalysisPanelOpen(true);
+        // V164-3: the clicked site keeps its popup until the reader closes it.
+        const clickedFeatureV164 = event.features?.[0];
+        if (clickedFeatureV164?.geometry.type === "Point") {
+          const clickedPropertiesV164 = (clickedFeatureV164.properties || {}) as Record<string, unknown>;
+          pinMapPopupV164(
+            map,
+            { hover: popupRef, hoverOwner: popupOwnerRef, pinned: pinnedPopupRefV164, pinnedKey: pinnedKeyRefV164 },
+            [...clickedFeatureV164.geometry.coordinates] as [number, number],
+            createMapPointPopupV152({ layer, properties: clickedPropertiesV164, primary: isPrimary, entity: record }),
+            `${elementId}:${String(clickedPropertiesV164.selectionKey ?? clickedPropertiesV164.recordId ?? "")}`
+          );
+        }
       };
       const pointPopupOwnerKey = `${runtimeKey(countryIso3, elementId)}:${ids.pointHit}`;
       const clusterPopupOwnerKey = `${runtimeKey(countryIso3, elementId)}:${ids.cluster}`;
@@ -3432,6 +3597,11 @@ export default function RealMapExplorerPage({
         const hoveredKey = String(feature.properties?.selectionKey ?? feature.properties?.recordId ?? "");
         if (map.getLayer(ids.pointHover)) {
           map.setFilter(ids.pointHover, ["==", ["get", "selectionKey"], hoveredKey || "__none__"]);
+        }
+        // V164-3: the clicked site's popup is already open; no second one.
+        if (pinnedKeyRefV164.current === `${elementId}:${hoveredKey}`) {
+          popupRef.current = null;
+          return;
         }
         popupRef.current = new maplibregl.Popup({
           closeButton: false,
@@ -4761,6 +4931,43 @@ export default function RealMapExplorerPage({
     () => (selectedSpatial ? parseMemberSummaryV151(selectedSpatial.properties.memberSummary) : null),
     [selectedSpatial]
   );
+  /**
+   * V164-3: a facility drawn from a spatial asset (BGD A-023) reads as the same
+   * facility card as a record-drawn one (VNM A-023). A cluster is not a facility.
+   */
+  const selectedSpatialFacilityV164 = useMemo(() => {
+    if (!selectedSpatial || !facilityCardSpecV153(selectedSpatial.elementId)) return null;
+    const properties = selectedSpatial.properties || {};
+    if (properties.category === "위치 묶음" || String(selectedSpatial.selectionKey || "").startsWith("cluster:")) return null;
+    return spatialFacilityForFeatureV164(facilityRecordsRefV164.current, countryIso3, selectedSpatial.elementId, properties);
+    // facilityRecordsTickV164 marks the records arriving after the map drew.
+  }, [selectedSpatial, countryIso3, facilityRecordsTickV164]);
+  // V164-3: the pinned popup belongs to the current selection; clearing it,
+  // switching country or switching the layer off takes the popup with it.
+  useEffect(() => {
+    const pinnedKey = pinnedKeyRefV164.current;
+    if (!pinnedKey) return;
+    const pinnedElementId = pinnedKey.split(":")[0];
+    if ((!selected && !selectedSpatial) || !activeIds.includes(pinnedElementId)) {
+      unpinMapPopupV164({ pinned: pinnedPopupRefV164, pinnedKey: pinnedKeyRefV164 });
+    }
+  }, [selected, selectedSpatial, activeIds]);
+  useEffect(() => {
+    unpinMapPopupV164({ pinned: pinnedPopupRefV164, pinnedKey: pinnedKeyRefV164 });
+  }, [countryIso3]);
+  useEffect(() => {
+    // Esc closes the clicked site's popup, as its × does.
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && pinnedPopupRefV164.current) {
+        unpinMapPopupV164({ pinned: pinnedPopupRefV164, pinnedKey: pinnedKeyRefV164 });
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      unpinMapPopupV164({ pinned: pinnedPopupRefV164, pinnedKey: pinnedKeyRefV164 });
+    };
+  }, []);
   const selectedMemberRecordsV138 = useMemo(() => {
     if (!selectedSpatial?.adm1Code || !selectedOwningLayer) return [];
     const data = spatialByElement[selectedOwningLayer.elementId]?.data;
@@ -5741,6 +5948,23 @@ export default function RealMapExplorerPage({
     const record = recordId
       ? recordIndexRef.current.get(`${choice.elementId}:${recordId}`) || null
       : null;
+    // V164-3: a site chosen from the overlap list keeps its popup, as a direct
+    // click does - a drawn record, or a facility drawn from a spatial asset
+    // once its record is read. A site without its own coordinates opens none.
+    const pinnedEntityV164 =
+      record || spatialFacilityForFeatureV164(facilityRecordsRefV164.current, countryIso3, choice.elementId, choice.properties);
+    const mapV164 = mapRef.current;
+    const lngV164 = typeof pinnedEntityV164?.longitude === "number" ? pinnedEntityV164.longitude : Number.NaN;
+    const latV164 = typeof pinnedEntityV164?.latitude === "number" ? pinnedEntityV164.latitude : Number.NaN;
+    if (pinnedEntityV164 && mapV164 && Number.isFinite(lngV164) && Number.isFinite(latV164) && !choice.properties.approximate) {
+      pinMapPopupV164(
+        mapV164,
+        { hover: popupRef, hoverOwner: popupOwnerRef, pinned: pinnedPopupRefV164, pinnedKey: pinnedKeyRefV164 },
+        [lngV164, latV164],
+        createMapPointPopupV152({ layer, properties: choice.properties, primary: choice.role === "primary", entity: pinnedEntityV164 }),
+        `${choice.elementId}:${choice.selectionKey || recordId}`
+      );
+    }
     if (record) {
       setSelected(record);
       setSelectedSpatial(null);
@@ -8386,12 +8610,33 @@ export default function RealMapExplorerPage({
                     )}
                   </div>
                 ) : selectedSpatial && selectedOwningLayer ? (
-                  <div data-testid="map-feature-detail">
+                  <div
+                    data-testid="map-feature-detail"
+                    data-a023-key-facts={
+                      selectedSpatialFacilityV164 && selectedSpatial.elementId === "A-023" ? "true" : undefined
+                    }
+                  >
                     {mapSelectionCardV161 && (
                       <SelectionPanelV161
                         card={mapSelectionCardV161}
                         onZoom={() => zoomToSelectionV161()}
                       />
+                    )}
+                    {selectedSpatialFacilityV164 && (
+                      <div
+                        className="cdp-map-a023-key-facts-v132"
+                        data-testid={
+                          selectedSpatial.elementId === "A-023"
+                            ? "a023-map-selected-key-facts-v132"
+                            : "map-selected-facts-v148"
+                        }
+                      >
+                        <FacilityCardV153
+                          elementId={selectedSpatial.elementId}
+                          entity={selectedSpatialFacilityV164}
+                          compact
+                        />
+                      </div>
                     )}
                     {selectedOwningLayer.sharedObjectsWith && selectedMemberRecordsV138.length === 0 && (
                       <p className="cdp-map-region-trend-v132__notice" data-testid="map-shared-register-note-v138">

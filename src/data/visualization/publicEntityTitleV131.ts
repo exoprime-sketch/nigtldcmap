@@ -1,6 +1,7 @@
 import { OSM_CLASS_KO_V162, osmClassLabelV162 } from "./osmClassLabelsV162";
 import { publicProcessWordingV162 } from "./processWordingV162";
 import type { VietnamEntityV124 } from "../vietnam/vietnamTypesV124";
+import { powerPlantStatedEntityV164 } from "../map/powerPlantStatedV164";
 import { publicCategoryLabelV136_2 } from "./publicCategoryLabelV136_2";
 import {
   publicProjectNumberV136_3,
@@ -750,7 +751,12 @@ export function resolvePublicEntityTitleV131(
   entity: VietnamEntityV124,
   options: PublicEntityTitleOptionsV131 = {}
 ): PublicEntityTitleResolutionV131 {
-  const resolved = resolvePublicEntityTitleBaseV131(entity, options);
+  // V164-3: a power plant whose name field holds its capacity (Bangladesh
+  // A-023 "510") is titled with the name its own row note states.
+  const resolved = resolvePublicEntityTitleBaseV131(
+    entity.elementId === "A-023" ? powerPlantStatedEntityV164(entity) : entity,
+    options
+  );
   // V164-3: B-028 names unnamed stations by the HydroBASINS field (MAIN_BAS);
   // the field name reads as the word it stands for.
   const title = publicProcessWordingV162(resolved.title).replace(/HydroBASINS\s+MAIN_BAS\s+/gu, "HydroBASINS 유역 ");
