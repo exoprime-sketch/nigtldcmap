@@ -2153,7 +2153,8 @@ function GenericEntitiesV125({
         <ol className="sv125-group-counts" data-testid="entity-value-comparison-v141" data-compared-measure={comparable[0].measureKey || comparable[0].unit}>
           {comparable.slice(0, 20).map((item) => (
             <li key={item.recordId}>
-              <span><PublicTermTextV134 text={item.title} /></span>
+              {/* V164-3: B-028's basin ID field name (MAIN_BAS) reads as the word it stands for. */}
+              <span><PublicTermTextV134 text={item.title.replace(/HydroBASINS\s+MAIN_BAS\s+/gu, "HydroBASINS 유역 ")} /></span>
               <i aria-hidden="true" style={{ width: `${(Math.abs(item.value) / comparableMax) * 100}%` }} />
               <strong>{formatValueV121(item.value)} <PublicTermTextV134 text={item.unit} /></strong>
             </li>

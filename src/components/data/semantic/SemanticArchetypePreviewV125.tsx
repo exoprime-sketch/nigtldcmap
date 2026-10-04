@@ -494,6 +494,10 @@ export default function SemanticArchetypePreviewV125({
       const measureValues = valuesOf(inMeasure);
       const inContextList = deliveredValues.filter((value) => contextValues.has(value));
       const inMeasureList = deliveredValues.filter((value) => measureValues.has(value));
+      // The other choices already lead to values that carry no value of this
+      // dimension (BGD D-010: 분류 "명시적 보조금 (금액)" has no 세부 분류): the
+      // measure's whole list would offer only choices that empty the screen.
+      if (inContextList.length === 0 && inContext.some(isPopulatedSemanticRowV125)) return keepCurrent([]);
       return keepCurrent(inContextList.length > 0 ? inContextList : inMeasureList.length > 0 ? inMeasureList : deliveredValues);
     }
     const entityContext = entities.filter((entity) =>
@@ -641,6 +645,7 @@ export default function SemanticArchetypePreviewV125({
           if (pairsWithShorter) return null;
           // V164-3: of the delivered values, the ones that lead to a value.
           const values = selectableDimensionValuesV164(dimension.key, deliveredValues, valuesForMeasure.length > 0);
+          if (values.length === 0 && !dimensions[dimension.key]) return null;
           if (values.length === 1 && !dimensions[dimension.key]) {
             return (
               <p className="sv125-fixed-value" key={dimension.key} data-public-dimension-key={dimension.key}>
