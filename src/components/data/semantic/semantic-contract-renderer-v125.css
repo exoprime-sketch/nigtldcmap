@@ -769,3 +769,77 @@
   font-weight: 600;
   white-space: nowrap;
 }
+
+/* V164: CDM activities listed apart from the institutions of a directory. */
+.sv164-activities {
+  margin-top: 18px;
+  min-width: 0;
+}
+.sv164-activities__title {
+  margin: 0 0 4px;
+  font-size: 1rem;
+}
+.sv164-activities__note {
+  margin: 0 0 8px;
+  font-size: 0.86rem;
+  color: #526a63;
+}
+.sv164-activities__list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sv164-activities__list > li {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid #d9e5e0;
+  border-radius: 10px;
+  background: #fff;
+  overflow-wrap: anywhere;
+}
+.sv164-activities__list > li > span {
+  font-size: 0.86rem;
+  color: #3c554d;
+}
+.sv164-activities__procedure {
+  color: #6b8078;
+}
+
+/*
+ * V164: the dot of a timeline entry sits on the entry's rule, to the right of a
+ * date column of fixed width, so a date that wraps ("2013-07-02 서명 / 2021-10")
+ * never runs under it.
+ */
+.sv125-policy-timeline li {
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+}
+.sv125-policy-timeline li::before {
+  box-sizing: border-box;
+  left: calc(7.5rem + 0.8rem - 7px);
+}
+.sv125-policy-timeline time {
+  line-height: 1.4;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 768px) {
+  .sv125-policy-timeline li {
+    grid-template-columns: 5.75rem minmax(0, 1fr);
+  }
+  .sv125-policy-timeline li::before {
+    left: calc(5.75rem + 0.8rem - 7px);
+  }
+}
+@media (max-width: 480px) {
+  .sv125-policy-timeline li {
+    display: block;
+  }
+  .sv125-policy-timeline li::before {
+    left: -1px;
+    top: 1.8rem;
+  }
+}

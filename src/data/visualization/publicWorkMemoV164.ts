@@ -35,6 +35,8 @@ const SIGNALS_V164: readonly string[] = [
   String.raw`재(?:확보|접근|수집|대조|산출)`,
   String.raw`재확인\s*(?:필요|대상|예정|시점)`,
   String.raw`확인\s*대상`,
+  // the sheet's own note on keeping an earlier collection ("종전 수집 근거 유지")
+  String.raw`종전\s*수집`,
   // how a page was fetched
   String.raw`HTTP\s*[1-5]\d{2}`,
   String.raw`봇\s*차단`,
@@ -150,7 +152,13 @@ function withoutMemoDashTailV164(sentence: string): string {
  * on through the rest of the list ("재확보 대상 1차 출처: BTR1 제2장 · …").
  */
 function publicSentenceV164(sentence: string): string {
-  const trimmed = withoutMemoDashTailV164(sentence);
+  // A dash belongs to the list item it stands in: "사건일 — 검토 개시: 2018 · …
+  // 발효일: 원천 미제공 — … 확인 필요" must not lose the item that precedes the memo.
+  const items = sentence.split(LIST_SPLIT_V164);
+  const trimmed =
+    items.length >= 3
+      ? items.map((item, index) => (index % 2 === 0 ? withoutMemoDashTailV164(item) : item)).join("")
+      : withoutMemoDashTailV164(sentence);
   if (!trimmed.trim()) return "";
   if (!hasSignalV164(trimmed)) return trimmed;
   // A list ("A · B · C") or the clauses of a plain sentence ("A, B"): the
@@ -215,4 +223,20 @@ export function publicWorkMemoV164(value: string): string {
 /** True when the cell is a memo through and through (nothing public is left). */
 export function isWorkMemoOnlyV164(value: string): boolean {
   return String(value ?? "").trim() !== "" && publicWorkMemoV164(value) === "";
+}
+
+/**
+ * Two marks the delivery writes into a note that mean nothing to a reader: the
+ * block separator "▣" (read as a broken glyph) and the ISO code after "해당국"
+ * ("해당국(VNM) 발효일"). The separator becomes the note's own " · "; the code
+ * is dropped. The words and every figure around them are unchanged.
+ */
+export function publicMarksV164(value: string): string {
+  const text = String(value ?? "");
+  if (!/▣|해당국\s*\([A-Z]{3}\)/u.test(text)) return text;
+  return text
+    .replace(/\s*▣\s*/gu, " · ")
+    .replace(/(해당국)\s*\([A-Z]{3}\)/gu, "$1")
+    .replace(/^\s*·\s*|\s*·\s*$/gu, "")
+    .trim();
 }

@@ -228,6 +228,47 @@ const ENTRIES_V164: ReadonlyArray<readonly [string, string]> = [
   ["Mauritius", "모리셔스"],
   ["Philippines", "필리핀"],
   ["Lao People's Democratic Republic (the)", "라오스"],
+  ["Lao People's Democratic Republic", "라오스"],
+  ["People's Republic of China", "중국"],
+  ["Republic of Korea", "대한민국"],
+  ["Hong Kong, China", "홍콩(중국)"],
+  ["Brunei Darussalam", "브루나이"],
+  ["Cambodia", "캄보디아"],
+  ["Indonesia", "인도네시아"],
+  ["Malaysia", "말레이시아"],
+  ["Myanmar", "미얀마"],
+  ["Australia", "호주"],
+  ["New Zealand", "뉴질랜드"],
+  ["Canada", "캐나다"],
+  ["Chile", "칠레"],
+  ["Mexico", "멕시코"],
+  ["Peru", "페루"],
+  ["Papua New Guinea", "파푸아뉴기니"],
+  ["Afghanistan", "아프가니스탄"],
+  ["Mongolia", "몽골"],
+  ["Bhutan", "부탄"],
+  ["Maldives", "몰디브"],
+  ["Nepal", "네팔"],
+  ["Pakistan", "파키스탄"],
+  ["Sri Lanka", "스리랑카"],
+  ["Armenia", "아르메니아"],
+  ["Kazakhstan", "카자흐스탄"],
+  ["Kyrgyz Republic", "키르기스스탄"],
+  ["Belarus", "벨라루스"],
+  ["Russian Federation", "러시아"],
+  ["Türkiye", "튀르키예"],
+  ["Turkiye", "튀르키예"],
+  ["Egypt", "이집트"],
+  ["Nigeria", "나이지리아"],
+  ["Israel", "이스라엘"],
+  ["Switzerland", "스위스"],
+  ["Norway", "노르웨이"],
+  ["Iceland", "아이슬란드"],
+  ["Liechtenstein", "리히텐슈타인"],
+  ["Brazil", "브라질"],
+  ["Argentina", "아르헨티나"],
+  ["Paraguay", "파라과이"],
+  ["Uruguay", "우루과이"],
   // --- cities named as a category ---
   ["Dhaka", "다카"],
   ["Manila", "마닐라"],
@@ -287,6 +328,20 @@ function koreanSingleV164(text: string): string | null {
   return null;
 }
 
+/** The parts of a list; a name that holds a comma ("Hong Kong, China") stays one part. */
+function splitKnownV164(text: string): string[] {
+  const raw = text.split(LIST_SEPARATOR_V164).filter(Boolean);
+  const parts: string[] = [];
+  for (let index = 0; index < raw.length; index += 1) {
+    const pair = index + 1 < raw.length ? `${raw[index]}, ${raw[index + 1]}` : "";
+    if (pair && DICTIONARY_V164.has(keyOf(pair))) {
+      parts.push(pair);
+      index += 1;
+    } else parts.push(raw[index]);
+  }
+  return parts;
+}
+
 /**
  * The Korean name of a classification value, or the value itself when it is not
  * one the dictionary knows. A list ("Adaptation, Mitigation", "PE;VC") is
@@ -298,10 +353,25 @@ export function koreanCategoryV164(value: string): string {
   if (!trimmed || !/^[A-Za-z]/u.test(trimmed)) return text;
   const whole = koreanSingleV164(trimmed);
   if (whole) return whole;
-  const parts = trimmed.split(LIST_SEPARATOR_V164).filter(Boolean);
+  const parts = splitKnownV164(trimmed);
   if (parts.length < 2) return text;
   const translated = parts.map((part) => koreanSingleV164(part));
   return translated.every((part): part is string => part !== null) ? translated.join("·") : text;
+}
+
+/**
+ * A list of names of one kind (the member countries of an agreement) where the
+ * known ones read in Korean and the others stay as delivered: "Mongolia, Taipei,China"
+ * is "몽골·Taipei,China". A list with no known name is returned as it was.
+ */
+export function koreanListV164(value: string): string {
+  const text = String(value ?? "");
+  const trimmed = text.trim();
+  if (!trimmed || !/^[A-Za-z]/u.test(trimmed)) return text;
+  const parts = splitKnownV164(trimmed);
+  const translated = parts.map((part) => koreanSingleV164(part));
+  if (parts.length < 2 || translated.every((part) => part === null)) return koreanCategoryV164(text);
+  return parts.map((part, index) => translated[index] ?? part).join("·");
 }
 
 /**

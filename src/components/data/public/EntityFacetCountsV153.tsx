@@ -1,5 +1,6 @@
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV126";
+import { koreanCategoryV164 } from "../../../data/visualization/publicCategoryLabelV164";
 import PublicCountDistributionV143 from "./PublicCountDistributionV143";
 import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
 
@@ -54,7 +55,8 @@ export default function EntityFacetCountsV153({ entities, recordLabel = "항목"
   const regionText = useRegionTextV162();
   const facet = entityFacetCountsV153(entities);
   if (!facet) return null;
-  const rows = facet.key === "city" ? facet.rows.map((row) => ({ ...row, label: regionText(row.label) })) : facet.rows;
+  // V164: a class the source states in English reads in Korean (exact-match dictionary).
+  const rows = facet.rows.map((row) => ({ ...row, label: facet.key === "city" ? regionText(row.label) : koreanCategoryV164(row.label) }));
   return (
     <section className="d153-block" data-analysis-block="category-bar" data-testid="entity-facet-counts-v153" data-facet={facet.key}>
       <PublicCountDistributionV143 title={`${facet.label}별 ${recordLabel} 수`} rows={rows} unit={facet.noun} xAxis={`${recordLabel} 수`} yAxis={facet.label} testId="entity-facet-distribution-v153" />

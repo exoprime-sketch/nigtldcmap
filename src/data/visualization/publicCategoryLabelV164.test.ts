@@ -1,4 +1,4 @@
-import { koreanCategoryV164, koreanTitleV164 } from "./publicCategoryLabelV164";
+import { koreanCategoryV164, koreanListV164, koreanTitleV164 } from "./publicCategoryLabelV164";
 
 /** V164-3: the English classification values the delivery shipped, in Korean. */
 describe("koreanCategoryV164", () => {
@@ -80,5 +80,22 @@ describe("koreanTitleV164", () => {
     );
     expect(koreanTitleV164("NDC 3.0 감축수단 — AFOLU")).toBe("NDC 3.0 감축수단 — AFOLU");
     expect(koreanTitleV164("협의 기간")).toBe("협의 기간");
+  });
+});
+
+describe("koreanListV164", () => {
+  it("reads each known name of a list and leaves an unknown one as delivered", () => {
+    expect(koreanListV164("Bangladesh, People's Republic of China, Mongolia")).toBe("방글라데시·중국·몽골");
+    expect(koreanListV164("Japan, Taipei,China, Viet Nam")).toBe("일본·Taipei,China·베트남");
+  });
+
+  it("keeps a name that holds a comma as one name", () => {
+    expect(koreanListV164("Australia, Hong Kong, China, Japan")).toBe("호주·홍콩(중국)·일본");
+    expect(koreanCategoryV164("Japan, Hong Kong, China")).toBe("일본·홍콩(중국)");
+  });
+
+  it("returns a list with no known name, and a value that is not English, as it was", () => {
+    expect(koreanListV164("Acme Ltd, Foo Corp")).toBe("Acme Ltd, Foo Corp");
+    expect(koreanListV164("방글라데시, 부탄")).toBe("방글라데시, 부탄");
   });
 });

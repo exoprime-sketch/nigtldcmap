@@ -52,6 +52,8 @@ import type { AnalysisBlockTypeV153 } from "../../../data/visualization/publicVi
 import { useAnalysisContractV153 } from "../public/analysisContractContextV153";
 import { PolicyDocumentDescriptionV153 } from "../public/PolicyDescriptionV153";
 import EntityFacetCountsV153 from "../public/EntityFacetCountsV153";
+import { cdmActivityRowV164, splitCdmActivitiesV164, withDirectoryKeysV164 } from "../../../data/visualization/directoryEntitiesV164";
+import { agreementDateTextV164, agreementDetailV164, partiesTextV164, withAgreementNameV164 } from "../../../data/visualization/agreementTimelineV164";
 
 import "./semantic-contract-renderer-v125.css";
 
@@ -361,14 +363,17 @@ export type IndicatorUnitsV142 = Record<string, { unit: string | null; unitFamil
 
 function renderEntityPanelV125(
   renderer: RendererV125,
-  entities: VietnamEntityV124[],
+  deliveredEntities: VietnamEntityV124[],
   contract: ElementVisualizationContractV125,
   countryNameKo: string,
   detailTemplate?: string,
   elementTitle?: string,
   indicatorUnits: IndicatorUnitsV142 = {}
 ) {
-  if (entities.length === 0) return null;
+  if (deliveredEntities.length === 0) return null;
+  // V164: an A-029 row named by its signing date or status is named by its note's 협정명.
+  const renamedEntities = deliveredEntities.map(withAgreementNameV164);
+  const entities = renamedEntities.some((entity, index) => entity !== deliveredEntities[index]) ? renamedEntities : deliveredEntities;
   // V162: the wide record template ('[블록] 속성' columns, one row per record)
   // reads as block cards whatever the renderer; record ids, working files and
   // the supplier's note never reach the screen (wideRecordsV162).
@@ -397,7 +402,7 @@ function renderEntityPanelV125(
     case "directory":
       return (
         <>
-          <EntityFacetCountsV153 entities={entities} recordLabel="기관" />
+          <EntityFacetCountsV153 entities={splitCdmActivitiesV164(entities.map(withDirectoryKeysV164)).institutions} recordLabel="기관" />
           <DirectoryEntitiesV125
             entities={entities}
             detailTemplate={detailTemplate}
@@ -1508,6 +1513,16 @@ function TimelineGroupCountsV141({ entities, elementId }: { entities: VietnamEnt
   );
 }
 
+/**
+ * V164: an A-029 note is a detail line without the repeated or unreadable parts
+ * (agreementDetailV164); an agreement of E-014 names its parties first.
+ */
+function timelineDetailV164(entity: VietnamEntityV124, detail: string): string {
+  if (entity.elementId === "A-029") return agreementDetailV164(detail);
+  const parties = partiesTextV164(entity.normalizedAttributes?.["체결국"]);
+  return parties ? `체결국: ${parties}${detail ? ` · ${detail}` : ""}` : detail;
+}
+
 function PolicyTimelineV125({
   rows,
   entities,
@@ -1534,8 +1549,11 @@ function PolicyTimelineV125({
     })),
     ...entities.map((entity) => ({
       key: entity.recordId,
-      date: entityFieldV125(entity, [
+      // V164: A-029's signing / entry-into-force columns (also the Bangladesh
+      // names) and the events of its note date a row before the generic keys do.
+      date: agreementDateTextV164(entity) || entityFieldV125(entity, [
         "signedDate",
+        "signed_date",
         "effectiveDate",
         "date",
         "year",
@@ -1551,7 +1569,8 @@ function PolicyTimelineV125({
         "시작일",
       ]),
       title: publicEntityTitleV131(entity),
-      detail:
+      detail: timelineDetailV164(
+        entity,
         publicDescriptionNoteV137(
           entityFieldV125(entity, [
             "status",
@@ -1563,11 +1582,12 @@ function PolicyTimelineV125({
             "발생지역_원문",
           ])
         ) ||
-        withoutRestatedTitleV137(
-          publicDescriptionNoteV137(entity.note),
-          publicEntityTitleV131(entity)
-        ) ||
-        "",
+          withoutRestatedTitleV137(
+            publicDescriptionNoteV137(entity.note),
+            publicEntityTitleV131(entity)
+          ) ||
+          ""
+      ),
       sourceUrl: entityUrlV125(entity),
     })),
   ].sort((left, right) => timelineSortV125(left.date) - timelineSortV125(right.date));
@@ -1793,7 +1813,7 @@ export function directoryCountsV142(entities: VietnamEntityV124[]): {
 } {
   const byOrganisation = new Map<string, { contacts: number; roles: Set<string> }>();
   let contacts = 0;
-  entities.forEach((entity) => {
+  entities.map(withDirectoryKeysV164).forEach((entity) => {
     const organisation = directoryOrganisationV142(entity);
     const person = directoryPersonV142(entity);
     const role = publicTextV126((entity.normalizedAttributes || {})["role"]) || "";
@@ -1812,8 +1832,37 @@ export function directoryCountsV142(entities: VietnamEntityV124[]): {
   };
 }
 
+/** A directory shows every institution it counts (the grid's default stops at 12 of 16). */
+const DIRECTORY_CARD_LIMIT_V164 = 30;
+
+/**
+ * V164: the CDM activities an Article 6.4 authority is processing are projects,
+ * so they are listed by name with their kind and status, apart from the
+ * institutions the heading counts.
+ */
+function CdmActivitiesTableV164({ entities }: { entities: VietnamEntityV124[] }) {
+  const rows = entities.map(cdmActivityRowV164);
+  return (
+    <section className="sv164-activities" data-testid="directory-cdm-activities-v164" data-activity-count={rows.length} aria-label="CDM 전환 활동">
+      <h5 className="sv164-activities__title">CDM 전환 활동 · {rows.length.toLocaleString("ko-KR")}건</h5>
+      <p className="sv164-activities__note">제6.4조 국가지정기관이 전환 승인 절차를 진행 중인 CDM 사업·프로그램 목록입니다.</p>
+      <ListFoldV160 total={rows.length} noun="건">
+        <ol className="sv164-activities__list">
+          {rows.map((row) => (
+            <li key={row.recordId}>
+              <strong><PublicTermTextV134 text={row.name} /></strong>
+              {(row.kind || row.status) && <span>{[row.kind, row.status].filter(Boolean).join(" · ")}</span>}
+              {row.procedure && <span className="sv164-activities__procedure"><PublicTermTextV134 text={row.procedure} /></span>}
+            </li>
+          ))}
+        </ol>
+      </ListFoldV160>
+    </section>
+  );
+}
+
 function DirectoryEntitiesV125({
-  entities,
+  entities: deliveredEntities,
   detailTemplate,
   elementTitle,
 }: {
@@ -1821,6 +1870,9 @@ function DirectoryEntitiesV125({
   detailTemplate?: string;
   elementTitle?: string;
 }) {
+  // V164: the Korean-named columns of a country delivery are read as the cards'
+  // keys, and CDM activities (projects) are listed apart from the institutions.
+  const { institutions: entities, activities: cdmActivities } = splitCdmActivitiesV164(deliveredEntities.map(withDirectoryKeysV164));
   const installed = entities.filter((entity) => !isNotInstalledEntityV138(entity));
   const notInstalled = entities.filter(isNotInstalledEntityV138);
   const counts = directoryCountsV142(installed.length ? installed : entities);
@@ -1865,7 +1917,9 @@ function DirectoryEntitiesV125({
         template="directory"
         detailTemplate={detailTemplate}
         elementTitle={elementTitle}
+        limit={DIRECTORY_CARD_LIMIT_V164}
       />
+      {cdmActivities.length > 0 && <CdmActivitiesTableV164 entities={cdmActivities} />}
       {notInstalled.length > 0 && (
         <div className="sv125-contract-note" role="note" data-testid="directory-not-installed-v138">
           <strong>현지 사무소가 없는 기관 {notInstalled.length.toLocaleString("ko-KR")}곳</strong>

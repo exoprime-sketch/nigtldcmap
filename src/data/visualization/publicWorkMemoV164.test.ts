@@ -1,4 +1,4 @@
-import { isWorkMemoOnlyV164, publicWorkMemoV164 } from "./publicWorkMemoV164";
+import { isWorkMemoOnlyV164, publicMarksV164, publicWorkMemoV164 } from "./publicWorkMemoV164";
 
 /**
  * V164-3: working memos cut from public text. Every case is a string the
@@ -135,5 +135,30 @@ describe("publicWorkMemoV164", () => {
       const once = publicWorkMemoV164(text);
       expect(publicWorkMemoV164(once)).toBe(once);
     }
+  });
+
+  it("cuts the dash tail of one list item without taking the items before it", () => {
+    const note =
+      "구분: 양자 · 사건일 — 검토 개시: 2018; WTO 통보: 미통보 · 협정 최초 발효일: 해당 없음(미발효) · 해당국(BGD) 발효일: 원천 미제공 — ADB ARIC 은 협정 단위 최초 발효일만 제공하므로 별도 확인 필요 · 수집 기준일: 2026-09-18 · 원천: ADB ARIC FTA Database";
+    const cleaned = publicWorkMemoV164(note);
+    for (const fact of ["사건일 — 검토 개시: 2018", "WTO 통보: 미통보", "협정 최초 발효일: 해당 없음(미발효)", "해당국(BGD) 발효일: 원천 미제공", "수집 기준일: 2026-09-18", "원천: ADB ARIC FTA Database"]) {
+      expect(cleaned).toContain(fact);
+    }
+    expect(cleaned).not.toMatch(/확인 필요|단위 최초/u);
+  });
+
+  it("cuts the note on keeping an earlier collection and keeps the statement it qualifies", () => {
+    expect(publicWorkMemoV164("해당국 발효일: 2024-11-17 (종전 수집 근거 유지 — 해당국 기준 발효일)")).toBe("해당국 발효일: 2024-11-17 (해당국 기준 발효일)");
+  });
+});
+
+describe("publicMarksV164", () => {
+  it("writes the block separator as the note's own separator and drops the ISO code after 해당국", () => {
+    expect(publicMarksV164("비고: 상품무역협정 기준 ▣ 상태(통일): 발효")).toBe("비고: 상품무역협정 기준 · 상태(통일): 발효");
+    expect(publicMarksV164("해당국(VNM) 발효일: 2024-11-17")).toBe("해당국 발효일: 2024-11-17");
+  });
+
+  it("leaves text with neither mark as it is", () => {
+    for (const text of ["회원국(7): Bangladesh", "해당국 발효일: 원천 미제공", "전국(VNM) 합계"]) expect(publicMarksV164(text)).toBe(text);
   });
 });
