@@ -29,7 +29,9 @@
 - 304쪽 글자 스캔(최종 빌드): 열림 304/304 · 오류 0 · 긴 눈금 0 · 가로 넘침 0 · 작업 메모·내부 코드·방글라데시 화면의 베트남 용어 0
 - 빈 선택지가 있던 36쪽 재조작: BGD 229회 · VNM 272회, 빈 화면 0(BGD D-010 세부 분류는 마지막 수정 반영)
 - 반응형: 바뀐 10화면 × 6폭 = 60건 가로 넘침 0 · 주요 화면 스모크 20건 이상 없음
-- CI: Static gate 통과. `PR gate finalize:v151`은 #71·#72와 같이 수 분 만에 실패(참고용)
+- CI: Static gate 통과 · 브라우저 감사 shard 2·3 통과(shard 1·4 실패는 main #71·#72와 같은 기존 실패) · `PR gate finalize:v151`은 #71·#72와 같이 수 분 만에 실패(참고용)
+- 중간 커밋에서 새로 실패한 감사 2건 수정: 연도 축이 자료에 없는 연도 표시(portfolio) → 관측 연도만, 카드 제목 3줄(entity-cards) → 2줄 규칙 복원
+- 성능: 지역 대장 화면 로드 중 최장 작업 VNM B-007 3.1s → 0.85s, B-006 3.1s → 0.96s, B-005 2.9s → 0.94s(main 대비 개선, 나머지 같은 수준)
 
 ### Preview 확인
 - Preview URL: https://nigtldcmap-git-fix-v164-3-full-review-exoprime-5142s-projects.vercel.app (Vercel 로그인 필요)
