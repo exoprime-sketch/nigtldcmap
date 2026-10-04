@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { resolvePublicEntityTitleV131 } from "../../../data/visualization/publicEntityTitleV131";
+import { categoryVariantKeyV164, koreanCategoryV164 } from "../../../data/visualization/publicCategoryLabelV164";
 import { publicUnstatedWordingV161 } from "../../../data/visualization/publicFieldPolicyV126";
 import PublicPortfolioSummaryV132, { publicPortfolioFacetV132, publicPortfolioRecordLabelV138 } from "./PublicPortfolioSummaryV132";
 import PublicPortfolioListV132, { publicPortfolioCategoryLabelV140 } from "./PublicPortfolioListV132";
@@ -19,9 +20,14 @@ export function portfolioSelectionModelV143(props: Props, selection: PortfolioSe
   const individual = records.filter(({ facet }) => facet.recordRole === "individual");
   const noteEntities = records.filter(({ facet }) => facet.recordRole !== "individual").map(({ entity }) => entity);
   const needle = selection.query.normalize("NFC").trim().toLocaleLowerCase("ko-KR");
+  // V164 R2: a category written in two spellings ("Gold Standard Certified Design"
+  // and "Gold Standard certified design") is one choice, so records are matched
+  // by the spelling-insensitive key and the list offers one entry per key.
+  const sameCategory = (facetCategory: string | null, chosen: string) =>
+    Boolean(facetCategory) && categoryVariantKeyV164(facetCategory || "") === categoryVariantKeyV164(chosen);
   const filtered = individual.filter(({ facet, title }) =>
     (selection.year === "all" || String(facet.year) === selection.year) &&
-    (selection.category === "all" || facet.category === selection.category) &&
+    (selection.category === "all" || sameCategory(facet.category, selection.category)) &&
     (!needle || `${title} ${facet.searchText}`.normalize("NFC").toLocaleLowerCase("ko-KR").includes(needle))
   ).map(({ entity }) => entity);
   // V164-3: each of the two selectors offers what the other one's current choice
@@ -31,18 +37,30 @@ export function portfolioSelectionModelV143(props: Props, selection: PortfolioSe
   // value it is not set to.
   const yearsOf = (items: typeof individual) =>
     [...new Set(items.flatMap(({ facet }) => facet.year ? [String(facet.year)] : []))].sort((a, b) => Number(b) - Number(a));
-  const categoriesOf = (items: typeof individual) =>
-    [...new Set(items.flatMap(({ facet }) => facet.category ? [facet.category] : []))].sort((a, b) => a.localeCompare(b, "ko"));
+  const categoriesOf = (items: typeof individual) => {
+    const byKey = new Map<string, string>();
+    items.forEach(({ facet }) => {
+      if (!facet.category) return;
+      const key = categoryVariantKeyV164(facet.category);
+      if (!byKey.has(key)) byKey.set(key, facet.category);
+    });
+    return [...byKey.values()].sort((a, b) => koreanCategoryV164(a).localeCompare(koreanCategoryV164(b), "ko"));
+  };
   const inYear = individual.filter(({ facet }) => selection.year === "all" || String(facet.year) === selection.year);
-  const inCategory = individual.filter(({ facet }) => selection.category === "all" || facet.category === selection.category);
-  const withCurrent = (offered: string[], current: string, delivered: string[]) =>
-    current !== "all" && !offered.includes(current) && delivered.includes(current) ? [...offered, current] : offered;
+  const inCategory = individual.filter(({ facet }) => selection.category === "all" || sameCategory(facet.category, selection.category));
+  const withCurrent = (offered: string[], current: string, delivered: string[]) => {
+    if (current === "all") return offered;
+    const key = categoryVariantKeyV164(current);
+    if (offered.some((value) => value === current || categoryVariantKeyV164(value) === key)) return offered;
+    return delivered.includes(current) ? [...offered, current] : offered;
+  };
   const allYears = yearsOf(individual);
   const allCategories = categoriesOf(individual);
   return {
     filtered, noteEntities, total: individual.length,
     years: withCurrent(yearsOf(inCategory), selection.year, allYears).sort((a, b) => Number(b) - Number(a)),
-    categories: withCurrent(categoriesOf(inYear), selection.category, allCategories).sort((a, b) => a.localeCompare(b, "ko")),
+    categories: withCurrent(categoriesOf(inYear), selection.category, allCategories)
+      .sort((a, b) => koreanCategoryV164(a).localeCompare(koreanCategoryV164(b), "ko")),
   };
 }
 
@@ -58,7 +76,7 @@ export default function PublicPortfolioWorkspaceV143(props: Props) {
     <div className="paw143-filters" role="search" aria-label={`${noun} 분석 조건`}>
       <label><span>검색어</span><input type="search" placeholder="제목·기관·분야 검색" value={selection.query} onChange={(event) => update("query", event.target.value)} /></label>
       {model.years.length > 0 && <label><span>연도</span><select value={selection.year} onChange={(event) => update("year", event.target.value)}><option value="all">전체 기간</option>{model.years.map((year) => <option key={year} value={year}>{year}년</option>)}</select></label>}
-      {model.categories.length > 0 && <label><span>{publicPortfolioCategoryLabelV140(props.elementId)}</span><select value={selection.category} onChange={(event) => update("category", event.target.value)}><option value="all">전체</option>{model.categories.map((category) => <option key={category} value={category}>{publicUnstatedWordingV161(category)}</option>)}</select></label>}
+      {model.categories.length > 0 && <label><span>{publicPortfolioCategoryLabelV140(props.elementId)}</span><select value={selection.category} onChange={(event) => update("category", event.target.value)}><option value="all">전체</option>{model.categories.map((category) => <option key={category} value={category}>{koreanCategoryV164(publicUnstatedWordingV161(category))}</option>)}</select></label>}
       <button type="button" onClick={() => setSelection(EMPTY_PORTFOLIO_SELECTION_V143)} disabled={!active}>선택 초기화</button>
     </div>
     <p className="paw143-selection" role="status" data-testid="portfolio-selection-count-v143">{active ? "선택한 조건" : "전체 자료"} · {noun} {model.filtered.length.toLocaleString("ko-KR")}건 / 전체 {model.total.toLocaleString("ko-KR")}건<span>아래 현황·차트·목록에 같은 조건이 적용됩니다.</span></p>

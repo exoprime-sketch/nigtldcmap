@@ -1,5 +1,14 @@
 import { describe, expect, it } from "@jest/globals";
-import { gradeRankV164, koreanCategoryV164, koreanLabeledValuesV164, koreanListV164, koreanTitleV164 } from "./publicCategoryLabelV164";
+import {
+  categoryVariantKeyV164,
+  gradeRankV164,
+  investmentRoundLabelV164,
+  koreanCategoryV164,
+  koreanLabeledValuesV164,
+  koreanListV164,
+  koreanTitleV164,
+  nationalityLabelV164,
+} from "./publicCategoryLabelV164";
 
 /** V164-3: the English classification values the delivery shipped, in Korean. */
 describe("koreanCategoryV164", () => {
@@ -135,8 +144,8 @@ describe("koreanCategoryV164 (finance portfolios)", () => {
     expect(koreanCategoryV164("Pipeline/Identification")).toBe("준비·발굴 단계");
   });
 
-  it("leaves an institution, a programme and a long path as delivered", () => {
-    for (const text of ["International Organisation for Migration", "Energy/Electricity/Electricity generation", "Greenfield project (Build, own, and operate)", "IDA"]) {
+  it("leaves an institution and a programme as delivered", () => {
+    for (const text of ["International Organisation for Migration", "IDA", "Energy/Unlisted sector/Roads"]) {
       expect(koreanCategoryV164(text)).toBe(text);
     }
   });
@@ -167,5 +176,67 @@ describe("koreanCategoryV164 additions (V164-3 main)", () => {
     expect(koreanCategoryV164("scape reputational risk")).toBe("경관 단위 평판 위험");
     expect(koreanCategoryV164("Taxes on Pollution")).toBe("오염 관련 세");
     expect(koreanCategoryV164("Arid and Low Water Use")).toBe("건조·물 사용 적음");
+  });
+});
+
+describe("koreanCategoryV164 R2 additions", () => {
+  it("keeps two donor groups apart so a chart never numbers them as 계열 1 and 2", () => {
+    expect(koreanCategoryV164("DAC Members")).toBe("DAC 회원국");
+    expect(koreanCategoryV164("DAC countries")).toBe("DAC 국가");
+    expect(koreanCategoryV164("DAC Members")).not.toBe(koreanCategoryV164("DAC countries"));
+    expect(koreanCategoryV164("EU Institutions")).toBe("EU 기구");
+  });
+
+  it("reads the D-018 to D-026 statuses and sectors", () => {
+    expect(koreanCategoryV164("Concept Proposed")).toBe("개념 제안");
+    expect(koreanCategoryV164("Proposal Approved")).toBe("제안서 승인");
+    expect(koreanCategoryV164("Water management")).toBe("물 관리");
+    expect(koreanCategoryV164("Hydro, Small (<50MW)")).toBe("소수력(50MW 미만)");
+    expect(koreanCategoryV164("Gold Standard Certified Design")).toBe("Gold Standard 설계 인증");
+    expect(koreanCategoryV164("Under validation")).toBe("타당성 검토 중");
+    expect(koreanCategoryV164("Operational Focal Point")).toBe("실무 연락관(Operational Focal Point)");
+  });
+
+  it("reads a sector path when every segment is known, once per repeated segment", () => {
+    expect(koreanCategoryV164("Energy/Electricity/Electricity generation")).toBe("에너지 › 전력 › 발전");
+    // an empty segment ("Disposal/") is dropped
+    expect(koreanCategoryV164("Transport/Roads/Highway/")).toBe("교통 › 도로 › 고속도로");
+    expect(koreanCategoryV164("Energy/Unlisted sector/Roads")).toBe("Energy/Unlisted sector/Roads");
+    expect(koreanCategoryV164("https://example.org/energy/electricity")).toBe("https://example.org/energy/electricity");
+  });
+
+  it("reads a known head followed by words the delivery already wrote in Korean", () => {
+    expect(koreanCategoryV164("Series B(신규 라운드)")).toBe("시리즈 B(신규 라운드)");
+    expect(koreanCategoryV164("Pillar 1 Institutions 순위")).toBe("부문 1 제도 순위");
+    expect(koreanCategoryV164("Completed (완료 2021-05)")).toBe("완료 (2021-05)");
+    expect(koreanCategoryV164("Series B")).toBe("시리즈 B");
+  });
+
+  it("keeps a comma-holding name whole inside a list", () => {
+    expect(koreanCategoryV164("Solar, PV; Wind")).toBe("태양광(PV)·풍력");
+  });
+});
+
+describe("category variants and company labels (R2)", () => {
+  it("compares two spellings of one classification as the same", () => {
+    expect(categoryVariantKeyV164("GOLD_STANDARD_CERTIFIED_DESIGN")).toBe(categoryVariantKeyV164("Gold Standard  Certified Design"));
+    expect(categoryVariantKeyV164("LISTED")).toBe(categoryVariantKeyV164("Listed"));
+    expect(categoryVariantKeyV164("Listed")).not.toBe(categoryVariantKeyV164("Registered"));
+  });
+
+  it("reads a nationality without its ownership share, one name per country", () => {
+    expect(nationalityLabelV164("Vietnam(100%)")).toBe("베트남");
+    expect(nationalityLabelV164("Thailand(90%); Vietnam(10%)")).toBe("태국·베트남");
+    expect(nationalityLabelV164("태국")).toBe("태국");
+    expect(nationalityLabelV164("Denmark; Vietnam")).toBe("덴마크·베트남");
+    expect(nationalityLabelV164("Vietnam[추정]")).toBe("베트남 (추정)");
+    expect(nationalityLabelV164("Atlantis(100%)")).toBe("Atlantis");
+    expect(nationalityLabelV164("")).toBe("");
+  });
+
+  it("says a round once whether or not the delivery marks it as a new round", () => {
+    expect(investmentRoundLabelV164("Series B(신규 라운드)")).toBe("Series B");
+    expect(investmentRoundLabelV164("Series B")).toBe("Series B");
+    expect(investmentRoundLabelV164("Seed (신규 라운드)")).toBe("Seed");
   });
 });

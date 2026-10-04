@@ -2,7 +2,12 @@ import { useMemo } from "react";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV126";
 import { isNumericCodeListV136_2 } from "../../../data/visualization/publicCategoryLabelV136_2";
-import { koreanCategoryV164 } from "../../../data/visualization/publicCategoryLabelV164";
+import {
+  categoryVariantKeyV164,
+  investmentRoundLabelV164,
+  koreanCategoryV164,
+  nationalityLabelV164,
+} from "../../../data/visualization/publicCategoryLabelV164";
 import { publicCategoryRowsV136_3 } from "../../../utils/publicCategoryGroupingV136_3";
 import { reviewedEntityAttributesV132 } from "../../../data/visualization/publicEntityFieldPolicyV132";
 import { publicRecordRoleV142 } from "../../../data/visualization/publicRecordRoleV142";
@@ -492,7 +497,7 @@ function portfolioAnalysisV132(
     if (category) {
       // Counted under the source's own value. Turning that into something a
       // reader recognises happens later, on the way to the screen.
-      categories.set(category, (categories.get(category) || 0) + 1);
+      addCategoryCountV164(categories, categoryCountValueV164(elementId, elementCategoryKeyV162 || "", category));
     } else if (elementCategoryKeyV162) {
       uncategorizedCount += 1;
     }
@@ -500,7 +505,7 @@ function portfolioAnalysisV132(
       const value = publicTextV126(facet.attributes?.[key]);
       if (!value || isNumericCodeListV136_2(value) || COMPILER_REMARK_VALUE_V142.test(value)) return;
       const bucket = categoriesByKey.get(key) || new Map<string, number>();
-      bucket.set(value, (bucket.get(value) || 0) + 1);
+      addCategoryCountV164(bucket, categoryCountValueV164(elementId, key, value));
       categoriesByKey.set(key, bucket);
     });
 
@@ -612,6 +617,34 @@ export function publicPortfolioFacetV132(
   };
 }
 
+/**
+ * The value a category count is keyed by (V164-3 round 2). A company's nationality
+ * is counted without its ownership share ("Vietnam(100%)" and "베트남" are one bar),
+ * and an investment round without the delivery's "(신규 라운드)" note. Every other
+ * value is counted as delivered.
+ */
+export function categoryCountValueV164(elementId: string, key: string, value: string): string {
+  if (elementId === "D-012" && key === "entryCountry") return nationalityLabelV164(value);
+  if (key === "fundingRound") return investmentRoundLabelV164(value);
+  return value;
+}
+
+/**
+ * One count per classification, spelled however the source spelled it first: the
+ * same status delivered as "GOLD_STANDARD_CERTIFIED_DESIGN" and as "Gold Standard
+ * Certified Design" (C-025) is one bar, not two that print the same Korean name.
+ */
+export function addCategoryCountV164(counts: Map<string, number>, value: string): void {
+  const variant = categoryVariantKeyV164(value);
+  for (const existing of counts.keys()) {
+    if (categoryVariantKeyV164(existing) === variant) {
+      counts.set(existing, (counts.get(existing) || 0) + 1);
+      return;
+    }
+  }
+  counts.set(value, 1);
+}
+
 function numericAmountV132(value: unknown): number | null {
   if (typeof value === "number") return Number.isFinite(value) && value >= 0 ? value : null;
   if (typeof value !== "string") return null;
@@ -696,6 +729,9 @@ const PORTFOLIO_CATEGORY_KEY_LABELS_BY_ELEMENT_V142: Readonly<Record<string, Rea
   "D-023": { implementingEntity: "인가·집행기관(AE/Agency)" },
   // V164-3: VC·impact deals are grouped by climate field (RE·효율·모빌리티·AgTech), not a DAC sector.
   "D-024": { portfolioCategory: "기후 분야" },
+  // V164-3 round 2: a PPI project's sector is the World Bank's own sector path, not a
+  // DAC sector, and its "mode" is the investment type (신규 건설·기존 시설 개량), not a market entry.
+  "D-025": { portfolioCategory: "섹터", entryMode: "투자 유형" },
 });
 
 export function portfolioCategoryKeyLabelV142(elementId: string, key: string): string | null {

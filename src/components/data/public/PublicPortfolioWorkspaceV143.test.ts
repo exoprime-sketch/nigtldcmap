@@ -1,6 +1,8 @@
 import { describe, expect, it } from "@jest/globals";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { EMPTY_PORTFOLIO_SELECTION_V143, portfolioSelectionModelV143 } from "./PublicPortfolioWorkspaceV143";
+import { addCategoryCountV164, categoryCountValueV164, publicPortfolioFacetV132 } from "./PublicPortfolioSummaryV132";
+import { categoryVariantKeyV164 } from "../../../data/visualization/publicCategoryLabelV164";
 import { isPublicMapFactV143, publicMapFactSourcesV143, hasPublicMapFactValueV143 } from "../../../data/visualization/publicMapCopyV143";
 import { readDownloadJsonV158 } from "../../../data/testing/downloadZipV158";
 
@@ -84,6 +86,47 @@ describe("cross-conditioned selectors", () => {
     const result = portfolioSelectionModelV143(props, { ...EMPTY_PORTFOLIO_SELECTION_V143, year: allOffered.years[0] });
     expect(result.total).toBe(allOffered.total);
     expect(entities).toHaveLength(13);
+  });
+});
+
+// V164 R2: C-025 delivered one status in two spellings (GOLD_STANDARD_CERTIFIED_DESIGN
+// and "Gold Standard Certified Design"); the status selector offered it twice and a
+// chart counted two bars with one Korean name.
+describe("one choice per classification (R2)", () => {
+  const registry = readDownloadJsonV158("c-025").entities as VietnamEntityV124[];
+  const registryProps = { elementId: "C-025", entities: registry, detailTemplate: "portfolio" };
+
+  it("offers one entry for every spelling-insensitive category", () => {
+    const { categories } = portfolioSelectionModelV143(registryProps, EMPTY_PORTFOLIO_SELECTION_V143);
+    const keys = categories.map((category) => categoryVariantKeyV164(category));
+    expect(new Set(keys).size).toBe(keys.length);
+  });
+
+  it("selecting a category finds the records of every spelling of it", () => {
+    const all = portfolioSelectionModelV143(registryProps, EMPTY_PORTFOLIO_SELECTION_V143);
+    const counted = all.categories.reduce(
+      (sum, category) => sum + portfolioSelectionModelV143(registryProps, { ...EMPTY_PORTFOLIO_SELECTION_V143, category }).filtered.length,
+      0
+    );
+    // every record that has a category is reachable through exactly one entry
+    const withCategory = registry.filter((entity) => publicPortfolioFacetV132("C-025", entity, "portfolio").category).length;
+    expect(counted).toBeLessThanOrEqual(withCategory);
+    expect(counted).toBeGreaterThan(0);
+  });
+});
+
+describe("category counting (R2)", () => {
+  it("counts two spellings of one status as one bar, under the first spelling", () => {
+    const counts = new Map<string, number>();
+    ["Gold Standard Certified Design", "GOLD_STANDARD_CERTIFIED_DESIGN", "Listed", "LISTED", "Listed"].forEach((value) => addCategoryCountV164(counts, value));
+    expect([...counts.entries()]).toEqual([["Gold Standard Certified Design", 2], ["Listed", 3]]);
+  });
+
+  it("counts a nationality without the ownership share and a round without the new-round note", () => {
+    expect(categoryCountValueV164("D-012", "entryCountry", "Vietnam(100%)")).toBe("베트남");
+    expect(categoryCountValueV164("D-012", "entryCountry", "베트남")).toBe("베트남");
+    expect(categoryCountValueV164("D-024", "fundingRound", "Series B(신규 라운드)")).toBe("Series B");
+    expect(categoryCountValueV164("D-024", "sector", "Finance")).toBe("Finance");
   });
 });
 

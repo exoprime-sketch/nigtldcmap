@@ -204,8 +204,17 @@ const ENTRIES_V164: ReadonlyArray<readonly [string, string]> = [
   ["Multilateral organisations", "다자기구"],
   ["Multilaterals organisations", "다자기구"],
   ["DAC Members", "DAC 회원국"],
-  ["DAC countries", "DAC 회원국"],
+  // D-011 lists both groups; one Korean name for the two made the legend print
+  // "DAC 회원국 · 계열 1/2", so each keeps the words its own name carries.
+  ["DAC countries", "DAC 국가"],
   ["DAC members/countries", "DAC 회원국"],
+  ["DAC EU countries", "DAC 소속 EU 국가"],
+  ["DAC EU countries and EU Institutions", "DAC 소속 EU 국가·EU 기구"],
+  ["EU Institutions", "EU 기구"],
+  ["Other multilateral organisations", "기타 다자기구"],
+  ["Regional Development Banks", "지역개발은행"],
+  ["European Union (evolving composition)", "유럽연합(구성 변동)"],
+  ["IMF Concessional Trust Funds", "IMF 양허성 신탁기금"],
   ["Non-DAC countries", "비DAC 국가"],
   // --- investor / institution types (a type, never a name) ---
   ["DFI", "개발금융기관(DFI)"],
@@ -330,12 +339,179 @@ const ENTRIES_V164: ReadonlyArray<readonly [string, string]> = [
   ["Taxes on Transport (excluding fuel for transport)", "수송 관련 세(수송 연료 제외)"],
 ];
 
+/**
+ * V164-3 round 2: the values the second screen review still found in English.
+ * Whole classification values only (a name, a project and a sentence are never
+ * listed), grouped by the screens they were found on.
+ */
+const ENTRIES_ROUND2_V164: ReadonlyArray<readonly [string, string]> = [
+  // --- countries and country groups as donors, investors, nationalities (D-011, D-012, D-026) ---
+  ["Austria", "오스트리아"],
+  ["Belgium", "벨기에"],
+  ["Bulgaria", "불가리아"],
+  ["Croatia", "크로아티아"],
+  ["Cyprus", "키프로스"],
+  ["Czechia", "체코"],
+  ["Czech Republic", "체코"],
+  ["Denmark", "덴마크"],
+  ["Estonia", "에스토니아"],
+  ["Finland", "핀란드"],
+  ["Greece", "그리스"],
+  ["Hungary", "헝가리"],
+  ["Ireland", "아일랜드"],
+  ["Italy", "이탈리아"],
+  ["Korea", "한국"],
+  ["South Korea", "한국"],
+  ["Kuwait", "쿠웨이트"],
+  ["Latvia", "라트비아"],
+  ["Lithuania", "리투아니아"],
+  ["Luxembourg", "룩셈부르크"],
+  ["Malta", "몰타"],
+  ["Poland", "폴란드"],
+  ["Portugal", "포르투갈"],
+  ["Qatar", "카타르"],
+  ["Romania", "루마니아"],
+  ["Russia", "러시아"],
+  ["Saudi Arabia", "사우디아라비아"],
+  ["Slovak Republic", "슬로바키아"],
+  ["Slovenia", "슬로베니아"],
+  ["Spain", "스페인"],
+  ["Sweden", "스웨덴"],
+  ["Burundi", "부룬디"],
+  ["Virgin Islands (British)", "영국령 버진아일랜드"],
+  ["To be determined", "미정"],
+  // --- D-018 / D-020 / D-021 / D-023 sector, status and result-area values ---
+  ["Water management", "물 관리"],
+  ["Transboundary Water Management", "월경 수자원 관리"],
+  ["Urban development", "도시개발"],
+  ["Water Supply & Sanitation", "상수도·위생"],
+  ["Banking & Financial Services", "은행·금융 서비스"],
+  ["Fishing", "어업"],
+  ["Energy generation, renewable sources", "재생에너지 발전"],
+  ["Energy distribution", "에너지 배급"],
+  ["Government & Civil Society", "정부·시민사회"],
+  ["Multiple Foci", "복수 초점"],
+  ["Mitigation - General", "감축 — 일반"],
+  ["Mitigation - REDD", "감축 — REDD"],
+  ["Livelihoods of people and communities", "주민·지역사회 생계"],
+  ["Ecosystems and ecosystem services", "생태계·생태계서비스"],
+  ["Infrastructure and built environment", "기반시설·건조 환경"],
+  ["Health, food, and water security", "보건·식량·물 안보"],
+  ["Energy generation and access", "에너지 생산·접근성"],
+  ["International Waters", "국제 수역"],
+  ["Concept Proposed", "개념 제안"],
+  ["Proposal Approved", "제안서 승인"],
+  ["EDA: Proposal Submitted,Proposal Approved", "EDA: 제안서 제출·제안서 승인"],
+  ["Grant approved - Large Grants for Innovation,Project Under Implementation", "혁신 대형 보조금 승인·사업 이행 중"],
+  ["Full-size Project", "정규 사업"],
+  ["Medium-size Project", "중규모 사업"],
+  ["Enabling Activity", "역량 강화 활동"],
+  ["Rehabilitation Loan", "복구 대출"],
+  ["Sector Adjustment Loan", "부문 조정 대출"],
+  ["Agribusiness, Manufacturing, Services", "농산업·제조업·서비스업"],
+  ["Complex Project", "복합 사업"],
+  ["Transformational Project", "혁신적 변화 사업"],
+  ["Summary of Proposed Guarantee", "제안 보증 요약"],
+  // --- C-025 registry statuses (the same word is delivered as CODE and as Words) ---
+  ["Gold Standard Certified Design", "Gold Standard 설계 인증"],
+  ["Gold Standard Certified Project", "Gold Standard 사업 인증"],
+  ["Listed", "목록 등재"],
+  ["Registered", "등록"],
+  ["Registration requested", "등록 요청"],
+  ["Under development", "개발 중"],
+  ["Under validation", "타당성 검토 중"],
+  ["Late to verify", "검증 지연"],
+  ["Verification approval requested", "검증 승인 요청"],
+  ["Units Transferred from Approved GHG Program", "승인된 온실가스 프로그램에서 이전"],
+  ["Withdrawn", "철회"],
+  ["Issued", "발행"],
+  ["Awaiting issuance request", "발행 요청 대기"],
+  // --- D-024 investment rounds, sectors and instruments ---
+  ["Seed", "시드"],
+  ["Pre-Series A", "프리 시리즈 A"],
+  ["Series A", "시리즈 A"],
+  ["Series B", "시리즈 B"],
+  ["Series C", "시리즈 C"],
+  ["Debt financing", "부채 금융"],
+  ["Finance", "금융"],
+  ["Equity Investments", "지분투자"],
+  ["Finance and Insurance", "금융·보험"],
+  ["Agriculture, Forestry, Fishing and Hunting", "농림어업"],
+  ["Wholesale Trade", "도매업"],
+  ["Educational Services", "교육 서비스"],
+  // --- D-025 technology and investment type (World Bank PPI) ---
+  ["Natural Gas", "천연가스"],
+  ["Diesel", "디젤"],
+  ["Coal", "석탄"],
+  ["Wind", "풍력"],
+  ["Biomass", "바이오매스"],
+  ["Waste", "폐기물"],
+  ["Solar, PV", "태양광(PV)"],
+  ["Hydro, Small (<50MW)", "소수력(50MW 미만)"],
+  ["Hydro, Large (>50MW)", "대수력(50MW 초과)"],
+  ["Greenfield project (Build, operate, and transfer)", "신규 건설(건설·운영·이전, BOT)"],
+  ["Greenfield project (Build, own, and operate)", "신규 건설(건설·소유·운영, BOO)"],
+  ["Greenfield project (Rental)", "신규 건설(임대)"],
+  ["Greenfield project (Merchant)", "신규 건설(상업 판매)"],
+  ["Greenfield project (Not Available)", "신규 건설(방식 미기재)"],
+  ["Divestiture (Partial)", "지분 매각(일부)"],
+  ["Brownfield (Build, rehabilitate, operate, and transfer)", "기존 시설 개량(건설·개보수·운영·이전)"],
+  ["Brownfield (Rehabilitate, operate, and transfer)", "기존 시설 개량(개보수·운영·이전)"],
+  // PPI sector paths, one segment at a time ("Energy / Electricity / Electricity generation")
+  ["Electricity", "전력"],
+  ["Electricity generation", "발전"],
+  ["Electricity distribution", "배전"],
+  ["Electricity transmission", "송전"],
+  ["Natural gas distribution and transmission", "천연가스 공급·수송"],
+  ["Natural gas transmission", "천연가스 수송"],
+  ["Treatment plant", "처리시설"],
+  ["Potable water treatment plant", "상수 처리장"],
+  ["Treatment", "처리"],
+  ["Disposal", "처분"],
+  ["Terminal", "터미널"],
+  ["Channel dredging and terminal", "수로 준설·터미널"],
+  ["Highway", "고속도로"],
+  ["Bridge", "교량"],
+  // --- D-026 investor countries named inside a list handled above; E-003 roles ---
+  ["Operational Focal Point", "실무 연락관(Operational Focal Point)"],
+];
+
+/**
+ * Index and pillar names that read in Korean only in front of a Korean tail
+ * ("Pillar 1 Institutions 순위", "Governance 부문 점수"); a bare "People" or
+ * "Impact" is not translated anywhere else.
+ */
+const INDEX_TERMS_V164: ReadonlyArray<readonly [string, string]> = [
+  ["Innovation Input Sub-Index", "혁신 투입 하위지수"],
+  ["Innovation Output Sub-Index", "혁신 산출 하위지수"],
+  ["Pillar 1 Institutions", "부문 1 제도"],
+  ["Pillar 2 Human capital & research", "부문 2 인적자본·연구"],
+  ["Pillar 3 Infrastructure", "부문 3 인프라"],
+  ["Pillar 4 Market sophistication", "부문 4 시장 성숙도"],
+  ["Pillar 5 Business sophistication", "부문 5 기업 성숙도"],
+  ["Pillar 6 Knowledge & technology outputs", "부문 6 지식·기술 산출"],
+  ["Pillar 7 Creative outputs", "부문 7 창의 산출"],
+  ["Governance", "거버넌스"],
+  ["Impact", "영향"],
+  ["People", "인재"],
+  ["Technology", "기술"],
+];
+
 /** The comparison key: no case, no repeated or surrounding spaces. */
 function keyOf(text: string): string {
   return text.replace(/\s+/gu, " ").trim().toLowerCase();
 }
 
-const DICTIONARY_V164: ReadonlyMap<string, string> = new Map(ENTRIES_V164.map(([english, korean]) => [keyOf(english), korean]));
+// The first entry of a name stands: round 2 adds names, it does not re-translate one.
+const DICTIONARY_V164: ReadonlyMap<string, string> = (() => {
+  const map = new Map<string, string>();
+  for (const [english, korean] of [...ENTRIES_V164, ...ENTRIES_ROUND2_V164]) {
+    const key = keyOf(english);
+    if (!map.has(key)) map.set(key, korean);
+  }
+  return map;
+})();
+const INDEX_TERMS_MAP_V164: ReadonlyMap<string, string> = new Map(INDEX_TERMS_V164.map(([english, korean]) => [keyOf(english), korean]));
 
 /** Water-risk style grades: "Low - Medium (10-20%)" reads "낮음~중간 (10-20%)". */
 const GRADE_V164: ReadonlyArray<readonly [string, string]> = [
@@ -373,6 +549,46 @@ function koreanRangeV164(range: string): string {
 /** Splits a value that is a list of classification values. */
 const LIST_SEPARATOR_V164 = /\s*[;|]\s*|\s*,\s+/u;
 
+/**
+ * "Energy / Electricity / Electricity generation" (a sector path): translated
+ * only when every segment is a known name; an empty segment ("Disposal/") is
+ * dropped and a segment that repeats the one before it ("ICT / ICT") is said once.
+ */
+function koreanPathV164(text: string): string | null {
+  if (!text.includes("/") || /:\/\//u.test(text)) return null;
+  const segments = text.split(/\s*\/\s*/u).map((segment) => segment.trim()).filter(Boolean);
+  // Two segments are usually alternatives ("Yes/No"), not a path.
+  if (segments.length < 3) return null;
+  const names: string[] = [];
+  for (const segment of segments) {
+    const known = DICTIONARY_V164.get(keyOf(segment));
+    if (!known) return null;
+    if (names[names.length - 1] !== known) names.push(known);
+  }
+  return names.join(" › ");
+}
+
+/**
+ * A known name followed by words the delivery already wrote in Korean:
+ * "Series B(신규 라운드)" reads "시리즈 B(신규 라운드)", "Pillar 1 Institutions 순위"
+ * reads "부문 1 제도 순위". Only a whole known head is translated.
+ */
+function koreanWithKoreanTailV164(text: string): string | null {
+  const completed = /^Completed\s*\(\s*완료\s+([^)]+)\)$/iu.exec(text);
+  if (completed) return `완료 (${completed[1].trim()})`;
+  const parenthesis = /^([A-Za-z][^()가-힣]*?)\s*(\([가-힣][^()]*\))$/u.exec(text);
+  if (parenthesis) {
+    const head = DICTIONARY_V164.get(keyOf(parenthesis[1]));
+    if (head) return `${head}${parenthesis[2]}`;
+  }
+  const spaced = /^([A-Za-z][^가-힣]*?)\s+([가-힣].*)$/u.exec(text);
+  if (spaced) {
+    const head = INDEX_TERMS_MAP_V164.get(keyOf(spaced[1])) || DICTIONARY_V164.get(keyOf(spaced[1]));
+    if (head) return `${head} ${spaced[2]}`;
+  }
+  return null;
+}
+
 function koreanSingleV164(text: string): string | null {
   const direct = DICTIONARY_V164.get(keyOf(text));
   if (direct) return direct;
@@ -381,21 +597,37 @@ function koreanSingleV164(text: string): string | null {
     const base = GRADE_V164.find(([english]) => english === keyOf(grade[1]));
     if (base) return grade[2] ? `${base[1]} ${koreanRangeV164(grade[2])}` : base[1];
   }
-  return null;
+  return koreanPathV164(text.trim()) || koreanWithKoreanTailV164(text.trim());
 }
 
-/** The parts of a list; a name that holds a comma ("Hong Kong, China") stays one part. */
+/**
+ * The names the dictionary holds that themselves contain a comma ("Hong Kong,
+ * China", "Hydro, Small (<50MW)", "Buildings, cities, industries, and
+ * appliances"), longest first, so a list is split around them and never
+ * through them.
+ */
+const COMMA_NAME_PATTERNS_V164: ReadonlyArray<RegExp> = [...DICTIONARY_V164.keys()]
+  .filter((key) => key.includes(","))
+  .sort((left, right) => right.length - left.length)
+  .map((name) => {
+    const body = name.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&").replace(/\s+/gu, "\\s+");
+    return new RegExp(`(^|[;|]\\s*|,\\s+|\\s)(${body})(?=$|\\s*[;|]|,\\s)`, "giu");
+  });
+
+/** The parts of a list; a known name that holds a comma stays one part. */
 function splitKnownV164(text: string): string[] {
-  const raw = text.split(LIST_SEPARATOR_V164).filter(Boolean);
-  const parts: string[] = [];
-  for (let index = 0; index < raw.length; index += 1) {
-    const pair = index + 1 < raw.length ? `${raw[index]}, ${raw[index + 1]}` : "";
-    if (pair && DICTIONARY_V164.has(keyOf(pair))) {
-      parts.push(pair);
-      index += 1;
-    } else parts.push(raw[index]);
-  }
-  return parts;
+  const atoms: string[] = [];
+  let protectedText = text;
+  COMMA_NAME_PATTERNS_V164.forEach((pattern) => {
+    protectedText = protectedText.replace(pattern, (_match, lead: string, name: string) => {
+      atoms.push(name);
+      return `${lead}\u0001${atoms.length - 1}\u0001`;
+    });
+  });
+  return protectedText
+    .split(LIST_SEPARATOR_V164)
+    .filter(Boolean)
+    .map((part) => part.replace(/\u0001(\d+)\u0001/gu, (_match, index: string) => atoms[Number(index)]));
 }
 
 /**
@@ -463,4 +695,47 @@ export function koreanTitleV164(title: string): string {
   if (!match) return text;
   const translated = koreanCategoryV164(match[2]);
   return translated === match[2] ? text : `${match[1]}${translated}`;
+}
+
+/**
+ * The comparison key of a classification value written two ways by one source
+ * ("GOLD_STANDARD_CERTIFIED_DESIGN" and "Gold Standard Certified Design",
+ * "LISTED" and "Listed"): no case, no underscores, no repeated spaces. Two values
+ * with one key are one classification, so a count over them is one bar.
+ */
+export function categoryVariantKeyV164(value: string): string {
+  return String(value ?? "").replace(/[_\s]+/gu, " ").trim().toLowerCase();
+}
+
+/**
+ * A company's nationality as the source writes it - "Vietnam(100%)", "Thailand",
+ * "태국", "Denmark; Vietnam", "Thailand(90%); Vietnam(10%)", "Vietnam[추정]" -
+ * as Korean country names without the ownership share. The share is a property
+ * of a stake, not of the nationality, and it split one nationality into several
+ * bars; a nationality the source marked as an estimate keeps that mark. A country
+ * the dictionary does not know stays as written.
+ */
+export function nationalityLabelV164(value: string): string {
+  const text = String(value ?? "").trim();
+  if (!text) return String(value ?? "");
+  const estimated = /\[추정\]\s*$/u.test(text);
+  const body = text.replace(/\s*\[추정\]\s*$/u, "").trim();
+  const names: string[] = [];
+  for (const part of body.split(/\s*[;/]\s*/u).filter(Boolean)) {
+    const name = part.replace(/\s*\(\s*\d+(?:\.\d+)?\s*%\s*\)\s*$/u, "").trim();
+    if (!name) continue;
+    const korean = koreanCategoryV164(name);
+    if (!names.includes(korean)) names.push(korean);
+  }
+  if (names.length === 0) return text;
+  const joined = names.join("·");
+  return estimated ? `${joined} (추정)` : joined;
+}
+
+/**
+ * An investment round without the delivery's own annotation: "Series B(신규
+ * 라운드)" and "Series B" are the same kind of round.
+ */
+export function investmentRoundLabelV164(value: string): string {
+  return String(value ?? "").replace(/\s*\(\s*신규\s*라운드\s*\)\s*$/u, "").trim();
 }
