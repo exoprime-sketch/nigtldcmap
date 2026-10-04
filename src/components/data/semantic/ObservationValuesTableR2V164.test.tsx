@@ -3,7 +3,7 @@ import { act } from "react-dom/test-utils";
 import { createRoot } from "react-dom/client";
 import type { Root } from "react-dom/client";
 import type { SemanticObservationV125 } from "../../../data/visualization/semanticTypesV125";
-import { ObservationValuesTableV146 } from "./SemanticContractRendererV125";
+import { amountUnitTextV164, namedRawKeysV164, ObservationValuesTableV146 } from "./SemanticContractRendererV125";
 
 (globalThis as typeof globalThis & { IS_REACT_ACT_ENVIRONMENT: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
 
@@ -41,6 +41,54 @@ afterEach(() => {
 });
 
 const lastCell = () => host.querySelector("tbody tr:last-child td:last-child")?.textContent;
+
+/** BGD D-026's statistics: the label ends in the delivery's indicator key and the amounts carry the count unit "건". */
+const migaRow = (key: string, value: number, unit = "건") =>
+  ({
+    elementId: "D-026",
+    recordId: `miga-${key}`,
+    indicatorId: `D-026_${key}`,
+    countryIso3: "BGD",
+    year: 2022,
+    value,
+    seriesKey: key,
+    unit,
+    semanticMeasure: { key, labelKo: `MIGA 정치적 리스크 보증 · ${key}`, unit, unitFamily: "count" },
+    dimensionLabels: {},
+    dimensions: {},
+    displayLabel: `MIGA 정치적 리스크 보증 · ${key}`,
+  }) as unknown as SemanticObservationV125;
+
+describe("namedRawKeysV164 and amountUnitTextV164 (R2, BGD D-026)", () => {
+  test("a delivery key with a reviewed name reads as that name; an unknown key is left for the cutter", () => {
+    expect(namedRawKeysV164("MIGA 정치적 리스크 보증 · guarantee_amount_total_active")).toBe("MIGA 정치적 리스크 보증 · 보증금액 합계(유효)");
+    expect(namedRawKeysV164("MIGA 정치적 리스크 보증 · guarantee_count_total")).toBe("MIGA 정치적 리스크 보증 · 보증 건수(합계)");
+    expect(namedRawKeysV164("MIGA 정치적 리스크 보증 · some_unknown_column_key")).toBe("MIGA 정치적 리스크 보증 · some_unknown_column_key");
+    expect(namedRawKeysV164("전체 실업률 · ILO 추정치")).toBe("전체 실업률 · ILO 추정치");
+  });
+
+  test("an amount under a count unit has no stated unit; a count keeps its unit", () => {
+    expect(amountUnitTextV164("MIGA 정치적 리스크 보증 · 보증금액 합계(유효)", "건")).toBe("단위 미기재");
+    expect(amountUnitTextV164("MIGA 정치적 리스크 보증 · 보증 건수(유효)", "건")).toBe("건");
+    expect(amountUnitTextV164("보증금액 합계", "백만 USD")).toBe("백만 USD");
+    expect(amountUnitTextV164("보증금액 합계", "")).toBe("");
+  });
+
+  test("the values table lists each statistic under its own label and never prints an amount in 건", () => {
+    const rows = [
+      migaRow("guarantee_amount_total_active", 1211600000),
+      migaRow("guarantee_amount_total_not_active", 720000000),
+      migaRow("guarantee_count_active", 7),
+      migaRow("guarantee_count_total", 15),
+    ] as never[];
+    act(() => root.render(<ObservationValuesTableV146 rows={rows} title="2022 · 항목별 값" />));
+    const labels = Array.from(host.querySelectorAll("tbody th")).map((cell) => cell.textContent);
+    expect(new Set(labels).size).toBe(4);
+    expect(labels[0]).toContain("보증금액 합계(유효)");
+    const units = Array.from(host.querySelectorAll("tbody tr")).map((tr) => tr.children[2].textContent);
+    expect(units).toEqual(["단위 미기재", "단위 미기재", "건", "건"]);
+  });
+});
 
 describe("ObservationValuesTableV146 previous-year column (R2)", () => {
   test("a change of exactly zero reads 변화 없음", () => {

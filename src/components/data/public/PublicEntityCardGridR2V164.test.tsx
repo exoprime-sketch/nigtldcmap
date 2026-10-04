@@ -2,6 +2,7 @@ import { afterEach, beforeEach, describe, expect, test } from "@jest/globals";
 import { act } from "react-dom/test-utils";
 import { createRoot } from "react-dom/client";
 import type { Root } from "react-dom/client";
+import { RegionCountryContextV162 } from "../../../data/geo/regionDisplayV162";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import PublicEntityCardGridV131, { landCoverFactsV164, regionTitledV164, statedTitleValueV164 } from "./PublicEntityCardGridV131";
 
@@ -83,6 +84,35 @@ describe("landCoverFactsV164 (B-035 / B-036)", () => {
   test("a row with no class figure and another element have no facts", () => {
     expect(landCoverFactsV164(landCover("B-035", "a3", { 지역명: "AnGiang" }))).toEqual({});
     expect(landCoverFactsV164({ ...landCover("B-035", "a4", { 산림_면적_km: 1 }), elementId: "B-034" } as VietnamEntityV124)).toEqual({});
+  });
+});
+
+describe("BGD B-002 card", () => {
+  const division = (period: string) =>
+    ({
+      recordId: `b2-${period}`,
+      elementId: "B-002",
+      entityType: "entity",
+      countryIso3: "BGD",
+      name: `BGD.8_1_${period}`,
+      geometryType: "polygon",
+      normalizedAttributes: { 레코드_키: `BGD.8_1_${period}`, 지역명: "Mymensingh", 기간: period, 행정단위: "Division" },
+      rawAttributes: {},
+      provenance: {},
+    }) as unknown as VietnamEntityV124;
+
+  test("a division-and-period card reads the division as 한글명 (현지명), as B-003 and B-004 do", () => {
+    act(() =>
+      root.render(
+        <RegionCountryContextV162.Provider value="BGD">
+          <PublicEntityCardGridV131 entities={[division("1901-1930"), division("1991-2020")]} template="generic" detailTemplate="spatial" />
+        </RegionCountryContextV162.Provider>
+      )
+    );
+    expect(Array.from(host.querySelectorAll("[data-testid='public-entity-card-title']")).map((node) => node.textContent)).toEqual([
+      "마이멘싱 (Mymensingh) · 1901-1930",
+      "마이멘싱 (Mymensingh) · 1991-2020",
+    ]);
   });
 });
 

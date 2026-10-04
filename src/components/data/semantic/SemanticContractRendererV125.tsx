@@ -1354,7 +1354,7 @@ export function ObservationValuesTableV146({ rows, title, context }: { rows: Pre
           <tr key={row.recordId}>
             <th scope="row"><PublicTermTextV134 text={seriesLabelV164(row)} /></th>
             <td>{formatValueV121(row.value)}</td>
-            <td><PublicTermTextV134 text={observationUnitV125(row) || "—"} /></td>
+            <td><PublicTermTextV134 text={amountUnitTextV164(seriesLabelV164(row), observationUnitV125(row)) || "—"} /></td>
             <td>{observationTimeTextV164(row) || "미기재"}</td>
             {/* V164 R2: a change of exactly zero reads "변화 없음", not "0 1000 ha". */}
             {context && <td>{change ? (change.value === 0 ? "변화 없음" : <>{`${change.value > 0 ? "+" : ""}${formatValueV121(Number(change.value.toPrecision(10)))} `}<PublicTermTextV134 text={displayUnitV150(change.unit || "")} /></>) : "비교 자료 없음"}</td>}
@@ -1622,6 +1622,8 @@ function PolicyTimelineV125({
   /** The contract's first block: the timeline opens the screen unless the contract asks for the counts (V153). */
   primaryType?: AnalysisBlockTypeV153 | null;
 }) {
+  // V164 R2: a place a record names reads "한글명 (현지명)" where the dictionary knows it.
+  const regionText = useRegionTextV162(elementId);
   if (documentTimelineShapeV140(entities)) {
     return <DocumentTimelineV140 entities={entities} />;
   }
@@ -1655,29 +1657,33 @@ function PolicyTimelineV125({
         // EM-DAT dates each event by its start day.
         "시작일",
       ]),
-      title: publicEntityTitleV131(entity),
-      detail: timelineDetailV164(
+      title: timelineTitleV164(entity, publicEntityTitleV131(entity)),
+      detail: timelineEventPlaceV164(
         entity,
-        publicDescriptionNoteV137(
-          entityFieldV125(entity, [
-            "status",
-            "scope",
-            "agreementType",
-            "속성23_설명",
-            "속성7_상태",
-            // EM-DAT states where the event struck in its own column.
-            "발생지역_원문",
-          ])
-        ) ||
-          withoutRestatedTitleV137(
-            publicDescriptionNoteV137(entity.note),
-            publicEntityTitleV131(entity)
+        timelineDetailV164(
+          entity,
+          publicDescriptionNoteV137(
+            entityFieldV125(entity, [
+              "status",
+              "scope",
+              "agreementType",
+              "속성23_설명",
+              "속성7_상태",
+              // EM-DAT states where the event struck in its own column.
+              "발생지역_원문",
+            ])
           ) ||
-          ""
+            withoutRestatedTitleV137(
+              publicDescriptionNoteV137(entity.note),
+              publicEntityTitleV131(entity)
+            ) ||
+            ""
+        ),
+        regionText
       ),
       sourceUrl: entityUrlV125(entity),
     })),
-  ].sort((left, right) => timelineSortV125(left.date) - timelineSortV125(right.date));
+  ].sort((left, right) => timelineOrderKeyV164(left.date) - timelineOrderKeyV164(right.date));
   if (items.length === 0) return null;
   return (
     <>
@@ -2407,8 +2413,37 @@ function publicRowLabelV164(value: string | null | undefined): string | null {
  * and known English classification values in Korean. Falls back to the measure.
  */
 function seriesLabelV164(row: SemanticObservationV125): string {
-  const text = publicTextV126(publicIndicatorSeriesV144(row)) || "";
+  const text = publicTextV126(namedRawKeysV164(publicIndicatorSeriesV144(row))) || "";
   return koreanLegendLabelV164(withoutRawKeysV164(text) || row.semanticMeasure.labelKo || "");
+}
+
+/**
+ * V164 R2: a delivery key the platform has a reviewed name for ("MIGA 정치적 리스크
+ * 보증 · guarantee_amount_total_active", BGD D-026) reads as that name instead of
+ * being cut - cut, nine statistics all read "MIGA 정치적 리스크 보증". A key with no
+ * reviewed name is left for `withoutRawKeysV164`.
+ */
+export function namedRawKeysV164(label: string): string {
+  return String(label ?? "")
+    .split(/(\s+·\s+)/u)
+    .map((part, index) => {
+      if (index % 2 === 1 || !/^[a-z][a-z0-9]*(?:_[a-z0-9]+){2,}$/u.test(part.trim())) return part;
+      const named = publicDimensionValueV134("indicator", part.trim());
+      return named && named !== part.trim() && named !== "분류 미기재" ? named : part;
+    })
+    .join("");
+}
+
+const AMOUNT_LABEL_V164 = /금액|예산|비용|투자액|대출액|지원액|보증금/u;
+const COUNT_UNIT_V164 = /^(?:건|개|곳|명|회)$/u;
+
+/**
+ * V164 R2: an amount the source files under a count unit (BGD D-026's "보증금액
+ * 합계 … 1,211,600,000 건") has no unit a reader can trust. The figure stays and
+ * the unit says it is not stated; no currency is assumed.
+ */
+export function amountUnitTextV164(label: string, unit: string): string {
+  return AMOUNT_LABEL_V164.test(label) && COUNT_UNIT_V164.test(unit.trim()) ? "단위 미기재" : unit;
 }
 
 /**
@@ -3005,6 +3040,44 @@ function safeHttpUrlV125(value: string): boolean {
 function timelineSortV125(value: string): number {
   const year = value.match(/(?:19|20)\d{2}/)?.[0];
   return year ? Number(year) : Number.MAX_SAFE_INTEGER;
+}
+
+/**
+ * V164 R2: the order key of a timeline date - the year, then the month and the
+ * day the date states ("1990-08", "1909-10-15"). Sorted by year alone, the events
+ * of one year kept the order of the file (1990-08 before 1990-01). A date with
+ * no month sorts with the year's first day; no year sorts last, as before.
+ */
+export function timelineOrderKeyV164(value: string): number {
+  const match = /((?:19|20)\d{2})(?:[-./](0?[1-9]|1[0-2])(?:[-./](0?[1-9]|[12]\d|3[01]))?(?!\d))?/u.exec(value);
+  if (!match) return Number.MAX_SAFE_INTEGER;
+  return Number(match[1]) * 10000 + Number(match[2] || 0) * 100 + Number(match[3] || 0);
+}
+
+/**
+ * V164 R2: an event whose type the register gives in Korean ("폭풍·태풍") but whose
+ * title is the English type ("Tropical cyclone") reads the Korean type first, the
+ * source's wording after it. A title that is already Korean is left as it is.
+ */
+export function timelineTitleV164(entity: VietnamEntityV124, title: string): string {
+  const type = publicTextV126(entity.normalizedAttributes?.["재해유형"]);
+  if (!type || /[가-힣]/u.test(title) || title.trim() === type) return title;
+  return `${type} · ${title}`;
+}
+
+/**
+ * V164 R2: the place EM-DAT names for an event is the source's own wording
+ * ("Chittagong", "Barisal, Chittagong, Khulna provinces"). It is labelled as
+ * such and a name the dictionary knows reads "치타공 (Chittagong)".
+ */
+export function timelineEventPlaceV164(
+  entity: VietnamEntityV124,
+  detail: string,
+  regionText: (text: string | null | undefined) => string
+): string {
+  const place = publicTextV126(entity.normalizedAttributes?.["발생지역_원문"]);
+  if (!place || detail !== place) return detail;
+  return `발생 지역(원문): ${regionText(place)}`;
 }
 
 function hasCoordinateV125(entity: VietnamEntityV124): boolean {
