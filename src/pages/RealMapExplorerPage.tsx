@@ -5381,7 +5381,15 @@ export default function RealMapExplorerPage({
               value: selectedSpatial.value ?? null,
               peers,
               unit,
-              peerLabel: isUnit ? "평가구역" : isAsset ? "대상" : regionWordV158(countryIso3).word,
+              // V164-4: B-021 draws one value per GDL region (6), so the peers
+              // are regions, not provinces.
+              peerLabel: isUnit
+                ? "평가구역"
+                : isAsset
+                  ? "대상"
+                  : selectedB021RegionRankV129
+                    ? "권역"
+                    : regionWordV158(countryIso3).word,
               withAverage: !(selectedOwningLayer.mapMode === "region-choropleth" && unit === "건"),
             })
           );
@@ -5412,7 +5420,10 @@ export default function RealMapExplorerPage({
           comparison.push(...categoryShareLinesV161(ownCategoryV163, categoryCounts, peerWordV163));
         }
       }
-      if (selectedB021RegionRankV129) {
+      if (
+        selectedB021RegionRankV129 &&
+        !comparison.some((line) => line.label === "권역 중 순위")
+      ) {
         comparison.push({ label: "권역 비교", value: selectedB021RegionRankV129 });
       }
       const detailHref = `/?view=data&country=${countryIso3}&element=${selectedOwningLayer.elementId}#element-detail`;
