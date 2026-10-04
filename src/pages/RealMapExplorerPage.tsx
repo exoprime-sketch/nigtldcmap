@@ -4454,10 +4454,19 @@ export default function RealMapExplorerPage({
       const features = assetFeatureCollectionV157(focusedLayer, asset, filters).features;
       const byKind = new Map<string, number>();
       features.forEach((feature) => {
-        const kind = String(feature.properties?.kindLabel || feature.properties?.categoryLabel || "미표기");
+        // V164-4: a mine asset names its kind in `commodity` (BGD B-048).
+        const commodity = feature.properties?.commodity;
+        const kind = String(
+          feature.properties?.kindLabel ||
+            feature.properties?.categoryLabel ||
+            (typeof commodity === "string" && commodity.trim() ? canonicalMineralLabelV164(commodity) : "") ||
+            "미표기"
+        );
         byKind.set(kind, (byKind.get(kind) || 0) + 1);
       });
       summaryRows.push({ label: "표시 대상", value: `${features.length.toLocaleString()}개` });
+      // A breakdown with one "미표기" row only restates the total.
+      if (byKind.size === 1 && byKind.has("미표기")) byKind.clear();
       [...byKind.entries()]
         .sort(([, left], [, right]) => right - left)
         .forEach(([kind, count]) =>
