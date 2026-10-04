@@ -153,3 +153,27 @@ test("V164: delivered rows carry origin, role and the date column; observation-d
   expect(rows[2].date).toBeNull();
   expect(rows[2].dateKey).toBeNull();
 });
+
+test("V164-3: a multi-country project whose amount is the whole project's is flagged, a single-country one is not", () => {
+  const rows = adaptS4V159([
+    entity({
+      recordId: "multi",
+      name: "Groundwater resources in the Greater Mekong Subregion",
+      normalizedAttributes: { 대표금액: 4898775, 승인금액: "4,898,775 USD", 베트남_귀속금액: "AF 미게재 — 수록 금액은 전체 사업 기준" },
+    }),
+    entity({
+      recordId: "fund",
+      name: "Regional fund",
+      normalizedAttributes: { 대표금액: 100, 베트남_귀속: "GCF 미게재(M01) — 수록 금액은 전체 펀드 기준" },
+    }),
+    entity({
+      recordId: "single",
+      name: "Mekong Delta project",
+      normalizedAttributes: { 대표금액: 6345292, 베트남_귀속: "전액(단일국 사업)", 베트남_귀속금액: null },
+    }),
+    entity({ recordId: "plain", name: "No attribution column", normalizedAttributes: { 대표금액: 5 } }),
+  ]);
+  expect(rows.map((row) => row.wholeProjectAmount)).toEqual([true, true, undefined, undefined]);
+  // The flag does not touch the amount itself.
+  expect(rows[0].amount).toMatchObject({ value: 4898775 });
+});

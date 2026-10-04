@@ -171,6 +171,21 @@ function extractLinks(attrs: Record<string, unknown>): string[] {
   return [...new Set(links)];
 }
 
+const ATTRIBUTION_KEY_V164 = /귀속/u;
+const WHOLE_AMOUNT_NOTE_V164 = /수록\s*금액은\s*전체/u;
+
+/**
+ * V164-3: whether the delivery says the record's amount is the whole project's or
+ * fund's ("GEF 미게재 — 수록 금액은 전체 사업 기준(다국가 사업)") because the share
+ * attributed to the country is not published. The note sits in the country-share
+ * columns ("베트남_귀속", "베트남_귀속금액").
+ */
+function holdsWholeProjectAmount(attrs: Record<string, unknown>): boolean {
+  return Object.entries(attrs).some(
+    ([key, value]) => ATTRIBUTION_KEY_V164.test(key) && typeof value === "string" && WHOLE_AMOUNT_NOTE_V164.test(value)
+  );
+}
+
 function buildRecord(
   elementId: string,
   indicatorId: string | null,
@@ -207,6 +222,7 @@ function buildRecord(
     origin: "entity",
     ...(recordRole ? { recordRole } : {}),
     dateKey: dated ? dated.key : null,
+    ...(holdsWholeProjectAmount(attrs) ? { wholeProjectAmount: true } : {}),
   };
 }
 

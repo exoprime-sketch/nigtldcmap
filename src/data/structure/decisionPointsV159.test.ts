@@ -575,3 +575,71 @@ test("V164-3: a species-sum label in another unit is not the chart's total (A-01
   expect(value).not.toMatch(/Gg/u);
   expect(value).toMatch(/^70/u);
 });
+
+describe("V164-3 판단 포인트 consistency with the screen (R1)", () => {
+  const financing = (key: string, label: string, value: number, country = "BGD") =>
+    s1({ elementId: "B-022", indicatorId: `B-022_${key}`, countryIso3: country, year: 2025, value, unit: "십억 US$", label, valueKind: "projection" });
+  const financingRows = (country = "BGD") => [
+    financing("financing_public", "기후 투자 재원 구성 — 공공", 4.2, country),
+    financing("financing_private", "기후 투자 재원 구성 — 민간", 4.9, country),
+    // The delivery files the CCDR "합계" row under the public source's label.
+    financing("financing_source_total", "기후 투자 재원 구성 — 공공", 12, country),
+  ];
+
+  it("B-022 BGD: the total leads the financing chart and is named as the total", () => {
+    const point = pointOf(decisionPointsV159("U1", { structure: "S1", rows: financingRows() }, opts({ countryIso3: "BGD" })), "latest-value");
+    expect(point?.value).toMatch(/^120억/u);
+    expect(point?.detail).toBe("기후 투자 재원 구성 · 합계 기준");
+  });
+
+  it("B-022 for another country keeps the general choice (no curated total)", () => {
+    const point = pointOf(decisionPointsV159("U1", { structure: "S1", rows: financingRows("VNM") }, opts({ countryIso3: "VNM" })), "latest-value");
+    expect(point?.detail || "").not.toContain("합계");
+  });
+
+  const entity = (name: string, overrides: Partial<S3LocatedEntityV159> = {}) => baseS3({ name, ...overrides });
+
+  it("U4: a count alone is not a decision point (B-023, B-025, B-028, E-019 VNM)", () => {
+    const rows = [entity("A"), entity("B"), entity("C")];
+    expect(decisionPointsV159("U4", { structure: "S3", rows }, opts())).toEqual([]);
+  });
+
+  it("U4: the count stays beside a size or a class composition", () => {
+    const sized = [entity("A", { size: { value: 10, unit: "MW" } }), entity("B", { size: { value: 5, unit: "MW" } })];
+    expect(decisionPointsV159("U4", { structure: "S3", rows: sized }, opts()).map((p) => p.key)).toEqual(["entity-count", "size-total"]);
+    const classed = [entity("A", { classLabel: "solar" }), entity("B", { classLabel: "hydro" })];
+    expect(decisionPointsV159("U4", { structure: "S3", rows: classed }, opts()).map((p) => p.key)).toEqual(["entity-count", "class-composition"]);
+  });
+
+  const project = (name: string, value: number | null, wholeProjectAmount = false) =>
+    baseS4({ name, amount: value === null ? null : { value, currency: "USD" }, ...(wholeProjectAmount ? { wholeProjectAmount: true } : {}) });
+
+  it("U5 D-018 VNM: a multi-country project's whole-project amount is not added to the country's total", () => {
+    const rows = [
+      project("Mekong EbA South", 7_000_000, true),
+      project("Groundwater (4 countries)", 4_898_775, true),
+      project("Mekong Delta", 6_345_292),
+      project("IFIA", 5_000_000),
+    ];
+    const points = decisionPointsV159("U5", { structure: "S4", rows }, opts());
+    expect(pointOf(points, "record-count")?.value).toBe("4건");
+    // 6,345,292 + 5,000,000 = 11,345,292: the single-country figure the card states.
+    expect(pointOf(points, "amount-total")).toMatchObject({ value: "1,135만 USD", detail: "2건 합계 · 다국가 사업 2건 제외" });
+  });
+
+  it("U5: the exclusion and a partly stated amount both say so; nothing is shown when no amount is the country's", () => {
+    const partial = [project("A", 100, true), project("B", 200), project("C", null), project("D", 300)];
+    expect(pointOf(decisionPointsV159("U5", { structure: "S4", rows: partial }, opts()), "amount-total")?.detail).toBe("금액 기재 2건 합계 · 다국가 사업 1건 제외");
+    const none = [project("A", 100, true), project("B", 200, true)];
+    expect(pointOf(decisionPointsV159("U5", { structure: "S4", rows: none }, opts()), "amount-total")).toBeUndefined();
+  });
+
+  it("U6 C-010 BGD: a status the delivery marks as an estimate is counted apart from the confirmed one", () => {
+    const statuses = ["시행중", "시행중", "시행중 (추정)", "시행중 (추정)", "시행중 (추정)", "폐지"];
+    const rows = statuses.map((status, index) => baseS4({ name: `R${index}`, status }));
+    expect(pointOf(decisionPointsV159("U6", { structure: "S4", rows }, opts()), "status-breakdown")?.value).toBe("시행중(추정) 3건 · 시행중 2건 · 폐지 1건");
+    // A bracketed amendment note is still the plain status.
+    const amended = [baseS4({ name: "X", status: "시행중 (2000·2002·2010년 개정 반영)" }), baseS4({ name: "Y", status: "시행중" })];
+    expect(pointOf(decisionPointsV159("U6", { structure: "S4", rows: amended }, opts()), "status-breakdown")?.value).toBe("시행중 2건");
+  });
+});

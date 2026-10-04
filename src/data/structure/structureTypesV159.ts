@@ -104,6 +104,13 @@ export interface S4EntityV159 {
   recordRole?: "individual" | "aggregate" | "definition";
   /** V164: the normalized name of the column the `date` came from (e.g. "이사회승인일"), so a caller can tell an approval date from an issue date. */
   dateKey?: string | null;
+  /**
+   * V164-3: the delivery states that the amount is the whole project's or fund's
+   * ("수록 금액은 전체 사업 기준": a multi-country project whose share for this
+   * country is not published). Absent otherwise; such an amount is not added to
+   * the country's total.
+   */
+  wholeProjectAmount?: boolean;
 }
 
 export type StructureRowsV159 =

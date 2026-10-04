@@ -224,7 +224,11 @@ const PLANNED_PATTERN = /계획액|계획|목표|\bplan(?:ned)?\b|\btarget\b/iu;
  * Series the first chart draws that no general rule can tell from its siblings.
  * Chosen against the V164 screen review; each names the chart's own series.
  */
-const HEADLINE_OVERRIDES_V164: ReadonlyArray<{ elementId: string; countryIso3?: string; indicator: RegExp }> = [
+const HEADLINE_OVERRIDES_V164: ReadonlyArray<{ elementId: string; countryIso3?: string; indicator: RegExp; seriesText?: string }> = [
+  // B-022 BGD (V164-3): the CCDR table's "합계" row (12 십억 US$) leads the financing
+  // chart. The delivery files that row under the label of the public source, so the
+  // series is named here.
+  { elementId: "B-022", countryIso3: "BGD", indicator: /_financing_source_total$/u, seriesText: "기후 투자 재원 구성 · 합계" },
   // D-006 BGD: the chart draws the environmental-tax revenue as % of GDP, not the zero-filled local-currency sub-series.
   { elementId: "D-006", countryIso3: "BGD", indicator: /_environmental_tax_revenue_pct_gdp$/u },
   // D-010: the chart draws the explicit subsidies in USD.
@@ -432,7 +436,15 @@ function decisionPointsU1(
         .filter((row) => row.countryIso3 === opts.countryIso3 && isNumeric(row.value) && headlineSeriesText(row.label) === seriesLabel)
         .map((row) => row.indicatorId)
     );
-    const seriesText = headlineSeriesText(latest.label, sameName.size > 1);
+    // A curated series carries its own name where the delivered label names another series.
+    const curatedName = HEADLINE_OVERRIDES_V164.find(
+      (item) =>
+        item.seriesText &&
+        item.elementId === latest.elementId &&
+        (!item.countryIso3 || item.countryIso3 === opts.countryIso3) &&
+        item.indicator.test(headlineId)
+    )?.seriesText;
+    const seriesText = curatedName ?? headlineSeriesText(latest.label, sameName.size > 1);
     const detail = subjectSeries.size > 1 && seriesText ? withBasis(seriesText) : undefined;
     if (projection) {
       // V164: a projection is a forecast for its year, not the latest value.
@@ -858,7 +870,10 @@ function decisionPointsU4(allRows: readonly S3LocatedEntityV159[]): DecisionPoin
     });
   }
 
-  return points;
+  // V164-3: a count alone is no reading of the list (the list and the summary tiles state
+  // it already, and a directory counts its sites, not its rows): it is shown only
+  // beside a size or a class composition.
+  return points.length > 1 ? points : [];
 }
 
 // ---------------------------------------------------------------------------
@@ -915,18 +930,33 @@ function decisionPointsU5(allRows: readonly S4EntityV159[], opts: DecisionPoints
     { key: "record-count", label: "건수", value: `${rows.length.toLocaleString("ko-KR")}건` },
   ];
 
-  const amounted = rows.filter((row) => row.amount !== null);
+  const withAmount = rows.filter((row) => row.amount !== null);
+  // V164-3: a multi-country project lists the whole project's amount, not the share of
+  // this country (D-018 VNM: 2 of 4 projects), so it is not added to the country's total.
+  const wholeProject = withAmount.filter((row) => row.wholeProjectAmount === true);
+  const amounted = withAmount.filter((row) => row.wholeProjectAmount !== true);
   if (amounted.length > 0) {
     const currencies = new Set(amounted.map((row) => row.amount?.currency ?? null));
     if (currencies.size === 1 && amounted[0].amount?.currency) {
       const currency = amounted[0].amount.currency;
       const total = amounted.reduce((sum, row) => sum + (row.amount?.value || 0) * (row.amount?.scale ?? 1), 0);
+      const summable = rows.length - wholeProject.length;
+      // A sum over only some of the records says which ones.
+      const detail = [
+        amounted.length < summable
+          ? `금액 기재 ${amounted.length.toLocaleString("ko-KR")}건 합계`
+          : wholeProject.length > 0
+          ? `${amounted.length.toLocaleString("ko-KR")}건 합계`
+          : "",
+        wholeProject.length > 0 ? `다국가 사업 ${wholeProject.length.toLocaleString("ko-KR")}건 제외` : "",
+      ]
+        .filter(Boolean)
+        .join(" · ");
       points.push({
         key: "amount-total",
         label: "총액",
         value: `${formatNumber(total, currency)} ${currency}`,
-        // A sum over only some of the records says which ones.
-        ...(amounted.length < rows.length ? { detail: `금액 기재 ${amounted.length.toLocaleString("ko-KR")}건 합계` } : {}),
+        ...(detail ? { detail } : {}),
       });
     }
   }
@@ -976,8 +1006,10 @@ function publicStatus(raw: string): string | null {
   const head = text.split(/\s*[(（]|\s+[—–-]\s+/u)[0].trim();
   if (!head || STATUS_MEMO.test(head) || STATUS_MEMO.test(text.split(/\s+[—–-]\s+/u)[0])) return null;
   const mapped = ENGLISH_STATUS.find(([pattern]) => pattern.test(head));
-  if (mapped) return mapped[1];
-  return /[가-힣]/u.test(head) ? head : null;
+  const name = mapped ? mapped[1] : /[가-힣]/u.test(head) ? head : null;
+  // V164-3: a status the delivery marks as an estimate ("시행중 (추정)") is counted apart
+  // from the confirmed one, so the count of confirmed records is not overstated.
+  return name && /^[^(（]*[(（]\s*추정\s*[)）]\s*$/u.test(text) ? `${name}(추정)` : name;
 }
 
 function decisionPointsU6(allRows: readonly S4EntityV159[], opts: DecisionPointsOptsV159): DecisionPointV159[] {

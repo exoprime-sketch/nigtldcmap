@@ -1251,6 +1251,8 @@ function CountryDataElementPageV122({
               observations={observations}
               entities={entities}
               indicatorFamilyCount={indicatorFamilyCountV153(observations)}
+              indicators={bundle?.meta?.indicators}
+              decisionPoints={decisionPointListV159}
             />
             {specBundleV159?.spec ? (
               <DataDescriptionV159
