@@ -1,3 +1,4 @@
+import { describe, expect, it } from "@jest/globals";
 import fs from "fs";
 import path from "path";
 import type { VietnamEntityV124 } from "../vietnam/vietnamTypesV124";

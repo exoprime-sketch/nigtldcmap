@@ -1,3 +1,4 @@
+import { describe, expect, it } from "@jest/globals";
 import { isWorkMemoOnlyV164, publicMarksV164, publicWorkMemoV164 } from "./publicWorkMemoV164";
 
 /**

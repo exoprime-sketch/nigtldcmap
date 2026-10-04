@@ -1,3 +1,4 @@
+import { describe, expect, it } from "@jest/globals";
 import { gradeRankV164, koreanCategoryV164, koreanLabeledValuesV164, koreanListV164, koreanTitleV164 } from "./publicCategoryLabelV164";
 
 /** V164-3: the English classification values the delivery shipped, in Korean. */
