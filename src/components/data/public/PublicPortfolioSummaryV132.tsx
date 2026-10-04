@@ -694,6 +694,8 @@ const PORTFOLIO_CATEGORY_KEY_LABELS_BY_ELEMENT_V142: Readonly<Record<string, Rea
   "D-018": { implementingEntity: "실행기관(IE · 다자/국가/지역)" },
   // 인가기관_Agency: GCF accredited entity, GEF agency, AF implementing entity or CIF MDB.
   "D-023": { implementingEntity: "인가·집행기관(AE/Agency)" },
+  // V164-3: VC·impact deals are grouped by climate field (RE·효율·모빌리티·AgTech), not a DAC sector.
+  "D-024": { portfolioCategory: "기후 분야" },
 });
 
 export function portfolioCategoryKeyLabelV142(elementId: string, key: string): string | null {

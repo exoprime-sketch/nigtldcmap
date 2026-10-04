@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v131-public-content-audit-1",
-  "generatedAt": "2026-09-30T05:38:26.838Z",
+  "generatedAt": "2026-10-04T04:34:13.605Z",
   "audit": "public-naming:v131",
   "status": "PASS",
   "summary": {
@@ -11,17 +11,17 @@
     "failed": 0,
     "total": 10,
     "failedChecks": [],
-    "entityCount": 154806,
-    "entityContextTitleCount": 144411,
+    "entityCount": 366166,
+    "entityContextTitleCount": 346332,
     "publicPlaceholderPrimaryTitleCount": 0,
     "publicBlankPrimaryTitleCount": 0,
     "rawTechnicalPrimaryLabelCount": 0,
     "strategyCounts": {
-      "element-title-field": 2147,
-      "factual-composite": 144409,
+      "element-title-field": 9319,
+      "factual-composite": 346330,
       "record-type": 2,
-      "source-name": 7861,
-      "template-title-field": 387
+      "source-name": 10083,
+      "template-title-field": 432
     }
   },
   "checks": [
@@ -115,20 +115,20 @@
       "audit": "public-naming:v131",
       "name": "ENTITY_TITLE_RECONCILIATION",
       "status": "PASS",
-      "actual": 154806,
+      "actual": 366166,
       "expected": "all public entities"
     }
   ],
-  "entityCount": 154806,
-  "entityContextTitleCount": 144411,
+  "entityCount": 366166,
+  "entityContextTitleCount": 346332,
   "publicPlaceholderPrimaryTitleCount": 0,
   "publicBlankPrimaryTitleCount": 0,
   "rawTechnicalPrimaryLabelCount": 0,
   "strategyCounts": {
-    "element-title-field": 2147,
-    "factual-composite": 144409,
+    "element-title-field": 9319,
+    "factual-composite": 346330,
     "record-type": 2,
-    "source-name": 7861,
-    "template-title-field": 387
+    "source-name": 10083,
+    "template-title-field": 432
   }
 }
