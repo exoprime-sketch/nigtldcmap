@@ -47,6 +47,7 @@ import PeerComparisonV147 from "../public/PeerComparisonV147";
 import RegionalVulnerabilityV147 from "../public/RegionalVulnerabilityV147";
 import { useAnalysisContractV153 } from "../public/analysisContractContextV153";
 import type { IndicatorUnitsV142 } from "./SemanticContractRendererV125";
+import { observationTimeTextV164 } from "../../../data/visualization/barRowsV164";
 import "../../../styles/semantic-visualization-v125.css";
 
 interface Props {
@@ -432,6 +433,12 @@ export default function SemanticArchetypePreviewV125({
       ? selectorState.year
       : populatedDefaultYear ?? years[0] ?? null;
   const dimensionFilteredRows = periodContextRows;
+  // V164-3: a climatology's year column holds only the first year of its span
+  // (B-001 "1991"); the selector names the span ("1991–2020 평년").
+  const yearTextV164 = (value: number): string => {
+    const row = periodContextRows.find((item) => item.year === value);
+    return row ? observationTimeTextV164(row) || String(value) : String(value);
+  };
 
   useEffect(() => {
     const next: DataFinderSelectorStateV125 = {
@@ -717,8 +724,8 @@ export default function SemanticArchetypePreviewV125({
         */}
         {years.length === 1 && (
           <p className="sv125-fixed-value" data-testid="v125-fixed-year">
-            <span>연도</span>
-            <strong>{years[0]}</strong>
+            <span>{yearTextV164(years[0]).includes("평년") ? "기간" : "연도"}</span>
+            <strong>{yearTextV164(years[0])}</strong>
           </p>
         )}
         {years.length > 1 && (
@@ -737,7 +744,7 @@ export default function SemanticArchetypePreviewV125({
             >
               {years.map((value) => (
                 <option key={value} value={value}>
-                  {value}
+                  {yearTextV164(value)}
                 </option>
               ))}
             </select>

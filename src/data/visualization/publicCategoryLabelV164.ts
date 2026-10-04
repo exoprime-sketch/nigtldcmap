@@ -318,6 +318,16 @@ const ENTRIES_V164: ReadonlyArray<readonly [string, string]> = [
   // --- grades with no range ---
   ["Insignificant Trend", "유의미한 추세 없음"],
   ["No Risk", "위험 없음"],
+  ["Arid and Low Water Use", "건조·물 사용 적음"],
+  // --- WWF Biodiversity Risk Filter 경관(Scape) 위험 (B-009) ---
+  ["Scape Physical Risk", "경관 단위 물리적 위험"],
+  ["Scape Regulatory Deficiency Risk", "경관 단위 규제 미비 위험"],
+  ["Scape Reputational Risk", "경관 단위 평판 위험"],
+  // --- OECD 환경 관련 세목 (D-006) ---
+  ["Taxes on Energy (including fuel for transport)", "에너지 관련 세(수송 연료 포함)"],
+  ["Taxes on Pollution", "오염 관련 세"],
+  ["Taxes on Resources", "자원 관련 세"],
+  ["Taxes on Transport (excluding fuel for transport)", "수송 관련 세(수송 연료 제외)"],
 ];
 
 /** The comparison key: no case, no repeated or surrounding spaces. */

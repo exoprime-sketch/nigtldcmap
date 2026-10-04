@@ -162,7 +162,9 @@ describe("legend text", () => {
   });
 
   test("an unknown value is never touched", () => {
-    expect(koreanLegendLabelV164("Taxes on Resources")).toBe("Taxes on Resources");
+    // "Taxes on Resources" joined the dictionary (V164-3 main); an unlisted name stays.
+    expect(koreanLegendLabelV164("Taxes on Transport Services")).toBe("Taxes on Transport Services");
+    expect(koreanLegendLabelV164("Taxes on Resources")).toBe("자원 관련 세");
   });
 
   test("equal labels are numbered, distinct ones are not", () => {

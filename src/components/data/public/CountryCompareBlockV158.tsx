@@ -34,6 +34,8 @@ export interface CountryCompareBlockPropsV158 {
   series: CountryCompareSeriesV158[];
   /** Overrides the shape the data would pick; used by the tests. */
   mode?: "auto" | "grouped-bars" | "multi-line";
+  /** How a compared year reads ("2023년", "1991–2020 평년"); defaults to "{year}년" (V164-3). */
+  periodText?: (year: number) => string;
 }
 
 const COLORS_V158 = ["#16806b", "#2563eb", "#c2410c", "#7c3aed", "#be123c"];
@@ -240,6 +242,7 @@ export default function CountryCompareBlockV158({
   elementId,
   title,
   compareKey,
+  periodText = (year: number) => `${year}년`,
   series,
   mode = "auto",
 }: CountryCompareBlockPropsV158) {
@@ -380,7 +383,7 @@ export default function CountryCompareBlockV158({
       ) : (
         <table className="ccb158__bars" data-testid="country-compare-bars-v158">
           <caption>
-            {barYear === null ? "공통 연도 없음" : `${barYear}년 · 단위 ${compareKey.unit}`}
+            {barYear === null ? "공통 연도 없음" : `${periodText(barYear)} · 단위 ${compareKey.unit}`}
           </caption>
           <tbody>
             {model.matched.map((row, index) => {

@@ -119,7 +119,10 @@ function latinPatternV158(term: string): RegExp {
   if (!pattern) {
     const parts = stripDiacriticsV158(term).trim().split(/\s+/u).map(escapeRegExpV158);
     const body = parts.join("\\s*");
-    pattern = new RegExp(`(?<![\\p{L}\\p{N}])${body}(?![\\p{L}\\p{N}])`, "iu");
+    // V164-3: only Latin letters and digits block a match. A Korean particle
+    // written straight after the term ("PDP8의", "Viet Nam과") is part of the
+    // Korean sentence, so the term is still there (C-018 heading on BGD).
+    pattern = new RegExp(`(?<![\\p{Script=Latin}\\p{N}])${body}(?![\\p{Script=Latin}\\p{N}])`, "iu");
     LATIN_PATTERN_CACHE.set(term, pattern);
   }
   return pattern;

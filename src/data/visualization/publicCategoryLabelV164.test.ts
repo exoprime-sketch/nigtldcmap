@@ -159,3 +159,12 @@ describe("gradeRankV164", () => {
     expect(gradeRankV164("")).toBeNull();
   });
 });
+
+describe("koreanCategoryV164 additions (V164-3 main)", () => {
+  it("reads the B-009 and D-006 classifications in Korean", () => {
+    expect(koreanCategoryV164("Scape Physical Risk")).toBe("경관 단위 물리적 위험");
+    expect(koreanCategoryV164("scape reputational risk")).toBe("경관 단위 평판 위험");
+    expect(koreanCategoryV164("Taxes on Pollution")).toBe("오염 관련 세");
+    expect(koreanCategoryV164("Arid and Low Water Use")).toBe("건조·물 사용 적음");
+  });
+});

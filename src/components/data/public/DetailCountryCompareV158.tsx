@@ -164,7 +164,7 @@ export default function DetailCountryCompareV158({
       publicGasTextV163(liveEntries[0]?.labelKo || ""),
       liveEntries.map((entry) => entry.countryNameKo)
     ) || "국가 비교";
-    return { compareKey: element.compareKey, series, title };
+    return { compareKey: element.compareKey, series, title, labelKo: liveEntries[0]?.labelKo || "" };
   }, [doc, elementId, countryIso3]);
 
   if (!model) return null;
@@ -174,6 +174,7 @@ export default function DetailCountryCompareV158({
       title={model.title}
       compareKey={model.compareKey}
       series={model.series}
+      periodText={(year) => comparePeriodTextV164(model.labelKo, year)}
     />
   );
 }
