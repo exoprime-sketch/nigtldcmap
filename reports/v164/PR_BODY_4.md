@@ -3,7 +3,7 @@
 사용자 지시(2026-10-04 18:11·18:59·19:42·20:10): 방글라데시도 지도 표시 기준에 맞게 지도에 올리고 플랫폼 전면 검토. 데이터가 부족한 부분은 직접 확보하지 않고 용역사에 수정·재제출 요청.
 
 - 상세 보고: `reports/v164/REVIEW_V164_4.md`
-- 용역사 보완 요청표: `reports/v164/데이터_보완요청표_STADT_20261004.xlsx`(49건 — 방글라데시 44 · 베트남 5)
+- 용역사 보완 요청: 49건(방글라데시 44 · 베트남 5) — 요약 `reports/v164/VENDOR_REQUEST_V164_4.md`, 엑셀 요청표는 별도 전달(저장소에 엑셀 파일 금지)
 
 ### 방글라데시 지도 38 → 51
 - 추가 13개
@@ -68,7 +68,7 @@
 - 다운로드 문서 높이 = 푸터 하단(1440·390px)
 
 ### Preview 확인
-- Preview URL: PREVIEW_URL (Vercel 로그인 필요)
+- Preview URL: https://nigtldcmap-git-feat-v164-4-full-review-exoprime-5142s-projects.vercel.app (Vercel 로그인 필요, 이번 커밋 배포: https://nigtldcmap-8lw9nua1b-exoprime-5142s-projects.vercel.app)
 
 | 화면 | 경로 | 볼 것 |
 |---|---|---|
