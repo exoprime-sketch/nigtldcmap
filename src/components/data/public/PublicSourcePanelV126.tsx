@@ -4,6 +4,7 @@ import type {
   VietnamObservationV124,
 } from "../../../data/vietnam/vietnamTypesV124";
 import {
+  publicLicenseTextV164,
   publicSourceOrganizationV136_1,
   publicSourceUrlV126,
   publicTextV126,
@@ -129,10 +130,10 @@ export default function PublicSourcePanelV126({
   const licenses = uniquePublicValuesV126([
     // V161: a licence line can end with a working note ("다운로드 제공 대상은 …
     // 용역사가 재편집한 표준서식 자료임.") - judged like every source display.
-    ...indicators.map((item) => publicSourceOrganizationV136_1(item.licenseCode)),
+    ...indicators.map((item) => publicLicenseTextV164(item.licenseCode)),
     // Attribution lines carry the same per-row sheet note as the organisation
     // names - "Source: 각 기관 공식 웹사이트 및 공개 보도 (레코드별 상이)".
-    ...indicators.map((item) => publicSourceOrganizationV136_1(item.attributionText)),
+    ...indicators.map((item) => publicLicenseTextV164(item.attributionText)),
   ]);
 
   // V153: the source, period and unit read as one visible line; the licence,
