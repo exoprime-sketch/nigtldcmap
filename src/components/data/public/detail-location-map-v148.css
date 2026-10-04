@@ -33,3 +33,6 @@
 .detail-map148-category-legend { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 12px; }
 .detail-map148-category-legend > span { display: inline-flex; align-items: center; gap: 5px; }
 .detail-map148-category-key { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
+
+/* V164: how many level-1 units have a value in the drawn slice (another country's maps) */
+.detail-map148-coverage { text-align: center; }

@@ -1,0 +1,24 @@
+/* V164: region-scenario summary (PublicRegionScenarioSummaryV138) */
+
+/* "표시 항목" and its glossary help ("용어 도움말 ?") are two items on one row, not one word. */
+.prs137__controls .prs164__label {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+}
+
+/* What the summary leaves out (regions without a value) and what a bare "all scenarios" compares on. */
+.prs164__missing,
+.prs164__basis {
+  margin: 0 0 10px;
+  color: var(--cdp-muted, #55635c);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+/* A quantile table of one or two rows is the first block on a single-year delivery: the split
+   layout's 320px floor for a first block left ~200px of empty card under it. */
+.prs138 .cdp-table-wrap[data-analysis-block="table"][data-analysis-rank="1"] {
+  min-height: 0;
+}

@@ -10,6 +10,7 @@ import {
   boundaryCreditPhraseV163,
   isDefaultCountryV163,
   level1BasisCaptionV163,
+  level1DisplayNameV163,
   level1NamesByKeyV163,
   projectionCenterLatV163,
   regionLabelV163,
@@ -21,6 +22,20 @@ import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125"
 import { prepareLayerRecordsV138 } from "../../../data/map/prepareLayerRecordsV148";
 import { detailMapHandoffV148, detailMapSelectionForCountryV163, detailMapSelectionV148, finiteMapValueV148, coordinatePairsV148, overviewProjectionV148, geometryPathV148, mapColorV148 } from "../../../data/map/detailMapModelV148";
 import { mapFactsV148, mapIndicatorSourceV148 } from "../../../data/map/mapPresentationV148";
+import { applyNationalMineJoinV157_2 } from "../../../data/map/entityAttributeJoinV157_2";
+import {
+  NO_REFERENCE_YEAR_LAYERS_V164,
+  NO_SITES_NOTE_V164,
+  lineCategoryCountsV164,
+  lineFeatureFallbackLabelV164,
+  lineMapKindV164,
+  lineMapTitleV164,
+  lineMatchesVariableV164,
+  pointPeriodLabelV164,
+  recordYearSpanV164,
+  regionCoverageCaptionV164,
+  usesRecordYearSpanV164,
+} from "../../../data/map/detailMapLabelsV164";
 import { resolvePublicEntityTitleV131 } from "../../../data/visualization/publicEntityTitleV131";
 import { formatPublicNumberV126 } from "../../../data/visualization/publicNumberFormatV126";
 import { publicSourceOrganizationV136_1 } from "../../../data/visualization/publicFieldPolicyV126";
@@ -112,7 +127,10 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
         Promise.resolve().then(() => loader.loadSpatialGeoJson(isDefault ? OUTLINE : countryOutlineZ5UrlV163(countryIso3))).catch(() => null),
         layer.geometryUrl ? loader.loadSpatialGeoJson(layer.geometryUrl) : Promise.resolve(undefined),
         layer.dataUrl ? loader.loadSpatialLayer(layer.dataUrl) : Promise.resolve(undefined),
-        layer.geometryUrl ? Promise.resolve(EMPTY_RECORDS) : loadCountryElementEntitiesV122(countryIso3, elementId).then((r) => r.records),
+        // V164: a mineral layer (B-044/B-046/B-047) draws its host's mines, with the national figure joined on
+        // (the big map and the compare pane do the same); its own entities carry no coordinates.
+        layer.geometryUrl ? Promise.resolve(EMPTY_RECORDS) : loadCountryElementEntitiesV122(countryIso3, layer.entityJoinV157_2?.hostElementId || elementId)
+          .then((r) => (layer.entityJoinV157_2 ? applyNationalMineJoinV157_2(r.records, layer.entityJoinV157_2) : r.records)),
       ]);
       if (!cancelled) setRuntime({ layer, base, outline, geometry, data, records });
     }).catch(() => { if (!cancelled) setError(true); });
@@ -146,6 +164,7 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
     const joinKey = (data as { joinKey?: string } | undefined)?.joinKey;
     const unitKey = (f: { properties: Record<string, unknown> }) => staticUnitKeyV163(f.properties, joinKey, countryIso3);
     const level1Names = isDefault ? undefined : level1NamesByKeyV163(base, joinKey);
+    const categoryFields = layer.filters.map((flt) => flt.field);
     const filterState = Object.fromEntries(layer.filters.map((f) => [`${layer.elementId}:${f.field}`, selection.dimensions[f.field] || f.defaultValue || "all"]));
     // V163: another country's facility/area asset (point-and-polygon) is filtered and keyed like the live map's.
     const assetFeatures = !isDefault && layer.renderer === "point-and-polygon" && geometry
@@ -154,14 +173,24 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
     const finite = values.flatMap((v) => finiteMapValueV148(v.value) === null ? [] : [v.value]);
     const min = finite.length ? Math.min(...finite) : 0, max = finite.length ? Math.max(...finite) : 0;
     const prepared = prepareLayerRecordsV138(runtime.records, layer);
-    const points = prepared.records.filter((r) => r.mapEligible && typeof r.latitude === "number" && typeof r.longitude === "number")
+    const placed = prepared.records.filter((r) => r.mapEligible && typeof r.latitude === "number" && typeof r.longitude === "number");
+    const points = placed
       .filter((r) => layer.filters.every((f) => {
         const chosen = selection.dimensions[f.field] || f.defaultValue || "all";
         return chosen === "all" || String(r.normalizedAttributes?.[f.field] ?? "") === chosen;
       }));
     const features = assetFeatures
       ? assetFeatures.features as unknown as VietnamMapGeoJsonV124["features"]
-      : (geometry || base).features.filter((f) => layer.renderer !== "line" || slice.variable === "all" || String(f.properties.voltageKv ?? f.properties.voltage) === slice.variable);
+      : (geometry || base).features.filter((f) => layer.renderer !== "line" || (
+        lineMatchesVariableV164(f, slice.variable, categoryFields) &&
+        layer.filters.every((flt) => {
+          const chosen = selection.dimensions[flt.field] || flt.defaultValue || "all";
+          return chosen === "all" || String(f.properties?.[flt.field] ?? "") === chosen;
+        })
+      ));
+    // V164: a line layer is a voltage network (A-024) or a route network (A-027's roads and railway, no voltage).
+    const lineKind = layer.renderer === "line" ? lineMapKindV164((geometry || base).features) : null;
+    const lineCategories = lineKind === "route" ? lineCategoryCountsV164(features, categoryFields, layer.filters[0]?.values || []) : [];
     const extent = [...base.features, ...(geometry?.features || [])].flatMap((f) => coordinatePairsV148(f.geometry.coordinates));
     points.forEach((r) => extent.push([r.longitude!, r.latitude!]));
     const project = isDefault
@@ -182,7 +211,7 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
             : "") ||
           "지역 미표기";
     const options: Array<{ id: string; label: string; value: number | null; sourceRegion?: string }> = data ? values.map((v) => ({ id: v.adm1Code, label: regionLabelV157(v as { adm1Code: string; adm1Name?: string; label?: string }), value: v.value, sourceRegion: v.sourceRegion }))
-      : geometry ? features.map((f, i) => ({ id: String(f.id ?? i), label: String(f.properties.projectTitle || f.properties.name || f.properties.displayLabel || (isDefault || layer.renderer === "line" ? `${f.properties.voltageKv || ""} kV 선로 ${i + 1}` : `${layer.publicShortTitle} ${i + 1}`)), value: null, sourceRegion: undefined }))
+      : geometry ? features.map((f, i) => ({ id: String(f.id ?? i), label: String(f.properties.projectTitle || f.properties.name || f.properties.displayLabel || (layer.renderer === "line" ? lineFeatureFallbackLabelV164(f.properties, categoryFields, i) : isDefault ? `${f.properties.voltageKv || ""} kV 선로 ${i + 1}` : `${layer.publicShortTitle} ${i + 1}`)), value: null, sourceRegion: undefined }))
       : points.map((r) => ({ id: r.recordId, label: resolvePublicEntityTitleV131(r, { elementTitle: layer.publicShortTitle }).title, value: null, sourceRegion: undefined }));
     const layerColor = LAYER_COLORS[layer.elementId] || "#176a4b";
     const layerTitle = layer.publicShortTitle;
@@ -199,7 +228,20 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
     const assetIconLegend = assetIconList ? iconKit!.mapIconLegendEntriesV152(layer.elementId, assetIconProps, layerColor, layerTitle) : [];
     const assetCategories = assetFeatures && !assetIconList ? categoryLegendV157(assetFeatures) : [];
     const categoryColor = new Map(assetCategories.map((c) => [c.label, c.color]));
-    return { variable, values, byCode, min, max, points, prepared, features, project, options, categories, iconLegend, unitKey, assetCategories, categoryColor, assetIcons, assetIconLegend };
+    // V164: the years the drawn records state (a register's grouped members count, not only its representative).
+    const yearSpan = data || layer.renderer === "line" || !usesRecordYearSpanV164(layer.elementId)
+      ? null
+      : recordYearSpanV164(assetFeatures
+        ? assetFeatures.features.map((f) => ({ properties: (f.properties || {}) as Record<string, unknown> }))
+        : points.flatMap((r) => prepared.membersByRecordId.get(r.recordId) || [r]));
+    // V164: of the level-1 units the base file draws, how many have a value in this slice (another country's maps).
+    let coverage: { valued: number; total: number; missingNames: string[] } | null = null;
+    if (data && !isDefault) {
+      const keys = [...new Set(base.features.map((f) => unitKey(f)).filter(Boolean))];
+      const missing = keys.filter((key) => finiteMapValueV148(byCode.get(key)?.value) === null);
+      coverage = { valued: keys.length - missing.length, total: keys.length, missingNames: missing.map((key) => level1DisplayNameV163(level1Names?.get(key), elementId, countryIso3)).filter(Boolean) };
+    }
+    return { variable, values, byCode, min, max, points, placedCount: placed.length, prepared, features, project, options, categories, iconLegend, unitKey, assetCategories, categoryColor, assetIcons, assetIconLegend, lineKind, lineCategories, yearSpan, coverage };
   }, [runtime, slice, selection.dimensions, compact, iconKit, elementId, countryIso3]);
   const isDefaultCountry = isDefaultCountryV163(countryIso3);
 
@@ -241,6 +283,15 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
   // V163: another country's layer with nothing to draw at all (no values, features or records in the
   // whole layer - not just in the chosen slice, whose selectors must stay reachable) keeps the fallback text.
   if (!isDefaultCountry && (data ? data.values.length : geometry ? geometry.features.length : runtime.records.length) === 0) return fallbackV163;
+  // V164: a layer with nothing to place says so; an empty map says nothing.
+  if (!data && !geometry && model.placedCount === 0) {
+    return (
+      <section className="detail-map148" data-testid="detail-map-no-sites-v164" data-element-id={elementId}>
+        <h3>위치·분포</h3>
+        <p className="detail-map148-note">{NO_SITES_NOTE_V164}</p>
+      </section>
+    );
+  }
   const current = model.options.find((o) => o.id === picked);
   const point = model.points.find((r) => r.recordId === picked);
   const feature = geometry ? model.features.find((f, i) => String(f.id ?? i) === picked) : undefined;
@@ -250,12 +301,25 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
   const approximate = model.prepared.approximateRecordIds.size > 0;
   const units = displayUnitV150(model.variable?.unit || layer.unit || "");
   const pointPeriod = isDefaultCountry && elementId === "A-023" ? (selection.dimensions.sourceKey === "osm" ? "2026" : selection.dimensions.sourceKey === "all" ? "2021·2026" : "2021") : slice.period;
+  // V164: a register's title says the years its records cover; a layer whose file states no year (B-025's
+  // basins) says none; the national figures drawn on B-048's mines say what the year belongs to.
+  const periodLabel = data || layer.renderer === "line" || (isDefaultCountry && elementId === "A-023")
+    ? pointPeriod
+    : pointPeriodLabelV164({
+      span: model.yearSpan,
+      selectorPeriod: slice.period,
+      selectorPeriodIsDeliveryYear: NO_REFERENCE_YEAR_LAYERS_V164.has(`${countryIso3.toUpperCase()}:${elementId}`),
+      joinedToHostSites: Boolean(layer.entityJoinV157_2),
+    });
   // Another country names its own level-1 unit ("8개 주(Division) 기준"); Viet Nam's 34/63 wording stays as it was.
   const level1V163 = isDefaultCountry ? null : countryLevel1V158(countryIso3);
   const basisCaptionV163 = level1BasisCaptionV163(level1V163);
+  const coverageCaption = model.coverage
+    ? regionCoverageCaptionV164({ ...model.coverage, missing: model.coverage.missingNames, unitWord: level1V163?.label || "지역" })
+    : "";
   const sliceSources = [...new Set(model.values.map((v) => mapIndicatorSourceV148(v.sourceIndicatorId || "")).filter(Boolean))];
-  return <section className="detail-map148" data-testid="detail-location-map-v148" data-element-id={elementId} data-map-variable={slice.variable} data-map-period={pointPeriod} data-map-count={data ? model.values.length : geometry ? model.features.length : model.points.length}>
-    <header><div><h3>{data ? "지역별 분포" : layer.renderer === "line" ? "송전선 경로" : "위치 살펴보기"}</h3><p><PublicTermTextV134 text={`${(model.variable?.label && model.variable.label !== "전체" ? model.variable.label : "") || layer.publicShortTitle} · ${pointPeriod}${units && data ? ` · ${units}` : ""}`} /></p></div>
+  return <section className="detail-map148" data-testid="detail-location-map-v148" data-element-id={elementId} data-map-variable={slice.variable} data-map-period={pointPeriod} data-map-period-label={periodLabel} data-map-count={data ? model.values.length : geometry ? model.features.length : model.points.length}>
+    <header><div><h3>{data ? "지역별 분포" : layer.renderer === "line" ? lineMapTitleV164(model.lineKind || "voltage") : "위치 살펴보기"}</h3><p><PublicTermTextV134 text={`${(model.variable?.label && model.variable.label !== "전체" ? model.variable.label : "") || layer.publicShortTitle}${periodLabel ? ` · ${periodLabel}` : ""}${units && data ? ` · ${units}` : ""}`} /></p></div>
       <button className="cdp-button cdp-button--secondary" data-testid={compact ? "home-hero-map-link-v139" : "detail-map-open-v152"} type="button" onClick={() => onOpenMap(elementId, countryIso3, handoff, miniMapHandoffV152(cameraRef.current, slice))}>큰 지도에서 비교</button>
     </header>
     {!override && resolved?.note && <p className="detail-map148-note">{resolved.note}</p>}
@@ -281,7 +345,7 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
           onEngineLegend={setEngineLegend}
           onSelectFeature={(id) => { if (!id || model.options.some((o) => o.id === id)) setPicked(id || ""); else onSelectFeature?.(elementId, id); }}
         >
-        <svg viewBox={`0 0 ${compact ? 360 : 460} 400`} role="img" aria-label={`${layer.publicShortTitle} ${pointPeriod} ${data ? "지역 분포" : "위치"}. 지역·대상 선택 목록에서도 정보를 확인할 수 있습니다.`}>
+        <svg viewBox={`0 0 ${compact ? 360 : 460} 400`} role="img" aria-label={`${layer.publicShortTitle}${periodLabel ? ` ${periodLabel}` : ""} ${data ? "지역 분포" : "위치"}. 지역·대상 선택 목록에서도 정보를 확인할 수 있습니다.`}>
           <g fill="#f7f5e9" stroke="#778d89" strokeWidth="0.9">{base.features.map((f, i) => <path key={String(f.id || i)} d={geometryPathV148(f.geometry, model.project)} fillRule="evenodd" />)}</g>
           {runtime.outline && <g fill="none" stroke="#3f5a52" strokeWidth="1.2" pointerEvents="none" data-testid="detail-map148-country-outline">{runtime.outline.features.map((f, i) => <path key={String(f.id || i)} d={geometryPathV148(f.geometry, model.project)} fillRule="evenodd" />)}</g>}
           {geometry && model.features.map((f, i) => {
@@ -332,7 +396,8 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
         {!data && !geometry && iconKit && model.iconLegend.length > 0 && <div className="detail-map148-icon-legend" data-testid="detail-map-icon-legend-v152"><iconKit.MapIconLegendV152 entries={model.iconLegend} compact /></div>}
         {!data && iconKit && model.assetIconLegend.length > 0 && <div className="detail-map148-icon-legend" data-testid="detail-map-icon-legend-v152"><iconKit.MapIconLegendV152 entries={model.assetIconLegend} compact /></div>}
         {!data && model.assetCategories.length > 0 && <figcaption className="detail-map148-category-legend" data-testid="detail-map-category-legend-v163">{model.assetCategories.map((c) => <span key={c.label}><i className="detail-map148-category-key" style={{ background: c.color }} />{c.text} {c.featureCount.toLocaleString()}</span>)}</figcaption>}
-        {!data && <figcaption>{layer.renderer === "line" ? <>{LINE_CLASSES_V152.map((entry) => <span key={entry.kv}><span className="detail-map148-line-key" style={{ background: entry.color, height: entry.kv === 500 ? 4 : 3 }} /><PublicTermTextV134 text={`${entry.kv} kV`} /> </span>)}<PublicTermTextV134 text={`· ${model.features.length}개 선로 구간`} /></> : `${geometry ? model.features.length : model.points.length}개 위치·범위`}{approximate ? " · 속 빈 점은 소재 지역의 대표 위치" : ""}</figcaption>}
+        {data && coverageCaption && <figcaption className="detail-map148-coverage" data-testid="detail-map-coverage-v164">{coverageCaption}</figcaption>}
+        {!data && <figcaption>{layer.renderer === "line" ? model.lineKind === "route" ? <>{model.lineCategories.map((c) => <span key={c.label}>{c.label} {c.count.toLocaleString()} · </span>)}{`${model.features.length.toLocaleString()}개 노선 구간`}</> : <>{LINE_CLASSES_V152.map((entry) => <span key={entry.kv}><span className="detail-map148-line-key" style={{ background: entry.color, height: entry.kv === 500 ? 4 : 3 }} /><PublicTermTextV134 text={`${entry.kv} kV`} /> </span>)}<PublicTermTextV134 text={`· ${model.features.length}개 선로 구간`} /></> : `${geometry ? model.features.length : model.points.length}개 위치·범위`}{approximate ? " · 속 빈 점은 소재 지역의 대표 위치" : ""}</figcaption>}
       </figure>
       {!compact && <div className="detail-map148-selection">
         <label>지역·대상 선택<select aria-label="작은 지도 지역·대상 선택" value={picked} onChange={(e) => setPicked(e.target.value)}><option value="">지도 또는 목록에서 선택</option>{model.options.map((o) => <option key={o.id} value={o.id}>{o.label}</option>)}</select></label>
