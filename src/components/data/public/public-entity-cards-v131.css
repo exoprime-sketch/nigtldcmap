@@ -166,10 +166,11 @@
  * long place descriptions. A label beside a value left the value a 7-character
  * column ("Bahaduraba / d"), and a two-line clamp cut the title before the figure
  * that told the cards apart. The label sits above its value, a word is broken
- * only when it cannot fit a line on its own, and the title may take three lines.
+ * only when it cannot fit a line on its own; the title keeps the two-line rule.
  */
 .pec131-grid--generic .pec131-card__title {
-  -webkit-line-clamp: 3;
+  /* Two lines stay the card title rule (entity-cards audit); long names end in an ellipsis. */
+  -webkit-line-clamp: 2;
   min-height: 0;
   overflow-wrap: break-word;
   word-break: keep-all;
@@ -198,7 +199,8 @@
 }
 
 .pec131-grid--directory .pec131-card__title {
-  -webkit-line-clamp: 3;
+  /* Two lines stay the card title rule (entity-cards audit); long names end in an ellipsis. */
+  -webkit-line-clamp: 2;
   min-height: 0;
   overflow-wrap: break-word;
   word-break: keep-all;
