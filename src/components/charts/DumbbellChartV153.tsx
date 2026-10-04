@@ -29,9 +29,57 @@ interface Props {
 }
 
 const WIDTH = 760;
-const LABEL_WIDTH = 190;
-const ROW_HEIGHT = 44;
+const LABEL_WIDTH = 220;
+const MIN_ROW_HEIGHT = 44;
+const LINE_HEIGHT = 15;
 const PADDING = { top: 14, right: 36, bottom: 34 };
+/** Room for a row label, in drawing units: the label ends 12 units left of the plot and starts 8 units inside the edge. */
+const LABEL_BUDGET = LABEL_WIDTH - 12 - 8;
+const LABEL_MAX_LINES = 3;
+
+/** An estimate of a glyph's width at the label size, on the wide side so a label is wrapped rather than cut off. */
+function glyphWidthV164(character: string): number {
+  if (/[\u1100-\u11ff\u3130-\u318f\uac00-\ud7af\u3040-\u30ff\u4e00-\u9fff]/u.test(character)) return 14.5;
+  if (/\s/u.test(character)) return 4;
+  if (/[A-Z]/u.test(character)) return 9.5;
+  return 7.8;
+}
+
+function textWidthV164(text: string): number {
+  return Array.from(text).reduce((sum, character) => sum + glyphWidthV164(character), 0);
+}
+
+/**
+ * A row label as at most `maxLines` lines no wider than `budget`. The label is
+ * broken at spaces; what still does not fit ends in an ellipsis (the full text
+ * stays in the tooltip and in the list under the chart). Drawn on one line
+ * right-aligned, a long basin or station name was cut off at the chart's edge.
+ */
+export function wrapLabelV164(text: string, budget: number, maxLines = LABEL_MAX_LINES): string[] {
+  const words = text.trim().split(/\s+/u).filter(Boolean);
+  const lines: string[] = [];
+  let current = "";
+  for (const word of words) {
+    const candidate = current ? `${current} ${word}` : word;
+    if (textWidthV164(candidate) <= budget) {
+      current = candidate;
+      continue;
+    }
+    if (current) lines.push(current);
+    current = word;
+  }
+  if (current) lines.push(current);
+  const fitted = lines.slice(0, maxLines);
+  const dropped = lines.length > maxLines;
+  return fitted.map((line, index) => {
+    const last = index === fitted.length - 1;
+    if (textWidthV164(line) <= budget && !(last && dropped)) return line;
+    let cut = Array.from(line);
+    const room = budget - glyphWidthV164("…");
+    while (cut.length > 1 && textWidthV164(cut.join("")) > room) cut = cut.slice(0, -1);
+    return `${cut.join("").trimEnd()}…`;
+  });
+}
 
 export default function DumbbellChartV153({ rows, unit, xAxis, yAxis, ariaLabel, testId = "dumbbell-chart-v153" }: Props) {
   if (rows.length === 0) return null;
@@ -42,7 +90,13 @@ export default function DumbbellChartV153({ rows, unit, xAxis, yAxis, ariaLabel,
   const tickLabels = formatAxisTicksV164(ticks);
   const plotLeft = LABEL_WIDTH;
   const plotWidth = WIDTH - LABEL_WIDTH - PADDING.right;
-  const height = PADDING.top + rows.length * ROW_HEIGHT + PADDING.bottom;
+  const labelLines = rows.map((row) => ({
+    label: wrapLabelV164(row.label, LABEL_BUDGET),
+    note: row.note ? wrapLabelV164(row.note, LABEL_BUDGET, 1) : [],
+  }));
+  const tallest = Math.max(...labelLines.map((entry) => entry.label.length + entry.note.length));
+  const rowHeight = Math.max(MIN_ROW_HEIGHT, tallest * LINE_HEIGHT + 12);
+  const height = PADDING.top + rows.length * rowHeight + PADDING.bottom;
   const x = (value: number) => plotLeft + (Math.max(0, value) / maximum) * plotWidth;
   const format = (value: number) => formatPublicNumberV126(value, unit);
   return (
@@ -60,13 +114,19 @@ export default function DumbbellChartV153({ rows, unit, xAxis, yAxis, ariaLabel,
           </g>
         ))}
         {rows.map((row, index) => {
-          const cy = PADDING.top + index * ROW_HEIGHT + ROW_HEIGHT / 2;
+          const cy = PADDING.top + index * rowHeight + rowHeight / 2;
+          const entry = labelLines[index];
+          const blockTop = cy - ((entry.label.length + entry.note.length) * LINE_HEIGHT) / 2;
           const lowX = x(row.low.value);
           const highX = x(row.high.value);
           return (
             <g key={row.id} className="dumbbell153__row" data-row-id={row.id}>
-              <text className="dumbbell153__label" x={plotLeft - 12} y={cy - (row.note ? 4 : -4)} textAnchor="end">{row.label}</text>
-              {row.note && <text className="dumbbell153__note" x={plotLeft - 12} y={cy + 12} textAnchor="end">{row.note}</text>}
+              {entry.label.map((line, lineIndex) => (
+                <text className="dumbbell153__label" key={`l-${lineIndex}`} x={plotLeft - 12} y={blockTop + (lineIndex + 1) * LINE_HEIGHT - 3} textAnchor="end">{line}</text>
+              ))}
+              {entry.note.map((line, lineIndex) => (
+                <text className="dumbbell153__note" key={`n-${lineIndex}`} x={plotLeft - 12} y={blockTop + (entry.label.length + lineIndex + 1) * LINE_HEIGHT - 3} textAnchor="end">{line}</text>
+              ))}
               <line className="dumbbell153__bar" x1={Math.min(lowX, highX)} x2={Math.max(lowX, highX)} y1={cy} y2={cy} />
               <circle className="dumbbell153__dot dumbbell153__dot--low" cx={lowX} cy={cy} r="7" />
               <circle className="dumbbell153__dot dumbbell153__dot--high" cx={highX} cy={cy} r="7" />

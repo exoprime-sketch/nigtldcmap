@@ -6,7 +6,7 @@ import {
   useRef,
   useState,
 } from "react";
-import { formatAxisTicksV164, niceTicksV164 } from "../../utils/axisTicksV164";
+import { formatAxisTicksV164, niceXTicksV164, valueAxisV164 } from "../../utils/axisTicksV164";
 import ChartTooltipV127 from "./ChartTooltipV127";
 import ChartViewportControlsV129 from "./ChartViewportControlsV129";
 import {
@@ -26,6 +26,7 @@ import type {
 } from "../../types/chartInteractionV127";
 import "./chart-interactions-v127.css";
 import ChartAxesV150 from "./ChartAxesV150";
+import { scaleOutlierSeriesIdsV164 } from "./seriesScaleV164";
 
 const SERIES_COLORS_V127 = [
   "#0f6b4d",
@@ -104,6 +105,8 @@ function defaultFormatXV127(value: number): string {
 }
 
 const LEGEND_OPEN_LIMIT_V164 = 12;
+/** Marker radius plus stroke: how far a point at the edge of the plot reaches past it. */
+const CLIP_MARGIN_V164 = 8;
 
 function estimatedTextWidthV127(value: string): number {
   return Array.from(value).reduce((width, character) => {
@@ -112,18 +115,6 @@ function estimatedTextWidthV127(value: string): number {
     if (/\s/.test(character)) return width + 3.5;
     return width + 11;
   }, 0);
-}
-
-function formatAxisTickV127(
-  value: number,
-  formatValue: (candidate: number) => string,
-  widthBudget: number
-): string {
-  const fullPrecisionLabel = formatValue(value);
-  if (estimatedTextWidthV127(fullPrecisionLabel) <= widthBudget) {
-    return fullPrecisionLabel;
-  }
-  return compactAxisFormatterV127.format(value);
 }
 
 function clampV127(value: number, minimum: number, maximum: number): number {
@@ -149,15 +140,6 @@ function buildLinearPathV127(points: PlottedPointV127[]): string {
   return points
     .map((point, index) => `${index === 0 ? "M" : "L"}${point.chartX},${point.chartY}`)
     .join(" ");
-}
-
-function adaptiveTicksV127(values: number[], maximum: number): number[] {
-  if (values.length <= maximum) return values;
-  const result = Array.from({ length: maximum }, (_, index) => {
-    const valueIndex = Math.round((index * (values.length - 1)) / (maximum - 1));
-    return values[valueIndex];
-  });
-  return result.filter((value, index) => index === 0 || value !== result[index - 1]);
 }
 
 function markerPathV127(
@@ -251,9 +233,14 @@ export function InteractiveTimeSeriesChartV127({
     () => normalizedSeries.filter((item) => item.points.length > 0).map((item) => item.id),
     [normalizedSeries]
   );
+  // V164: a lone point many times larger than every other series starts switched off (still in the legend).
+  const scaleOutlierIds = useMemo(
+    () => (fixedYDomain ? new Set<string>() : scaleOutlierSeriesIdsV164(normalizedSeries)),
+    [fixedYDomain, normalizedSeries]
+  );
   const [visibleSeriesIds, setVisibleSeriesIds] = useState<Set<string>>(() => {
     const defaults = normalizedSeries
-      .filter((item) => item.points.length > 0 && item.defaultVisible !== false)
+      .filter((item) => item.points.length > 0 && item.defaultVisible !== false && !scaleOutlierIds.has(item.id))
       .map((item) => item.id);
     const fallback = normalizedSeries.find((item) => item.points.length > 0)?.id;
     return new Set(defaults.length > 0 ? defaults : fallback ? [fallback] : []);
@@ -316,6 +303,7 @@ export function InteractiveTimeSeriesChartV127({
         if (
           item.points.length > 0 &&
           item.defaultVisible !== false &&
+          !scaleOutlierIds.has(item.id) &&
           !previousKnown.has(item.id)
         ) {
           next.add(item.id);
@@ -324,7 +312,7 @@ export function InteractiveTimeSeriesChartV127({
       if (next.size === 0 && seriesIds[0]) next.add(seriesIds[0]);
       return next;
     });
-  }, [normalizedSeries, seriesIds]);
+  }, [normalizedSeries, scaleOutlierIds, seriesIds]);
 
   const allXValues = useMemo(
     () =>
@@ -365,43 +353,21 @@ export function InteractiveTimeSeriesChartV127({
   );
   const fallbackValues = visibleSeries.flatMap((item) => item.points.map((point) => point.value));
   const ySource = visibleValues.length > 0 ? visibleValues : fallbackValues;
-  const calculatedYDomain = useMemo<ChartDomainV127>(() => {
-    if (fixedYDomain) return normalizeDomainV127(fixedYDomain);
-    if (ySource.length === 0) return [0, 1];
-    const minimum = Math.min(...ySource);
-    const maximum = Math.max(...ySource);
-    if (minimum === maximum) {
-      const amount = Math.max(1, Math.abs(minimum) * 0.08);
-      return [minimum >= 0 ? Math.max(0, minimum - amount) : minimum - amount, maximum + amount];
-    }
-    const amount = (maximum - minimum) * 0.08;
-    const padded: ChartDomainV127 = [minimum >= 0 ? Math.max(0, minimum - amount) : minimum - amount, maximum + amount];
-    // V164: the axis ends on round ticks (1·2·2.5·5×10ⁿ), so every guide is a round number.
-    const nice = niceTicksV164(padded[0], padded[1], 5);
-    return nice.length >= 2 ? [Math.max(minimum >= 0 ? 0 : -Infinity, nice[0]), nice[nice.length - 1]] : padded;
-  }, [fixedYDomain, ySource]);
+  // V164: the domain and its ticks come from one step, so the axis never ends on
+  // 0.5 and then counts in 0.6; a % axis whose values fit in 0-100 stops at 100.
+  const yIntervalsV164 = chartWidth < 480 ? 4 : 5;
+  const yAxisV164 = valueAxisV164({ values: ySource, fixedDomain: fixedYDomain ? normalizeDomainV127(fixedYDomain) : null, unit, intervals: yIntervalsV164 });
+  const calculatedYDomain: ChartDomainV127 = yAxisV164.domain;
   const ySpan = Math.max(1e-8, calculatedYDomain[1] - calculatedYDomain[0]);
-  const yTickCount = chartWidth < 480 ? 5 : 6;
-  const niceYTicksV164 = fixedYDomain ? [] : niceTicksV164(calculatedYDomain[0], calculatedYDomain[1], yTickCount - 1);
-  const yTicks = niceYTicksV164.length >= 2 &&
-    Math.abs(niceYTicksV164[0] - calculatedYDomain[0]) < ySpan * 1e-6 &&
-    Math.abs(niceYTicksV164[niceYTicksV164.length - 1] - calculatedYDomain[1]) < ySpan * 1e-6
-    ? [...niceYTicksV164].reverse()
-    : Array.from({ length: yTickCount }, (_, index) =>
-        calculatedYDomain[1] - (index / (yTickCount - 1)) * ySpan
-      );
+  const yTicks = [...yAxisV164.ticks].reverse();
   const yTickWidthBudget = chartWidth < 480 ? 76 : 112;
   // Axis guides need less precision than observations. Keep exact values in
   // point labels, tooltips and tables; never round the plotted measurements.
-  const tickDigits = Math.max(0, Math.min(8, 1 - Math.floor(Math.log10(ySpan / (yTickCount - 1)))));
-  const formatTick = (value: number) => new Intl.NumberFormat("ko-KR", { maximumFractionDigits: tickDigits }).format(value);
-  // V164: past 억 the ticks share one Korean scale word (1,000억 · 2,000억) instead of 12-digit figures.
-  const scaledTickLabelsV164 = Math.max(...yTicks.map((value) => Math.abs(value))) >= 100_000_000
-    ? formatAxisTicksV164(yTicks)
-    : null;
-  const yTickLabels = scaledTickLabelsV164 || yTicks.map((value) =>
-    formatAxisTickV127(value, formatTick, yTickWidthBudget)
-  );
+  // The ticks share one precision (what the step needs) and, past 억, one scale word.
+  const roundedTickLabelsV164 = formatAxisTicksV164(yTicks);
+  const yTickLabels = Math.max(0, ...roundedTickLabelsV164.map(estimatedTextWidthV127)) <= yTickWidthBudget
+    ? roundedTickLabelsV164
+    : yTicks.map((value) => compactAxisFormatterV127.format(value));
   const legendItemsV164 = normalizedSeries
     .map((item, seriesIndex) => ({ item, seriesIndex }))
     .filter(({ item }) => item.points.length > 0);
@@ -486,7 +452,8 @@ export function InteractiveTimeSeriesChartV127({
         visibleXValues[visibleXValues.length - 1]
       )}`
     : `${formatX(visibleXDomain[0])}–${formatX(visibleXDomain[1])}`;
-  const xTicks = adaptiveTicksV127(visibleXValues, chartWidth < 480 ? 4 : chartWidth < 760 ? 6 : 8);
+  // V164: round, evenly spaced years - as many as the plot has room for (about one per 64px).
+  const xTicks = niceXTicksV164(visibleXValues, Math.max(3, Math.floor(plotWidth / 64)), plotWidth);
 
   const updateDomainV127 = (
     candidate: ChartDomainV127,
@@ -689,8 +656,11 @@ export function InteractiveTimeSeriesChartV127({
     yAxisTitle.trim() === unit.trim() ||
     yAxisTitle.includes(`(${unit})`) ||
     yAxisTitle.includes(`[${unit}]`);
-  const yAxisDisplayLabel =
-    unit && !yAxisHasExplicitUnit ? `${yAxisTitle}(${unit})` : yAxisTitle;
+  // V164: a unit that carries its own parentheses ("USD (2024년 불변가격)") follows the title after a
+  // dot, so the label never closes with "))".
+  const yAxisDisplayLabel = unit && !yAxisHasExplicitUnit
+    ? (/[()（）]/u.test(unit) ? `${yAxisTitle} · ${unit}` : `${yAxisTitle}(${unit})`)
+    : yAxisTitle;
 
   if (unitMismatch) {
     return (
@@ -873,7 +843,8 @@ export function InteractiveTimeSeriesChartV127({
           </desc>
           <defs>
             <clipPath id={clipId}>
-              <rect height={plotHeight} width={plotWidth} x={padding.left} y={padding.top} />
+              {/* V164: a little room around the plot, so a marker on the first or last year is not cut in half. */}
+              <rect height={plotHeight + 2 * CLIP_MARGIN_V164} width={plotWidth + 2 * CLIP_MARGIN_V164} x={padding.left - CLIP_MARGIN_V164} y={padding.top - CLIP_MARGIN_V164} />
             </clipPath>
           </defs>
 

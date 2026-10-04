@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import "./country-compare-v158.css";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
-import { formatAxisTicksV164, formatAxisValueV164, niceTicksV164 } from "../../../utils/axisTicksV164";
+import { formatAxisTicksV164, formatAxisValueV164, niceXTicksV164, valueAxisV164 } from "../../../utils/axisTicksV164";
 
 /**
  * One country's series for the element being compared.
@@ -97,10 +97,12 @@ function MultiLineChartV164({
   const height = width < 480 ? 220 : 260;
   const values = years.flatMap((year) => rows.map(({ row }) => valueAtV158(row, year)).filter((value): value is number => value !== null));
   if (values.length === 0) return null;
-  const ticks = niceTicksV164(Math.min(...values), Math.max(...values));
+  // The axis ends on round ticks counted in one step (32.5 · 35 · 37.5, never 33 · 35 · 38), and a % whose values fit in 0-100 stops at 100.
+  const axis = valueAxisV164({ values, unit, intervals: 4 });
+  const ticks = axis.ticks;
   const tickLabels = formatAxisTicksV164(ticks);
-  const lo = ticks[0];
-  const hi = ticks[ticks.length - 1];
+  const lo = axis.domain[0];
+  const hi = axis.domain[1];
   const span = hi - lo || 1;
   const lastIndex = years.length - 1;
   const endText = (row: CountryCompareSeriesV158, value: number) => `${row.countryNameKo} ${formatAxisValueV164(value)}`;
@@ -110,9 +112,13 @@ function MultiLineChartV164({
   const right = Math.min(width * 0.38, Math.max(24, ...rows.map(({ row }, index) => (endLabels[index] === undefined ? 0 : textWidth(endText(row, endLabels[index])) + 18))));
   const top = 22;
   const bottom = 28;
-  const x = (position: number) => (years.length === 1 ? left + (width - left - right) / 2 : left + (position / (years.length - 1)) * (width - left - right));
+  // Placed by year, not by position: the shared years can have gaps, and an evenly spaced axis would stretch them.
+  const firstYear = years[0];
+  const yearSpan = years[lastIndex] - firstYear;
+  const x = (year: number) => (yearSpan <= 0 ? left + (width - left - right) / 2 : left + ((year - firstYear) / yearSpan) * (width - left - right));
   const y = (value: number) => top + (1 - (value - lo) / span) * (height - top - bottom);
-  const yearMarks = years.length <= 3 ? years.map((year, index) => ({ year, index })) : [0, Math.floor((years.length - 1) / 2), years.length - 1].map((index) => ({ year: years[index], index }));
+  // Round, evenly spaced years (every 2nd, 5th, 10th …) as many as the plot has room for.
+  const yearMarks = niceXTicksV164(years, Math.max(3, Math.floor((width - left - right) / 72)), width - left - right);
   // End labels, nudged apart when two lines finish close together.
   const ends = rows
     .map(({ row, color }) => ({ row, color, value: valueAtV158(row, years[lastIndex]) }))
@@ -146,8 +152,8 @@ function MultiLineChartV164({
           {`단위: ${unit}`}
         </text>
       ) : null}
-      {yearMarks.map(({ year, index }) => (
-        <text key={year} x={x(index)} y={height - 10} textAnchor={index === 0 ? "start" : index === lastIndex ? "end" : "middle"} fontSize="11" fill="#5b7169">
+      {yearMarks.map((year) => (
+        <text key={year} x={x(year)} y={height - 10} textAnchor={year === firstYear ? "start" : year === years[lastIndex] ? "end" : "middle"} fontSize="11" fill="#5b7169">
           {year}
         </text>
       ))}
@@ -160,9 +166,9 @@ function MultiLineChartV164({
           strokeLinejoin="round"
           data-country={row.countryIso3}
           points={years
-            .map((year, position) => {
+            .map((year) => {
               const value = valueAtV158(row, year);
-              return value === null ? null : `${x(position).toFixed(1)},${y(value).toFixed(1)}`;
+              return value === null ? null : `${x(year).toFixed(1)},${y(value).toFixed(1)}`;
             })
             .filter(Boolean)
             .join(" ")}
@@ -170,8 +176,8 @@ function MultiLineChartV164({
       ))}
       {ends.map((end) => (
         <g key={end.row.countryIso3}>
-          <circle cx={x(lastIndex)} cy={y(end.value)} r="3.2" fill={end.color} />
-          <text x={x(lastIndex) + 8} y={end.labelY + 4} fontSize="11.5" fill={end.color} fontWeight="700">
+          <circle cx={x(years[lastIndex])} cy={y(end.value)} r="3.2" fill={end.color} />
+          <text x={x(years[lastIndex]) + 8} y={end.labelY + 4} fontSize="11.5" fill={end.color} fontWeight="700">
             {endText(end.row, end.value)}
           </text>
         </g>

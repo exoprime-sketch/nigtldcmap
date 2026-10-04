@@ -1,5 +1,9 @@
 .v129-chart-viewport {
   display: flex;
+  /* V164: when the legend takes a whole row, the controls sit on the next one, right-aligned. */
+  flex: 0 0 auto;
+  margin-left: auto;
+  max-width: 100%;
   min-width: 0;
   align-items: center;
   justify-content: flex-end;

@@ -186,6 +186,51 @@
   background-image: repeating-linear-gradient(0deg, transparent 0 3px, rgba(255,255,255,.65) 3px 4px);
 }
 
+/* V164: the read-only legend under a stacked area - swatch and name, no toggle. */
+.pec132__legend-static {
+  margin: 10px 0 4px;
+}
+
+.pec132__legend.pec132__legend--static {
+  column-gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  row-gap: 6px;
+}
+
+.pec132__legend--static li {
+  align-items: center;
+  color: #344c46;
+  display: inline-flex;
+  font-size: 0.84rem;
+  gap: 7px;
+  line-height: 1.35;
+  min-width: 0;
+}
+
+.pec132__legend--static li i {
+  flex: 0 0 auto;
+}
+
+.pec132__legend-more {
+  background: none;
+  border: 0;
+  color: #0e5e51;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 700;
+  margin-top: 6px;
+  padding: 4px 0;
+  text-decoration: underline;
+}
+
+.pec132__legend-more:focus-visible {
+  outline: 3px solid #f0a54a;
+  outline-offset: 2px;
+}
+
 .pec132__chart {
   min-width: 0;
   position: relative;

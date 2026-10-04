@@ -358,7 +358,7 @@ export default function PublicPortfolioSummaryV132({
         {/* The classes open the screen (V153 contract: category-bar); the years follow. */}
         {analysis.categories.length > 0 && (
           <section className="d153-block" data-analysis-block="category-bar">
-            <PublicCountDistributionV143 title="주요 분야·기금 구성" rows={analysis.categories} />
+            <PublicCountDistributionV143 title="주요 분야·기금 구성" rows={analysis.categories} yAxis={analysis.categoryKeyLabel || "분류"} />
             {analysis.uncategorizedCount > 0 ? (
               <p className="pps132-note" data-testid="portfolio-uncategorized-v162">
                 <PublicTermTextV134 text={`${analysis.categoryKeyLabel || "분류"}가 기재되지 않은 ${analysis.uncategorizedCount.toLocaleString("ko-KR")}건은 이 구성에 넣지 않았습니다.`} />
@@ -381,7 +381,7 @@ export default function PublicPortfolioSummaryV132({
           .slice(0, 3)
           .map((entry) => (
             <section className="d153-block" data-analysis-block="category-bar" key={entry.key}>
-              <PublicCountDistributionV143 title={`${entry.label}별 ${config?.recordLabel || "사업"} 수`} rows={entry.rows} testId={`portfolio-category-${entry.key}-v141`} />
+              <PublicCountDistributionV143 title={`${entry.label}별 ${config?.recordLabel || "사업"} 수`} rows={entry.rows} yAxis={entry.label} testId={`portfolio-category-${entry.key}-v141`} />
             </section>
           ))}
       </div>

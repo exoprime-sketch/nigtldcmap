@@ -34,3 +34,5 @@
 .kr159-figures > div { border: 1px solid #dce5e1; border-radius: 8px; padding: 12px 14px; min-width: 0; }
 .kr159-figures dt { font-size: .84rem; color: #567067; }
 .kr159-figures dd { margin: 6px 0 0; font-size: 1.3rem; font-weight: 700; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+/* V164: a rank is written as a number; there is no bar for it. */
+.analysis147-bars li > i[data-track="none"] { background: transparent; }

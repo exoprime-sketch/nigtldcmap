@@ -4,6 +4,7 @@ import type { CSSProperties } from "react";
 import type { SemanticObservationV125 } from "../../../data/visualization/semanticTypesV125";
 import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
+import { symmetricBoundV164 } from "../../../utils/axisTicksV164";
 import "./context-specialized-analysis-v134.css";
 
 interface Props {
@@ -87,7 +88,8 @@ export default function SpeiDroughtScenarioAnalysisV134({
   const minimumYear = years[0] ?? 2015;
   const maximumYear = years[years.length - 1] ?? 2100;
   const maximumAbsolute = Math.max(...scenarioRows.map((row) => Math.abs(row.value)), 0.5);
-  const yMaximum = Math.max(0.5, Math.ceil(maximumAbsolute * 10) / 10);
+  // V164: the guides are -2s, -s, 0, s, 2s with s on the 1·2·2.5·5×10ⁿ steps, never -0.85 / +0.85.
+  const yMaximum = symmetricBoundV164(maximumAbsolute);
   const plotWidth = SVG_WIDTH_V134 - PLOT_V134.left - PLOT_V134.right;
   const plotHeight = SVG_HEIGHT_V134 - PLOT_V134.top - PLOT_V134.bottom;
   const x = (year: number) => PLOT_V134.left + ((year - minimumYear) / Math.max(1, maximumYear - minimumYear)) * plotWidth;

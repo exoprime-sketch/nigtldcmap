@@ -103,6 +103,8 @@ export function publicCompareTitleV164(title: string, countryNames: string[]): s
   for (const name of countryNames.filter(Boolean)) {
     const escaped = name.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&");
     text = text
+      // "한-방글라데시 교역" is Korea's trade with that one country; the block draws both partners.
+      .replace(new RegExp(`한-${escaped}\\s*교역`, "u"), "한국과의 교역")
       .replace(new RegExp(`\\s·\\s${escaped}(?=\\s—|\\s·|$)`, "u"), "")
       .replace(new RegExp(`대${escaped}\\s*`, "u"), "");
   }
