@@ -44,7 +44,10 @@ function dimensionValueV164(row: BarRowShapeV164, key: string): string {
  * One row has nothing to vary against, so the preferred order is kept.
  */
 export function categoryLabelKeysV164(rows: readonly BarRowShapeV164[]): string[] {
-  if (rows.length < 2) return [...CATEGORY_LABEL_KEYS_V164];
+  // V164-3: a lone bar is not a technology's bar because its indicator is tagged
+  // with one (BGD A-024's total of 984 line segments read "24 기타 온실가스 처리
+  // 및 대체 기술"); without anything to compare it is named after its measure.
+  if (rows.length < 2) return CATEGORY_LABEL_KEYS_V164.filter((key) => key !== "technology");
   const varying: string[] = [];
   const constant: string[] = [];
   for (const key of CATEGORY_LABEL_KEYS_V164) {
@@ -118,6 +121,8 @@ export function barAxisLabelV164(contractAxis: string | null | undefined, source
   if (TIME_AXIS_V164.test(axis) && dated * 2 < labels.length) return derived;
   const technical = labels.filter((label) => TECH_LABEL_V164.test(label)).length;
   if (TECH_AXIS_V164.test(axis) && source !== "technology" && technical * 2 < labels.length) return derived;
+  // A voltage axis whose bars name no voltage (BGD A-024 draws one total).
+  if (/전압/u.test(axis) && !labels.some((label) => /kV|볼트|전압/iu.test(label))) return derived;
   return axis;
 }
 

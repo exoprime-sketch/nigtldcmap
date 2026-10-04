@@ -206,3 +206,14 @@ describe("the grade table order (B-017)", () => {
     expect(gradeOrderV164("Something else")).toBe(99);
   });
 });
+
+describe("V164-3 lone bar and voltage axis (BGD A-024)", () => {
+  test("a single bar is not named after its indicator's technology tag", () => {
+    const keys = categoryLabelKeysV164([{ dimensions: { technology: "24" }, dimensionLabels: { technology: "24 기타 온실가스 처리 및 대체 기술" } }]);
+    expect(keys).not.toContain("technology");
+  });
+  test("a voltage axis over bars that name no voltage reads what the bars are", () => {
+    expect(barAxisLabelV164("전압 등급", "measure", ["송전 선로 구간 수"])).toBe("지표");
+    expect(barAxisLabelV164("전압 등급", "category", ["500 kV", "220 kV"])).toBe("전압 등급");
+  });
+});

@@ -799,8 +799,11 @@ function CountryDataElementPageV122({
   // default - the count of delivered segments - opened a mapped screen by
   // announcing it was not mapped, and named an electricity-access indicator the
   // reader had not chosen. Only 미공급 지역 has no spatial counterpart.
+  // V164-3: the two notes below state the Viet Nam delivery (722·606·116, its
+  // unserved-area indicator); another country's A-024 is a different source.
+  const vietnamA024V164 = elementId === "A-024" && (countryIso3 || DEFAULT_COUNTRY_ISO3_V158).toUpperCase() === "VNM";
   const mapSelectionUnavailableReason =
-    elementId === "A-024" &&
+    vietnamA024V164 &&
     selectorState.measure === A024_UNSERVED_AREA_MEASURE_V138
       ? "선택한 미공급 지역 지표에는 공개 공간자료가 없어 지도에 연결하지 않습니다. 데이터 지도에서 베트남 송전망을 별도로 분석할 수 있습니다."
       : "";
@@ -809,7 +812,7 @@ function CountryDataElementPageV122({
   // the World Bank 2016 network is delivered with its own line geometry, and the
   // existing/planned segments stated in the plan table carry no coordinates.
   const mapCoverageNote =
-    elementId === "A-024" && !mapSelectionUnavailableReason
+    vietnamA024V164 && !mapSelectionUnavailableReason
       ? "수록 선로 구간 722건 중 원천이 좌표를 제공한 606건을 지도에 표시합니다. 나머지 116건은 계획표에 기재된 구간으로 좌표가 없어 지도에 나타나지 않습니다."
       : "";
 
