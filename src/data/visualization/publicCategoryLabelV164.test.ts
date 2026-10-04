@@ -1,4 +1,4 @@
-import { koreanCategoryV164, koreanLabeledValuesV164, koreanListV164, koreanTitleV164 } from "./publicCategoryLabelV164";
+import { gradeRankV164, koreanCategoryV164, koreanLabeledValuesV164, koreanListV164, koreanTitleV164 } from "./publicCategoryLabelV164";
 
 /** V164-3: the English classification values the delivery shipped, in Korean. */
 describe("koreanCategoryV164", () => {
@@ -122,5 +122,40 @@ describe("koreanLabeledValuesV164", () => {
     expect(koreanLabeledValuesV164("Adaptation")).toBe("Adaptation");
     expect(koreanLabeledValuesV164("")).toBe("");
     expect(koreanLabeledValuesV164("2030년까지 감축: 21.7%")).toBe("2030년까지 감축: 21.7%");
+  });
+});
+
+describe("koreanCategoryV164 (finance portfolios)", () => {
+  it("reads the sector and status names of the finance registers", () => {
+    expect(koreanCategoryV164("Banking")).toBe("은행업");
+    expect(koreanCategoryV164("Climate Change, Biodiversity, Land Degradation")).toBe("기후변화·생물다양성·토지 황폐화");
+    expect(koreanCategoryV164("Environmental policy and administrative management")).toBe("환경정책 및 행정관리");
+    expect(koreanCategoryV164("Concept Approved")).toBe("개념 승인");
+    expect(koreanCategoryV164("Pipeline/Identification")).toBe("준비·발굴 단계");
+  });
+
+  it("leaves an institution, a programme and a long path as delivered", () => {
+    for (const text of ["International Organisation for Migration", "Energy/Electricity/Electricity generation", "Greenfield project (Build, own, and operate)", "IDA"]) {
+      expect(koreanCategoryV164(text)).toBe(text);
+    }
+  });
+});
+
+describe("gradeRankV164", () => {
+  it("orders the water-risk grades from low to extremely high", () => {
+    const grades = ["Extremely High (>80%)", "Low (<10%)", "Medium - High (20-40%)", "Low - Medium (10-20%)", "High (40-80%)"];
+    expect([...grades].sort((left, right) => (gradeRankV164(left) ?? 99) - (gradeRankV164(right) ?? 99))).toEqual([
+      "Low (<10%)",
+      "Low - Medium (10-20%)",
+      "Medium - High (20-40%)",
+      "High (40-80%)",
+      "Extremely High (>80%)",
+    ]);
+  });
+
+  it("has no rank for a value that is not a grade", () => {
+    expect(gradeRankV164("No Data")).toBeNull();
+    expect(gradeRankV164("낮음 (<10%)")).toBeNull();
+    expect(gradeRankV164("")).toBeNull();
   });
 });

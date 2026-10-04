@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV126";
 import { isNumericCodeListV136_2 } from "../../../data/visualization/publicCategoryLabelV136_2";
+import { koreanCategoryV164 } from "../../../data/visualization/publicCategoryLabelV164";
 import { publicCategoryRowsV136_3 } from "../../../utils/publicCategoryGroupingV136_3";
 import { reviewedEntityAttributesV132 } from "../../../data/visualization/publicEntityFieldPolicyV132";
 import { publicRecordRoleV142 } from "../../../data/visualization/publicRecordRoleV142";
@@ -631,7 +632,9 @@ function extractYearV132(value: unknown): number | null {
 }
 
 function compactCategoryV132(value: string): string {
-  const normalized = value.replace(/\s+/gu, " ").trim();
+  // V164: a known English classification ("Banking", "Climate Change") reads in
+  // Korean on the bar; the count stays keyed by the source value.
+  const normalized = koreanCategoryV164(value.replace(/\s+/gu, " ").trim());
   return normalized.length > 54 ? `${normalized.slice(0, 52).trim()}…` : normalized;
 }
 

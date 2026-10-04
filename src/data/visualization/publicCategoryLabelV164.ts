@@ -98,6 +98,30 @@ const ENTRIES_V164: ReadonlyArray<readonly [string, string]> = [
   ["Other Services", "기타 서비스"],
   ["Others", "기타"],
   ["Other", "기타"],
+  // --- sector and focal-area names of the finance portfolios (D-023 ... D-026) ---
+  ["Banking", "은행업"],
+  ["Chemicals", "화학"],
+  ["Forestry", "임업"],
+  ["Insurance", "보험"],
+  ["Biodiversity", "생물다양성"],
+  ["Climate Change", "기후변화"],
+  ["Land Degradation", "토지 황폐화"],
+  ["Chemicals and Waste", "화학물질·폐기물"],
+  ["Transport & Storage", "운송·저장"],
+  ["Disaster Prevention & Preparedness", "재난 예방·대비"],
+  ["General environment protection", "일반 환경보호"],
+  ["Environmental research", "환경 연구"],
+  ["Other Multisector", "기타 다부문"],
+  ["Unallocated / Unspecified", "미배분·미분류"],
+  ["Environmental policy and administrative management", "환경정책 및 행정관리"],
+  ["Forestry policy and administrative management", "산림정책 및 행정관리"],
+  ["Financial Institutions Group", "금융기관 그룹"],
+  ["Health Care and Social Assistance", "보건·사회복지"],
+  ["Agribusiness and Forestry", "농업·임업 기업"],
+  ["Energy efficiency and climate change", "에너지 효율·기후변화"],
+  ["Advisory Services", "자문 서비스"],
+  ["Investment", "투자"],
+  ["Multilateral", "다자"],
   // --- status ---
   ["Completed", "완료"],
   ["Complete", "완료"],
@@ -112,6 +136,10 @@ const ENTRIES_V164: ReadonlyArray<readonly [string, string]> = [
   ["Closed", "종료"],
   ["Dropped", "중단"],
   ["Proposed", "제안"],
+  ["Pending", "대기 중"],
+  ["Concept Approved", "개념 승인"],
+  ["Project Under Implementation", "사업 이행 중"],
+  ["Pipeline/Identification", "준비·발굴 단계"],
   ["Pipeline", "준비 단계"],
   ["Cancelled", "취소"],
   ["Concluded", "종결"],
@@ -309,6 +337,20 @@ const GRADE_V164: ReadonlyArray<readonly [string, string]> = [
   ["high", "높음"],
 ];
 const GRADE_PATTERN_V164 = new RegExp(`^(${GRADE_V164.map(([english]) => english).join("|")})\\s*(\\(.+\\))?$`, "iu");
+
+/**
+ * The position of a water-risk grade from low to extremely high ("Low (<10%)" 1,
+ * "Low - Medium (10-20%)" 2, ... "Extremely High (>80%)" 6), or null for a value
+ * that is not a grade ("No Data"). A grade table lists its rows in this order
+ * instead of the order the source file happened to hold them.
+ */
+export function gradeRankV164(value: string): number | null {
+  const grade = GRADE_PATTERN_V164.exec(String(value ?? "").trim());
+  if (!grade) return null;
+  const order = ["low", "low - medium", "medium", "medium - high", "high", "extremely high"];
+  const index = order.indexOf(keyOf(grade[1]));
+  return index < 0 ? null : index + 1;
+}
 
 /** "more than 2 in 1,000" -> "1,000분의 2 초과"; "3 in 10,000 to 2 in 1,000" -> "10,000분의 3 ~ 1,000분의 2". */
 function koreanRangeV164(range: string): string {

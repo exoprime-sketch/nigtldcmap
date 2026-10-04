@@ -226,17 +226,38 @@ export function isWorkMemoOnlyV164(value: string): boolean {
 }
 
 /**
- * Two marks the delivery writes into a note that mean nothing to a reader: the
- * block separator "▣" (read as a broken glyph) and the ISO code after "해당국"
- * ("해당국(VNM) 발효일"). The separator becomes the note's own " · "; the code
- * is dropped. The words and every figure around them are unchanged.
+ * An HTML tag the source page left in a scraped value ("<br/>", "<td>x</td>").
+ * Only real element names: a URL template such as "vbpl.vn/<slug>/Pages" is a
+ * placeholder the source states and stays as written.
+ */
+const HTML_TAG_SOURCE_V164 =
+  "<\\/?(?:a|b|br|div|em|font|h[1-6]|i|img|li|ol|p|span|strong|sub|sup|table|tbody|td|th|thead|tr|u|ul)(?:\\s[^<>]*)?\\/?>";
+const HTML_TAG_V164 = new RegExp(HTML_TAG_SOURCE_V164, "giu");
+const HAS_HTML_TAG_V164 = new RegExp(HTML_TAG_SOURCE_V164, "iu");
+/** What a cut-off anchor leaves behind: 'Roads/electricity-generation">Bridge and highway'. */
+const ANCHOR_REMNANT_V164 = /\s*\/[a-z0-9]+(?:-[a-z0-9]+)+"\s*>\s*/gu;
+
+/**
+ * Marks the delivery writes into a value that mean nothing to a reader:
+ * - the block separator "▣" (read as a broken glyph) becomes the note's own " · ";
+ * - the ISO code after "해당국" ("해당국(VNM) 발효일") is dropped;
+ * - HTML a scraper left in a value (D-025's sector "Energy/Electricity, Roads/
+ *   electricity-generation">Bridge and highway, <br/>Electricity generation")
+ *   is taken out: a line break reads as a space, a tag is removed and the
+ *   remnant of a cut-off link separates the two names it joined.
+ * The words and every figure around them are unchanged.
  */
 export function publicMarksV164(value: string): string {
   const text = String(value ?? "");
-  if (!/▣|해당국\s*\([A-Z]{3}\)/u.test(text)) return text;
+  if (!/▣|해당국\s*\([A-Z]{3}\)|"\s*>/u.test(text) && !HAS_HTML_TAG_V164.test(text)) return text;
   return text
     .replace(/\s*▣\s*/gu, " · ")
     .replace(/(해당국)\s*\([A-Z]{3}\)/gu, "$1")
+    .replace(ANCHOR_REMNANT_V164, ", ")
+    .replace(/<br\s*\/?>/giu, " ")
+    .replace(HTML_TAG_V164, "")
+    .replace(/,\s*,/gu, ",")
+    .replace(/\s{2,}/gu, " ")
     .replace(/^\s*·\s*|\s*·\s*$/gu, "")
     .trim();
 }

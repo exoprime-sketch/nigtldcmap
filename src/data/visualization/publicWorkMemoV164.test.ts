@@ -161,4 +161,21 @@ describe("publicMarksV164", () => {
   it("leaves text with neither mark as it is", () => {
     for (const text of ["회원국(7): Bangladesh", "해당국 발효일: 원천 미제공", "전국(VNM) 합계"]) expect(publicMarksV164(text)).toBe(text);
   });
+
+  it("takes the scraped HTML out of a value and keeps every name in it (VNM D-025 sector)", () => {
+    expect(publicMarksV164('Energy/Electricity, Roads/electricity-generation">Bridge and highway, <br/>Electricity generation')).toBe(
+      "Energy/Electricity, Roads, Bridge and highway, Electricity generation"
+    );
+    expect(publicMarksV164("<td>Afforestation and reforestation programme</td>")).toBe("Afforestation and reforestation programme");
+    expect(publicMarksV164("Line one<br>Line two")).toBe("Line one Line two");
+  });
+
+  it("keeps a placeholder the source states in a URL template (C-009 portal note)", () => {
+    const note = "진입점 vbpl.vn/van-ban/dia-phuong (?province=<slug>), 성별 개별 포털 vbpl.vn/<slug>/Pages/Home.aspx.";
+    expect(publicMarksV164(note)).toBe(note);
+  });
+
+  it("does not read a comparison or a quoted figure as markup", () => {
+    for (const text of ["감축률 <10% 구간", "a < b and c > d", '인용문 "10 > 5" 참고', "5<6, 7>3"]) expect(publicMarksV164(text)).toBe(text);
+  });
 });

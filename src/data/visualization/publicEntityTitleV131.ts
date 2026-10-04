@@ -69,7 +69,17 @@ const ELEMENT_TITLE_FIELDS_V131: Record<string, EntityTitleFieldV131[]> = {
   "A-025": [{ key: "시설명", source: "note-facility" }],
   // V138 map targets: the row's own subject, not its record key. A sea-level
   // row is filed as "1003_medium_ssp126_q5_2060"; the station is the subject.
-  "B-008": [{ key: "관측소명_베트남어" }, { key: "관측소명_PSMSL" }],
+  "B-008": [
+    { key: "관측소명_베트남어" },
+    { key: "관측소명_PSMSL" },
+    // V164: the Bangladesh delivery names the station in these columns.
+    { key: "관측소명_로마자" },
+    { key: "관측소명_PSMSL_격자점" },
+  ],
+  // V164: USGS commodity rows are filed as "BGD_구리_2026"; the commodity the
+  // source prints is the subject (the year separates the repeats).
+  "B-046": [{ key: "광종_세부_원천_표기" }],
+  "B-047": [{ key: "광종_세부_원천_표기" }],
   "B-023": [{ key: "지점_유역명" }],
   "B-028": [{ key: "지점_유역명" }],
   // V162: the 2026-09-30 delivery names a basin in 유역명(원천 표기) where the
