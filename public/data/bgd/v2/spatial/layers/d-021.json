@@ -1,0 +1,385 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "D-021",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2024",
+    "defaultVariable": "d-021-located-count",
+    "periods": [
+      "2024"
+    ],
+    "variables": [
+      {
+        "key": "d-021-located-count",
+        "label": "지역이 확인된 사업 수",
+        "measureId": "d-021-located-count",
+        "measureKey": "d-021-located-count",
+        "unit": "건",
+        "periods": [
+          "2024"
+        ],
+        "maxFeatureCount": 4
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "d-021-located-count",
+        "variableLabel": "지역이 확인된 사업 수",
+        "unit": "건",
+        "period": "2024",
+        "sourceIndicatorId": null,
+        "values": [
+          null,
+          1,
+          21,
+          2,
+          null,
+          null,
+          2,
+          null
+        ]
+      }
+    ]
+  },
+  "memberRecords": {
+    "BGD.2_1": [
+      {
+        "recordId": "bgd-v162-d-021-entity-00036",
+        "label": "Chattogram Water Supply Improvement Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Chattogram Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      }
+    ],
+    "BGD.3_1": [
+      {
+        "recordId": "bgd-v162-d-021-entity-00271",
+        "label": "Air Quality Management Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-021-entity-00046",
+        "label": "BD Dhaka Water Supply and Sanitation Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-021-entity-00238",
+        "label": "Bangladesh Regional Waterway Transport Project 1",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-021-entity-00316",
+        "label": "Clean Air and Sustainable Environment Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-021-entity-00315",
+        "label": "Clean Air and Sustainable Environment Project - Additional Financing",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-021-entity-00448",
+        "label": "DHAKA WASA III",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-021-entity-00394",
+        "label": "DHAKA WATER&SAN SUP",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-021-entity-00010",
+        "label": "Dhaka Bus Rapid Transit Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-021-entity-00311",
+        "label": "Dhaka City Neighborhood Upgrading Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-021-entity-00040",
+        "label": "Dhaka Environment and Water Project (DEW)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-021-entity-00024",
+        "label": "Dhaka Integrated Urban Renewal Program",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-021-entity-00012",
+        "label": "Dhaka MRT Development (Line-2) and Institutional Strengthening",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-021-entity-00310",
+        "label": "Dhaka North Neighborhood Upgrading Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-021-entity-00297",
+        "label": "Dhaka Public Transport Improvement Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-021-entity-00035",
+        "label": "Dhaka Rivers Ecological Restoration Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-021-entity-00033",
+        "label": "Dhaka Sanitation Improvement Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-021-entity-00232",
+        "label": "Dhaka Urban Transport",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-021-entity-00021",
+        "label": "Fourth Dhaka Water Supply Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-021-entity-00231",
+        "label": "Integrated Corridor Management Dhaka North Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-021-entity-00005",
+        "label": "Metro Dhaka Water Security and Resilience Program",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-021-entity-00142",
+        "label": "URBAN DEV. I",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      }
+    ],
+    "BGD.4_1": [
+      {
+        "recordId": "bgd-v162-d-021-entity-00075",
+        "label": "Gorai River Restoration Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Khulna Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-021-entity-00344",
+        "label": "Khulna Urban Services Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Khulna Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      }
+    ],
+    "BGD.7_1": [
+      {
+        "recordId": "bgd-v162-d-021-entity-00098",
+        "label": "Bangladesh Urban Resilience Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Sylhet Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-021-entity-00289",
+        "label": "Third Road Rehabilitation & Maintenance",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Sylhet Division",
+        "indicatorId": "D-021_international_organization_and_mdb_project_registry"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "d-021-located-count",
+      "period": "2024",
+      "expectedCount": 8,
+      "matchedCount": 4,
+      "missingCount": 4,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "World Bank Projects & Operations"
+    ],
+    "licenses": [
+      "CC-BY-4.0"
+    ],
+    "attribution": [
+      "World Bank Projects & Operations — CC-BY-4.0. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://projects.worldbank.org/en/projects-operations/projects-list",
+      "https://projects.worldbank.org/en/projects-operations/projects-list?os=0&countrycode_exact=BD"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 4,
+    "maxSeriesFeatureCount": 4,
+    "missingAdm1Count": 4,
+    "providedZeroCount": 0,
+    "publishedValueCount": 4,
+    "sourceValueCount": 26,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0,
+    "mappingMethod": "stated-division-count"
+  }
+}

@@ -4,7 +4,7 @@
  * RealMapExplorerPage so the mini map builds exactly the same features).
  */
 import type { CountryEntityV122, CountryMapLayerV122 } from "../../data/countries/countryDataTypesV122";
-import type { VietnamLocationSidecarV151, VietnamSpatialLayerAssetV124 } from "../../data/vietnam/vietnamTypesV124";
+import type { VietnamLocationSidecarV151, VietnamSpatialLayerAssetV124, VietnamSpatialValue34V162 } from "../../data/vietnam/vietnamTypesV124";
 import type { VietnamMapGeoJsonV124 } from "../../data/vietnam/vietnamDataLoaderV124";
 import type { BoundarySystemV151 } from "../../data/map/adminBoundaryV151";
 import { PROVINCE_KO_34_V151 } from "../../data/map/adminBoundaryV151";
@@ -21,6 +21,7 @@ import { PROVINCE_KO_V150 } from "../../data/map/mapBackdropV150";
 import { source34ValuesForSelectorV162 } from "../../data/geo/regionSystemV162";
 import { prepareLayerRecordsV138, type PreparedLayerRecordsV138 } from "../../data/map/prepareLayerRecordsV148";
 import { mapIndicatorSourceV148 } from "../../data/map/mapPresentationV148";
+import { pointOutsideNoteV164 } from "../../data/map/pointLocationV164";
 import {
   factValueV137,
   layerFactFieldsV137,
@@ -109,7 +110,13 @@ export function choroplethFeatureCollection(
   const values = asset.data
     ? spatialValuesForSelectorV125(asset.data, selector)
     : [];
-  const valueByCode = new Map(values.map((row) => [row.adm1Code, row]));
+  // V164-4: a value row is keyed by the asset's own join column (Viet Nam
+  // D-022 states the post-2025 unit, `adm1Code34`); keyed only by adm1Code,
+  // every D-022 row was unmatched and the layer drew an empty map.
+  const assetJoinKeyV164 = String((asset.data as { joinKey?: string } | undefined)?.joinKey || "adm1Code");
+  const valueByCode = new Map(
+    values.map((row) => [String((row as unknown as Record<string, unknown>)[assetJoinKeyV164] ?? row.adm1Code ?? ""), row])
+  );
   const numericValues = values.map((row) => row.value).filter(Number.isFinite);
   const minimum = numericValues.length ? Math.min(...numericValues) : 0;
   const maximum = numericValues.length ? Math.max(...numericValues) : 1;
@@ -122,7 +129,13 @@ export function choroplethFeatureCollection(
         // V162 PR-D: the boundary file's own key names the unit the values are
         // keyed by ("divisionKey" for Bangladesh); Viet Nam's is adm1Code.
         const joinKey = String((asset.data as { joinKey?: string } | undefined)?.joinKey || "adm1Code");
-        const adm1Code = String(feature.properties?.[joinKey] || feature.properties?.adm1Code || "");
+        // The 2025 boundary file keys its units as `unitCode` (VN34-xx).
+        const adm1Code = String(
+          feature.properties?.[joinKey] ||
+            (joinKey === "adm1Code34" ? feature.properties?.unitCode : "") ||
+            feature.properties?.adm1Code ||
+            ""
+        );
         const value = valueByCode.get(adm1Code);
         return {
           type: "Feature" as const,
@@ -248,9 +261,39 @@ export function choroplethFeatureCollectionV151(
   // V162: where the source itself states the 34-unit values for this variable
   // and period, the 34 outline shows them as printed (native-34). The 63-unit
   // aggregation below is used only where no such row exists.
+  // V164-4: a layer whose rows are keyed by the 2025 unit itself (VNM D-022,
+  // `joinKey: "adm1Code34"`) states its 34-unit values in `values`, not in
+  // `values34`; read them as the same native rows, never through the 63-unit
+  // aggregation (which found no members and drew an empty map).
+  const keyed34V164 =
+    (asset.data as { joinKey?: string } | undefined)?.joinKey === "adm1Code34"
+      ? values
+          .map((row): VietnamSpatialValue34V162 | null => {
+            const fields = row as unknown as Record<string, unknown>;
+            const unitCode = String(fields.adm1Code34 ?? "");
+            return unitCode && Number.isFinite(row.value)
+              ? {
+                  unitCode,
+                  unitName: String(fields.adm1Name34 ?? unitCode),
+                  variable: row.variable,
+                  variableLabel: row.variableLabel || variableLabel,
+                  period: row.period,
+                  value: row.value,
+                  unit: row.unit ?? null,
+                  sourceIndicatorId: row.sourceIndicatorId ?? null,
+                  sourceRecordId: row.sourceRecordId ?? null,
+                  sourceSpatialUnit: "admin1-34" as const,
+                  imputed: false as const,
+                }
+              : null;
+          })
+          .filter((row): row is VietnamSpatialValue34V162 => row !== null)
+      : [];
   const source34 =
     context.system === "post-2025-34" && context.geometry34
-      ? source34ValuesForSelectorV162(asset.data, selector.variable, selector.period)
+      ? keyed34V164.length
+        ? keyed34V164
+        : source34ValuesForSelectorV162(asset.data, selector.variable, selector.period)
       : [];
   if (source34.length && context.geometry34) {
     const byUnit = new Map(source34.map((row) => [row.unitCode, row]));
@@ -449,14 +492,29 @@ export function lineFeatureCollection(
   };
 }
 
-/** V151-2: where a point sits, worded for the outline on screen. */
+/**
+ * V151-2: where a point sits, worded for the outline on screen.
+ *
+ * V164: the whole phrase, not the words after "소재". A point outside every
+ * province was "소재 미확정(성·시 경계 밖 지점)" whatever the reason (a station
+ * in Cambodia, a typhoon at sea, a mine whose province the record states);
+ * pointOutsideNoteV164 words it from the record's own attributes instead.
+ */
 export function pointLocationLabelV151(
   hit: VietnamLocationSidecarV151["byRecordId"][string] | undefined,
-  system: BoundarySystemV151
+  system: BoundarySystemV151,
+  attrs?: Record<string, unknown> | null,
+  countryIso3: string = "VNM"
 ): string | null {
   if (hit === undefined) return null;
-  // V163-T3: printed after "소재" in the popup - "소재 미확정(…)", not "소재 소재지 …".
-  if (hit === null) return "미확정(성·시 경계 밖 지점)";
+  if (hit === null) return pointOutsideNoteV164(attrs, countryIso3);
+  return `소재 ${pointUnitLabelV151(hit, system)}`;
+}
+
+function pointUnitLabelV151(
+  hit: NonNullable<VietnamLocationSidecarV151["byRecordId"][string]>,
+  system: BoundarySystemV151
+): string {
   if (system === "post-2025-34" && hit.unitCode) {
     const unitName = PROVINCE_KO_34_V151[hit.unitCode] || hit.adm1Name;
     return `${unitName} ${formerProvinceLabelV151(hit.adm1Code)}`.trim();
@@ -496,7 +554,7 @@ export function featureCollection(
           entityType: record.entityType,
           referenceYear:
             record.provenance.referenceYear || null,
-          sourceOrg: mapIndicatorSourceV148(record.indicatorId, record.provenance.sourceOrg || "") || null,
+          sourceOrg: mapIndicatorSourceV148(record.indicatorId, record.provenance.sourceOrg || "", layer.countryIso3) || null,
           selectionKey: record.recordId,
           approximate: prepared.approximateRecordIds.has(record.recordId),
           memberCount: prepared.membersByRecordId.get(record.recordId)?.length || 1,
@@ -505,7 +563,8 @@ export function featureCollection(
           const hit = location.sidecar.byRecordId[record.recordId];
           properties.adm1Code = hit?.adm1Code ?? null;
           properties.unitCode = hit?.unitCode ?? null;
-          properties.locationLabelV151 = pointLocationLabelV151(hit, location.system);
+          properties.locationLabelV151 = pointLocationLabelV151(hit, location.system, attrs, layer.countryIso3);
+          properties.locationOutsideV164 = hit === null;
         }
         // Facts come from the layer's own contract, which names the source key
         // each one lives under. Reading a fixed field name instead is what left

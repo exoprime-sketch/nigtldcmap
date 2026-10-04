@@ -41,24 +41,35 @@ export function createMapPointPopupV152({
   // the drawn feature does not carry those lines (Bangladesh A-023 sites).
   const locationRow = allRows?.find((row) => row.key === "location" && !row.missing);
   const sourceRow = allRows?.find((row) => row.key === "source" && !row.missing);
-  const location = publicTextV126(properties.locationLabelV151) || (compact && locationRow ? locationRow.value.replace(/\s·\s개편 후 34개 기준.*$/u, "") : "");
+  // V164: the title is the feature's name, so a 이름 row carrying the same
+  // text (A-027 roads) says it twice and pushes a real row out of the three.
+  const title = mapPointPopupTitleV152(layer, properties);
+  const facts = mapFactsV148(layer, properties).filter(
+    (fact) => fact.key !== "sourceLabel" && !(fact.key === "name" && fact.value.trim() === title.trim())
+  );
+  // V164: locationLabelV151 is the whole phrase ("소재 …", "국외 지점 (…)",
+  // "해상 지점 (…)"). A point outside every province whose facts already carry
+  // a 소재 line (B-008 "소재 중부 — 다낭") is not told its place twice.
+  const outside = properties.locationOutsideV164 === true;
+  const factsStateLocation = facts.some((fact) => fact.label === "소재" || fact.label === "소재지");
+  const location =
+    (outside && factsStateLocation ? "" : publicTextV126(properties.locationLabelV151)) ||
+    (compact && locationRow ? `소재 ${locationRow.value.replace(/\s·\s개편 후 34개 기준.*$/u, "")}` : "");
+  // V164: Bangladesh organisation points carry the delivery's own precision
+  // ("행정구역(구역) 중심점") instead of the `approximate` flag; both mean the
+  // point is the area's representative position, not the office or site itself.
+  const representativePoint = Boolean(properties.approximate) || /중심점/u.test(String(properties.locationPrecision ?? ""));
   const sourceLine = mapSourceLineV148(properties) || (compact && sourceRow ? sourceRow.value.split(" · ")[0] : "");
   return createMapFeaturePopupV148({
     elementId: layer.elementId,
     selectionKey: String(properties.selectionKey ?? properties.recordId ?? ""),
-    title: mapPointPopupTitleV152(layer, properties),
+    title,
     dataset: publicMapLayerTitleV126(layer.elementId, layer.publicShortTitle),
     primary,
-    facts: mapFactsV148(layer, properties).filter((fact) => fact.key !== "sourceLabel"),
+    facts,
     source: sourceLine,
     rows: rows?.map((row) => ({ key: row.key, label: row.label, value: row.value, missing: row.missing })),
     iconSvg: category ? mapIconSvg(category.iconId, { size: 16, color: "#20343a" }) : undefined,
-    note:
-      [
-        properties.approximate ? "소재 지역의 대표 위치" : "",
-        !locationShown && location ? `소재 ${location}` : "",
-      ]
-        .filter(Boolean)
-        .join(" · ") || undefined,
+    note: [representativePoint ? "소재 지역의 대표 위치" : "", !locationShown && location ? location : ""].filter(Boolean).join(" · ") || undefined,
   });
 }

@@ -328,7 +328,7 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
   const coverageCaption = model.coverage
     ? regionCoverageCaptionV164({ ...model.coverage, missing: model.coverage.missingNames, unitWord: level1V163?.label || "지역" })
     : "";
-  const sliceSources = [...new Set(model.values.map((v) => mapIndicatorSourceV148(v.sourceIndicatorId || "")).filter(Boolean))];
+  const sliceSources = [...new Set(model.values.map((v) => mapIndicatorSourceV148(v.sourceIndicatorId || "", "", countryIso3)).filter(Boolean))];
   return <section className="detail-map148" data-testid="detail-location-map-v148" data-element-id={elementId} data-map-variable={slice.variable} data-map-period={pointPeriod} data-map-period-label={periodLabel} data-map-count={data ? model.values.length : geometry ? model.features.length : model.points.length}>
     <header><div><h3>{data ? "지역별 분포" : layer.renderer === "line" ? lineMapTitleV164(model.lineKind || "voltage") : "위치 살펴보기"}</h3><p><PublicTermTextV134 text={`${(model.variable?.label && model.variable.label !== "전체" ? model.variable.label : "") || layer.publicShortTitle}${periodLabel ? ` · ${periodLabel}` : ""}${units && data ? ` · ${units}` : ""}`} /></p></div>
       <button className="cdp-button cdp-button--secondary" data-testid={compact ? "home-hero-map-link-v139" : "detail-map-open-v152"} type="button" onClick={() => onOpenMap(elementId, countryIso3, handoff, miniMapHandoffV152(cameraRef.current, slice))}>큰 지도에서 비교</button>
@@ -416,7 +416,7 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
         <label>지역·대상 선택<select aria-label="작은 지도 지역·대상 선택" value={picked} onChange={(e) => setPicked(e.target.value)}><option value="">지도 또는 목록에서 선택</option>{model.options.map((o) => <option key={o.id} value={o.id}>{o.label}</option>)}</select></label>
         {current ? <><h4>{current.label}</h4>{current.value !== null && <p className="detail-map148-value">{formatPublicNumberV126(current.value, units)} {units}</p>}{current.sourceRegion && <p className="detail-map148-note">{formatRegionTextV162({ country: countryIso3, raw: current.sourceRegion })} 단위로 제공된 값입니다.</p>}
           {facility && facilityCardSpecV153(elementId) ? <FacilityCardV153 elementId={elementId} entity={facility} compact /> : <dl>{selectedFacts.map((f) => <div key={f.key}><dt>{f.label}</dt><dd>{/^https?:\/\//.test(f.value) ? <a href={f.value} target="_blank" rel="noreferrer">공식 원문</a> : f.value}</dd></div>)}</dl>}
-          {point && <p className="detail-map148-note">{[mapIndicatorSourceV148(point.indicatorId, publicSourceOrganizationV136_1(point.provenance.sourceOrg) || ""), point.provenance.referenceYear].filter(Boolean).join(" · ")}</p>}
+          {point && <p className="detail-map148-note">{[mapIndicatorSourceV148(point.indicatorId, publicSourceOrganizationV136_1(point.provenance.sourceOrg) || "", countryIso3), point.provenance.referenceYear].filter(Boolean).join(" · ")}</p>}
         </> : <p className="detail-map148-note">위치를 선택하면 지역 값이나 대상의 주요 정보를 확인할 수 있습니다.</p>}
         {["B-023", "B-025", "B-028"].includes(elementId) && <p className="detail-map148-note">관측지점 또는 대표 위치입니다. 유역 경계와 영향 범위를 나타내지 않습니다.</p>}
         {elementId === "B-021" && <p className="detail-map148-note">6개 권역의 값을 소속 성·시에 표시합니다. 성·시별 독립값이 아닙니다.</p>}

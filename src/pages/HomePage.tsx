@@ -13,6 +13,7 @@ import { EMPTY_DATA_FINDER_SELECTOR_STATE_V125, type DataFinderSelectorStateV125
 import FinderCardSummaryV140 from "../components/catalog/FinderCardSummaryV140";
 import { PublicTermTextV134 } from "../components/help/PublicTermV134";
 import { getCardSpecForCountryV158 } from "../data/spec/countrySpecV158";
+import { publicItemNameV164 } from "../data/spec/publicItemNameV164";
 import "../styles/home-final-v13.css";
 const DetailLocationMapV148 = lazy(() => import("../components/data/public/DetailLocationMapV148"));
 
@@ -116,7 +117,7 @@ export default function HomePage({ query, onQueryChange, onSubmit, onSearchExamp
           const card = summaries.get(item.elementId);
           const date = datasetDatesV149.get(item.elementId);
           const spec = getCardSpecForCountryV158(item.elementId, item.countryIso3, item);
-          const title = spec?.baseName || item.publicTitle;
+          const title = publicItemNameV164(item);
           return <article key={item.elementId} className="home-featured-v139__card" data-element-id={item.elementId} aria-labelledby={"home-card-" + item.elementId}>
             {spec?.sourceLabel ? <div className="home-featured-v139__source" data-testid="home-card-source-v159"><PublicTermTextV134 text={spec.sourceLabel} /></div> : null}
             <h3 id={"home-card-" + item.elementId}><PublicTermTextV134 text={title} /></h3>

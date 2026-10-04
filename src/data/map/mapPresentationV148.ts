@@ -55,8 +55,54 @@ export function publicMapFieldsV148(layer: CountryMapLayerV122): VietnamMapFactF
     .sort((a, b) => (order.includes(a.key) ? order.indexOf(a.key) : 100) - (order.includes(b.key) ? order.indexOf(b.key) : 100));
 }
 
-export function mapIndicatorSourceV148(indicatorId: string | null | undefined, fallback = ""): string {
-  return publicSourceOrganizationV136_1((sourceByIndicator as Record<string, string>)[indicatorId || ""] || fallback) || "";
+/**
+ * V164: a source line is the organisations that published the data, said once.
+ *
+ * Two kinds of segment crept into the delivered strings and are dropped here
+ * (the strings are generated, so the reader is where they are cleaned):
+ *   - a processing remark ("좌표보정 GADM 4.1" on B-012), which says how the
+ *     platform treated the coordinates, not who published them;
+ *   - the same organisation written a second time ("Global Forest Watch (UMD/WRI,
+ *     Hansen et al. 2013) · … · Global Forest Watch / Hansen et al.(2013), UMD" on
+ *     B-031), recognised by the name before the first "(" or "/".
+ * A boundary note ("경계 GADM 4.1 ADM1") is a different segment and stays.
+ */
+export function publicSourceLineV164(line: string): string {
+  const seen = new Set<string>();
+  const kept: string[] = [];
+  for (const segment of line.split(/\s+·\s+/u)) {
+    const text = segment.trim();
+    if (!text || /^좌표\s*보정/u.test(text)) continue;
+    // A citation ("기관 — 법령 번호") names a distinct document, so it is only
+    // dropped when written out in full twice; a plain organisation is dropped
+    // when its name was already given.
+    const key = text.includes("—") ? text.toLowerCase() : text.split(/\s*[(/]/u)[0].trim().toLowerCase();
+    if (key && seen.has(key)) continue;
+    if (key) seen.add(key);
+    kept.push(text);
+  }
+  return kept.join(" · ");
+}
+
+/**
+ * The public source line for a record of `indicatorId`.
+ *
+ * V164-4: `mapSourcesV148.json` was compiled from the Viet Nam delivery, and
+ * Bangladesh reuses the same indicator ids (B-048_mine_site, B-023_hydro_site,
+ * E-004_*), so a Bangladesh record read "USGS Minerals Yearbook Vietnam" or
+ * "MRC (2009)". The table answers for Viet Nam only; any other country reads
+ * the record's own source (`fallback`).
+ */
+export function mapIndicatorSourceV148(
+  indicatorId: string | null | undefined,
+  fallback = "",
+  countryIso3: string | null | undefined = "VNM"
+): string {
+  const registry =
+    !countryIso3 || countryIso3.toUpperCase() === "VNM"
+      ? (sourceByIndicator as Record<string, string>)[indicatorId || ""]
+      : undefined;
+  return publicSourceLineV164(publicSourceOrganizationV136_1(registry || fallback) || "");
 }
 
 export function mapFactValueV148(fact: VietnamMapFactFieldV137, attributes: Record<string, unknown>): unknown {

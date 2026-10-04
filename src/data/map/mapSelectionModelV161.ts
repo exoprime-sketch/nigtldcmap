@@ -16,6 +16,7 @@
  *     ("Thanh Hóa · Nghệ An") is split and formatted one name at a time;
  *   - no raw key, internal code or personal contact detail reaches a line.
  */
+import { severityLabelV157 } from "../../map/layers/unitFeaturesV157";
 import { formatRegionName } from "../geo/regionNameV161";
 import type { RegionLevelV161 } from "../geo/regionNameV161";
 
@@ -120,6 +121,12 @@ export interface RankInputV161 {
   unit?: string | null;
   /** What the peers are ("34개 성·시", "전압 등급"). */
   peerLabel: string;
+  /**
+   * V164-4: false for a count of records per region (the D-group "지역이
+   * 확인된 사업 수"): an average over only the regions that have a record,
+   * "−0.75 건 (평균 2.75 건)", says nothing about a region. The rank stays.
+   */
+  withAverage?: boolean;
 }
 
 /**
@@ -128,7 +135,7 @@ export interface RankInputV161 {
  * Returns nothing when the value is missing or there is nothing to compare with,
  * so the panel shows no rank rather than a rank of one.
  */
-export function rankLinesV161({ value, peers, unit, peerLabel }: RankInputV161): MapSelectionLineV161[] {
+export function rankLinesV161({ value, peers, unit, peerLabel, withAverage = true }: RankInputV161): MapSelectionLineV161[] {
   if (typeof value !== "number" || !Number.isFinite(value)) return [];
   const usable = peers.filter((peer) => typeof peer === "number" && Number.isFinite(peer));
   if (usable.length < 2) return [];
@@ -139,6 +146,7 @@ export function rankLinesV161({ value, peers, unit, peerLabel }: RankInputV161):
   const lines: MapSelectionLineV161[] = [
     { label: `${peerLabel} 중 순위`, value: `${rank}위 / ${usable.length}개` },
   ];
+  if (!withAverage) return lines;
   const difference = value - average;
   lines.push({
     label: `${peerLabel} 평균 대비`,
@@ -160,10 +168,12 @@ export function categoryShareLinesV161(
   const own = categoryCounts[categoryLabel] ?? 0;
   if (total === 0 || own === 0) return [];
   const share = Math.round((own / total) * 1000) / 10;
+  // V164: the band reads as the legend and the 분류 row do ("높음 (3-4)", not
+  // the source's "High (3-4)"); the counts are keyed by the source label.
   return [
     {
       label: `같은 분류 비중`,
-      value: `${categoryLabel} ${own.toLocaleString()}개 / ${peerLabel} ${total.toLocaleString()}개 (${share}%)`,
+      value: `${severityLabelV157(categoryLabel).text} ${own.toLocaleString()}개 / ${peerLabel} ${total.toLocaleString()}개 (${share}%)`,
     },
   ];
 }

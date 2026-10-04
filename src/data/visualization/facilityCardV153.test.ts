@@ -59,7 +59,61 @@ test("E-006 cards separate a Vietnam office from a head office abroad", () => {
   const patamar = entities.find((row: never) => (row as { name?: string }).name === "Patamar Capital")!;
   expect(byKey(facilityCardRowsV153("E-006", ifc)).location.value).toContain("Washington, D.C.");
   expect(byKey(facilityCardRowsV153("E-006", patamar)).location.value).toContain("호찌민 (Hồ Chí Minh)");
-  expect(byKey(facilityCardRowsV153("E-006", patamar)).hq.value).toBe("USA");
+  // V164: the ISO code the delivery stores reads as the country's name.
+  expect(byKey(facilityCardRowsV153("E-006", patamar)).hq.value).toBe("미국");
+});
+
+test("V164: A-025 names the facility the record states, not 미기재 next to a title that has it", () => {
+  const [vung] = (inflate(source("a-025")) as unknown as VietnamEntityV124[]).filter((row) => /Vung Ang/u.test(String(row.note || "")));
+  expect(vung).toBeDefined();
+  const card = byKey(facilityCardRowsV153("A-025", vung));
+  expect(card.type.value).toBe("Power (coal)");
+  expect(card.name.value).toMatch(/Vung Ang/u);
+  expect(card.name.missing).toBe(false);
+  // The source reads as its publisher; the link stays on the row.
+  expect(card.source.value).not.toMatch(/^www\.|^https?:/u);
+  expect(card.source.href).toContain("globalccsinstitute.com");
+});
+
+test("V164: B-048 reads its province and its source from where the record states them", () => {
+  const mines = inflate(source("b-048")) as unknown as VietnamEntityV124[];
+  const bauxite = mines.find((row) => row.name === "Bauxite - Vietnam")!;
+  const card = byKey(facilityCardRowsV153("B-048", bauxite));
+  expect(card.location.missing).toBe(false);
+  expect(card.location.value).toContain("꽝찌 (Quảng Trị)");
+  expect(card.location.value).not.toBe("미기재");
+  expect(card.source.missing).toBe(false);
+  expect(card.source.value).toContain("USGS");
+});
+
+// Reads a Bangladesh element's download (BGD_DIR_V164 is set up below; this runs inside a test).
+function bgdDownloadV164(id: string) {
+  return JSON.parse(readZipMembersV158(resolve(BGD_DIR_V164, `downloads/${id}.zip`)).get(`${id}.json`)!.toString("utf8"));
+}
+
+test("V164: Bangladesh E-018 and B-048 cards read the delivery's own column names", () => {
+  const firms = inflate(bgdDownloadV164("e-018")) as unknown as VietnamEntityV124[];
+  const kunhwa = byKey(facilityCardRowsV153("E-018", firms.find((row) => String(row.name).startsWith("(주)건화"))!));
+  expect(kunhwa.country.value).toBe("방글라데시");
+  // The panel shows 업종·진출형태 for this firm; the card no longer prints 미기재 for them.
+  expect(kunhwa.business.value).toContain("엔지니어링·컨설팅");
+  expect(kunhwa.business.missing).toBe(false);
+  expect(kunhwa.source.missing).toBe(false);
+  expect(kunhwa.source.value).not.toMatch(/^www\.|^https?:/u);
+  expect(kunhwa.source.href).toContain("data.go.kr");
+  for (const firm of firms) {
+    const card = byKey(facilityCardRowsV153("E-018", firm));
+    expect(card.source.missing).toBe(false);
+    expect(card.source.value).not.toMatch(/^www\.|^https?:/u);
+  }
+  const mines = inflate(bgdDownloadV164("b-048")) as unknown as VietnamEntityV124[];
+  const plant = mines.find((row) => /Phosphoric/u.test(String(row.name)))!;
+  const mine = byKey(facilityCardRowsV153("B-048", plant));
+  // The record states Chittagong and USGS MRDS; neither prints as 미기재.
+  expect(mine.location.value).toContain("치타공 (Chittagong)");
+  expect(mine.location.value).not.toContain("원문 표기");
+  expect(mine.location.value).not.toMatch(/34개|63개|성·시/u);
+  expect(mine.source.value).toContain("USGS MRDS");
 });
 
 test("C-025 card prints 미기재 for an unstated reduction, never 0", () => {

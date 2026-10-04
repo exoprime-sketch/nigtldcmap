@@ -7,6 +7,13 @@ import type { Map as MapLibreMap } from "maplibre-gl";
 import type { MapLayerRuntimeIdsV152 } from "./ids";
 import type { ChoroplethCollectionV151 } from "./types";
 
+/**
+ * V164-4: the low end of every choropleth ramp. #e6f2ea read as "no value"
+ * next to a transparent missing region (a count layer's "1 건"); this pale
+ * green is still light but visibly filled.
+ */
+export const CHOROPLETH_RAMP_START_V164 = "#cfe5d7";
+
 /** Missing provinces stay transparent; values run from pale green to the layer colour. */
 export function choroplethFillColorV152(
   color: string,
@@ -27,7 +34,7 @@ export function choroplethFillColorV152(
               ["linear"],
               ["to-number", ["get", "value"]],
               choropleth.minimum,
-              "#e6f2ea",
+              CHOROPLETH_RAMP_START_V164,
               choropleth.maximum,
               color,
             ],

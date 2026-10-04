@@ -1000,14 +1000,160 @@ export const PUBLIC_INDICATOR_INTERPRETATIONS_V129: readonly PublicIndicatorInte
     },
   ]);
 
+/**
+ * V164: explanations that follow the variable the map actually draws.
+ *
+ * The element-level entries above were written for one reading of the element
+ * (B-041 "계절변동 지수", C-013 "소액투자자 보호 지표", C-022 "탄소시장 준비도"),
+ * but the Viet Nam layers draw other measures (GHI/DNI/PVOUT/최적 경사각 means,
+ * the count of regional-incentive provisions, the count of target facilities),
+ * so the "지표 읽는 법" beside the map described a different indicator.
+ *
+ * These entries are consulted before the registry and carry no `publicUnit`, so
+ * the layer's own label and unit stay the ones the selector states. They live
+ * outside PUBLIC_INDICATOR_INTERPRETATIONS_V129 on purpose: that array is mirrored
+ * into interpretation/indicator-interpretation-v129.json by
+ * scripts/build-vietnam-interpretation-v129.mjs (parity-checked), and that script
+ * evaluates this file without a module loader, so it must stay import-free.
+ */
+function overrideV164(
+  elementId: string,
+  variableKey: string | undefined,
+  publicName: string,
+  meaningBullets: string[],
+  direction: PublicIndicatorDirectionV129,
+  directionLabel: string
+): PublicIndicatorInterpretationV129 {
+  return {
+    elementId,
+    ...(variableKey ? { variableKey } : {}),
+    explanationRequired: true,
+    publicName,
+    meaningBullets,
+    direction,
+    directionLabel,
+    officialBands: null,
+    benchmarkType: "none",
+  };
+}
+
+const B041_MEAN_NOTE_V164 =
+  "성·시 값은 약 250m 격자를 면적(위도) 가중 평균한 값입니다.";
+
+const FACILITY_COUNT_NOTE_V164 = [
+  "선택한 업종의 대상 시설이 성·시마다 몇 곳인지 센 값입니다.",
+  "시설이 많고 적음은 제도 준비 수준이나 성과의 높고 낮음이 아니라 대상 시설의 분포를 나타냅니다.",
+];
+
+export const PUBLIC_INDICATOR_INTERPRETATION_OVERRIDES_V164: readonly PublicIndicatorInterpretationV129[] =
+  Object.freeze([
+    overrideV164(
+      "B-041",
+      "ghi-mean",
+      "수평면 전일사량(GHI, 평균)",
+      [
+        "수평면이 하루 동안 받는 태양 에너지(직사광과 산란광의 합)를 성·시별 평균으로 보여줍니다.",
+        "값이 클수록 같은 면적에서 얻을 수 있는 햇빛 에너지가 많으며, 태양광 설비를 검토할 때 보는 값입니다.",
+        B041_MEAN_NOTE_V164,
+      ],
+      "higher-better",
+      "값이 클수록 같은 면적에서 얻는 햇빛 에너지가 많음"
+    ),
+    overrideV164(
+      "B-041",
+      "dni-mean",
+      "직달 일사량(DNI, 평균)",
+      [
+        "태양을 향해 수직으로 놓은 면이 하루 동안 받는 직사광 에너지를 성·시별 평균으로 보여줍니다.",
+        "값이 클수록 같은 면적에서 얻을 수 있는 햇빛 에너지가 많으며, 집광형 태양열 설비를 검토할 때 보는 값입니다.",
+        B041_MEAN_NOTE_V164,
+      ],
+      "higher-better",
+      "값이 클수록 같은 면적에서 얻는 직사광 에너지가 많음"
+    ),
+    overrideV164(
+      "B-041",
+      "pvout-mean",
+      "실용 발전량(PVOUT, 평균)",
+      [
+        "태양광 설비 1kWp가 하루에 만들 수 있는 전력량을 성·시별 평균으로 보여줍니다.",
+        "값이 클수록 같은 설비 용량에서 얻는 발전량이 많습니다.",
+        B041_MEAN_NOTE_V164,
+      ],
+      "higher-better",
+      "값이 클수록 같은 설비 용량에서 발전량이 많음"
+    ),
+    overrideV164(
+      "B-041",
+      "opta-mean",
+      "최적 경사각(평균)",
+      [
+        "태양광 패널을 지면에 대해 어느 각도로 기울이면 좋은지를 성·시별 평균 각도(°)로 보여줍니다.",
+        "일사량처럼 높을수록 유리한 값이 아니라 설치 각도를 정하는 참고값입니다.",
+        B041_MEAN_NOTE_V164,
+      ],
+      "neutral",
+      "높고 낮음의 우열이 아닌 설치 각도의 참고값"
+    ),
+    overrideV164(
+      "B-041",
+      undefined,
+      "태양 일사량·발전 잠재량",
+      [
+        "성·시별 수평면 전일사량(GHI)·직달 일사량(DNI)·실용 발전량(PVOUT)·최적 경사각을 보여줍니다.",
+        "일사량과 발전량은 값이 클수록 같은 면적·같은 설비 용량에서 얻는 에너지가 많습니다.",
+        "평균은 면적 가중 평균이고 최소·최대는 성·시 안 격자의 극값이므로 섞어서 읽지 않습니다.",
+      ],
+      "context-dependent",
+      "선택한 항목(일사량·발전량·경사각)의 정의에 따라 해석"
+    ),
+    overrideV164(
+      "C-013",
+      "special-incentive-provision-count",
+      "지역 특별 인센티브 근거 행 수",
+      [
+        "성·시별로 특별 인센티브(특별 메커니즘·비조세 지원)의 근거가 되는 법령 항목이 몇 행인지 센 값입니다.",
+        "행 수는 근거 항목의 수이며 인센티브의 금액이나 지원 건수가 아닙니다.",
+        "색이 없는 성·시는 원자료에 해당 근거가 없는 곳이며 0건이 아닙니다. 전국에 적용되는 규정은 지도에 그리지 않습니다.",
+      ],
+      "neutral",
+      "행 수가 많다고 혜택이 크다는 뜻은 아님"
+    ),
+    overrideV164(
+      "C-013",
+      undefined,
+      "외국인 투자 규제",
+      [
+        "외국인 지분 보유 제한, 세제·경제특구 인센티브, 투자보호협정, 수익 송금 규정을 법령 근거와 함께 보여줍니다.",
+        "값이 서술형이고 나라마다 원천이 달라 나라끼리 점수로 비교하지 않습니다.",
+      ],
+      "neutral",
+      "점수의 높고 낮음이 아닌 규정 내용과 시행일로 해석"
+    ),
+    ...["facilities-industry-trade", "facilities-transport", "facilities-construction", "facilities-agri-environment"].map(
+      (key) =>
+        overrideV164(
+          "C-022",
+          key,
+          "탄소시장 대상시설 수",
+          FACILITY_COUNT_NOTE_V164,
+          "neutral",
+          "시설 수가 많고 적음은 우열이 아닌 분포의 차이"
+        )
+    ),
+  ]);
+
 export function getPublicIndicatorInterpretationV129(
   elementId: string,
   variableKey?: string | null,
   indicatorId?: string | null
 ): PublicIndicatorInterpretationV129 | null {
-  const candidates = PUBLIC_INDICATOR_INTERPRETATIONS_V129.filter(
-    (item) => item.elementId === elementId
-  );
+  // V164: variable-level overrides come first so they win both the
+  // variableKey match and the element default below.
+  const candidates = [
+    ...PUBLIC_INDICATOR_INTERPRETATION_OVERRIDES_V164,
+    ...PUBLIC_INDICATOR_INTERPRETATIONS_V129,
+  ].filter((item) => item.elementId === elementId);
   if (candidates.length === 0) return null;
 
   if (variableKey) {

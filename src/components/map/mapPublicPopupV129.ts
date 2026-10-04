@@ -101,8 +101,11 @@ export function boundaryPopupLineV151(properties: Record<string, unknown>, unit:
     switch (summary.kind) {
       case "native-34":
         return `개편 후 34개 기준 원자료 값${single ? "" : ` · ${coverage}`}${flags}`;
+      // V164: a unit that was not merged has nothing to explain about the
+      // merger - the line is empty, as it is for the other kinds below, instead
+      // of the processing remark "개편에서 합쳐지지 않은 성·시".
       case "sum":
-        return single ? "개편에서 합쳐지지 않은 성·시" : `${coverage} 합계${range}${flags}`;
+        return single ? "" : `${coverage} 합계${range}${flags}`;
       case "count-sum":
         return single ? "" : `${coverage} 문서 수 합계${flags}`;
       case "membership-or":
@@ -113,7 +116,7 @@ export function boundaryPopupLineV151(properties: Record<string, unknown>, unit:
             ? `구성 ${summary.memberCount}개 성·시 중 참여 ${summary.valueCount}개${flags}`
             : `구성 ${summary.memberCount}개 성·시 · 참여 없음${flags}`;
       case "area-weighted-mean":
-        return single ? "개편에서 합쳐지지 않은 성·시" : `${coverage} 면적가중평균${range}${flags}`;
+        return single ? "" : `${coverage} 면적가중평균${range}${flags}`;
       default:
         return single ? "" : `${coverage}${range}${flags}`;
     }

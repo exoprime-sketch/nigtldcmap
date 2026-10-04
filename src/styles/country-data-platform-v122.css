@@ -1641,6 +1641,11 @@
   overflow: auto;
   margin-top: 16px;
   padding: 2px;
+  /* V164-4: the scroll box is the containing block of its .sr-only labels
+     (position: absolute). Without it each hidden label sat in the document's
+     own coordinate space at its list row's offset and stretched the page by
+     thousands of pixels below the footer. */
+  position: relative;
 }
 
 .cdp-download-item {
@@ -1748,6 +1753,11 @@
 
 .cdp-download-item strong {
   line-height: 1.45;
+  /* V164-4: a title breaks at its spaces, not inside a word ("경제성 / 장");
+     a single word wider than the box still wraps instead of overflowing. */
+  min-width: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .cdp-download-item small {
@@ -2463,9 +2473,12 @@
   width: 100%;
 }
 
+/* V164-4: one column - the colour bar, then its two ends, then the value
+   count. Three columns squeezed the count to one character per line when the
+   ends were long (B-034 "-108,822,184 Mg CO2e"). */
 .cdp-map-legend__scale {
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 1fr;
   align-items: center;
   gap: 6px;
   margin-top: 7px;

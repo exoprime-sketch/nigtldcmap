@@ -1,0 +1,224 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "D-014",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2025",
+    "defaultVariable": "d-014-located-count",
+    "periods": [
+      "2025"
+    ],
+    "variables": [
+      {
+        "key": "d-014-located-count",
+        "label": "지역이 확인된 사업 수",
+        "measureId": "d-014-located-count",
+        "measureKey": "d-014-located-count",
+        "unit": "건",
+        "periods": [
+          "2025"
+        ],
+        "maxFeatureCount": 4
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "d-014-located-count",
+        "variableLabel": "지역이 확인된 사업 수",
+        "unit": "건",
+        "period": "2025",
+        "sourceIndicatorId": null,
+        "values": [
+          null,
+          4,
+          4,
+          1,
+          null,
+          null,
+          1,
+          null
+        ]
+      }
+    ]
+  },
+  "memberRecords": {
+    "BGD.2_1": [
+      {
+        "recordId": "bgd-v162-d-014-entity-00011",
+        "label": "반달쥬리 상수도 개발사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Chattogram",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-014-entity-00013",
+        "label": "반달쥬리 상수도 개발사업(보충융자)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Chattogram",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-014-entity-00068",
+        "label": "방글라데시 카르나풀리 철도/도로 교량 건설사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Chittagong",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-014-entity-00040",
+        "label": "철도신호시스템 현대화사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Chattogram",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "BGD.3_1": [
+      {
+        "recordId": "bgd-v162-d-014-entity-00008",
+        "label": "다카 상수도 개발사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-014-entity-00014",
+        "label": "다카상하수도청 국제교육연구센터 건립사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-014-entity-00032",
+        "label": "대기환경 개선을 위한 CNG 버스 구매사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-014-entity-00082",
+        "label": "친환경 CNG 버스 구매사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "BGD.4_1": [
+      {
+        "recordId": "bgd-v162-d-014-entity-00002",
+        "label": "제2차 송배전사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Khulna",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "BGD.7_1": [
+      {
+        "recordId": "bgd-v162-d-014-entity-00006",
+        "label": "방글라데시 비비야나-칼리아코 송전망 개발사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Sylhet",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "d-014-located-count",
+      "period": "2025",
+      "expectedCount": 8,
+      "matchedCount": 4,
+      "missingCount": 4,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "대한민국 ODA 통합보고(OECD CRS) — 한국수출입은행(EDCF) 보고분"
+    ],
+    "licenses": [
+      "공공누리 제1유형"
+    ],
+    "attribution": [
+      "대한민국 ODA 통합보고(OECD CRS) — 한국수출입은행(EDCF) 보고분 — 공공누리 제1유형. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://stats.odakorea.go.kr/portal/oda/spot/statistics"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 4,
+    "maxSeriesFeatureCount": 4,
+    "missingAdm1Count": 4,
+    "providedZeroCount": 0,
+    "publishedValueCount": 4,
+    "sourceValueCount": 10,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0,
+    "mappingMethod": "stated-division-count"
+  }
+}

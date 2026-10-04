@@ -1,0 +1,236 @@
+/* ------------------------------------------------------------------
+ * V164-4: the cards over the data map.
+ *
+ * Measured with 발전소 on (VNM): the outline card (246x160), the item card
+ * (231x106) and the legend (320x331-380) covered 45% of the map at 1280x720,
+ * 38% at 1366x768 and 30% at 1440x900, and at 1280x800 the item card ran
+ * 18px into the legend. Now:
+ *   - the outline choice is a two-way switch beside the zoom buttons, its
+ *     explanation behind the ⓘ;
+ *   - the item stepper is one line inside the legend;
+ *   - the legend's three fact tiles are one caption line, and a single
+ *     dataset's "현재 표시 중" row no longer repeats the legend title.
+ * This file loads after the other map sheets and only overrides them.
+ * ------------------------------------------------------------------ */
+
+/* 1. Outline switch: top right, left of the zoom buttons. */
+.cdp-map-canvas-wrap .cdp-map-boundary-compact-v164 {
+  position: absolute;
+  z-index: 8;
+  top: 10px;
+  right: 50px;
+  width: auto;
+  max-width: calc(100% - 64px);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 4px 3px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.cdp-map-canvas-wrap .cdp-map-boundary-compact-v164 fieldset {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+}
+
+.cdp-map-canvas-wrap .cdp-map-boundary-compact-v164 legend {
+  float: left;
+  margin-right: 4px;
+  color: #37524f;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.cdp-map-canvas-wrap .cdp-map-boundary-compact-v164 label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 28px;
+  padding: 2px 8px 2px 6px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.cdp-map-canvas-wrap .cdp-map-boundary-compact-v164 label:has(input:checked) {
+  background: #e3f1ec;
+  color: #0b5a4f;
+  font-weight: 700;
+}
+
+.cdp-map-canvas-wrap .cdp-map-boundary-compact-v164 input {
+  width: 14px;
+  height: 14px;
+  margin: 0;
+}
+
+.cdp-map-boundary-info-v164 {
+  position: relative;
+  flex: none;
+}
+
+.cdp-map-boundary-info-v164 > summary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  color: #315b4c;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  list-style: none;
+}
+
+.cdp-map-boundary-info-v164 > summary::-webkit-details-marker {
+  display: none;
+}
+
+.cdp-map-boundary-info-v164 > summary:hover,
+.cdp-map-boundary-info-v164 > summary:focus-visible,
+.cdp-map-boundary-info-v164[open] > summary {
+  background: #e3f1ec;
+  outline: none;
+}
+
+.cdp-map-canvas-wrap .cdp-map-boundary-info-v164 > p {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  width: min(280px, 70vw);
+  margin: 0;
+  padding: 8px 10px;
+  border: 1px solid #aabfc2;
+  border-radius: 9px;
+  background: #fff;
+  box-shadow: 0 6px 18px #15353b26;
+  color: #37524f;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* 2. The status card shows only while there is something to say (no data
+      chosen yet, or the chosen data loading). */
+.cdp-map-canvas-wrap .cdp-map-overlay-card.is-idle-v164 {
+  display: none;
+}
+
+/* 3. Legend. It sits 10px above the map credit, whose height the page
+      measures (--cdp-map-credit-clear-v164); 58px is the two-line credit. */
+.cdp-map-canvas-wrap .cdp-map-legend {
+  bottom: calc(var(--cdp-map-credit-clear-v164, 48px) + 10px);
+}
+
+@media (min-width: 769px) {
+  .cdp-map-canvas-wrap .cdp-map-legend {
+    width: min(300px, calc(100% - 32px));
+    max-height: min(44%, 400px);
+    padding: 8px 10px;
+  }
+}
+
+.cdp-map-canvas-wrap .cdp-map-legend__header {
+  padding-bottom: 6px;
+}
+
+/* The stepper is one line; it stays when the legend is folded. */
+.cdp-map-canvas-wrap .cdp-map-legend .cdp-map-keyboard-feature-nav {
+  grid-template-columns: 32px minmax(0, 1fr) 32px;
+  gap: 4px;
+  margin: 6px 0 0 !important;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.cdp-map-canvas-wrap .cdp-map-legend .cdp-map-keyboard-feature-nav button {
+  min-width: 32px;
+  min-height: 32px;
+  border-radius: 7px;
+}
+
+.cdp-map-canvas-wrap .cdp-map-legend .cdp-map-keyboard-feature-nav button:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 3px 8px;
+}
+
+.cdp-map-canvas-wrap .cdp-map-legend .cdp-map-keyboard-feature-nav button:nth-child(2) span {
+  font-size: 0.7rem;
+}
+
+.cdp-map-canvas-wrap .cdp-map-legend .cdp-map-keyboard-feature-nav button:nth-child(2) small {
+  flex: none;
+  margin: 0;
+}
+
+.cdp-map-canvas-wrap .cdp-map-legend.is-collapsed > .cdp-map-keyboard-feature-nav {
+  display: grid !important;
+}
+
+.cdp-map-canvas-wrap .cdp-map-legend.is-collapsed {
+  max-width: min(300px, calc(100% - 32px));
+}
+
+/* The three fact tiles (항목·단위·자료연도) read as one caption line. */
+.cdp-map-canvas-wrap .cdp-map-legend__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 10px;
+  margin: 6px 0;
+}
+
+.cdp-map-canvas-wrap .cdp-map-legend__facts div {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  min-width: 0;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+}
+
+.cdp-map-canvas-wrap .cdp-map-legend__facts dd {
+  margin: 0;
+  font-size: 0.72rem;
+}
+
+/* One dataset: its row would repeat the legend title; keep its line (drawing
+   rule, approximate positions) and its 표시 끄기. */
+.cdp-map-canvas-wrap .cdp-map-active-legend[data-active-layer-count="1"] > strong,
+.cdp-map-canvas-wrap .cdp-map-active-legend[data-active-layer-count="1"] li > span > strong {
+  display: none;
+}
+
+.cdp-map-canvas-wrap .cdp-map-active-legend[data-active-layer-count="1"] {
+  margin-top: 4px;
+  padding-bottom: 6px;
+}
+
+.cdp-map-canvas-wrap .cdp-map-active-legend[data-active-layer-count="1"] ul {
+  margin-top: 0;
+}
+
+.cdp-map-canvas-wrap .cdp-map-active-legend[data-active-layer-count="1"] li {
+  padding: 4px 6px;
+}
+
+.cdp-map-canvas-wrap .cdp-map-active-legend__toggle {
+  min-height: 32px;
+}
+
+/* 4. Phones: the switch takes the free top-left corner (the status card is
+      hidden once data is shown). */
+@media (max-width: 768px) {
+  .cdp-map-canvas-wrap .cdp-map-boundary-compact-v164 {
+    top: 10px;
+    right: auto;
+    left: 10px;
+  }
+
+}

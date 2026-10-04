@@ -1,0 +1,128 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "D-019",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2026",
+    "defaultVariable": "d-019-located-count",
+    "periods": [
+      "2026"
+    ],
+    "variables": [
+      {
+        "key": "d-019-located-count",
+        "label": "지역이 확인된 기술지원 사업 수",
+        "measureId": "d-019-located-count",
+        "measureKey": "d-019-located-count",
+        "unit": "건",
+        "periods": [
+          "2026"
+        ],
+        "maxFeatureCount": 1
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "d-019-located-count",
+        "variableLabel": "지역이 확인된 기술지원 사업 수",
+        "unit": "건",
+        "period": "2026",
+        "sourceIndicatorId": null,
+        "values": [
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  "memberRecords": {
+    "BGD.3_1": [
+      {
+        "recordId": "bgd-v162-d-019-entity-00005",
+        "label": "Development of Framework for Real-Time Transport Information Systems for Public Transport in Greater Dhaka",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-019_ctcn_ta_request_registry"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "d-019-located-count",
+      "period": "2026",
+      "expectedCount": 8,
+      "matchedCount": 1,
+      "missingCount": 7,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "Climate Technology Centre and Network (CTCN)"
+    ],
+    "licenses": [
+      "CTCN 웹사이트 이용약관"
+    ],
+    "attribution": [
+      "Climate Technology Centre and Network (CTCN) — CTCN 웹사이트 이용약관. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://www.ctc-n.org/open-data-export.csv"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 1,
+    "maxSeriesFeatureCount": 1,
+    "missingAdm1Count": 7,
+    "providedZeroCount": 0,
+    "publishedValueCount": 1,
+    "sourceValueCount": 1,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0,
+    "mappingMethod": "stated-division-count"
+  }
+}

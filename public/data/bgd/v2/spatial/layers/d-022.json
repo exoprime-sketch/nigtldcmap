@@ -1,0 +1,608 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "D-022",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2026",
+    "defaultVariable": "d-022-located-count",
+    "periods": [
+      "2026"
+    ],
+    "variables": [
+      {
+        "key": "d-022-located-count",
+        "label": "지역이 확인된 사업 수",
+        "measureId": "d-022-located-count",
+        "measureKey": "d-022-located-count",
+        "unit": "건",
+        "periods": [
+          "2026"
+        ],
+        "maxFeatureCount": 5
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "d-022-located-count",
+        "variableLabel": "지역이 확인된 사업 수",
+        "unit": "건",
+        "period": "2026",
+        "sourceIndicatorId": null,
+        "values": [
+          null,
+          7,
+          33,
+          3,
+          1,
+          null,
+          3,
+          null
+        ]
+      }
+    ]
+  },
+  "memberRecords": {
+    "BGD.2_1": [
+      {
+        "recordId": "bgd-v162-d-022-entity-00023",
+        "label": "Bangladesh: Electricity Distribution Modernization (Chattogram and Sylhet Divisions) Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Chattogram Division",
+        "indicatorId": "D-022_aiib_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00004",
+        "label": "Bangladesh: Southern Chattogram and Kaliakoir Transmission Infrastructure Development Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Chattogram Division",
+        "indicatorId": "D-022_aiib_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00088",
+        "label": "Chattogram - Coxs Bazar Highway Improvement Project (E/S)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Chattogram Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00076",
+        "label": "Chattogram Sewerage System Development ProjectEngineering Service",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Chattogram Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00228",
+        "label": "Chattogram Water Supply Improvement Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Chattogram Division",
+        "indicatorId": "D-022_mdb_dfi_ppp_investment_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00148",
+        "label": "Chattogram-Coxs Bazar Highway Improvement Project (I)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Chattogram Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00111",
+        "label": "Southern Chattogram Regional Development Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Chattogram Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      }
+    ],
+    "BGD.3_1": [
+      {
+        "recordId": "bgd-v162-d-022-entity-00290",
+        "label": "Air Quality Management Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_mdb_dfi_ppp_investment_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00212",
+        "label": "BD Dhaka Water Supply and Sanitation Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_mdb_dfi_ppp_investment_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00008",
+        "label": "Bangladesh: Dhaka Sanitation Improvement",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_aiib_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00005",
+        "label": "Bangladesh: Dhaka and West Zone Transmission Grid Expansion Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_aiib_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00018",
+        "label": "Bangladesh: North Dhaka Waste to Energy Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_aiib_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00300",
+        "label": "Clean Air and Sustainable Environment Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_mdb_dfi_ppp_investment_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00324",
+        "label": "Clean Air and Sustainable Environment Project - Additional Financing",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_mdb_dfi_ppp_investment_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00213",
+        "label": "Dhaka Environment and Water Project (DEW)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_mdb_dfi_ppp_investment_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00202",
+        "label": "Dhaka Integrated Urban Renewal Program",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_mdb_dfi_ppp_investment_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00193",
+        "label": "Dhaka MRT Development (Line-2) and Institutional Strengthening",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_mdb_dfi_ppp_investment_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00033",
+        "label": "Dhaka Mass Rapid Transit Development Project (I)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00165",
+        "label": "Dhaka Mass Rapid Transit Development Project (II)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00169",
+        "label": "Dhaka Mass Rapid Transit Development Project (III)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00161",
+        "label": "Dhaka Mass Rapid Transit Development Project (IV)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00142",
+        "label": "Dhaka Mass Rapid Transit Development Project (Line 1) (I)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00149",
+        "label": "Dhaka Mass Rapid Transit Development Project (Line 1)(E/S)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00042",
+        "label": "Dhaka Mass Rapid Transit Development Project (Line 1)(II)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00147",
+        "label": "Dhaka Mass Rapid Transit Development Project (Line 5 Northern Route) (I)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00052",
+        "label": "Dhaka Mass Rapid Transit Development Project (Line 5 Northern Route) (II)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00162",
+        "label": "Dhaka Mass Rapid Transit Development Project (Line 5) (E/S)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00085",
+        "label": "Dhaka Mass Rapid Transit Development Project (V)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00082",
+        "label": "Dhaka Port Development Project (Engineering Services)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00227",
+        "label": "Dhaka Rivers Ecological Restoration Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_mdb_dfi_ppp_investment_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00221",
+        "label": "Dhaka Sanitation Improvement Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_mdb_dfi_ppp_investment_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00090",
+        "label": "Dhaka Underground Substation Construction Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00285",
+        "label": "Dhaka Urban Transport",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_mdb_dfi_ppp_investment_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00135",
+        "label": "Dhaka-Chittagong Main Power Grid Strengthening Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00048",
+        "label": "Dhaka-Chittagong Railway Development Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00200",
+        "label": "Fourth Dhaka Water Supply Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_mdb_dfi_ppp_investment_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00061",
+        "label": "Greater Dhaka Telecom. Network Improvement Project (II)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00154",
+        "label": "Greater Dhaka Telecommunications Network Improvement Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00332",
+        "label": "Integrated Corridor Management Dhaka North Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_mdb_dfi_ppp_investment_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00190",
+        "label": "Metro Dhaka Water Security and Resilience Program",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-022_mdb_dfi_ppp_investment_registry"
+      }
+    ],
+    "BGD.4_1": [
+      {
+        "recordId": "bgd-v162-d-022-entity-00231",
+        "label": "Gorai River Restoration Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Khulna Division",
+        "indicatorId": "D-022_mdb_dfi_ppp_investment_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00028",
+        "label": "Khulna Power Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Khulna Division",
+        "indicatorId": "D-022_ifc_investment_services_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00069",
+        "label": "Khulna Water Supply Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Khulna Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      }
+    ],
+    "BGD.5_1": [
+      {
+        "recordId": "bgd-v162-d-022-entity-00021",
+        "label": "Bangladesh: Electricity Distribution Modernization (Rajshahi-Rangpur Divisions) Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Rajshahi Division",
+        "indicatorId": "D-022_aiib_project_registry"
+      }
+    ],
+    "BGD.7_1": [
+      {
+        "recordId": "bgd-v162-d-022-entity-00243",
+        "label": "Bangladesh Urban Resilience Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Sylhet Division",
+        "indicatorId": "D-022_mdb_dfi_ppp_investment_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00172",
+        "label": "Sylhet Combined Cycle Power Plant Construction Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Sylhet Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-022-entity-00150",
+        "label": "Sylhet Combined Cycle Power Plant Construction Project (II)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Sylhet Division",
+        "indicatorId": "D-022_jica_oda_loan_registry"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "d-022-located-count",
+      "period": "2026",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "Asian Infrastructure Investment Bank (AIIB)",
+      "International Finance Corporation (IFC) · World Bank Data Catalog",
+      "Japan International Cooperation Agency (JICA)",
+      "World Bank Projects & Operations (기후 관련 자체 분류)"
+    ],
+    "licenses": [
+      "AIIB Terms of Use",
+      "CC-BY-4.0",
+      "JICA 이용약관"
+    ],
+    "attribution": [
+      "Asian Infrastructure Investment Bank (AIIB) — AIIB Terms of Use. 이용 시 출처 표기 필수",
+      "International Finance Corporation (IFC) · World Bank Data Catalog — CC-BY-4.0. 이용 시 출처 표기 필수",
+      "Japan International Cooperation Agency (JICA) — JICA 이용약관. 이용 시 출처 표기 필수",
+      "World Bank Projects & Operations (기후 관련 자체 분류) — CC-BY-4.0. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://datacatalog.worldbank.org/search/dataset/0037737",
+      "https://projects.worldbank.org/en/projects-operations/projects-list",
+      "https://projects.worldbank.org/en/projects-operations/projects-list?os=0&countrycode_exact=BD",
+      "https://www.aiib.org/en/projects/list/index.html",
+      "https://www2.jica.go.jp/en/yen_loan/index.php"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 5,
+    "maxSeriesFeatureCount": 5,
+    "missingAdm1Count": 3,
+    "providedZeroCount": 0,
+    "publishedValueCount": 5,
+    "sourceValueCount": 47,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0,
+    "mappingMethod": "stated-division-count"
+  }
+}

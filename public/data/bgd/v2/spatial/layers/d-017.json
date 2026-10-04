@@ -1,0 +1,214 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "D-017",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2025",
+    "defaultVariable": "d-017-located-count",
+    "periods": [
+      "2025"
+    ],
+    "variables": [
+      {
+        "key": "d-017-located-count",
+        "label": "지역이 확인된 사업 수",
+        "measureId": "d-017-located-count",
+        "measureKey": "d-017-located-count",
+        "unit": "건",
+        "periods": [
+          "2025"
+        ],
+        "maxFeatureCount": 4
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "d-017-located-count",
+        "variableLabel": "지역이 확인된 사업 수",
+        "unit": "건",
+        "period": "2025",
+        "sourceIndicatorId": null,
+        "values": [
+          null,
+          null,
+          6,
+          1,
+          null,
+          1,
+          null,
+          1
+        ]
+      }
+    ]
+  },
+  "memberRecords": {
+    "BGD.3_1": [
+      {
+        "recordId": "bgd-v162-d-017-entity-00231",
+        "label": "다카 상수도 개발사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-017_korea_oda_award_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-017-entity-00012",
+        "label": "다카상하수도청 국제교육연구센터 건립사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-017_korea_oda_award_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-017-entity-00065",
+        "label": "방글라데시 다카 슬럼지역 노동 아동 기초 교육권 증진 사업('22-'25/1,704백만원/어린이재단)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-017_korea_oda_award_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-017-entity-00213",
+        "label": "방글라데시 다카 지역 송전전문인력 양성 사업(2025-2029/3,571백만원)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-017_korea_oda_award_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-017-entity-00055",
+        "label": "방글라데시 다카시 스마트물관리를 위한 스마트미터 선정 및 구축 시범사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-017_korea_oda_award_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-017-entity-00202",
+        "label": "방글라데시 다카주 사람중심의 통합적 접근을 통한 일차 안보건 강화 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-017_korea_oda_award_registry"
+      }
+    ],
+    "BGD.4_1": [
+      {
+        "recordId": "bgd-v162-d-017-entity-00206",
+        "label": "방글라데시 서남해안 쿨나지역 극빈층 소득증대 및 회복력강화 지원 사업 2단계",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Khulna Division",
+        "indicatorId": "D-017_korea_oda_award_registry"
+      }
+    ],
+    "BGD.6_1": [
+      {
+        "recordId": "bgd-v162-d-017-entity-00033",
+        "label": "방글라데시 랑푸르 주 모자보건 시스템 강화 사업('23-'27/14,300백만원)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Rangpur Division",
+        "indicatorId": "D-017_korea_oda_award_registry"
+      }
+    ],
+    "BGD.8_1": [
+      {
+        "recordId": "bgd-v162-d-017-entity-00248",
+        "label": "방글라데시 마이멘싱 구 지역 안질환 통합관리 지원사업(22-24/920백만원)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Mymensingh Division",
+        "indicatorId": "D-017_korea_oda_award_registry"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "d-017-located-count",
+      "period": "2025",
+      "expectedCount": 8,
+      "matchedCount": 4,
+      "missingCount": 4,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "ODA Korea (국무조정실 국제개발협력위원회)"
+    ],
+    "licenses": [
+      "공공누리 제1유형"
+    ],
+    "attribution": [
+      "ODA Korea (국무조정실 국제개발협력위원회) — 공공누리 제1유형. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://stats.odakorea.go.kr/portal/oda/spot/statistics"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 4,
+    "maxSeriesFeatureCount": 4,
+    "missingAdm1Count": 4,
+    "providedZeroCount": 0,
+    "publishedValueCount": 4,
+    "sourceValueCount": 9,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0,
+    "mappingMethod": "stated-division-count"
+  }
+}

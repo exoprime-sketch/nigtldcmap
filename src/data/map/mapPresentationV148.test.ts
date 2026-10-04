@@ -5,7 +5,7 @@ import { EMPTY_DATA_FINDER_SELECTOR_STATE_V125 as EMPTY } from "../../types/data
 import type { CountryMapLayerV122 } from "../countries/countryDataTypesV122";
 import { detailMapHandoffV148, detailMapSelectionV148, finiteMapValueV148, geometryPathV148, overviewProjectionV148 } from "./detailMapModelV148";
 import { resolveMapSelectorBindingV125 } from "../visualization/mapSelectorBindingsV125";
-import { mapFactsV148, mapFactValueV148, publicMapFieldsV148, powerCapacitySummaryV148 } from "./mapPresentationV148";
+import { mapFactsV148, mapFactValueV148, mapIndicatorSourceV148, publicMapFieldsV148, powerCapacitySummaryV148, publicSourceLineV164 } from "./mapPresentationV148";
 import { prepareLayerRecordsV138 } from "./prepareLayerRecordsV148";
 import { createMapFeaturePopupV148 } from "../../components/map/mapFeaturePopupV148";
 import { countryAssetPathV158 } from "../countryContext";
@@ -75,4 +75,26 @@ test("polygon holes stay separate and projection stays finite", () => {
   const path = geometryPathV148({ type: "Polygon", coordinates: [[[102,8],[110,8],[110,24],[102,8]],[[104,12],[105,12],[104,13],[104,12]]] }, p);
   expect(path.match(/M/g)).toHaveLength(2); expect(path.match(/Z/g)).toHaveLength(2);
   expect(path).not.toMatch(/NaN|Infinity/);
+});
+
+test("a source line names each publisher once and carries no processing remark", () => {
+  // B-012: "좌표보정 GADM 4.1" says how the platform placed the point, not who published it.
+  expect(mapIndicatorSourceV148("B-012_disaster_event")).toBe("EM-DAT Archive v2026-04-30 (CRED/UCLouvain, Brussels)");
+  // B-031: Global Forest Watch was written twice; the boundary note is another segment and stays.
+  expect(mapIndicatorSourceV148("B-031_prov_area_vn_44")).toBe("Global Forest Watch (UMD/WRI, Hansen et al. 2013) · 경계 GADM 4.1 ADM1");
+  expect(publicSourceLineV164("A · B (x) · a / y")).toBe("A · B (x)");
+  // A citation names a distinct document: two laws of one body both stay, a verbatim repeat goes.
+  expect(publicSourceLineV164("베트남 정부 — Nghị định 29/2026/NĐ-CP · 베트남 정부 — Nghị định 45/2022/NĐ-CP")).toBe(
+    "베트남 정부 — Nghị định 29/2026/NĐ-CP · 베트남 정부 — Nghị định 45/2022/NĐ-CP"
+  );
+  expect(publicSourceLineV164("베트남 정부 — Nghị định 45/2022/NĐ-CP · 베트남 정부 — Nghị định 45/2022/NĐ-CP")).toBe("베트남 정부 — Nghị định 45/2022/NĐ-CP");
+  expect(publicSourceLineV164("")).toBe("");
+});
+
+test("the indicator source table answers for Viet Nam only", () => {
+  // V164-4: Bangladesh reuses B-048_mine_site; its record names its own source.
+  expect(mapIndicatorSourceV148("B-048_mine_site", "", "VNM")).toBe("USGS Minerals Yearbook Vietnam 2022 (Table 2); USGS MRDS");
+  expect(mapIndicatorSourceV148("B-048_mine_site")).toBe("USGS Minerals Yearbook Vietnam 2022 (Table 2); USGS MRDS");
+  expect(mapIndicatorSourceV148("B-048_mine_site", "USGS MRDS", "BGD")).toBe("USGS MRDS");
+  expect(mapIndicatorSourceV148("B-023_hydro_site", "", "BGD")).not.toMatch(/MRC|Vietnam/u);
 });

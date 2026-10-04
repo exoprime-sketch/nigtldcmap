@@ -1,0 +1,234 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "C-016",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2025",
+    "defaultVariable": "c-016-located-count",
+    "periods": [
+      "2025"
+    ],
+    "variables": [
+      {
+        "key": "c-016-located-count",
+        "label": "지역이 확인된 입찰 사업 수",
+        "measureId": "c-016-located-count",
+        "measureKey": "c-016-located-count",
+        "unit": "건",
+        "periods": [
+          "2025"
+        ],
+        "maxFeatureCount": 4
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "c-016-located-count",
+        "variableLabel": "지역이 확인된 입찰 사업 수",
+        "unit": "건",
+        "period": "2025",
+        "sourceIndicatorId": null,
+        "values": [
+          null,
+          4,
+          2,
+          null,
+          null,
+          3,
+          null,
+          2
+        ]
+      }
+    ]
+  },
+  "memberRecords": {
+    "BGD.2_1": [
+      {
+        "recordId": "bgd-v162-c-016-entity-00085",
+        "label": "태양광 IPP 입찰 — SOLAR.IPP.02 Lohagara",
+        "date": "",
+        "status": "",
+        "value": "공고 용량 30 MW",
+        "url": "",
+        "region": "Lohagara",
+        "indicatorId": "C-016_tender_round"
+      },
+      {
+        "recordId": "bgd-v162-c-016-entity-00088",
+        "label": "태양광 IPP 입찰 — SOLAR.IPP.05 Cox's Bazar (North)",
+        "date": "",
+        "status": "",
+        "value": "공고 용량 50 MW",
+        "url": "",
+        "region": "Cox's Bazar (North)",
+        "indicatorId": "C-016_tender_round"
+      },
+      {
+        "recordId": "bgd-v162-c-016-entity-00089",
+        "label": "태양광 IPP 입찰 — SOLAR.IPP.06 Cox's Bazar",
+        "date": "",
+        "status": "",
+        "value": "공고 용량 50 MW",
+        "url": "",
+        "region": "Cox's Bazar",
+        "indicatorId": "C-016_tender_round"
+      },
+      {
+        "recordId": "bgd-v162-c-016-entity-00084",
+        "label": "태양광 IPP 입찰 — SOLAR.IPP.11 Chandraghona",
+        "date": "",
+        "status": "",
+        "value": "공고 용량 25 MW",
+        "url": "",
+        "region": "Chandraghona, Kaptai, Rangamati",
+        "indicatorId": "C-016_tender_round"
+      }
+    ],
+    "BGD.3_1": [
+      {
+        "recordId": "bgd-v162-c-016-entity-00083",
+        "label": "태양광 IPP 입찰 — SOLAR.IPP.01 Bajitpur",
+        "date": "",
+        "status": "",
+        "value": "공고 용량 25 MW",
+        "url": "",
+        "region": "Bajitpur",
+        "indicatorId": "C-016_tender_round"
+      },
+      {
+        "recordId": "bgd-v162-c-016-entity-00082",
+        "label": "태양광 IPP 입찰 — SOLAR.IPP.10 Tangail",
+        "date": "",
+        "status": "",
+        "value": "공고 용량 100 MW",
+        "url": "",
+        "region": "Tangail",
+        "indicatorId": "C-016_tender_round"
+      }
+    ],
+    "BGD.6_1": [
+      {
+        "recordId": "bgd-v162-c-016-entity-00086",
+        "label": "태양광 IPP 입찰 — SOLAR.IPP.03 Kurigram",
+        "date": "",
+        "status": "",
+        "value": "공고 용량 45 MW",
+        "url": "",
+        "region": "Kurigram",
+        "indicatorId": "C-016_tender_round"
+      },
+      {
+        "recordId": "bgd-v162-c-016-entity-00090",
+        "label": "태양광 IPP 입찰 — SOLAR.IPP.07 Panchagarh",
+        "date": "",
+        "status": "",
+        "value": "공고 용량 50 MW",
+        "url": "",
+        "region": "Panchagarh",
+        "indicatorId": "C-016_tender_round"
+      },
+      {
+        "recordId": "bgd-v162-c-016-entity-00091",
+        "label": "태양광 IPP 입찰 — SOLAR.IPP.08 Lalmonirhat",
+        "date": "",
+        "status": "",
+        "value": "공고 용량 50 MW",
+        "url": "",
+        "region": "Lalmonirhat",
+        "indicatorId": "C-016_tender_round"
+      }
+    ],
+    "BGD.8_1": [
+      {
+        "recordId": "bgd-v162-c-016-entity-00087",
+        "label": "태양광 IPP 입찰 — SOLAR.IPP.04 Bhaluka",
+        "date": "",
+        "status": "",
+        "value": "공고 용량 45 MW",
+        "url": "",
+        "region": "Bhaluka",
+        "indicatorId": "C-016_tender_round"
+      },
+      {
+        "recordId": "bgd-v162-c-016-entity-00092",
+        "label": "태양광 IPP 입찰 — SOLAR.IPP.09 Netrokona",
+        "date": "",
+        "status": "",
+        "value": "공고 용량 50 MW",
+        "url": "",
+        "region": "Netrokona",
+        "indicatorId": "C-016_tender_round"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "c-016-located-count",
+      "period": "2025",
+      "expectedCount": 8,
+      "matchedCount": 4,
+      "missingCount": 4,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "Power Division, MPEMR — Renewable Energy Policy of Bangladesh 2025"
+    ],
+    "licenses": [
+      "해당국 전력수급계획·재생에너지 계획·규제기관 입찰 공고 및 IRENA 재생에너지 통계. 정부 공개 계획문서·공고문과 국제기구 공표 통계로 출처 표기 조건으로 이용 가능."
+    ],
+    "attribution": [
+      "Power Division, MPEMR — Renewable Energy Policy of Bangladesh 2025 — 해당국 전력수급계획·재생에너지 계획·규제기관 입찰 공고 및 IRENA 재생에너지 통계. 정부 공개 계획문서·공고문과 국제기구 공표 통계로 출처 표기 조건으로 이용 가능.. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-powercell/2024/12/e090083ecd2142208d945bcb086334e0.pdf"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 4,
+    "maxSeriesFeatureCount": 4,
+    "missingAdm1Count": 4,
+    "providedZeroCount": 0,
+    "publishedValueCount": 4,
+    "sourceValueCount": 11,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0,
+    "mappingMethod": "stated-division-count"
+  }
+}

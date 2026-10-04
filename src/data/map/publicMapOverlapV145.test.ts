@@ -71,3 +71,46 @@ describe("primary-first feature summaries", () => {
     expect(rows.map((row: any) => mapOverlapSummariesV145([{ ...plan, properties: { ...row, hasValue: true } }])[0].value)).toEqual(["313 MW", "68 MW"]);
   });
 });
+
+describe("V164: a feature with a name leads with the name, not its first attribute", () => {
+  const office: MapOverlapInputV145 = {
+    elementId: "E-004", selectionKey: "e4-1", role: "primary", title: "국제기구 현지사무소", label: "ADB",
+    properties: { name: "ADB", orgType: "다자개발은행", city: "Hanoi", officeProgram: "Viet Nam Resident Mission" },
+    facts: ["협력분야·업무 Viet Nam Resident Mission", "도시 하노이 (Hanoi)", "기관 유형 다자개발은행"],
+  };
+  it("puts the organisation name on the bold line and relabels the programme field", () => {
+    const [result] = mapOverlapSummariesV145([office]);
+    expect(result.value).toBe("ADB");
+    expect(result.place).toBe("사무소·프로그램 Viet Nam Resident Mission");
+    expect(result.facts).toEqual(["도시 하노이 (Hanoi)", "기관 유형 다자개발은행"]);
+  });
+  it("drops a line that says the work is unknown instead of showing it as a fact", () => {
+    const [result] = mapOverlapSummariesV145([
+      { ...office, elementId: "E-019", label: "KOTRA 호치민 무역관", properties: { name: "KOTRA 호치민 무역관" }, facts: ["담당 업무 미확인 — 원천 미게시", "도시 호찌민 (Ho Chi Minh City)"] },
+    ]);
+    expect(result.value).toBe("KOTRA 호치민 무역관");
+    expect([result.place, ...result.facts].join(" | ")).not.toContain("미확인");
+  });
+  it("does not print the name twice when an 이름 fact repeats it (OSM water facilities)", () => {
+    const [result] = mapOverlapSummariesV145([
+      { ...office, elementId: "A-028", label: "Đập Lìa", properties: { name: "Đập Lìa", kind: "dam" }, facts: ["종류 댐", "이름 Đập Lìa", "면적 0.01 km²"] },
+    ]);
+    expect(result.value).toBe("Đập Lìa");
+    expect([result.place, ...result.facts]).toEqual(["종류 댐", "면적 0.01 km²"]);
+  });
+  it("calls an unnamed dam 이름 없는 댐 and names the place, instead of the bare kind", () => {
+    const [result] = mapOverlapSummariesV145([
+      {
+        ...office, elementId: "A-028", label: "댐",
+        properties: { name: null, kind: "dam", kindLabel: "댐", adm1Name34: "Quảng Trị" },
+        facts: ["종류 댐", "댐 마루 길이 0.28 km", "성·시(2025) 꽝찌 (Quảng Trị)"],
+      },
+    ]);
+    expect(result.value).toBe("이름 없는 댐 · 꽝찌 (Quảng Trị)");
+    expect([result.place, ...result.facts]).toEqual(["댐 마루 길이 0.28 km"]);
+  });
+  it("keeps the old reading for a property list without a name key", () => {
+    const [result] = mapOverlapSummariesV145([{ ...office, label: "Hà Tĩnh", properties: {} }]);
+    expect(result.value).toBe("사무소·프로그램 Viet Nam Resident Mission");
+  });
+});

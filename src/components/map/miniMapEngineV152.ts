@@ -66,6 +66,7 @@ import {
 import type { MapCameraV151 } from "../../types/map";
 import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
 import { createMapPointPopupV152 } from "./mapPointPopupV152";
+import { CHOROPLETH_RAMP_START_V164 } from "../../map/layers/choroplethLayer";
 import { facilityCardSpecV153, featureRecordIdsV164, spatialFacilityEntityV164 } from "../../data/visualization/facilityCardV153";
 import { boundaryPopupLineV151, createPublicMapPopupContentV129 } from "./mapPublicPopupV129";
 import {
@@ -268,7 +269,7 @@ export async function createMiniMapEngineV152(input: MiniMapEngineInputV152): Pr
           kind: "ramp",
           minimum: prepared.area.choropleth.minimum,
           maximum: prepared.area.choropleth.maximum,
-          from: "#e6f2ea",
+          from: CHOROPLETH_RAMP_START_V164,
           to: prepared.color,
           boundaryMode: prepared.area.choropleth.mode,
         }

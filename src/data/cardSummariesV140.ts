@@ -5,6 +5,9 @@ import { publicSourceOrganizationV136_1, publicUnstatedWordingV161 } from "./vis
 import { getCardSpecV159 } from "./spec/datasetSpecV159";
 import { publicRegionTextV162 } from "./geo/regionDisplayV162";
 import { publicOsmIndicatorLabelV162 } from "./visualization/osmClassLabelsV162";
+import { specNeedsCountryScopeV158 } from "./countries/countryCopyV158";
+import { providerLineV164 } from "./providerNamesV164";
+import { headlineSpacingV164, publicUnitSpellingV164 } from "./cardNotesV164";
 
 /**
  * The finder's pre-built card summaries (scripts/v140/build-card-summaries-v140.mjs).
@@ -92,11 +95,16 @@ export interface CardSummaryV140 {
   periodLabel?: string;
   provider: string;
   selection: DataFinderSelectorStateV125 | null;
-  basis: { unit: string; rule: string };
+  basis: { unit: string; rule: string; count?: { rows?: number; distinct?: number; sourceRows?: number } };
   measure: { key: string; label: string; unit: string } | null;
   mapConnected: boolean;
   downloadable: boolean;
   fromHome?: boolean;
+  /**
+   * What the card was built from (generated, read only for counts): the entity
+   * rows of the dataset and which indicators the headline takes (V164-4).
+   */
+  provenance?: { entityCount?: number; indicatorIds?: string[]; headlineIndicatorIds?: string[] };
 }
 
 export interface CardSummariesV140 {
@@ -118,16 +126,25 @@ export interface CardSummariesV140 {
  * ("원천 미기재") reads 미기재.
  */
 function publicCardSummaryV161(card: CardSummaryV140, countryIso3 = "VNM"): CardSummaryV140 {
-  const provider =
+  const judgedProvider =
     publicSourceOrganizationV136_1(card.provider) ||
     publicSourceOrganizationV136_1(getCardSpecV159(card.elementId)?.sourceLabel) ||
     "";
+  // V164-4: another country's source lines carry the compiler's separators
+  // ("A | 좌표(행정구역): B | …"), boundary / coordinate clauses and one
+  // organisation under several spellings. They read as organisation names, each
+  // once, two at most with the rest counted. The default country's lines are
+  // the reviewed ones and stay as they are.
+  const provider = specNeedsCountryScopeV158(countryIso3)
+    ? providerLineV164(judgedProvider, 2) || judgedProvider
+    : judgedProvider;
   // V162 (P12-B): a place named by the data reads "한글명 (현지명)" - a
   // reviewed name only; anything else keeps its source spelling.
   // A-027's OpenStreetMap wording ("피처 수", class values) reads as on its
   // detail table - "지물 수", "협궤 철도 (narrow_gauge)" (V162).
   const osm = (text: string) => (card.elementId === "A-027" || card.elementId === "A-028" ? publicOsmIndicatorLabelV162(text) : text);
-  const region = (text: string) => osm(publicRegionTextV162(text, card.elementId, countryIso3));
+  // V164-4: unit spellings as printed ("m²", "CO₂") on every card.
+  const region = (text: string) => publicUnitSpellingV164(osm(publicRegionTextV162(text, card.elementId, countryIso3)));
   const preview = card.preview as CardPreviewV140 | undefined;
   const nextPreview: CardPreviewV140 | undefined = preview
     ? {
@@ -137,12 +154,15 @@ function publicCardSummaryV161(card: CardSummaryV140, countryIso3 = "VNM"): Card
         ...(Array.isArray(preview.others) ? { others: preview.others.map((other) => ({ ...other, label: region(String(other.label ?? "")) })) } : {}),
         ...(typeof preview.scope === "string" ? { scope: region(preview.scope) } : {}),
         ...(typeof preview.seriesLabel === "string" ? { seriesLabel: region(preview.seriesLabel) } : {}),
+        ...(typeof preview.unit === "string" ? { unit: publicUnitSpellingV164(preview.unit) } : {}),
       }
     : preview;
   return {
     ...card,
     provider,
-    headline: card.headline ? { ...card.headline, label: region(card.headline.label) } : card.headline,
+    headline: card.headline
+      ? { ...card.headline, value: publicUnitSpellingV164(headlineSpacingV164(card.headline.value)), label: region(card.headline.label) }
+      : card.headline,
     preview: nextPreview as CardSummaryV140["preview"],
   };
 }

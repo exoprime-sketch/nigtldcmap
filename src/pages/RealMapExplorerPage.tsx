@@ -34,6 +34,7 @@ import {
   REGION_6_GEOMETRY_PATH_V151,
   boundaryGeometryPathV151,
   boundarySystemLabelV151,
+  boundarySystemShortLabelV151,
   boundarySystemV151,
   boundaryValueNoticeV151,
 } from "../data/map/adminBoundaryV151";
@@ -78,9 +79,12 @@ import MapIconLegendV152 from "../components/map/MapIconLegendV152";
 import { MapIconBadgeV152 } from "../components/map/MapIconSpriteV152";
 import FacilityCardV153 from "../components/data/public/FacilityCardV153";
 import { facilityCardSpecV153, featureRecordIdsV164, spatialFacilityEntityV164 } from "../data/visualization/facilityCardV153";
+import { publicScenarioLabelV164 } from "../data/map/scenarioLabelV164";
+import { pointUnitNameV164 } from "../data/map/pointLocationV164";
 import { A023_CAPACITY_BADGE_RADIUS_V152 } from "../map/layers/pointIconLayer";
 import {
   attachMapIconMissingHandlerV152,
+  canonicalMineralLabelV164,
   MAP_ICON_LAYER_IDS_V152,
   mapIconLegendEntriesV152,
   mapLayerIconV152,
@@ -168,6 +172,7 @@ import "../styles/map-comparison-v135.css";
 import "../styles/map-catalog-v138.css";
 import "../styles/map-overlap-v145.css";
 import "../styles/map-presentation-v148.css";
+import "../styles/map-overlay-v164.css";
 
 import type {
   BoundaryRenderContextV151,
@@ -176,6 +181,8 @@ import type {
   SpatialRuntimeAsset,
 } from "../map/layers/types";
 import { LAYER_COLORS } from "../map/layers/colors";
+import { TRANSMISSION_VOLTAGE_CLASSES_V152 } from "../map/layers/lineLayer";
+import { CHOROPLETH_RAMP_START_V164 } from "../map/layers/choroplethLayer";
 import { applyCountryOutlineV163, MAP_STYLE } from "../map/layers/baseStyle";
 import {
   layerRuntimeIds,
@@ -185,6 +192,7 @@ import {
   type LayerHandlers,
 } from "../map/layers/ids";
 import {
+  factValueV137,
   filterRecords,
   layerFactFieldsV137,
   rendererOf,
@@ -219,6 +227,7 @@ import type {
 import {
   areaKm2ByAdm1CodeV151,
   choroplethFeatureCollectionV151,
+  featureCollection,
   lineFeatureCollection,
   spatialValuesForSelectorV125,
   statisticalRepresentativePointsV133,
@@ -631,6 +640,8 @@ interface KeyboardMapFeatureV129 {
   record?: CountryEntityV122;
   role: PublicMapLayerRoleV129;
   spatial?: SpatialSelection;
+  /** V164-4: where the item is drawn, so the stepper can bring it into view. */
+  geometry?: GeoJSON.Geometry | null;
 }
 
 interface FallbackMapTooltipV129 {
@@ -1414,6 +1425,8 @@ function countryMapItemSummaryV162(layer: CountryMapLayerV122, regionWord: strin
   const places = count > 0 ? ` ${count.toLocaleString("ko-KR")}곳` : "";
   if (reference?.basis) return `${reference.label || "참고 지도"} · ${reference.basis}${places}`;
   if (rendererOf(layer) === "admin1-choropleth") return `${regionWord} 경계`;
+  // V164-4: a count of records per region is drawn on the region boundaries.
+  if (rendererOf(layer) === "partial-choropleth") return `${regionWord}별 건수`;
   return `위치${places}`;
 }
 
@@ -1467,6 +1480,41 @@ function unpinMapPopupV164(refs: Pick<MapPopupRefsV164, "pinned" | "pinnedKey">)
   refs.pinned.current = null;
   refs.pinnedKey.current = null;
   popup?.remove();
+}
+
+/** V164-4: the smallest map that keeps the legend open by default. */
+const MAP_LEGEND_OPEN_MIN_WIDTH_V164 = 600;
+const MAP_LEGEND_OPEN_MIN_HEIGHT_V164 = 520;
+
+/**
+ * V164-4: where the map is not covered. A move to a selected item centres it
+ * in the part of the map the cards leave free (the legend at the bottom left,
+ * the zoom and outline switch at the top right) instead of under them.
+ * Returns the pixel offset for `easeTo` and the padding for `fitBounds`.
+ */
+function freeMapAreaV164(map: MapLibreMap): {
+  offset: [number, number];
+  padding: { top: number; right: number; bottom: number; left: number };
+} {
+  const canvas = map.getContainer().getBoundingClientRect();
+  const padding = { top: 56, right: 64, bottom: 44, left: 24 };
+  const legend = map
+    .getContainer()
+    .closest(".cdp-map-canvas-wrap")
+    ?.querySelector<HTMLElement>('[data-testid="map-dynamic-legend"]');
+  if (legend && canvas.width > 0) {
+    const box = legend.getBoundingClientRect();
+    // A tall legend takes a column on the left; a short one a band at the bottom.
+    if (box.height > canvas.height * 0.3) {
+      padding.left = Math.max(padding.left, Math.min(canvas.width * 0.55, box.right - canvas.left + 16));
+    } else {
+      padding.bottom = Math.max(padding.bottom, Math.min(canvas.height * 0.5, canvas.bottom - box.top + 16));
+    }
+  }
+  return {
+    offset: [(padding.left - padding.right) / 2, (padding.top - padding.bottom) / 2],
+    padding,
+  };
 }
 
 /**
@@ -1755,6 +1803,48 @@ export default function RealMapExplorerPage({
   const [legendOpen, setLegendOpen] = useState(
     () => typeof window === "undefined" || window.innerWidth >= 1200
   );
+  // V164-4: once the reader opens or folds the legend, the map's size no
+  // longer decides it.
+  const legendUserChoiceRefV164 = useRef(false);
+  useEffect(() => {
+    // V164-4: the legend opens by itself only where the map has room for it -
+    // the map's own size, which the two side panels change, not the window's.
+    // At 1280x720 with both panels open the map is 576x649 and the open legend
+    // covered half of it.
+    const node = containerRef.current;
+    if (!node || typeof ResizeObserver === "undefined") return;
+    const apply = () => {
+      if (legendUserChoiceRefV164.current) return;
+      const { width, height } = node.getBoundingClientRect();
+      if (!width || !height) return;
+      setLegendOpen(width >= MAP_LEGEND_OPEN_MIN_WIDTH_V164 && height >= MAP_LEGEND_OPEN_MIN_HEIGHT_V164);
+    };
+    apply();
+    const observer = new ResizeObserver(apply);
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+  useEffect(() => {
+    // V164-4: the legend sits just above the map credit, whose height changes
+    // with the map's width (two lines at 736px, three at 396px, four on a
+    // phone); a fixed 58px let the credit cover the legend's stepper row.
+    if (baseMapStatus !== "ready") return;
+    const node = containerRef.current;
+    const wrap = node?.closest<HTMLElement>(".cdp-map-canvas-wrap");
+    const credit = wrap?.querySelector<HTMLElement>(".cdp-map-public-attribution");
+    if (!wrap || !credit || typeof ResizeObserver === "undefined") return;
+    const apply = () => {
+      const box = credit.getBoundingClientRect();
+      const frame = wrap.getBoundingClientRect();
+      if (!box.height) return;
+      wrap.style.setProperty("--cdp-map-credit-clear-v164", `${Math.ceil(frame.bottom - box.top)}px`);
+    };
+    apply();
+    const observer = new ResizeObserver(apply);
+    observer.observe(credit);
+    observer.observe(wrap);
+    return () => observer.disconnect();
+  }, [baseMapStatus]);
   const resizeMapAfterPanelChangeV129 = useCallback(() => {
     mapRef.current?.resize();
   }, []);
@@ -3316,10 +3406,14 @@ export default function RealMapExplorerPage({
           // kind, or its own value and unit - it has no area value to be "결측".
           const assetValueV163 = optionalFiniteNumberV130(properties.value);
           const assetUnitV163 = publicTextV126(properties.valueUnit) || "";
+          const assetKindV164 = publicTextV126(properties.kindLabel) || publicTextV126(properties.categoryLabel) || "";
           const assetDetailV163 =
             assetValueV163 !== null && assetUnitV163
               ? `${formatPublicNumberV126(assetValueV163, assetUnitV163)} ${assetUnitV163}`
-              : publicTextV126(properties.kindLabel) || publicTextV126(properties.categoryLabel) || "";
+              : // V164-4: a name that already says its kind ("홍수 (2016-07-19)") is not followed by it again.
+              assetKindV164 && String(assetDisplayNameV163(properties) || "").includes(assetKindV164)
+              ? ""
+              : assetKindV164;
           const featureLabel =
             renderer === "point-and-polygon"
               ? [publicMapFeatureNameV126(assetDisplayNameV163(properties) || properties.kindLabel, "시설·구역"), assetDetailV163]
@@ -3412,6 +3506,9 @@ export default function RealMapExplorerPage({
                           publicTextV126(properties.period) || publicTextV126(selector.period)
                           ? /기준$/u.test(publicTextV126(properties.period) || publicTextV126(selector.period) || "")
                             ? String(publicTextV126(properties.period) || publicTextV126(selector.period))
+                            : renderer === "point-and-polygon" && /^\d{4}$/u.test(publicTextV126(properties.period) || publicTextV126(selector.period) || "")
+                            ? // V164-4: a site's year is the edition of the register, not the event's date.
+                              `자료 ${publicTextV126(properties.period) || publicTextV126(selector.period)}년판`
                             : `기준 ${publicTextV126(properties.period) || publicTextV126(selector.period)}`
                           : ""
                         : "함께 보기",
@@ -4356,6 +4453,38 @@ export default function RealMapExplorerPage({
         focusedSelector,
         filters
       ).features;
+      // V164-4: a route layer (A-027 roads and railways) is not a grid; it is
+      // counted by its own class field, and its length is summed per class.
+      const routeFieldV164 = focusedLayer.filters[0]?.field;
+      const isGridV164 = features.some(
+        (feature) => feature.properties?.voltageKv !== undefined || feature.properties?.voltage !== undefined
+      );
+      if (!isGridV164 && routeFieldV164) {
+        const byClass = new Map<string, { count: number; km: number }>();
+        features.forEach((feature) => {
+          const key = publicTextV126(feature.properties?.[routeFieldV164]) || "미표기";
+          const entry = byClass.get(key) || { count: 0, km: 0 };
+          entry.count += 1;
+          const km = Number(feature.properties?.lengthKm);
+          if (Number.isFinite(km)) entry.km += km;
+          byClass.set(key, entry);
+        });
+        summaryRows.push({ label: "표시 구간", value: `${features.length.toLocaleString()}개` });
+        const order = focusedLayer.filters[0]?.values || [];
+        [...byClass.entries()]
+          .sort(([left], [right]) => (order.indexOf(left) + 1 || 999) - (order.indexOf(right) + 1 || 999))
+          .forEach(([label, entry]) =>
+            summaryRows.push({
+              label: focusedLayer.filters[0]?.valueLabels?.[label] || label,
+              value: `${entry.count.toLocaleString()}개 구간 · ${formatPublicNumberV126(entry.km, "km")} km`,
+            })
+          );
+        summaryRows.push({
+          label: "기준연도",
+          value: String(focusedLayer.sourceYear || focusedSelector.period),
+        });
+        return { ...empty, summaryRows, unit: "구간" };
+      }
       const voltageCounts = new Map<string, number>();
       features.forEach((feature) => {
         const voltage = String(
@@ -4407,10 +4536,19 @@ export default function RealMapExplorerPage({
       const features = assetFeatureCollectionV157(focusedLayer, asset, filters).features;
       const byKind = new Map<string, number>();
       features.forEach((feature) => {
-        const kind = String(feature.properties?.kindLabel || feature.properties?.categoryLabel || "미표기");
+        // V164-4: a mine asset names its kind in `commodity` (BGD B-048).
+        const commodity = feature.properties?.commodity;
+        const kind = String(
+          feature.properties?.kindLabel ||
+            feature.properties?.categoryLabel ||
+            (typeof commodity === "string" && commodity.trim() ? canonicalMineralLabelV164(commodity) : "") ||
+            "미표기"
+        );
         byKind.set(kind, (byKind.get(kind) || 0) + 1);
       });
       summaryRows.push({ label: "표시 대상", value: `${features.length.toLocaleString()}개` });
+      // A breakdown with one "미표기" row only restates the total.
+      if (byKind.size === 1 && byKind.has("미표기")) byKind.clear();
       [...byKind.entries()]
         .sort(([, left], [, right]) => right - left)
         .forEach(([kind, count]) =>
@@ -4575,10 +4713,13 @@ export default function RealMapExplorerPage({
         minimum,
         median: middle,
         maximum,
-        dataRegionCount: values.length,
+        // V164-4: counted the way the map draws them - one per region a
+        // value names (B-021's six regions are 6, not the 63 provinces they
+        // are painted on), so "값 있음 + 결측" adds up to the regions on screen.
+        dataRegionCount: ordered.length,
         missingRegionCount: sourceIsRegional
           ? Math.max(0, regionTotal - ordered.length)
-          : Math.max(0, unitTotalV151 - values.length),
+          : Math.max(0, unitTotalV151 - ordered.length),
         unit,
       };
     }
@@ -4626,11 +4767,11 @@ export default function RealMapExplorerPage({
       label: `${featureNoun} 수(지도 표시)`,
       value: `${records.length.toLocaleString()}${noun}`,
     });
-    if (focusedLayer.featureIdentity && focusedLayer.memberRowCount) {
+    // V164-4: the delivery's row count is not a public fact unless the layer
+    // names what a row is ("사업 기록 행"); "원자료 건수 8행" was an internal tally.
+    if (focusedLayer.featureIdentity?.memberLabel && focusedLayer.memberRowCount) {
       summaryRows.push({
-        label: focusedLayer.featureIdentity.memberLabel
-          ? `${focusedLayer.featureIdentity.memberLabel} 행`
-          : "원자료 건수",
+        label: `${focusedLayer.featureIdentity.memberLabel} 행`,
         value: `${focusedLayer.memberRowCount.toLocaleString()}행`,
       });
     }
@@ -4670,9 +4811,23 @@ export default function RealMapExplorerPage({
     const primaryGroupField = focusedLayer.filters[0]?.field;
     if (primaryGroupField) {
       const labels = focusedLayer.filters[0]?.valueLabels || {};
-      countByPublicFieldV126(records, primaryGroupField)
+      // V164-4: read the group value where the layer's fact contract says it
+      // lives (B-048 "mineral" is attrs["광종"]), as the map's features do;
+      // reading attrs["mineral"] counted all 37 mines as "미표기".
+      const groupFactV164 = layerFactFieldsV137(focusedLayer).find((fact) => fact.key === primaryGroupField);
+      const groupRowsV164 = groupFactV164
+        ? records.map((row) => {
+            const attrs = row.normalizedAttributes || {};
+            const stated = attrs[primaryGroupField] ?? factValueV137(groupFactV164, attrs);
+            const value =
+              primaryGroupField === "mineral" && typeof stated === "string" ? canonicalMineralLabelV164(stated) : stated;
+            return { ...row, normalizedAttributes: { ...attrs, [primaryGroupField]: value } };
+          })
+        : records;
+      countByPublicFieldV126(groupRowsV164, primaryGroupField)
         .forEach(([label, count]) =>
-          summaryRows.push({ label: labels[label] || label, value: `${count.toLocaleString()}${noun}` })
+          // V164-4: a place value reads "한글 (현지명)" (E-006 "Ho Chi Minh City; Hanoi").
+          summaryRows.push({ label: labels[label] || publicMapFactValueV163(primaryGroupField, label) || label, value: `${count.toLocaleString()}${noun}` })
         );
     }
     return { ...empty, summaryRows, unit: noun };
@@ -4687,6 +4842,26 @@ export default function RealMapExplorerPage({
     recordsByElement,
     spatialByElement,
   ]);
+  /**
+   * V164-4: the legend's "결측" line counts on the same basis as the
+   * "값 있음 N개 · 결측 M개" line above it. It read the asset's own coverage
+   * (63 provinces, or a basin layer's provinces) while the map drew 34 units,
+   * so one legend said "결측 0개" and "결측: 2개 성·시".
+   */
+  const focusedMissingTextV164 = (() => {
+    if (!focusedLayer) return "";
+    const renderer = rendererOf(focusedLayer);
+    if (renderer === "admin1-choropleth" || renderer === "partial-choropleth") {
+      const missing = focusedAnalysisV126.missingRegionCount;
+      if (!missing) return "";
+      const missingRow = focusedAnalysisV126.summaryRows.find((row) => row.label.startsWith("미제공"));
+      const unitWord = String(missingRow?.value || "").replace(/^[\d,]+개\s*/u, "") || level1V162?.label || "지역";
+      return `${missing.toLocaleString()}개 ${unitWord}는 원자료에 값 없음 · 0으로 대체하지 않음`;
+    }
+    // A basin or zone layer draws its own units; a province count does not describe it.
+    if (renderer === "unit-choropleth") return "";
+    return focusedMissingReason && focusedMissingReason !== "없음" ? focusedMissingReason : "";
+  })();
   const selectedLayer = selected
     ? layers.find((layer) => layer.elementId === selected.elementId) || null
       : null;
@@ -4882,8 +5057,10 @@ export default function RealMapExplorerPage({
     const allRows = [...rowsByVariable.values()].flat();
     const distinctPeriods = new Set(allRows.map((row) => row.period));
     if (distinctPeriods.size < 2) return null;
+    // V164-4: a layer without scenario groups (Bangladesh B-004~B-007) reads
+    // "SSP2-4.5", not the raw key "ssp245".
     const scenarioLabel = (key: string) =>
-      groups?.scenarios.find((scenario) => scenario.key === key)?.label || key;
+      groups?.scenarios.find((scenario) => scenario.key === key)?.label || publicScenarioLabelV164(key);
     const markers = ["circle", "square", "diamond", "triangle", "cross"] as const;
     const series: TimeSeriesV127[] = [...rowsByVariable]
       .map(([variable, rows], index) => {
@@ -4978,13 +5155,24 @@ export default function RealMapExplorerPage({
       : [selectedSpatial.adm1Code];
     const seen = new Set<string>();
     const merged: NonNullable<VietnamSpatialLayerAssetV124["memberRecords"]>[string] = [];
+    // V164-4: a record filed under every member (its source names the 2025
+    // unit, e.g. "Quảng Trị") belongs to no single former province; only a
+    // record filed under one member is marked with it ("(구 꽝빈성)" was
+    // attached to Quảng Trị projects because Quảng Bình was listed first).
+    const filedUnder = new Map<string, number>();
+    for (const code of codes) {
+      for (const record of data?.memberRecords?.[code] || []) {
+        const key = `${record.recordId}|${record.label}`;
+        filedUnder.set(key, (filedUnder.get(key) || 0) + 1);
+      }
+    }
     for (const code of codes) {
       for (const record of data?.memberRecords?.[code] || []) {
         const key = `${record.recordId}|${record.label}`;
         if (seen.has(key)) continue;
         seen.add(key);
         merged.push(
-          codes.length > 1
+          codes.length > 1 && filedUnder.get(key) === 1
             ? { ...record, label: `${record.label} ${formerProvinceLabelV151(code)}`.trim() }
             : record
         );
@@ -5299,7 +5487,16 @@ export default function RealMapExplorerPage({
               value: selectedSpatial.value ?? null,
               peers,
               unit,
-              peerLabel: isUnit ? "평가구역" : isAsset ? "대상" : regionWordV158(countryIso3).word,
+              // V164-4: B-021 draws one value per GDL region (6), so the peers
+              // are regions, not provinces.
+              peerLabel: isUnit
+                ? "평가구역"
+                : isAsset
+                  ? "대상"
+                  : selectedB021RegionRankV129
+                    ? "권역"
+                    : regionWordV158(countryIso3).word,
+              withAverage: !(selectedOwningLayer.mapMode === "region-choropleth" && unit === "건"),
             })
           );
         }
@@ -5329,7 +5526,10 @@ export default function RealMapExplorerPage({
           comparison.push(...categoryShareLinesV161(ownCategoryV163, categoryCounts, peerWordV163));
         }
       }
-      if (selectedB021RegionRankV129) {
+      if (
+        selectedB021RegionRankV129 &&
+        !comparison.some((line) => line.label === "권역 중 순위")
+      ) {
         comparison.push({ label: "권역 비교", value: selectedB021RegionRankV129 });
       }
       const detailHref = `/?view=data&country=${countryIso3}&element=${selectedOwningLayer.elementId}#element-detail`;
@@ -5354,7 +5554,10 @@ export default function RealMapExplorerPage({
           period: selectedSpatial.period || properties.period,
           source: mapIndicatorSourceV148(
             String(properties.sourceIndicatorId || ""),
-            selectedSpatial.adm1Code ? "" : selectedOwningLayer.source
+            // The indicator table is Viet Nam's; another country's layer
+            // source is built clean by its map builder (V164-4).
+            selectedSpatial.adm1Code && countryIso3 === "VNM" ? "" : selectedOwningLayer.source,
+            countryIso3
           ),
           drawing: drawingLabelV161(renderer, regionWordV158(countryIso3).word),
         }),
@@ -5375,10 +5578,9 @@ export default function RealMapExplorerPage({
         lines.push(
           ...selectionLineV161(
             "소재 성·시",
-            formatRegionListV161(locatedIn.adm1Name, {
-              country: countryIso3,
-              level: "adm1-63",
-            }),
+            // V164-4: the unit in the boundary vintage on screen (2025 "후에",
+            // not the pre-2025 "트어티엔후에").
+            pointUnitNameV164(locatedIn, boundarySystemV151State, countryIso3),
             selectedApproximateV138
               ? "소재 지역을 나타내는 점이며 실제 시설 위치가 아닙니다."
               : undefined
@@ -5409,7 +5611,8 @@ export default function RealMapExplorerPage({
           // internal attribute keys, which must not reach a public line.
           source: mapIndicatorSourceV148(
             selected.indicatorId,
-            selected.provenance?.sourceOrg || ""
+            selected.provenance?.sourceOrg || "",
+            countryIso3
           ),
           drawing: drawingLabelV161(rendererOf(selectedLayer), regionWordV158(countryIso3).word),
         }),
@@ -5444,7 +5647,12 @@ export default function RealMapExplorerPage({
     const map = mapRef.current;
     if (!map) return;
     if (selected && typeof selected.latitude === "number" && typeof selected.longitude === "number") {
-      map.easeTo({ center: [selected.longitude, selected.latitude], zoom: Math.max(map.getZoom(), 9), duration: 400 });
+      map.easeTo({
+        center: [selected.longitude, selected.latitude],
+        zoom: Math.max(map.getZoom(), 9),
+        offset: freeMapAreaV164(map).offset,
+        duration: 400,
+      });
       return;
     }
     if (!selectedSpatial || !selectedOwningLayer) return;
@@ -5457,7 +5665,7 @@ export default function RealMapExplorerPage({
         .includes(String(key));
     });
     const bounds = feature ? geometryBoundsV161(feature.geometry as GeoJSON.Geometry) : null;
-    if (bounds) map.fitBounds(bounds, { padding: 56, duration: 400 });
+    if (bounds) map.fitBounds(bounds, { padding: freeMapAreaV164(map).padding, duration: 400 });
   }, [selected, selectedOwningLayer, selectedSpatial, spatialByElement]);
   // Hydrological sites: each member row is one named indicator with its own unit.
   const selectedMemberFactsV138 = useMemo(() => {
@@ -5624,13 +5832,21 @@ export default function RealMapExplorerPage({
               );
         const isRegionNameV163 =
           renderer !== "line" && renderer !== "point-and-polygon" && renderer !== "regional-scope";
-        const shownNameV163 = isRegionNameV163
+        // V164-4: an assessment unit (B-017 Aqueduct basin) is named as its
+        // selection card names it ("유역 436642 · Cao Bằng"); the province name
+        // alone matched every basin in that province.
+        const unitLabelV164 =
+          renderer === "unit-choropleth" ? publicMapFeatureNameV126(properties.label, "") : "";
+        const shownNameV163 = unitLabelV164
+          ? unitLabelV164
+          : isRegionNameV163
           ? publicRegionLabelV163(name, countryIso3, properties.boundarySystem) || name
           : name;
         features.push({
           elementId,
           label: `${title} · ${shownNameV163}`,
           role,
+          geometry: (feature.geometry as GeoJSON.Geometry | null) ?? null,
           spatial: {
             elementId,
             adm1Code: String(properties.adm1Code || "") || undefined,
@@ -5697,28 +5913,109 @@ export default function RealMapExplorerPage({
     setKeyboardFeatureIndexV129(Math.max(0, firstWithValue));
   }, [keyboardMapFeaturesV129]);
 
+  // V164-4: the stepper card follows a click - it said "안장 1 / 34" while the
+  // panel showed the clicked Quảng Trị.
+  useEffect(() => {
+    const target = selected
+      ? `${selected.elementId}:${selected.recordId}`
+      : selectedSpatial
+      ? `${selectedSpatial.elementId}:${selectedSpatial.selectionKey ?? ""}`
+      : null;
+    if (!target) return;
+    const index = keyboardMapFeaturesV129.findIndex((feature) =>
+      feature.record
+        ? `${feature.elementId}:${feature.record.recordId}` === target
+        : feature.spatial
+        ? `${feature.elementId}:${feature.spatial.selectionKey ?? ""}` === target
+        : false
+    );
+    if (index < 0) return;
+    setKeyboardFeatureIndexV129((current) => {
+      const shown = keyboardMapFeaturesV129[current];
+      const shownKey = shown?.record
+        ? `${shown.elementId}:${shown.record.recordId}`
+        : shown?.spatial
+        ? `${shown.elementId}:${shown.spatial.selectionKey ?? ""}`
+        : null;
+      return shownKey === target ? current : index;
+    });
+  }, [keyboardMapFeaturesV129, selected, selectedSpatial]);
+
   const keyboardMapFeatureV129 =
     keyboardMapFeaturesV129[
       Math.min(keyboardFeatureIndexV129, keyboardMapFeaturesV129.length - 1)
     ] || null;
 
+  /**
+   * V164-4: ← / → select the next item and show it on the map, as a click on
+   * it does - the selection ring, the right panel and, for a site, its pinned
+   * popup - and bring it into view. They used to move only the card's label
+   * ("20 / 236") while the map stayed as it was.
+   */
+  function showKeyboardFeatureV164(feature: KeyboardMapFeatureV129) {
+    if (feature.record) {
+      setSelected(feature.record);
+      setSelectedSpatial(null);
+    } else if (feature.spatial) {
+      setSelected(null);
+      setSelectedSpatial(feature.spatial);
+    } else {
+      return;
+    }
+    setAnalysisPanelOpen(true);
+    const map = mapRef.current;
+    const layer = layers.find((item) => item.elementId === feature.elementId);
+    if (!map || !layer) return;
+    const refs = { hover: popupRef, hoverOwner: popupOwnerRef, pinned: pinnedPopupRefV164, pinnedKey: pinnedKeyRefV164 };
+    const primary = feature.role === "primary";
+    let center: [number, number] | null = null;
+    let content: HTMLElement | null = null;
+    let key = "";
+    if (feature.record && typeof feature.record.longitude === "number" && typeof feature.record.latitude === "number") {
+      center = [feature.record.longitude, feature.record.latitude];
+      // The same properties the map drew the point with (location line, flags).
+      const drawn = featureCollection(
+        [feature.record],
+        layer,
+        prepareLayerRecordsV138(recordsByElement[feature.elementId] || [feature.record], layer),
+        { sidecar: locationsByElementV151[feature.elementId], system: boundaryContextV151.system }
+      ).features[0];
+      const properties = (drawn?.properties || {}) as Record<string, unknown>;
+      content = createMapPointPopupV152({ layer, properties, primary, entity: feature.record });
+      key = `${feature.elementId}:${String(properties.selectionKey ?? feature.record.recordId)}`;
+    } else if (feature.spatial && feature.geometry) {
+      if (feature.geometry.type === "Point") {
+        center = [...feature.geometry.coordinates] as [number, number];
+        const properties = feature.spatial.properties || {};
+        const facility = spatialFacilityForFeatureV164(facilityRecordsRefV164.current, countryIso3, feature.elementId, properties);
+        content = createMapPointPopupV152({ layer, properties, primary, entity: facility });
+        key = `${feature.elementId}:${String(feature.spatial.selectionKey ?? "")}`;
+      } else {
+        const bounds = geometryBoundsV161(feature.geometry);
+        if (bounds) center = [(bounds[0][0] + bounds[1][0]) / 2, (bounds[0][1] + bounds[1][1]) / 2];
+      }
+    }
+    if (content && center) {
+      pinMapPopupV164(map, refs, center, content, key);
+    } else {
+      // An area or a line opens the panel only, as a click on it does.
+      unpinMapPopupV164(refs);
+    }
+    if (center) map.easeTo({ center, offset: freeMapAreaV164(map).offset, duration: 400 });
+  }
+
   function moveKeyboardFeatureV129(direction: -1 | 1) {
-    if (keyboardMapFeaturesV129.length === 0) return;
-    setKeyboardFeatureIndexV129((current) =>
-      (current + direction + keyboardMapFeaturesV129.length) %
-      keyboardMapFeaturesV129.length
-    );
+    const count = keyboardMapFeaturesV129.length;
+    if (count === 0) return;
+    const current = Math.min(keyboardFeatureIndexV129, count - 1);
+    const next = (current + direction + count) % count;
+    setKeyboardFeatureIndexV129(next);
+    showKeyboardFeatureV164(keyboardMapFeaturesV129[next]);
   }
 
   function selectKeyboardFeatureV129() {
     if (!keyboardMapFeatureV129) return;
-    if (keyboardMapFeatureV129.record) {
-      setSelected(keyboardMapFeatureV129.record);
-      setSelectedSpatial(null);
-    } else if (keyboardMapFeatureV129.spatial) {
-      setSelected(null);
-      setSelectedSpatial(keyboardMapFeatureV129.spatial);
-    }
+    showKeyboardFeatureV164(keyboardMapFeatureV129);
     setRoleNotice(
       keyboardMapFeatureV129.role === "context"
         ? `선택한 보조 데이터 · ${publicMapLayerTitleV126(
@@ -5729,6 +6026,66 @@ export default function RealMapExplorerPage({
     );
     setAnalysisPanelOpen(true);
   }
+  // V164-4: the item stepper is one line in the legend (it was its own card,
+  // 231x106, stacked over the legend). Without a legend it stays in the
+  // status card.
+  const boundaryNoticeTextV164 = focusedLayer?.boundaryPolicy
+    ? boundaryPolicyNoticeV151(
+        boundarySystemV151State,
+        focusedLayer.boundaryPolicy,
+        focusedBoundaryPolicyKindV151 || undefined
+      )
+    : boundaryValueNoticeV151(boundarySystemV151State);
+  const keyboardNavV164 =
+    baseMapStatus === "ready" && keyboardMapFeatureV129 ? (
+      <div
+        aria-label="키보드 지도 항목 탐색"
+        className="cdp-map-keyboard-feature-nav"
+        data-testid="map-keyboard-feature-navigation"
+        onKeyDown={(event) => {
+          if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            moveKeyboardFeatureV129(-1);
+          } else if (event.key === "ArrowRight") {
+            event.preventDefault();
+            moveKeyboardFeatureV129(1);
+          }
+        }}
+        role="group"
+      >
+        <button
+          aria-label="이전 지도 항목"
+          onClick={() => moveKeyboardFeatureV129(-1)}
+          type="button"
+        >
+          ←
+        </button>
+        <button
+          aria-label={`${keyboardMapFeatureV129.label} 선택`}
+          data-testid="map-keyboard-feature-select"
+          onClick={selectKeyboardFeatureV129}
+          onKeyDown={(event) => {
+            if (event.key !== "Enter" && event.key !== " ") return;
+            event.preventDefault();
+            selectKeyboardFeatureV129();
+          }}
+          title="Enter 또는 Space로 세부정보 보기"
+          type="button"
+        >
+          <span>{keyboardMapFeatureV129.label}</span>
+          <small aria-live="polite">
+            {keyboardFeatureIndexV129 + 1} / {keyboardMapFeaturesV129.length}
+          </small>
+        </button>
+        <button
+          aria-label="다음 지도 항목"
+          onClick={() => moveKeyboardFeatureV129(1)}
+          type="button"
+        >
+          →
+        </button>
+      </div>
+    ) : null;
   const analysisActionLayerV129 = selectedOwningLayer || focusedLayer;
 
   function semanticStateForLayerV125(
@@ -5771,6 +6128,29 @@ export default function RealMapExplorerPage({
   function changeCountry(nextCountryIso3: string) {
     if (nextCountryIso3 === countryIso3) return;
     setCountryIso3(nextCountryIso3);
+    // V164-4: the chosen country goes to the URL at once. Hydration waits for
+    // the URL to name the page's country, and the state echo waits for the
+    // map list: switching back (BGD → VNM) before Bangladesh's list had loaded
+    // left the URL on BGD, so Viet Nam never hydrated and the map stayed on
+    // Bangladesh while the selector said 베트남.
+    onStateChange({
+      ...initialState,
+      countryIso3: nextCountryIso3,
+      activeLayerKeys: [],
+      focusLayerKey: null,
+      primaryLayerId: null,
+      contextLayerIds: [],
+      hiddenLayerIds: [],
+      mapPresetId: null,
+      layerOpacities: {},
+      layerYears: {},
+      comparisonMode: false,
+      comparisonLayerIds: [],
+      comparisonCountries: [],
+      comparisonSelectors: [],
+      layerSelectors: {},
+      camera: null,
+    });
     setActiveIds([]);
     setHiddenIdsV138([]);
     setFocusId(null);
@@ -7794,21 +8174,18 @@ export default function RealMapExplorerPage({
           </span>
           {/* V151: one stack, so the boundary picker keeps its place when the
               backdrop card grows to show its error message. */}
-          <div className="cdp-map-control-stack-v151">
-          {backdropStatusV151 === "fallback" && (
-            <p className="cdp-map-backdrop-note-v164" role="status">
-              배경지도를 불러오지 못해 경계와 데이터만 표시합니다.
-            </p>
-          )}
+          {/* V164-4: the outline choice is a two-way switch under the zoom
+              buttons (it was a 246x160 card over the map's top-left); its
+              explanation opens from the ⓘ. */}
           {!level1V162 && (
           <div
-            className="cdp-map-boundary-system-v151"
+            className="cdp-map-boundary-system-v151 cdp-map-boundary-compact-v164"
             data-boundary-system={boundarySystemV151State}
           >
             <fieldset>
-              <legend>행정경계 기준</legend>
+              <legend>행정경계</legend>
               {(["post-2025-34", "pre-2025-63"] as const).map((system) => (
-                <label key={system}>
+                <label key={system} title={boundarySystemLabelV151(system)}>
                   <input
                     checked={boundarySystemV151State === system}
                     name="cdp-map-boundary-system-v151"
@@ -7820,25 +8197,37 @@ export default function RealMapExplorerPage({
                     type="radio"
                     value={system}
                   />
-                  {boundarySystemLabelV151(system)}
+                  <span aria-hidden="true">{boundarySystemShortLabelV151(system)}</span>
+                  <span className="sr-only">{boundarySystemLabelV151(system)}</span>
                 </label>
               ))}
             </fieldset>
+            {/* The notice is read in place by assistive technology (and by the
+                boundary audits); the ⓘ shows the same sentence to the eye. */}
             <p
+              className="sr-only"
               data-testid="map-boundary-value-notice-v151"
               data-boundary-policy={focusedBoundaryPolicyKindV151 || "none"}
             >
-              {focusedLayer?.boundaryPolicy
-                ? boundaryPolicyNoticeV151(
-                    boundarySystemV151State,
-                    focusedLayer.boundaryPolicy,
-                    focusedBoundaryPolicyKindV151 || undefined
-                  )
-                : boundaryValueNoticeV151(boundarySystemV151State)}
+              {boundaryNoticeTextV164}
             </p>
+            <details className="cdp-map-boundary-info-v164">
+              <summary aria-label="행정경계 기준 설명" title="행정경계 기준 설명">ⓘ</summary>
+              <p aria-hidden="true">{boundaryNoticeTextV164}</p>
+            </details>
           </div>
           )}
-          <div className="cdp-map-overlay-card">
+          <div className="cdp-map-control-stack-v151">
+          {backdropStatusV151 === "fallback" && (
+            <p className="cdp-map-backdrop-note-v164" role="status">
+              배경지도를 불러오지 못해 경계와 데이터만 표시합니다.
+            </p>
+          )}
+          <div
+            className={`cdp-map-overlay-card${
+              focusedLayer && !loadingIds.includes(focusedLayer.elementId) ? " is-idle-v164" : ""
+            }`}
+          >
             <strong>
               <PublicTermTextV134
                 text={
@@ -7855,55 +8244,7 @@ export default function RealMapExplorerPage({
             ) : loadingIds.includes(focusedLayer.elementId) ? (
               <div>불러오는 중입니다</div>
             ) : null}
-            {baseMapStatus === "ready" && keyboardMapFeatureV129 ? (
-              <div
-                aria-label="키보드 지도 항목 탐색"
-                className="cdp-map-keyboard-feature-nav"
-                data-testid="map-keyboard-feature-navigation"
-                onKeyDown={(event) => {
-                  if (event.key === "ArrowLeft") {
-                    event.preventDefault();
-                    moveKeyboardFeatureV129(-1);
-                  } else if (event.key === "ArrowRight") {
-                    event.preventDefault();
-                    moveKeyboardFeatureV129(1);
-                  }
-                }}
-                role="group"
-              >
-                <button
-                  aria-label="이전 지도 항목"
-                  onClick={() => moveKeyboardFeatureV129(-1)}
-                  type="button"
-                >
-                  ←
-                </button>
-                <button
-                  aria-label={`${keyboardMapFeatureV129.label} 선택`}
-                  data-testid="map-keyboard-feature-select"
-                  onClick={selectKeyboardFeatureV129}
-                  onKeyDown={(event) => {
-                    if (event.key !== "Enter" && event.key !== " ") return;
-                    event.preventDefault();
-                    selectKeyboardFeatureV129();
-                  }}
-                  title="Enter 또는 Space로 세부정보 보기"
-                  type="button"
-                >
-                  <span>{keyboardMapFeatureV129.label}</span>
-                  <small aria-live="polite">
-                    {keyboardFeatureIndexV129 + 1} / {keyboardMapFeaturesV129.length}
-                  </small>
-                </button>
-                <button
-                  aria-label="다음 지도 항목"
-                  onClick={() => moveKeyboardFeatureV129(1)}
-                  type="button"
-                >
-                  →
-                </button>
-              </div>
-            ) : null}
+            {focusedLayer ? null : keyboardNavV164}
           </div>
           </div>
           {baseMapStatus !== "ready" && (
@@ -7981,11 +8322,15 @@ export default function RealMapExplorerPage({
                   data-testid="map-legend-toggle-v137"
                   aria-expanded={legendOpen}
                   aria-label={legendOpen ? "범례 접기" : "범례 펼치기"}
-                  onClick={() => setLegendOpen((current) => !current)}
+                  onClick={() => {
+                    legendUserChoiceRefV164.current = true;
+                    setLegendOpen((current) => !current);
+                  }}
                 >
                   {legendOpen ? "범례 접기" : "범례"}
                 </button>
               </div>
+              {keyboardNavV164}
               <dl className="cdp-map-legend__facts">
                 <div>
                   <dt>항목</dt>
@@ -8175,7 +8520,7 @@ export default function RealMapExplorerPage({
                           focusedAnalysisV126.minimum !== null &&
                           focusedAnalysisV126.minimum === focusedAnalysisV126.maximum
                             ? LAYER_COLORS[focusedLayer.elementId] || "#106f4e"
-                            : `linear-gradient(90deg, #e6f2ea, ${
+                            : `linear-gradient(90deg, ${CHOROPLETH_RAMP_START_V164}, ${
                                 LAYER_COLORS[focusedLayer.elementId] || "#106f4e"
                               })`,
                       }}
@@ -8230,8 +8575,49 @@ export default function RealMapExplorerPage({
                 </div>
               ) : (
                 <div className="cdp-map-legend__explanation">
-                  <span>색상: 자료 유형</span>
-                  <span>묶음 숫자: 포함된 위치 수</span>
+                  {rendererOf(focusedLayer) === "line" && focusedLayer.filters[0]?.field !== "class" ? (
+                    // V164-4: a grid is coloured by voltage (110·220·500 kV), any other
+                    // voltage in the layer's own colour.
+                    <>
+                      {TRANSMISSION_VOLTAGE_CLASSES_V152.map((entry) => (
+                        <span key={entry.kv}>
+                          <i className="cdp-map-legend__swatch" style={{ background: entry.color }} aria-hidden="true" />{" "}
+                          <PublicTermTextV134 text={`${entry.kv} kV`} />
+                        </span>
+                      ))}
+                      <span>
+                        <i
+                          className="cdp-map-legend__swatch"
+                          style={{ background: LAYER_COLORS[focusedLayer.elementId] || "#106f4e" }}
+                          aria-hidden="true"
+                        />{" "}
+                        그 밖의 전압·미표기
+                      </span>
+                    </>
+                  ) : rendererOf(focusedLayer) === "line" ? (
+                    // V164-4: a route layer is drawn in one colour; its classes
+                    // and lengths are counted in the analysis panel.
+                    <>
+                      <span>
+                        <i
+                          className="cdp-map-legend__swatch"
+                          style={{ background: LAYER_COLORS[focusedLayer.elementId] || "#106f4e" }}
+                          aria-hidden="true"
+                        />{" "}
+                        <PublicTermTextV134 text={focusedLayer.legend.title || focusedLayer.publicShortTitle} />
+                      </span>
+                      {focusedLayer.legend.note && (
+                        <span>
+                          <PublicTermTextV134 text={focusedLayer.legend.note} />
+                        </span>
+                      )}
+                    </>
+                  ) : (
+                    <>
+                      <span>색상: 자료 유형</span>
+                      {focusedLayer.cluster && <span>묶음 숫자: 포함된 위치 수</span>}
+                    </>
+                  )}
                 </div>
               )}
               {/* V164: a layer drawn by one reference point per segment (another country's
@@ -8242,9 +8628,9 @@ export default function RealMapExplorerPage({
                   <PublicTermTextV134 text={focusedLayer.publicSpatialNotice} />
                 </p>
               ) : null}
-              {focusedMissingReason && focusedMissingReason !== "없음" && (
+              {focusedMissingTextV164 && (
                 <p className="cdp-map-legend__missing">
-                  결측: {focusedMissingReason}
+                  결측: {focusedMissingTextV164}
                 </p>
               )}
             </div>
