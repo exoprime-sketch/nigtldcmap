@@ -436,7 +436,7 @@ export function readWideRecordsV162(
       },
     };
   });
-  return disambiguateWideNamesV162(sortYearSeriesV164(records));
+  return disambiguateWideNamesV162(sortNumberedSeriesV164(sortYearSeriesV164(records)));
 }
 
 const DEFINITION_TYPE_V164 = /등급\s*체계/u;
@@ -551,6 +551,143 @@ export function sortYearSeriesV164<T extends { name: string; type: string | null
     }
   });
   return sorted;
+}
+
+interface NumberedKeyV164 {
+  stem: string;
+  /** The first number of the name: "2.10" is [2, 10], "5,000,000" is [5000000]. */
+  first: number[];
+}
+
+/**
+ * "건축허가 절차 10 — …" is the 10th entry of "건축허가 절차"; "환경허가 수수료 —
+ * 투자규모 5,000,000 ~ 10,000,000 Tk" the entry at 5,000,000 of "환경허가 수수료 —
+ * 투자규모". The stem is what comes before the first number. No key: a name with
+ * no number, a leading year (a yearly series, ordered by sortYearSeriesV164) and
+ * a document number ("Decree 57/2025/NĐ-CP" says nothing about order).
+ */
+function numberedKeyV164(name: string): NumberedKeyV164 | null {
+  const match = /^(\D{3,}?)\s*(\d[\d,]*(?:\.\d+)*)(?![\d,]*\/\d)/u.exec(name);
+  if (!match) return null;
+  const token = match[2].replace(/,+$/u, "");
+  if (/^(?:19|20)\d{2}$/u.test(token.replace(/,/gu, ""))) return null;
+  const first = (token.includes(",") ? [token.replace(/,/gu, "")] : token.split(".")).map(Number);
+  const stem = match[1].trim();
+  return first.every(Number.isFinite) && stem.length >= 3 ? { stem, first } : null;
+}
+
+function compareNumberedV164(left: number[], right: number[]): number {
+  for (let position = 0; position < Math.max(left.length, right.length); position += 1) {
+    const difference = (left[position] ?? -1) - (right[position] ?? -1);
+    if (difference) return difference;
+  }
+  return 0;
+}
+
+/**
+ * V164 R2: records of one numbered series (C-014's 16 construction-permit
+ * steps, its fee brackets) were delivered in text order ("절차 1", "절차 10",
+ * "절차 11" ... "절차 2"; a bracket from 5,000,000 before one from 100,000). They
+ * are listed together, in number order, at the place the series first
+ * appears. Left as delivered: a series already in number order (either way),
+ * fewer than 3 entries, and a stem whose numbers repeat (two outlines that each
+ * start again at 1 - "1. Legal" and "1. Domestic Pilot ETS" - are not one
+ * series).
+ */
+export function sortNumberedSeriesV164<T extends { name: string; type: string | null }>(records: T[]): T[] {
+  const keys = records.map((record) => numberedKeyV164(record.name));
+  const idOf = (index: number) => {
+    const key = keys[index];
+    return key ? `${records[index].type ?? ""}\u0000${key.stem}` : "";
+  };
+  const groups = new Map<string, number[]>();
+  keys.forEach((key, index) => {
+    if (key) groups.set(idOf(index), [...(groups.get(idOf(index)) || []), index]);
+  });
+  const series = new Set<string>();
+  groups.forEach((indexes, id) => {
+    const numbers = indexes.map((index) => (keys[index] as NumberedKeyV164).first);
+    if (indexes.length < 3 || new Set(numbers.map((number) => number.join("."))).size < indexes.length) return;
+    const steps = numbers.slice(1).map((number, position) => Math.sign(compareNumberedV164(number, numbers[position])));
+    if (steps.every((step) => step >= 0) || steps.every((step) => step <= 0)) return;
+    series.add(id);
+  });
+  if (series.size === 0) return records;
+  const emitted = new Set<number>();
+  const sorted: T[] = [];
+  records.forEach((record, index) => {
+    if (emitted.has(index)) return;
+    const id = idOf(index);
+    if (!id || !series.has(id)) {
+      sorted.push(record);
+      emitted.add(index);
+      return;
+    }
+    const members = [...(groups.get(id) || [])].sort((a, b) => compareNumberedV164((keys[a] as NumberedKeyV164).first, (keys[b] as NumberedKeyV164).first) || a - b);
+    for (const member of members) {
+      sorted.push(records[member]);
+      emitted.add(member);
+    }
+  });
+  return sorted;
+}
+
+/** A value long enough to be a sentence; shorter values are labels and codes. */
+const SHARED_MIN_LENGTH_V164 = 60;
+const SHARED_MIN_COUNT_V164 = 4;
+const SHARED_MIN_SHARE_V164 = 0.6;
+
+export interface SharedWideValueV164 {
+  block: string;
+  blockTitle: string;
+  attribute: string;
+  value: string;
+  /** Records that state this value. */
+  count: number;
+  /** All records of the list. */
+  total: number;
+}
+
+/**
+ * V164 R2: a long value that most records carrying its column state in the
+ * same words (BGD C-017's "지역 요건 판정" note on all 39 cards, C-022's
+ * "근거" on 34 of 34). It is told once above the list instead of on every
+ * card. Needs 4+ records, and 60%+ of the records that have the column; a
+ * link is never shared.
+ */
+export function sharedWideValuesV164(records: WideRecordV162[]): SharedWideValueV164[] {
+  const holders = new Map<string, number>();
+  const tally = new Map<string, SharedWideValueV164>();
+  for (const record of records) {
+    for (const block of record.blocks) {
+      for (const value of block.values) {
+        if (value.href) continue;
+        const column = `${block.block}\u0000${value.attribute}`;
+        holders.set(column, (holders.get(column) || 0) + 1);
+        if (value.value.length < SHARED_MIN_LENGTH_V164) continue;
+        const key = `${column}\u0000${value.value}`;
+        const current = tally.get(key) || { block: block.block, blockTitle: block.title, attribute: value.attribute, value: value.value, count: 0, total: records.length };
+        current.count += 1;
+        tally.set(key, current);
+      }
+    }
+  }
+  return [...tally.entries()]
+    .filter(([key, shared]) => shared.count >= SHARED_MIN_COUNT_V164 && shared.count / (holders.get(key.split("\u0000").slice(0, 2).join("\u0000")) || shared.count) >= SHARED_MIN_SHARE_V164)
+    .map(([, shared]) => shared);
+}
+
+/**
+ * V164 R2: a sentence the source wrote in English (a barrier's content, a field
+ * survey's key clause), not a name or a code: 30+ characters, 5+ words and
+ * nothing but ASCII letters and punctuation (a Vietnamese or Bengali text is
+ * not English; a text with any Korean is already partly read).
+ */
+export function isEnglishSentenceV164(value: string): boolean {
+  const text = String(value ?? "").trim();
+  if (text.length < 30 || /^https?:\/\//iu.test(text)) return false;
+  if (/[^\u0000-\u007F ‐-‧]/u.test(text)) return false;
+  return (text.match(/[A-Za-z][A-Za-z'’-]*/gu) || []).length >= 5;
 }
 
 // ---------------------------------------------------------------------------

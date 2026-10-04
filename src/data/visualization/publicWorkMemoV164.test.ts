@@ -167,6 +167,15 @@ describe("publicWorkMemoV164", () => {
     );
   });
 
+  it("R2: cuts how the collector read a number off a scan and keeps the statement that the number is unconfirmed (BGD C-010)", () => {
+    expect(publicWorkMemoV164('S.R.O. 번호 미확정 (두수 "255" 판독)')).toBe("S.R.O. 번호 미확정");
+    expect(publicWorkMemoV164("S.R.O. 번호 미확정")).toBe("S.R.O. 번호 미확정");
+  });
+
+  it("R2: reading an image is not a memo (land-cover description)", () => {
+    expect(publicWorkMemoV164("위성영상 판독으로 산출한 토지피복 면적")).toBe("위성영상 판독으로 산출한 토지피복 면적");
+  });
+
   it("R2: a source that says the source does not state a figure is a statement, not a memo", () => {
     expect(publicWorkMemoV164("500.4→1,237.7(하한), 20년, 원문 미제시, 2030·2050 전망치로 자체 산출(가공)")).toContain("원문 미제시");
   });

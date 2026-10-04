@@ -734,6 +734,16 @@ export function koreanTitleV164(title: string): string {
 }
 
 /**
+ * V164 R2: a place name from a slugged source lost its apostrophe ("Cox s
+ * Bazar", the GDL region of BGD B-021). A lone "s" between two capitalised
+ * words is the possessive; it is written back ("Cox’s Bazar"). Nothing else in
+ * the text is touched.
+ */
+export function restoredApostropheV164(text: string): string {
+  return String(text ?? "").replace(/\b([A-Z][a-z]+) s (?=[A-Z])/gu, "$1’s ");
+}
+
+/**
  * The comparison key of a classification value written two ways by one source
  * ("GOLD_STANDARD_CERTIFIED_DESIGN" and "Gold Standard Certified Design",
  * "LISTED" and "Listed"): no case, no underscores, no repeated spaces. Two values

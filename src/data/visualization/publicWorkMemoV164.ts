@@ -46,6 +46,8 @@ const SIGNALS_V164: readonly string[] = [
   String.raw`행\s*#\d+`,
   String.raw`하한\s*=\s*상한`,
   String.raw`확정\s*기재`,
+  // how the collector read a number off a scan ('S.R.O. 번호 미확정 (두수 "255" 판독)')
+  String.raw`두수\s*[“"]?\d+[”"]?\s*판독`,
   // how a page was fetched
   String.raw`HTTP\s*[1-5]\d{2}`,
   String.raw`봇\s*차단`,

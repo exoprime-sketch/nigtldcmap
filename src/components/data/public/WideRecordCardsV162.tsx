@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
-import type { WideRecordV162, WideValueV162 } from "../../../data/visualization/wideRecordsV162";
+import type { SharedWideValueV164, WideRecordV162, WideValueV162 } from "../../../data/visualization/wideRecordsV162";
 import { koreanTitleV164 } from "../../../data/visualization/publicCategoryLabelV164";
-import { mergeRegionNameValuesV163, sourceLinkTextV162 } from "../../../data/visualization/wideRecordsV162";
+import { isEnglishSentenceV164, mergeRegionNameValuesV163, sharedWideValuesV164, sourceLinkTextV162 } from "../../../data/visualization/wideRecordsV162";
 import { PublicTermExpandedTextV134, PublicTermTextV134 } from "../../help/PublicTermV134";
 import { PolicyDocumentDescriptionV153 } from "./PolicyDescriptionV153";
 import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
@@ -141,7 +141,88 @@ export function cardRowsV164(values: WideValueV162[]): WideValueV162[] {
   return values.flatMap((value, index) => (index === amountIndex ? [merged] : index === unitIndex ? [] : [value]));
 }
 
-function WideRecordCardV162({ record, elementId }: { record: WideRecordV162; elementId?: string }) {
+/** A value longer than this is shown folded to a few lines, with a button that opens it. */
+const FOLD_LENGTH_V164 = 240;
+const FOLD_LINES_V164 = 6;
+
+const sharedKeyV164 = (block: string, attribute: string, value: string) => `${block}\u0000${attribute}\u0000${value}`;
+
+/**
+ * V164 R2: a long value is folded (the whole text stays in the page, cut by the
+ * style, so it is still read by a screen reader and found by the browser's
+ * search) and opened by "더 보기". A short value is shown as it is.
+ */
+function FoldedValueV164({ text, children }: { text: string; children: ReactNode }) {
+  const [open, setOpen] = useState(false);
+  if (text.length <= FOLD_LENGTH_V164 && text.split("\n").length < FOLD_LINES_V164) return <>{children}</>;
+  return (
+    <>
+      <div className="wide162-fold" data-folded={open ? "false" : "true"}>
+        {children}
+      </div>
+      <button type="button" className="wide162-fold-toggle" aria-expanded={open} onClick={() => setOpen((value) => !value)}>
+        {open ? "접기" : "더 보기"}
+      </button>
+    </>
+  );
+}
+
+/** A value of a sentence or more (a link is not) is shown under its label, across the card. */
+const SENTENCE_LENGTH_V164 = 60;
+export function isSentenceV164(value: WideValueV162, displayValue: string): boolean {
+  return !value.href && displayValue.length > SENTENCE_LENGTH_V164;
+}
+
+/** The row label; a sentence the source wrote in English says so ("장벽 내용 (영어 원문)"). */
+export function rowLabelV164(attribute: string, text: string): string {
+  return !ORIGINAL_WORDING_ATTRIBUTE_V164.test(attribute) && isEnglishSentenceV164(text) ? `${attribute} (영어 원문)` : attribute;
+}
+
+/** The value of one row: a link, or the text line by line, folded when long. */
+function RowValueV164({ attribute, value, displayValue }: { attribute: string; value: WideValueV162; displayValue: string }) {
+  if (value.href) {
+    return (
+      <a href={value.href} target="_blank" rel="noopener noreferrer">
+        {/* A bare address is not link text: the reader sees "원문". */}
+        <PublicTermExpandedTextV134 text={/\.pdf(?:$|[?#])/iu.test(value.href) || /^https?:\/\//iu.test(value.value) ? sourceLinkTextV162(value.href) : value.value} />
+      </a>
+    );
+  }
+  const keepOriginal = ORIGINAL_WORDING_ATTRIBUTE_V164.test(attribute) || isEnglishSentenceV164(displayValue);
+  return (
+    <FoldedValueV164 text={displayValue}>
+      {/* V164-3: a line break the sheet marked ("⏎") is a line here. */}
+      {displayValue.split("\n").map((line, lineIndex) => (
+        <span className="wide162-line" key={lineIndex}>
+          <PublicTermTextV134 text={line} keepOriginal={keepOriginal} />
+        </span>
+      ))}
+    </FoldedValueV164>
+  );
+}
+
+/**
+ * V164 R2: how much room a card takes, as the rows it states and the text of
+ * each (a folded value counts as its folded length).
+ */
+export function wideCardWeightV164(record: WideRecordV162): number {
+  return record.blocks.reduce((sum, block) => sum + block.values.reduce((rows, value) => rows + 36 + Math.min(value.value.length, FOLD_LENGTH_V164), 0), 0);
+}
+
+/**
+ * V164 R2: a list whose cards differ a lot in height (BGD C-012's PPP law card
+ * beside cards of five rows) leaves a blank under the short ones when it is
+ * laid out in rows; such a list is laid out in columns instead.
+ */
+export function unevenCardsV164(weights: number[]): boolean {
+  if (weights.length < 4) return false;
+  const sorted = [...weights].sort((left, right) => left - right);
+  const median = sorted[Math.floor(sorted.length / 2)];
+  const max = sorted[sorted.length - 1];
+  return max >= 1200 && max >= 2.5 * median;
+}
+
+function WideRecordCardV162({ record, elementId, sharedKeys }: { record: WideRecordV162; elementId?: string; sharedKeys: ReadonlySet<string> }) {
   // V162 (P12-B): a [지역] block's place name reads "한글명 (현지명)"; its own
   // administrative code stays as delivered (regionText only rewrites the name
   // attributes, matched by REGION_NAME_ATTRIBUTE_V162).
@@ -158,51 +239,69 @@ function WideRecordCardV162({ record, elementId }: { record: WideRecordV162; ele
         </h4>
         {record.type ? <span className="wide162-type-chip">{record.type}</span> : null}
       </header>
-      {record.blocks.map((block) => (
-        <section className="wide162-block" key={block.block}>
-          {/* A label inside the card, not a page heading: every card repeats it. */}
-          <p className="wide162-block-title">{block.title}</p>
-          <dl className="wide162-rows">
-            {cardRowsV164(block.block === "지역" && level1 ? mergeRegionNameValuesV163(block.values) : block.values)
-              // V164: a field the record leaves empty is not shown as a bare label.
-              .filter((value) => value.href || String(value.value ?? "").trim() !== "")
-              .map((value) => {
-              const displayValue =
-                block.block === "지역" && REGION_NAME_ATTRIBUTE_V162.test(value.attribute)
-                  ? regionText(value.value)
-                  : cardValueTextV164(value.attribute, value.value);
-              return (
-                <div className="wide162-row" key={`${block.block}-${value.attribute}`}>
-                  <dt>
-                    <PublicTermTextV134 text={value.attribute} />
-                  </dt>
-                  <dd>
-                    {value.href ? (
-                      <a href={value.href} target="_blank" rel="noopener noreferrer">
-                        {/* A bare address is not link text: the reader sees "원문". */}
-                        <PublicTermExpandedTextV134 text={/\.pdf(?:$|[?#])/iu.test(value.href) || /^https?:\/\//iu.test(value.value) ? sourceLinkTextV162(value.href) : value.value} />
-                      </a>
-                    ) : (
-                      // V164-3: a line break the sheet marked ("⏎") is a line here.
-                      displayValue.split("\n").map((line, lineIndex) => (
-                        <span className="wide162-line" key={lineIndex}>
-                          <PublicTermTextV134 text={line} keepOriginal={ORIGINAL_WORDING_ATTRIBUTE_V164.test(value.attribute)} />
-                        </span>
-                      ))
-                    )}
-                  </dd>
-                </div>
-              );
-            })}
-          </dl>
-        </section>
-      ))}
+      {record.blocks.map((block) => {
+        const rows = cardRowsV164(block.block === "지역" && level1 ? mergeRegionNameValuesV163(block.values) : block.values)
+          // V164: a field the record leaves empty is not shown as a bare label.
+          .filter((value) => value.href || String(value.value ?? "").trim() !== "")
+          // V164 R2: a value the list states once above is not repeated on the card.
+          .filter((value) => !sharedKeys.has(sharedKeyV164(block.block, value.attribute, value.value)));
+        if (!rows.length) return null;
+        return (
+          <section className="wide162-block" key={block.block}>
+            {/* A label inside the card, not a page heading: every card repeats it. */}
+            <p className="wide162-block-title">{block.title}</p>
+            <dl className="wide162-rows">
+              {rows.map((value) => {
+                const displayValue =
+                  block.block === "지역" && REGION_NAME_ATTRIBUTE_V162.test(value.attribute)
+                    ? regionText(value.value)
+                    : cardValueTextV164(value.attribute, value.value);
+                return (
+                  <div className={isSentenceV164(value, displayValue) ? "wide162-row wide162-row--stacked" : "wide162-row"} key={`${block.block}-${value.attribute}`}>
+                    <dt>
+                      <PublicTermTextV134 text={value.href ? value.attribute : rowLabelV164(value.attribute, displayValue)} />
+                    </dt>
+                    <dd>
+                      <RowValueV164 attribute={value.attribute} value={value} displayValue={displayValue} />
+                    </dd>
+                  </div>
+                );
+              })}
+            </dl>
+          </section>
+        );
+      })}
       {/* V162: a policy document keeps the platform's reviewed description
           (V153 C-009/C-010) now that the wide cards show it; nothing when the
           document has no entry. */}
       {elementId ? <PolicyDocumentDescriptionV153 elementId={elementId} name={record.name} /> : null}
       <SourceLineV162 source={record.source} />
     </article>
+  );
+}
+
+/** What many records state in the same words, once, with how many it holds for. */
+function SharedNotesV164({ notes }: { notes: SharedWideValueV164[] }) {
+  return (
+    <aside className="wide162-shared" data-testid="wide-shared-notes-v164" aria-label="여러 기록에 공통인 내용">
+      <p className="wide162-shared-title">여러 기록에 같은 내용이라 한 번만 적습니다</p>
+      <dl className="wide162-rows">
+        {notes.map((note) => {
+          const text = cardValueTextV164(note.attribute, note.value);
+          return (
+            <div className="wide162-row" key={sharedKeyV164(note.block, note.attribute, note.value)}>
+              <dt>
+                <PublicTermTextV134 text={`${note.blockTitle} · ${rowLabelV164(note.attribute, text)}`} />
+                <span className="wide162-shared-count">{note.count === note.total ? `모든 기록(${note.total}건)` : `${note.count}건`}에 공통</span>
+              </dt>
+              <dd>
+                <RowValueV164 attribute={note.attribute} value={{ attribute: note.attribute, value: note.value }} displayValue={text} />
+              </dd>
+            </div>
+          );
+        })}
+      </dl>
+    </aside>
   );
 }
 
@@ -237,6 +336,10 @@ export default function WideRecordCardsV162({ records, elementTitle, elementId, 
   const visible = filtered.slice(0, visibleCount);
   const remaining = filtered.length - visible.length;
   const headerText = `${elementTitle ? `${elementTitle} ` : ""}${records.length}건`;
+  // V164 R2: what most records state in the same words is told once, above the list.
+  const shared = useMemo(() => sharedWideValuesV164(records), [records]);
+  const sharedKeys = useMemo(() => new Set(shared.map((note) => sharedKeyV164(note.block, note.attribute, note.value))), [shared]);
+  const uneven = useMemo(() => unevenCardsV164(visible.map(wideCardWeightV164)), [visible]);
 
   return (
     <section className="wide162" data-testid="wide-record-cards-v162" data-analysis-block="cards-list" data-record-scope={recordScope} data-record-count={records.length}>
@@ -276,12 +379,13 @@ export default function WideRecordCardsV162({ records, elementTitle, elementId, 
           />
         </label>
       </div>
+      {shared.length ? <SharedNotesV164 notes={shared} /> : null}
       {filtered.length === 0 ? (
         <p className="wide162-empty">검색 결과가 없습니다.</p>
       ) : (
-        <div className="wide162-grid">
+        <div className="wide162-grid" data-layout={uneven ? "columns" : "rows"}>
           {visible.map((record, index) => (
-            <WideRecordCardV162 key={`${index}-${record.name}`} record={record} elementId={elementId} />
+            <WideRecordCardV162 key={`${index}-${record.name}`} record={record} elementId={elementId} sharedKeys={sharedKeys} />
           ))}
         </div>
       )}

@@ -8,6 +8,7 @@ import {
   koreanListV164,
   koreanTitleV164,
   nationalityLabelV164,
+  restoredApostropheV164,
 } from "./publicCategoryLabelV164";
 
 /** V164-3: the English classification values the delivery shipped, in Korean. */
@@ -262,5 +263,21 @@ describe("TNA barrier categories and policy instrument groups (R2, C-005/C-009)"
 
   it("leaves a barrier the dictionary does not know as delivered", () => {
     expect(koreanCategoryV164("Lack of a technology transfer network")).toBe("Lack of a technology transfer network");
+  });
+});
+
+describe("restoredApostropheV164", () => {
+  it("writes the possessive back into a slugged place name", () => {
+    expect(restoredApostropheV164("Cox s Bazar")).toBe("Cox’s Bazar");
+    expect(restoredApostropheV164("Bandarban, Cox s Bazar")).toBe("Bandarban, Cox’s Bazar");
+    expect(restoredApostropheV164("GVI 지수 — 지역(23구역) — Bandarban, Cox s Bazar")).toBe("GVI 지수 — 지역(23구역) — Bandarban, Cox’s Bazar");
+  });
+
+  it("leaves a name that already has it and any other text", () => {
+    expect(restoredApostropheV164("Cox’s Bazar")).toBe("Cox’s Bazar");
+    expect(restoredApostropheV164("Cox's Bazar")).toBe("Cox's Bazar");
+    expect(restoredApostropheV164("Dar es Salaam")).toBe("Dar es Salaam");
+    expect(restoredApostropheV164("Chittagong")).toBe("Chittagong");
+    expect(restoredApostropheV164("")).toBe("");
   });
 });

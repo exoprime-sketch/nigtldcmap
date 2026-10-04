@@ -55,7 +55,7 @@ import EntityFacetCountsV153 from "../public/EntityFacetCountsV153";
 import { cdmActivityRowV164, splitCdmActivitiesV164, withDirectoryKeysV164 } from "../../../data/visualization/directoryEntitiesV164";
 import { agreementDateTextV164, agreementDetailV164, partiesTextV164, withAgreementNameV164 } from "../../../data/visualization/agreementTimelineV164";
 import { dedupeIdenticalRowsV164, evidenceColumnsV164 } from "../../../data/visualization/evidenceRowsV164";
-import { koreanLabeledValuesV164 } from "../../../data/visualization/publicCategoryLabelV164";
+import { koreanLabeledValuesV164, restoredApostropheV164 } from "../../../data/visualization/publicCategoryLabelV164";
 import {
   auxSeriesLabelV164,
   barAxisLabelV164,
@@ -2414,7 +2414,7 @@ function publicRowLabelV164(value: string | null | undefined): string | null {
  */
 function seriesLabelV164(row: SemanticObservationV125): string {
   const text = publicTextV126(namedRawKeysV164(publicIndicatorSeriesV144(row))) || "";
-  return koreanLegendLabelV164(withoutRawKeysV164(text) || row.semanticMeasure.labelKo || "");
+  return koreanLegendLabelV164(restoredApostropheV164(withoutRawKeysV164(text) || row.semanticMeasure.labelKo || ""));
 }
 
 /**
