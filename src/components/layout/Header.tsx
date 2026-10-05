@@ -3,12 +3,17 @@ import { PUBLIC_NAVIGATION_V114 } from "../../app/navigation";
 import type { View } from "../../app/navigation";
 import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
 import GlobalQuickSearchV41 from "../search/GlobalQuickSearchV41";
+import CountryPickerV165 from "../country/CountryPickerV165";
 import "../../styles/brand-v15.css";
 import "../../styles/global-search-v41.css";
 
 interface HeaderProps {
   currentView: View;
   onNavigate: (view: View) => void;
+  /** V165: the country the current screen shows (null while unknown). */
+  countryIso3: string | null;
+  /** V165: the reader picked another public country in the header. */
+  onCountryChange: (iso3: string) => void;
   onOpenElement: (elementId: string, countryIso3: string) => void;
   onOpenMapElement: (elementId: string, countryIso3: string) => void;
   onOpenDownload: (elementId: string, countryIso3: string) => void;
@@ -22,6 +27,8 @@ interface HeaderProps {
 export default function Header({
   currentView,
   onNavigate,
+  countryIso3,
+  onCountryChange,
   onOpenElement,
   onOpenMapElement,
   onOpenDownload,
@@ -82,6 +89,9 @@ export default function Header({
               );
             })}
           </nav>
+
+          {/* V165: which country every screen shows, changed in one place. */}
+          <CountryPickerV165 variant="header" value={countryIso3} onChange={onCountryChange} />
 
           <button
             type="button"

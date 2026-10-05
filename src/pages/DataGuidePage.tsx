@@ -8,21 +8,26 @@ import { loadPublicOverviewV161 } from "../data/publicPlatformV128";
 import { ensureCountryRegistryLoadedV158 } from "../data/countries/countryDataProviderRegistryV122";
 import { resolveHomeCountryV161 } from "../data/homeCountryV161";
 import type { HomeCountryV161 } from "../data/homeCountryV161";
-import CountryScopeLinksV162 from "../components/country/CountryScopeLinksV162";
+import CountryPickerV165 from "../components/country/CountryPickerV165";
 import { countryLevel1V158 } from "../data/countries/countryLevel1V158";
-import { DEFAULT_COUNTRY_ISO3_V158 } from "../data/countryContext";
+import { countryRegistryCacheV158, DEFAULT_COUNTRY_ISO3_V158 } from "../data/countryContext";
 import { PublicTermTextV134 } from "../components/help/PublicTermV134";
 import "../styles/data-guide-v128.css";
 
 interface DataGuidePageProps {
   onNavigate: (view: View) => void;
+  /** V165: another public country picked on the guide. */
+  onCountryChange: (iso3: string) => void;
 }
 
-export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
+export default function DataGuidePage({ onNavigate, onCountryChange }: DataGuidePageProps) {
   const [releaseDate, setReleaseDate] = useState("확인 중");
   // V162 PR-D: the guide names the public countries from the registry and
   // states the current country's own data date.
-  const [scopeCountry, setScopeCountry] = useState<HomeCountryV161 | null>(() => resolveHomeCountryV161(window.location.search));
+  // V165: only once the registry is read - the bundled fallback names a country by its code.
+  const [scopeCountry, setScopeCountry] = useState<HomeCountryV161 | null>(() =>
+    countryRegistryCacheV158() ? resolveHomeCountryV161(window.location.search) : null
+  );
   const [glossaryQuery, setGlossaryQuery] = useState("");
 
   // V162: terms about particular countries are listed on those countries' screens only.
@@ -100,7 +105,7 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
   return (
     <div className="page-shell data-guide-v128" data-v128-guide>
       <header className="data-guide-v128__hero">
-        <CountryScopeLinksV162 className="data-guide-v128__scope" current={scopeCountry?.iso3 || null} hash="guide" />
+        <CountryPickerV165 className="data-guide-v128__country" variant="inline" label="국가" value={scopeCountry?.iso3 || null} onChange={onCountryChange} />
         <h1>데이터 이용안내</h1>
         <p>
           데이터 범위, 자료기간, 출처, 다운로드 및 지도 이용 시 참고사항을
@@ -153,7 +158,7 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
             현재 {scopeCountry?.nameKo || "선택한 나라"} 데이터를 제공합니다. 정책·제도, 에너지,
             온실가스, 산림·토지, 기후사업·재원, 연구·협력기관 자료를 데이터
             항목 단위로 확인할 수 있습니다.
-            {scopeCountry && scopeCountry.live.length > 1 ? " 다른 나라의 데이터는 위 '현재 제공 국가'에서 고릅니다." : null}
+            {scopeCountry && scopeCountry.live.length > 1 ? " 다른 나라의 데이터는 위 '국가'나 상단 메뉴 옆 국가 버튼에서 고릅니다." : null}
           </p>
         </section>
 

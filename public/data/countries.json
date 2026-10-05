@@ -2,6 +2,11 @@
   "schemaVersion": "countries-v158",
   "generatedAt": "2026-09-24",
   "note": "공개 대상 국가 레지스트리. 런타임이 읽는 원본이며, 화면·빌더·감사는 여기서 국가별 데이터 경로와 상태를 얻는다. status=live 국가만 ?country= 파라미터로 선택할 수 있다.",
+  "regions": [
+    { "key": "sea", "nameKo": "동남아시아", "order": 1 },
+    { "key": "sa", "nameKo": "남아시아", "order": 2 },
+    { "key": "mena", "nameKo": "중동·북아프리카", "order": 3 }
+  ],
   "countries": [
     {
       "iso3": "VNM",
@@ -21,7 +26,8 @@
       "defaultZoom": 4.6,
       "boundaryEpoch": "2025-07-01",
       "categoriesAvailable": ["A", "B", "C", "D", "E"],
-      "status": "live"
+      "status": "live",
+      "region": "sea"
     },
     {
       "iso3": "BGD",
@@ -41,7 +47,8 @@
       "defaultZoom": 6.4,
       "boundaryEpoch": "geoBoundaries gbOpen ADM1",
       "categoriesAvailable": ["A", "B", "C", "E"],
-      "status": "live"
+      "status": "live",
+      "region": "sa"
     }
   ]
 }

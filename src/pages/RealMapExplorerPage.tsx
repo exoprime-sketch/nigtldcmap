@@ -1,5 +1,6 @@
 import { countryDataLoaderV158 } from "../data/countries/countryDataLoaderV158";
 import { useCountryDataProvidersV158 } from "../data/countries/useCountryDataProvidersV158";
+import CountryOptionsV165 from "../components/country/CountryOptionsV165";
 import { countryLevel1AssetUrlV162, countryLevel1V158, regionWordV158 } from "../data/countries/countryLevel1V158";
 import { boundaryCreditPhraseV163 } from "../data/map/miniMapCountryV163";
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -1758,6 +1759,24 @@ export default function RealMapExplorerPage({
         : null
     );
   const [roleNotice, setRoleNotice] = useState("");
+  // V165: a country chosen outside the page (the header picker, back and
+  // forward) is taken in the same render, with the reading of the previous
+  // country cleared as on the page's own selector (changeCountry); the layers
+  // follow the URL through the hydration below. Adjusting state while
+  // rendering spares the whole page a second pass after an effect.
+  const [requestedCountryV165, setRequestedCountryV165] = useState<string | null>(null);
+  if ((initialState.countryIso3 ?? null) !== requestedCountryV165) {
+    setRequestedCountryV165(initialState.countryIso3 ?? null);
+    const requested = initialState.countryIso3?.toUpperCase() || "";
+    if (requested && requested !== countryIso3) {
+      setCountryIso3(requested);
+      setSelected(null);
+      setSelectedSpatial(null);
+      setRoleNotice("");
+      setOverlapChoicesV133([]);
+      setLastEnabledContextIdV133(null);
+    }
+  }
   const [fallbackTooltipV129, setFallbackTooltipV129] =
     useState<FallbackMapTooltipV129 | null>(null);
   const [adm1OutlineStatus, setAdm1OutlineStatus] =
@@ -2225,12 +2244,6 @@ export default function RealMapExplorerPage({
         .filter((row) => Boolean(row.path)),
     [adm1Boundary, countryIso3, fallbackBounds]
   );
-
-  useEffect(() => {
-    const requested = initialState.countryIso3?.toUpperCase() || "";
-    if (!requested) return;
-    setCountryIso3((current) => (current === requested ? current : requested));
-  }, [initialState.countryIso3]);
 
   useEffect(() => {
     let cancelled = false;
@@ -6583,11 +6596,7 @@ export default function RealMapExplorerPage({
               value={countryIso3}
               onChange={(event) => changeCountry(event.target.value)}
             >
-              {countryProvidersV162.map((item) => (
-                <option key={item.countryIso3} value={item.countryIso3}>
-                  {item.countryNameKo}
-                </option>
-              ))}
+              <CountryOptionsV165 providers={countryProvidersV162} />
             </select>
           </label>
 

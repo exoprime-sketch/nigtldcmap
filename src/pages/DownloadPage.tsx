@@ -10,6 +10,7 @@ import {
   getCountryDataProviderV122,
 } from "../data/countries/countryDataProviderRegistryV122";
 import { useCountryDataProvidersV158 } from "../data/countries/useCountryDataProvidersV158";
+import CountryOptionsV165 from "../components/country/CountryOptionsV165";
 import type { CountryCatalogItemV122 } from "../data/countries/countryDataTypesV122";
 import {
   PublicTermHelpV134,
@@ -55,6 +56,8 @@ interface DownloadPageProps {
   initialDatasetId: string | null;
   initialElementId?: string | null;
   initialCountryIso3?: string | null;
+  /** V165: the page's own country choice (null = 전체), for the address and the header. */
+  onCountryChange?: (iso3: string | null) => void;
 }
 
 type PeriodMode = "all" | "year" | "range";
@@ -142,6 +145,7 @@ export default function DownloadPage({
   initialDatasetId: _initialDatasetId,
   initialElementId = null,
   initialCountryIso3 = null,
+  onCountryChange,
 }: DownloadPageProps) {
   const providers = useCountryDataProvidersV158();
   const normalizedInitialCountry = initialCountryIso3?.toUpperCase() || "";
@@ -536,14 +540,11 @@ export default function DownloadPage({
               onChange={(event) => {
                 setCountrySelection(event.target.value);
                 setSelectedKeys(new Set());
+                onCountryChange?.(event.target.value === "all" ? null : event.target.value);
               }}
             >
               <option value="all">전체</option>
-              {providers.map((provider) => (
-                <option key={provider.countryIso3} value={provider.countryIso3}>
-                  {provider.countryNameKo}
-                </option>
-              ))}
+              <CountryOptionsV165 providers={providers} />
             </select>
           </label>
           <label className="cdp-field">

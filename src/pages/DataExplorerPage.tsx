@@ -6,6 +6,7 @@ import {
   publicCountryDataErrorMessageV122,
 } from "../data/countries/countryDataFacadeV122";
 import { useCountryDataProvidersV158 } from "../data/countries/useCountryDataProvidersV158";
+import CountryOptionsV165 from "../components/country/CountryOptionsV165";
 import type { CountryCatalogItemV122 } from "../data/countries/countryDataTypesV122";
 import { publicDownloadStatusV128 } from "../data/publicPlatformV128";
 import { loadCardSummariesV140 } from "../data/cardSummariesV140";
@@ -732,11 +733,7 @@ export default function DataExplorerPage({
               onChange={(event) => onCountryChange(event.target.value)}
             >
               <option value="all">전체</option>
-              {providers.map((provider) => (
-                <option key={provider.countryIso3} value={provider.countryIso3}>
-                  {provider.countryNameKo}
-                </option>
-              ))}
+              <CountryOptionsV165 providers={providers} />
             </select>
           </label>
           <label className="cdp-field">

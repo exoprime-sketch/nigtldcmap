@@ -1,4 +1,4 @@
-import CountryScopeLinksV162 from "../components/country/CountryScopeLinksV162";
+import CountryPickerV165 from "../components/country/CountryPickerV165";
 import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import type { FormEvent } from "react";
 import type { View } from "../app/navigation";
@@ -25,11 +25,13 @@ interface HomePageProps {
   onOpenElement: (elementId: string, countryIso3: string, selection?: DataFinderSelectorStateV125) => void;
   onOpenMapElement: (elementId: string, countryIso3: string, selection?: DataFinderSelectorStateV125) => void;
   onNavigate: (view: View) => void;
+  /** V165: another public country picked on the home. */
+  onCountryChange: (iso3: string) => void;
 }
 const SEARCH_EXAMPLES_V139 = ["국내총생산", "가뭄", "산림손실", "송전망"];
 const DEFAULT_MAP_ELEMENT_V139 = "A-024";
 
-export default function HomePage({ query, onQueryChange, onSubmit, onSearchExample, onOpenElement, onOpenMapElement, onNavigate }: HomePageProps) {
+export default function HomePage({ query, onQueryChange, onSubmit, onSearchExample, onOpenElement, onOpenMapElement, onNavigate, onCountryChange }: HomePageProps) {
   // V161: the current country comes from ?country= and the country registry;
   // every figure below is read from that country's own data tree.
   const [country, setCountry] = useState<HomeCountryV161 | null>(null);
@@ -76,7 +78,8 @@ export default function HomePage({ query, onQueryChange, onSubmit, onSearchExamp
           <span className="home-final-eyebrow">국가별 기후기술 협력 데이터</span>
           <h1 id="home-v128-title">개도국 기후기술 협력 플랫폼</h1>
           <p>{country ? `${country.nameKo}의 ` : ""}정책·에너지·기후위험·사업·협력기관 정보를 검색하고, 지역별 분포와 변화를 확인하세요.</p>
-          <CountryScopeLinksV162 className="home-final-scope" current={country?.iso3 || null} hash="home" />
+          {/* V165: one button per public country (a list from five); the country stays on this page. */}
+          <CountryPickerV165 className="home-final-scope country-picker-v165--on-dark" variant="inline" label="국가" value={country?.iso3 || null} onChange={onCountryChange} />
           <form className="home-final-search" onSubmit={onSubmit} role="search">
             <label className="sr-only" htmlFor="home-search">데이터명·지역·기술·기관 검색</label>
             <input id="home-search" value={query} onChange={event => onQueryChange(event.target.value)} placeholder="데이터명·지역·기술·기관 검색" />
