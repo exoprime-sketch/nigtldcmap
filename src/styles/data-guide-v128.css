@@ -36,38 +36,6 @@
   line-height: 1.75;
 }
 
-.data-guide-v128__toc {
-  margin-top: 32px;
-  padding: 14px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  border: 1px solid var(--slate-200);
-  border-radius: 14px;
-  background: var(--white);
-}
-
-.data-guide-v128__toc button {
-  min-height: 44px;
-  padding: 0 14px;
-  display: inline-flex;
-  align-items: center;
-  border-radius: 9px;
-  border: 0;
-  color: var(--navy-800);
-  background: var(--slate-50);
-  font-size: 13px;
-  font-weight: 800;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.data-guide-v128__toc button:hover,
-.data-guide-v128__toc button:focus-visible {
-  color: var(--blue-700);
-  background: #eaf3fb;
-}
-
 .data-guide-v128__grid {
   margin-top: 24px;
   display: grid;
@@ -222,6 +190,41 @@
   line-height: 1.6;
 }
 
+/* V167: the definitions read as one list; a term's state is named in bold. */
+.data-guide-v128__grid dd strong {
+  color: var(--navy-800);
+  font-weight: 800;
+}
+
+/* V167: the usage-count notice and the map notes, folded under their part. */
+.data-guide-v167__more {
+  margin-top: 14px;
+  border-top: 1px solid var(--slate-200);
+}
+
+.data-guide-v167__more summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--navy-800);
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.data-guide-v167__more summary:focus-visible {
+  outline: 2px solid var(--blue-700);
+  outline-offset: 2px;
+}
+
+.data-guide-v128__grid .data-guide-v167__more p {
+  margin: 4px 0 12px;
+  font-size: 13px;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
 .data-guide-v128__contact a {
   min-height: 44px;
   margin-top: 16px;
@@ -236,7 +239,9 @@
   text-decoration: none;
 }
 
-.data-guide-v134__glossary {
+/* V167: the term search sits beside "다운로드·출처·이용조건"; the contact
+   card takes the full width under them. */
+.data-guide-v128__contact {
   grid-column: 1 / -1;
 }
 
@@ -306,7 +311,7 @@
   margin: 22px 0 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 10px;
   list-style: none;
 }
@@ -409,13 +414,22 @@
 }
 
 @media (max-width: 480px) {
-  .data-guide-v128__toc {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* V167: the "공개 예정" mark keeps its line in the narrow status column. */
+  .country-table-v166 thead th:nth-child(1) {
+    width: 22%;
   }
 
-  .data-guide-v128__toc button {
-    justify-content: center;
+  .country-table-v166 thead th:nth-child(3) {
+    width: 25%;
+  }
+
+  .country-table-v166 thead th:nth-child(4) {
+    width: 23%;
+  }
+
+  .country-table-v166 th,
+  .country-table-v166 td {
+    padding: 8px 4px;
   }
 
   .data-guide-v128__grid dl > div {
@@ -432,9 +446,4 @@
   .data-guide-v134__glossary-heading > span {
     width: fit-content;
   }
-}
-
-/* V165: the country picker (country-picker-v165.css) above the title. */
-.data-guide-v128__country {
-  margin-bottom: 6px;
 }

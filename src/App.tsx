@@ -1444,7 +1444,7 @@ export default function App() {
         )}
 
         {view === "guide" && (
-          <DataGuidePage key={pageCountryKeyV165} onNavigate={navigate} onCountryChange={changeCountryV165} />
+          <DataGuidePage key={pageCountryKeyV165} onNavigate={navigate} />
         )}
 
         {view === "not-found" && <NotFoundPage onNavigate={navigate} />}

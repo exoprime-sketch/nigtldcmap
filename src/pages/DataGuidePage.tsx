@@ -8,7 +8,6 @@ import { loadPublicOverviewV161 } from "../data/publicPlatformV128";
 import { ensureCountryRegistryLoadedV158 } from "../data/countries/countryDataProviderRegistryV122";
 import { resolveHomeCountryV161 } from "../data/homeCountryV161";
 import type { HomeCountryV161 } from "../data/homeCountryV161";
-import CountryPickerV165 from "../components/country/CountryPickerV165";
 import CountryTableV166 from "../components/country/CountryTableV166";
 import { countryLevel1V158 } from "../data/countries/countryLevel1V158";
 import { countryRegistryCacheV158, DEFAULT_COUNTRY_ISO3_V158 } from "../data/countryContext";
@@ -17,11 +16,18 @@ import "../styles/data-guide-v128.css";
 
 interface DataGuidePageProps {
   onNavigate: (view: View) => void;
-  /** V165: another public country picked on the guide. */
-  onCountryChange: (iso3: string) => void;
 }
 
-export default function DataGuidePage({ onNavigate, onCountryChange }: DataGuidePageProps) {
+/**
+ * V167 (user decision 2026-10-05): the guide in four parts - what is offered,
+ * how to read the data, download / sources / terms of use, contact - plus a
+ * term search. It was 44 screens long at 1440px, 95% of it the full list of
+ * some 580 terms; every screen already explains a term in place (its "?"
+ * help), so the list shows only what a search finds. The usage-count notice
+ * and the map notes (base-map and icon credits included) are kept, folded.
+ * The country follows the header's picker (the page key changes with it).
+ */
+export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
   const [releaseDate, setReleaseDate] = useState("확인 중");
   // V162 PR-D: the guide names the public countries from the registry and
   // states the current country's own data date.
@@ -37,9 +43,10 @@ export default function DataGuidePage({ onNavigate, onCountryChange }: DataGuide
     () => PUBLIC_GLOSSARY_V134.filter((entry) => glossaryShownForCountryV162(entry, pageCountry)),
     [pageCountry]
   );
-  const visibleGlossary = useMemo(() => {
+  // V167: nothing is listed until something is searched.
+  const foundGlossary = useMemo(() => {
     const normalized = glossaryQuery.trim().toLocaleLowerCase("ko-KR");
-    if (!normalized) return countryGlossary;
+    if (!normalized) return [];
     return countryGlossary.filter((entry) => {
       const patternAliases =
         entry.id === "spei"
@@ -60,6 +67,7 @@ export default function DataGuidePage({ onNavigate, onCountryChange }: DataGuide
         .includes(normalized);
     });
   }, [countryGlossary, glossaryQuery]);
+  const searching = glossaryQuery.trim().length > 0;
 
   useEffect(() => {
     let cancelled = false;
@@ -96,195 +104,148 @@ export default function DataGuidePage({ onNavigate, onCountryChange }: DataGuide
     return () => window.cancelAnimationFrame(frame);
   }, []);
 
-  function scrollToSection(id: string) {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }
+  const otherCountry = Boolean(scopeCountry && scopeCountry.iso3 !== DEFAULT_COUNTRY_ISO3_V158);
+  const level1 = scopeCountry && otherCountry ? countryLevel1V158(scopeCountry.iso3) : null;
 
   return (
     <div className="page-shell data-guide-v128" data-v128-guide>
       <header className="data-guide-v128__hero">
-        <CountryPickerV165 className="data-guide-v128__country" variant="inline" label="국가" value={scopeCountry?.iso3 || null} onChange={onCountryChange} />
         <h1>데이터 이용안내</h1>
-        <p>
-          데이터 범위, 자료기간, 출처, 다운로드 및 지도 이용 시 참고사항을
-          안내합니다.
-        </p>
+        <p>제공 범위, 데이터 읽는 법, 이용조건과 문의처를 안내합니다.</p>
       </header>
-
-      <section id="guide-usage" className="cdp-panel">
-        <h2>조회순·최신순 안내</h2>
-        <p>홈의 조회순은 최근 30일간의 상세보기 열람을, 주요 지역 데이터는 데이터 지도에서 주 분석 자료로 선택한 횟수를 기준으로 합니다. 같은 브라우저 세션에서 30분 이내 반복한 열람은 한 번만 집계합니다. 집계된 열람이 아직 없을 때는 홈이 주요 자료를 안내하고, 데이터 찾기는 가나다순으로 보여 줍니다.</p>
-        <p>최신순은 자료 파일이 플랫폼에 갱신된 날짜를 기준으로 합니다. 통계의 기준연도나 기후전망의 대상연도와는 다릅니다. 갱신일이 같은 자료는 데이터명 순으로 표시합니다.</p>
-        <details><summary>이용 집계에 사용하는 정보</summary>
-          <p>자료 식별번호와 열람 유형별 일일 합계를 최대 31일 보관합니다. 이름·연락처·검색어·정확한 위치는 수집하지 않습니다. 임의의 브라우저 세션 식별값은 반복 조회를 구분하는 데만 사용하며, 서버의 중복 확인값은 30분 후 만료됩니다. 과도한 요청을 막기 위한 접속주소는 원문을 저장하지 않고 하루마다 달라지는 값으로 변환해 최대 1분 동안 사용합니다.</p>
-          <p>브라우저의 추적 금지(DNT) 또는 개인정보 보호 신호(GPC)가 활성화되어 있거나 세션 저장을 사용할 수 없으면 조회를 집계하지 않습니다. 서버 운영에 필요한 접속 로그는 이 조회 집계와 별도로 호스팅 서비스 정책을 따릅니다.</p>
-        </details>
-      </section>
-      <nav className="data-guide-v128__toc" aria-label="이용안내 목차">
-        <button type="button" onClick={() => scrollToSection("guide-usage")}>조회순·최신순</button>
-        <button type="button" onClick={() => scrollToSection("guide-scope")}>
-          제공 범위
-        </button>
-        <button type="button" onClick={() => scrollToSection("guide-status")}>
-          데이터 상태
-        </button>
-        <button type="button" onClick={() => scrollToSection("guide-period")}>
-          자료기간
-        </button>
-        <button type="button" onClick={() => scrollToSection("guide-missing")}>
-          결측값
-        </button>
-        <button type="button" onClick={() => scrollToSection("guide-download")}>
-          다운로드
-        </button>
-        <button type="button" onClick={() => scrollToSection("guide-map")}>
-          지도 이용
-        </button>
-        <button
-          type="button"
-          onClick={() => scrollToSection("guide-glossary")}
-        >
-          용어·약어
-        </button>
-      </nav>
 
       <div className="data-guide-v128__grid">
         <section id="guide-scope">
           <h2>데이터 제공 범위</h2>
           <p>
-            {/* V162 PR-D: the page's own country only; the picker above names the others. */}
-            현재 {scopeCountry?.nameKo || "선택한 나라"} 데이터를 제공합니다. 정책·제도, 에너지,
+            {/* V162 PR-D: the page's own country only; the table below names the others. */}
+            현재 {scopeCountry?.nameKo || "선택한 나라"} 데이터를 보고 있습니다. 정책·제도, 에너지,
             온실가스, 산림·토지, 기후사업·재원, 연구·협력기관 자료를 데이터
             항목 단위로 확인할 수 있습니다.
-            {scopeCountry && scopeCountry.live.length > 1 ? " 다른 나라의 데이터는 위 '국가'나 상단 메뉴 옆 국가 버튼에서 고릅니다." : null}
+            {scopeCountry && scopeCountry.live.length > 1 ? " 다른 나라는 상단 메뉴 옆 국가 버튼에서 고릅니다." : null}
           </p>
           {/* V166: every country the platform names, by region, from the registry. */}
           <CountryTableV166 />
         </section>
 
-        <section id="guide-status">
-          <h2>데이터 상태의 의미</h2>
+        <section id="guide-reading">
+          <h2>데이터 읽는 법</h2>
           <dl>
-            <div>
-              <dt>데이터 제공</dt>
-              <dd>공개된 관측값 또는 목록을 화면에서 확인할 수 있습니다.</dd>
-            </div>
-            <div>
-              <dt>일부 데이터 제공</dt>
-              <dd>일부 기간이나 분류에 값이 있으며, 범위의 한계를 함께 표시합니다.</dd>
-            </div>
-            <div>
-              <dt>값이 없는 데이터</dt>
+            <div id="guide-status">
+              <dt>데이터 상태</dt>
               <dd>
-                입력 양식, 입력 예정, 원자료 미수집으로 표시된 데이터는 현재
-                화면에서 확인할 값이 없습니다.
+                <strong>데이터 제공</strong>은 공개된 관측값 또는 목록을 화면에서 확인할 수 있다는 뜻입니다.{" "}
+                <strong>일부 데이터 제공</strong>은 일부 기간이나 분류에만 값이 있으며 범위의 한계를 함께
+                표시합니다. <strong>값이 없는 데이터</strong>는 입력 양식, 입력 예정, 원자료 미수집으로 현재
+                확인할 값이 없습니다.
+              </dd>
+            </div>
+            <div id="guide-period">
+              <dt>자료기간</dt>
+              <dd>
+                기준연도는 값이나 목록이 설명하는 시점입니다. 여러 해의 값은 자료기간을 표시하고, 미래
+                연도는 전망임을 함께 적습니다. 자료 갱신일(출처 확인일)과 값의 기준연도는 다를 수 있습니다.
+              </dd>
+            </div>
+            <div id="guide-missing">
+              <dt>결측값</dt>
+              <dd>
+                원천에 없는 값은 0으로 임의 대체하지 않습니다. 값이 없는 기간·지역·분류는 빈 값 또는
+                결측으로 구분하고, 해석에 중요한 공백은 각 데이터의 유의사항에 설명합니다.
+              </dd>
+            </div>
+            <div id="guide-release">
+              <dt>데이터 기준일</dt>
+              <dd>
+                현재 공개된 데이터의 기준일은 <strong>{releaseDate}</strong>입니다.
               </dd>
             </div>
           </dl>
         </section>
 
-        <section id="guide-period">
-          <h2>자료기간의 의미</h2>
-          <p>
-            기준연도는 해당 값이나 목록이 설명하는 시점을 뜻합니다. 여러 해의
-            값이 있는 데이터는 자료기간을 표시하고, 미래 연도가 있으면 전망임을
-            함께 적습니다. 자료 갱신일(출처 확인일)과 값의 기준연도는 서로 다를 수
-            있으며, 자료 정리 기준일을 모든 통계의 기준연도로 읽지 않습니다.
-          </p>
-        </section>
-
-        <section id="guide-missing">
-          <h2>결측값 처리원칙</h2>
-          <p>
-            원천에 없는 값은 0으로 임의 대체하지 않습니다. 값이 제공되지 않은
-            기간·지역·분류는 빈 값 또는 결측으로 구분하고, 해석에 중요한 공백은
-            각 데이터의 유의사항에 설명합니다.
-          </p>
-        </section>
-
         <section id="guide-download">
-          <h2>다운로드 가능 여부</h2>
-          <p>
-            다운로드 가능 표시는 재사용 가능한 공개 파일이 있다는 뜻입니다.
-            일부 데이터는 이용조건에 따라 화면에서만 제공하며, 실제 입력값이
-            없는 항목에는 다운로드 자료가 없습니다.
-          </p>
-        </section>
-
-        <section>
-          <h2>출처·이용조건</h2>
-          <p>
-            각 상세화면에서 제공기관, 공식 원문, 출처표시와 이용조건을
-            확인할 수 있습니다. 데이터를 재사용할 때에는 해당 항목에 표시된
-            출처와 이용조건을 함께 확인해 주세요.
-          </p>
-        </section>
-
-        <section id="guide-map">
-          <h2>지도 이용 시 참고사항</h2>
-          {/* V162 PR-D: the 34/63 boundary note is the default country's; another
-              country's guide names its own level-1 unit from the registry. */}
-          {(() => {
-            const level1 = scopeCountry && scopeCountry.iso3 !== DEFAULT_COUNTRY_ISO3_V158 ? countryLevel1V158(scopeCountry.iso3) : null;
-            return level1 ? (
+          <h2>다운로드·출처·이용조건</h2>
+          <dl>
+            <div>
+              <dt>다운로드</dt>
+              <dd>
+                다운로드 가능 표시는 재사용 가능한 공개 파일이 있다는 뜻입니다. 일부 데이터는 이용조건에
+                따라 화면에서만 제공하며, 실제 입력값이 없는 항목에는 다운로드 자료가 없습니다.
+              </dd>
+            </div>
+            <div>
+              <dt>출처·이용조건</dt>
+              <dd>
+                각 상세화면에서 제공기관, 공식 원문, 출처표시와 이용조건을 확인할 수 있습니다. 재사용할
+                때에는 해당 항목의 출처와 이용조건을 함께 확인해 주세요.
+              </dd>
+            </div>
+          </dl>
+          <details className="data-guide-v167__more" id="guide-usage">
+            <summary>조회순·최신순과 이용 집계</summary>
+            <p>
+              홈의 조회순은 최근 30일간의 상세보기 열람을, 주요 지역 데이터는 데이터 지도에서 주 분석
+              자료로 선택한 횟수를 기준으로 합니다. 같은 브라우저 세션에서 30분 이내 반복한 열람은 한
+              번만 집계합니다. 집계된 열람이 아직 없을 때는 홈이 주요 자료를 안내하고, 데이터 찾기는
+              가나다순으로 보여 줍니다. 최신순은 자료 파일이 플랫폼에 갱신된 날짜를 기준으로 하며, 통계의
+              기준연도나 기후전망의 대상연도와는 다릅니다. 갱신일이 같은 자료는 데이터명 순으로 표시합니다.
+            </p>
+            <p>
+              자료 식별번호와 열람 유형별 일일 합계를 최대 31일 보관합니다. 이름·연락처·검색어·정확한
+              위치는 수집하지 않습니다. 임의의 브라우저 세션 식별값은 반복 조회를 구분하는 데만 사용하며,
+              서버의 중복 확인값은 30분 후 만료됩니다. 과도한 요청을 막기 위한 접속주소는 원문을 저장하지
+              않고 하루마다 달라지는 값으로 변환해 최대 1분 동안 사용합니다.
+            </p>
+            <p>
+              브라우저의 추적 금지(DNT) 또는 개인정보 보호 신호(GPC)가 활성화되어 있거나 세션 저장을 사용할
+              수 없으면 조회를 집계하지 않습니다. 서버 운영에 필요한 접속 로그는 이 조회 집계와 별도로
+              호스팅 서비스 정책을 따릅니다.
+            </p>
+          </details>
+          <details className="data-guide-v167__more" id="guide-map">
+            <summary>지도 이용 참고와 지도 자료 출처</summary>
+            {/* V162 PR-D: the 34/63 boundary note is the default country's; another
+                country's guide names its own level-1 unit from the registry. */}
+            {level1 ? (
               <p>
                 지도의 경계선은 {level1.label}
                 {level1.count ? ` ${level1.count}개` : ""}입니다. 원자료가 {level1.label}별로 밝힌 값과
                 원천이 준 위치만 지도에 표시하며, 결측 지역을 0으로 표시하지 않습니다. &lsquo;참고 지도&rsquo;로
                 표시한 자료는 구간 중간점·시작점 같은 대표점만 보여 주며 실제 형상이 아닙니다.
               </p>
-            ) : null;
-          })()}
-          {scopeCountry && scopeCountry.iso3 !== DEFAULT_COUNTRY_ISO3_V158 ? null : (
-          <p>
-            지도의 경계선은 2025-07-01 시행 34개 성·시가 기본이며, 개편 전
-            63개 성·시로 바꿔 볼 수 있습니다. 원자료는 대부분 개편 전 63개
-            성·시 기준으로 발표돼 있어, 34개 경계에서는 자료마다 정해진 한
-            가지 규칙(합계·면적가중평균·구성 범위만 표시·원자료가 34개 기준
-            등)으로 값을 보여 주고 그 규칙을 지도에 함께 표시합니다. 63개로
-            (개편 전) 바꾸면 원자료 값을 그대로 봅니다. 결측 지역을 0으로 표시하지
-            않습니다. 송전망 위치는 국가 단위 분포 확인용이며 정밀 설계나 시설
-            경계 판정에는 적합하지 않습니다.
-          </p>
-          )}
-          <p>
-            배경지도는 지형(Terrain Tiles — Mapzen · Amazon Web Services 공개
-            데이터, Natural Earth 음영기복, OpenStreetMap 하천·도로·지명 via
-            OpenFreeMap), 위성(Esri
-            World Imagery — Esri, Maxar, Earthstar Geographics), 도로·지명(©
-            OpenStreetMap contributors, ODbL · OpenFreeMap Liberty) 중에서
-            고를 수 있으며, 타일을 받지 못하면 배경 없이 데이터와 경계만
-            표시합니다. 지도를 움직인 위치는 주소의 view 값으로 저장되어
-            새로고침이나 공유 링크에서 그대로 열립니다.
-          </p>
-          <p data-testid="guide-minimap-v152">
-            홈과 상세화면의 작은 지도는 마우스를 올리거나 누르면 확대·이동할
-            수 있는 지도로 바뀝니다. Ctrl(맥은 ⌘)을 누른 채 스크롤하면
-            확대·축소되고, 드래그하면 이동합니다. 스크롤만 하면 페이지가
-            내려가고 지도는 그대로입니다. 휴대폰에서는 두 손가락으로 이동하고
-            벌려서 확대합니다. 오른쪽 위의 확대·축소·전체 보기·배경지도 버튼과
-            키보드(화살표 이동, +·− 확대·축소, Home 처음 화면)도 쓸 수 있으며,
-            '큰 지도에서 비교'를 누르면 보고 있던 위치와 배율 그대로 데이터
-            지도가 열립니다.
-          </p>
-          <p data-testid="guide-map-icons-v152">
-            지도의 기호(발전원·재해·탄소사업·기관 등 아이콘)는 Tabler
-            Icons(MIT, © Paweł Kuna)와 Material Symbols(Apache-2.0, ©
-            Google)를 사용하고, 두 세트에 없는 기호(석탄 화력, 가스·석유
-            복합)는 직접 제작했습니다. 아이콘 둘레의 색은 분류(발전원,
-            등록제도, 광종) 또는 자료를 나타내고, 흐리게 표시한 기호는 소재
-            지역의 대표 위치입니다.
-          </p>
-        </section>
-
-        <section>
-          <h2>데이터 기준일</h2>
-          <p>
-            현재 공개된 데이터의 기준일은 <strong>{releaseDate}</strong>입니다.
-          </p>
+            ) : null}
+            {otherCountry ? null : (
+              <p>
+                지도의 경계선은 2025-07-01 시행 34개 성·시가 기본이며, 개편 전 63개 성·시로 바꿔 볼 수
+                있습니다. 원자료는 대부분 개편 전 63개 성·시 기준으로 발표돼 있어, 34개 경계에서는 자료마다
+                정해진 한 가지 규칙(합계·면적가중평균·구성 범위만 표시·원자료가 34개 기준 등)으로 값을 보여
+                주고 그 규칙을 지도에 함께 표시합니다. 63개로(개편 전) 바꾸면 원자료 값을 그대로 봅니다.
+                결측 지역을 0으로 표시하지 않습니다. 송전망 위치는 국가 단위 분포 확인용이며 정밀 설계나
+                시설 경계 판정에는 적합하지 않습니다.
+              </p>
+            )}
+            <p>
+              배경지도는 지형(Terrain Tiles — Mapzen · Amazon Web Services 공개 데이터, Natural Earth
+              음영기복, OpenStreetMap 하천·도로·지명 via OpenFreeMap), 위성(Esri World Imagery — Esri, Maxar,
+              Earthstar Geographics), 도로·지명(© OpenStreetMap contributors, ODbL · OpenFreeMap Liberty) 중에서
+              고를 수 있으며, 타일을 받지 못하면 배경 없이 데이터와 경계만 표시합니다. 지도를 움직인 위치는
+              주소의 view 값으로 저장되어 새로고침이나 공유 링크에서 그대로 열립니다.
+            </p>
+            <p data-testid="guide-minimap-v152">
+              홈과 상세화면의 작은 지도는 마우스를 올리거나 누르면 확대·이동할 수 있는 지도로 바뀝니다.
+              Ctrl(맥은 ⌘)을 누른 채 스크롤하면 확대·축소되고, 드래그하면 이동합니다. 스크롤만 하면 페이지가
+              내려가고 지도는 그대로입니다. 휴대폰에서는 두 손가락으로 이동하고 벌려서 확대합니다. 오른쪽
+              위의 확대·축소·전체 보기·배경지도 버튼과 키보드(화살표 이동, +·− 확대·축소, Home 처음 화면)도
+              쓸 수 있으며, &lsquo;큰 지도에서 비교&rsquo;를 누르면 보고 있던 위치와 배율 그대로 데이터 지도가
+              열립니다.
+            </p>
+            <p data-testid="guide-map-icons-v152">
+              지도의 기호(발전원·재해·탄소사업·기관 등 아이콘)는 Tabler Icons(MIT, © Paweł Kuna)와 Material
+              Symbols(Apache-2.0, © Google)를 사용하고, 두 세트에 없는 기호(석탄 화력, 가스·석유 복합)는 직접
+              제작했습니다. 아이콘 둘레의 색은 분류(발전원, 등록제도, 광종) 또는 자료를 나타내고, 흐리게
+              표시한 기호는 소재 지역의 대표 위치입니다.
+            </p>
+          </details>
         </section>
 
         <section
@@ -294,15 +255,17 @@ export default function DataGuidePage({ onNavigate, onCountryChange }: DataGuide
         >
           <div className="data-guide-v134__glossary-heading">
             <div>
-              <h2>용어·약어</h2>
+              <h2>용어 찾기</h2>
               <p>
-                플랫폼의 개발협력·기후·에너지 용어와 단위를
-                한국어·영어 명칭과 함께 확인할 수 있습니다.
+                화면의 용어는 그 자리에서 설명합니다(
+                <PublicTermTextV134 text="ODA, SPEI12, SSP2-4.5, GVI, MW" />
+                처럼 점선이 표시된 용어에 마우스를 올리거나 눌러 보세요). 다른 용어는 약어·한국어·영어
+                명칭으로 찾을 수 있습니다.
               </p>
             </div>
-            <span aria-live="polite">
-              {visibleGlossary.length.toLocaleString("ko-KR")}개 용어
-            </span>
+            {searching ? (
+              <span aria-live="polite">{foundGlossary.length.toLocaleString("ko-KR")}개 찾음</span>
+            ) : null}
           </div>
 
           <div className="data-guide-v134__glossary-search">
@@ -324,9 +287,9 @@ export default function DataGuidePage({ onNavigate, onCountryChange }: DataGuide
             </div>
           </div>
 
-          {visibleGlossary.length > 0 ? (
+          {!searching ? null : foundGlossary.length > 0 ? (
             <ul className="data-guide-v134__glossary-list">
-              {visibleGlossary.map((entry) => (
+              {foundGlossary.map((entry) => (
                 <li
                   key={entry.id}
                   data-glossary-id={entry.id}
@@ -361,14 +324,6 @@ export default function DataGuidePage({ onNavigate, onCountryChange }: DataGuide
               <p>약어, 한국어 명칭 또는 영어 명칭으로 다시 검색해 보세요.</p>
             </div>
           )}
-
-          <p className="data-guide-v134__glossary-example">
-            화면에서는{" "}
-            <PublicTermTextV134 text="ODA, SPEI12, SSP2-4.5, GVI, MW" />
-            처럼 점선이 표시된 용어에 마우스를 올리거나 키보드로
-            초점을 이동하면 설명을 볼 수 있습니다. 모바일에서는 용어를
-            눌러 고정합니다.
-          </p>
         </section>
 
         <section className="data-guide-v128__contact">
