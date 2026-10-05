@@ -3,8 +3,8 @@
  * not yet delivered goes last, then 가나다순 by the name the card shows, or
  * 조회순 (detail views, most first; ties by name). "Not yet delivered" is every
  * catalogue status with no data behind it - not collected, entry planned, or
- * the input template only (V156-E: C-023, E-011, E-013, the typology's
- * data-pending set).
+ * the input template only (the typology's data-pending set). An element not
+ * offered ("excluded", "not-provided") is not listed at all.
  */
 export type FinderSortV160 = "name" | "views";
 

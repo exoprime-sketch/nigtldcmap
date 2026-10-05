@@ -2712,7 +2712,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "기술",
       "연도"
     ],
-    "downloadAvailable": true,
+    "downloadAvailable": false,
     "elementId": "D-001",
     "measureLabels": [
       "단위 사업당 CAPEX"
@@ -2735,7 +2735,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "기술",
       "연도"
     ],
-    "downloadAvailable": true,
+    "downloadAvailable": false,
     "elementId": "D-002",
     "measureLabels": [
       "시장 성장률"
@@ -2782,7 +2782,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "기술",
       "연도"
     ],
-    "downloadAvailable": true,
+    "downloadAvailable": false,
     "elementId": "D-004",
     "measureLabels": [
       "크레딧 가격 연동 수익성"

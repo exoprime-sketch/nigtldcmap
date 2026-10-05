@@ -203,7 +203,9 @@ async function finderCards(page) {
 async function finderSortCheck(page, iso3) {
   const collator = new Intl.Collator("ko");
   let mockDetail = [];
-  await page.route("**/api/usage", (route) =>
+  // V165-2: the page asks /api/usage?country=<ISO3> (V162); a glob without the
+  // query never matched, so the counts were never served and 조회순 stayed off.
+  await page.route((url) => url.pathname.endsWith("/api/usage"), (route) =>
     route.fulfill({
       status: 200,
       contentType: "application/json",
@@ -357,7 +359,18 @@ for (const iso3 of COUNTRIES) {
     if (iso3 === DEFAULT_COUNTRY) {
       const typology = readJson(resolve(ROOT, "src/data/spec/datasetTypologyV159.json"));
       const pendingRows = (Array.isArray(typology) ? typology : typology.rows || []).filter((row) => row.statusNotice === "data-pending").map((row) => row.elementId).sort();
-      check(iso3, "finder", "preparing-single-source", "명세 유형의 data-pending = 카탈로그 미입고(단일 출처)", orExpected("preparing-single-source", JSON.stringify(pendingRows) === JSON.stringify(data.preparingIds)), pendingRows, data.preparingIds, "src/data/spec/datasetTypologyV159.json");
+      // V165-2 (user decision 2026-10-05, reports/v165/REVIEW_V165_2.md): the
+      // catalog's "not delivered" includes "not-provided" (outside the 2026
+      // collection scope with nothing delivered) - the typology import
+      // (PENDING_PUBLIC_STATUSES_V162) and the screen notice
+      // (statusNoticeFromCatalogV162) count it as pending too. It is unlisted,
+      // so preparingIds (the finder's set) leaves it out; this comparison
+      // reads the catalog's whole pending set.
+      const catalogPendingIds = data.catalog
+        .filter((element) => PREPARING_STATUSES.has(element.publicStatus) || element.publicStatus === "not-provided")
+        .map((element) => element.elementId)
+        .sort();
+      check(iso3, "finder", "preparing-single-source", "명세 유형의 data-pending = 카탈로그 미입고(단일 출처)", orExpected("preparing-single-source", JSON.stringify(pendingRows) === JSON.stringify(catalogPendingIds)), pendingRows, catalogPendingIds, "src/data/spec/datasetTypologyV159.json");
       if (!SKIP.has("exclusions")) {
         if (BUILD_ARG !== "build") {
           check(iso3, "finder", "exclusions-audit", "제외 요소 전 화면 비노출(audit:exclusions:v156)", "skip", "the audit reads build/ only", "--build build", "audit:exclusions:v156");
