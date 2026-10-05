@@ -38,11 +38,13 @@ export function applyBoundaryReferenceV152(
     }
     return;
   }
-  // V151-2: the 34-unit outline is the primary reference and reads heavier
-  // than the 63 pre-reform provinces, which are a toggle.
-  const is34 = adm1Boundary.features[0]?.properties?.boundarySystem === "post-2025-34";
-  const lineWidth = is34 ? 1.6 : 0.8;
-  const lineOpacity = is34 ? 0.7 : 0.42;
+  // V168 (user report 2026-10-05): only one Viet Nam vintage is drawn at a
+  // time, so the 63 pre-reform provinces - shown when the reader picks them -
+  // read as clearly as the 34 (V151-2 drew them at 0.8px · 42%, too faint to
+  // follow). Another country's outline stays thin under the data (V163).
+  const thin = countryIso3 !== "VNM";
+  const lineWidth = thin ? 0.8 : 1.6;
+  const lineOpacity = thin ? 0.42 : 0.7;
   const existing = map.getSource(
     VNM_ADM1_BASE_SOURCE_V126
   ) as GeoJSONSource | undefined;
