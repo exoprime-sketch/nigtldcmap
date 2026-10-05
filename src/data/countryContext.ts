@@ -42,11 +42,22 @@ export interface CountryRegistryEntryV158 {
   boundaryEpoch: string;
   categoriesAvailable: string[];
   status: CountryStatusV158;
+  /** V165: the key of the region the country is listed under (`regions[].key`). */
+  region?: string;
+}
+
+/** V165: a region the country picker groups countries under, in `order`. */
+export interface CountryRegionV165 {
+  key: string;
+  nameKo: string;
+  order: number;
 }
 
 export interface CountryRegistryV158 {
   schemaVersion: string;
   generatedAt: string;
+  /** V165: the regions of the country picker; absent = no grouping. */
+  regions?: CountryRegionV165[];
   countries: CountryRegistryEntryV158[];
 }
 

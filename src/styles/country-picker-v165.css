@@ -1,0 +1,413 @@
+/*
+ * V165: the one country picker (header, home, guide).
+ *
+ * Shapes (see countryPickerModelV165): "single" (the name only), "segmented"
+ * (one button per public country, home and guide, up to four) and "list" (a
+ * button that opens a list, by region from five countries, with a search box
+ * from eleven). Touch targets: 32px high or more on a desktop, 44px at 768px
+ * and below.
+ */
+
+.country-picker-v165 {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.country-picker-v165__label {
+  color: var(--slate-600);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.country-picker-v165__single {
+  color: var(--navy-900);
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------- segmented */
+
+.country-picker-v165__segments {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  padding: 3px;
+  border: 1px solid var(--slate-300);
+  border-radius: 10px;
+  background: var(--slate-100);
+}
+
+.country-picker-v165__segment {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 7px;
+  color: var(--slate-700);
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.country-picker-v165__segment small {
+  font-size: 11px;
+  font-weight: 700;
+  opacity: 0.72;
+}
+
+.country-picker-v165__segment:hover {
+  color: var(--navy-900);
+  background: rgba(11, 37, 64, 0.06);
+}
+
+.country-picker-v165__segment.is-selected {
+  color: var(--white);
+  background: var(--navy-900);
+  box-shadow: 0 1px 2px rgba(11, 37, 64, 0.2);
+  cursor: default;
+}
+
+.country-picker-v165__segment:focus-visible,
+.country-picker-v165__trigger:focus-visible {
+  outline: 2px solid var(--blue-700);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------- list */
+
+.country-picker-v165__trigger {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border: 1px solid var(--slate-300);
+  border-radius: 10px;
+  color: var(--navy-900);
+  background: var(--white);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.country-picker-v165__trigger > i {
+  font-size: 11px;
+  font-style: normal;
+  opacity: 0.7;
+  transition: transform 120ms ease;
+}
+
+.country-picker-v165[data-open="true"] .country-picker-v165__trigger > i {
+  transform: rotate(180deg);
+}
+
+.country-picker-v165__popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 70;
+  width: 320px;
+  max-width: calc(100vw - 24px);
+  max-height: min(60vh, 520px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--slate-200);
+  border-radius: 12px;
+  color: var(--slate-900);
+  background: var(--white);
+  box-shadow: 0 18px 48px rgba(7, 26, 45, 0.24);
+}
+
+.country-picker-v165__popover[hidden] {
+  display: none;
+}
+
+.country-picker-v165--inline .country-picker-v165__popover {
+  right: auto;
+  left: 0;
+}
+
+.country-picker-v165__search {
+  flex: 0 0 auto;
+  margin: 8px 8px 4px;
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--slate-300);
+  border-radius: 8px;
+  color: var(--slate-900);
+  font: inherit;
+  font-size: 14px;
+}
+
+.country-picker-v165__search:focus {
+  border-color: var(--blue-700);
+  outline: 2px solid rgba(11, 103, 194, 0.18);
+}
+
+.country-picker-v165__list {
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 6px;
+  overflow-y: auto;
+  list-style: none;
+  outline: none;
+}
+
+.country-picker-v165__list ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.country-picker-v165__group + .country-picker-v165__group {
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px solid var(--slate-100);
+}
+
+.country-picker-v165__group-name {
+  display: block;
+  padding: 8px 10px 4px;
+  color: var(--slate-500);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.country-picker-v165__option {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.country-picker-v165__name {
+  display: grid;
+  min-width: 0;
+  line-height: 1.25;
+}
+
+.country-picker-v165__name strong {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.country-picker-v165__name small {
+  overflow: hidden;
+  color: var(--slate-500);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.country-picker-v165__meta {
+  flex: 0 0 auto;
+  color: var(--slate-600);
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.country-picker-v165__option.is-active {
+  background: var(--slate-100);
+}
+
+/* The list's own focus: the active option, while the list has the keyboard. */
+.country-picker-v165__list:focus-visible .country-picker-v165__option.is-active,
+.country-picker-v165__search:focus ~ .country-picker-v165__list .country-picker-v165__option.is-active {
+  box-shadow: inset 0 0 0 2px var(--blue-700);
+}
+
+.country-picker-v165__option.is-selected {
+  color: var(--blue-700);
+  background: var(--blue-100);
+}
+
+.country-picker-v165__option.is-selected .country-picker-v165__name strong::after {
+  margin-left: 6px;
+  content: "✓";
+}
+
+.country-picker-v165__option.is-disabled {
+  color: var(--slate-500);
+  background: transparent;
+  cursor: not-allowed;
+}
+
+.country-picker-v165__option.is-disabled .country-picker-v165__meta {
+  padding: 2px 7px;
+  border-radius: 999px;
+  color: var(--slate-600);
+  background: var(--slate-100);
+  font-size: 11px;
+}
+
+.country-picker-v165__empty {
+  padding: 14px 10px;
+  color: var(--slate-600);
+  font-size: 13px;
+}
+
+/* ------------------------------------------------------------ in the header */
+
+.country-picker-v165--header .country-picker-v165__trigger {
+  min-height: 44px;
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #f6fbff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.country-picker-v165--header .country-picker-v165__trigger:hover,
+.country-picker-v165--header .country-picker-v165__trigger:focus-visible,
+.country-picker-v165--header[data-open="true"] .country-picker-v165__trigger {
+  border-color: rgba(115, 221, 214, 0.8);
+  background: rgba(115, 221, 214, 0.12);
+}
+
+.country-picker-v165--header .country-picker-v165__trigger:focus-visible {
+  outline: 2px solid #73ddd6;
+}
+
+.country-picker-v165--header .country-picker-v165__single {
+  padding: 0 4px;
+  color: #dbe7f1;
+  font-size: 13px;
+}
+
+/* ------------------------------------------------ on the home's dark hero */
+
+.country-picker-v165--on-dark .country-picker-v165__label {
+  color: #9fb6c8;
+}
+
+.country-picker-v165--on-dark .country-picker-v165__single {
+  color: #f6fbff;
+}
+
+.country-picker-v165--on-dark .country-picker-v165__segments {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.country-picker-v165--on-dark .country-picker-v165__segment {
+  color: #d3e2ee;
+}
+
+.country-picker-v165--on-dark .country-picker-v165__segment:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.country-picker-v165--on-dark .country-picker-v165__segment.is-selected {
+  color: #062a3c;
+  background: #73ddd6;
+}
+
+.country-picker-v165--on-dark .country-picker-v165__segment:focus-visible,
+.country-picker-v165--on-dark .country-picker-v165__trigger:focus-visible {
+  outline-color: #73ddd6;
+}
+
+/* ------------------------------------------------------------ small screens */
+
+@media (max-width: 768px) {
+  .country-picker-v165__segment,
+  .country-picker-v165__trigger,
+  .country-picker-v165__option {
+    min-height: 44px;
+  }
+
+  .country-picker-v165__search {
+    min-height: 44px;
+  }
+
+  /* The header's list drops under the whole header, full width (the header
+     is the positioned box once the picker steps aside). */
+  .country-picker-v165--header {
+    position: static;
+  }
+
+  .country-picker-v165--header .country-picker-v165__popover {
+    top: 100%;
+    right: 12px;
+    left: 12px;
+    width: auto;
+    max-width: none;
+    max-height: min(70vh, 560px);
+  }
+}
+
+/* Until the registry is read, the place is kept (no layout shift). */
+.country-picker-v165--loading.country-picker-v165--header {
+  width: 96px;
+  height: 44px;
+}
+
+.country-picker-v165--loading.country-picker-v165--inline {
+  width: 220px;
+  height: 42px;
+}
+
+/* ------------------------------------------------- placement in the header */
+
+/* Wide screens: menu · country · search on one line; the country sits with
+   the search (10px apart) rather than a full header gap away. */
+.header-inner > .country-picker-v165--header {
+  margin-left: -12px;
+}
+
+.header-inner > .country-picker-v165--header + .header-search-v41-trigger {
+  margin-left: -18px;
+}
+
+/* 1050px and below the menu takes the second row; the country moves to the
+   right of the first row, beside the search. */
+@media (max-width: 1050px) {
+  .header-inner > .country-picker-v165--header {
+    margin-left: auto;
+  }
+}
+
+/* 560px and below the first row holds the name and the search only; the
+   country leads the menu row (the menu scrolls beside it). */
+@media (max-width: 560px) {
+  .header-inner {
+    column-gap: 10px;
+  }
+
+  .header-inner > .country-picker-v165--header {
+    order: 3;
+    align-self: stretch;
+    margin-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .header-inner > .country-picker-v165--header + .header-search-v41-trigger {
+    margin-left: auto;
+  }
+
+  .header-inner > .main-nav {
+    order: 4;
+    width: auto;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}

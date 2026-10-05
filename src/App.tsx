@@ -25,7 +25,8 @@ import {
   resolveCountryElementIdV122,
 } from "./data/countries/countryDataFacadeV122";
 import { ensureCountryRegistryLoadedV158 } from "./data/countries/countryDataProviderRegistryV122";
-import { DEFAULT_COUNTRY_ISO3_V158 } from "./data/countryContext";
+import { countryRegistryCacheV158, DEFAULT_COUNTRY_ISO3_V158 } from "./data/countryContext";
+import { useCountryRegistryV165 } from "./data/countries/useCountryRegistryV165";
 import { resolveHomeCountryV161 } from "./data/homeCountryV161";
 import type { CategoryCode } from "./data/publicTaxonomy";
 import CountryDataElementPage from "./pages/CountryDataElementPage";
@@ -141,6 +142,18 @@ function normalizeDownloadCountryIso3(value: string | null): string | null {
  */
 function currentUrlCountryIso3(): string | null {
   return normalizeDownloadCountryIso3(new URLSearchParams(window.location.search).get("country"));
+}
+
+/**
+ * V165: the country the home and the guide show, for the header. Before the
+ * registry is read only the default country is known, so the address's own
+ * `?country=` is taken as it stands (the picker names nothing until then).
+ */
+function homeCountryForHeaderV165(): string | null {
+  const resolved = resolveHomeCountryV161(window.location.search)?.iso3 || null;
+  if (countryRegistryCacheV158()) return resolved;
+  const requested = new URLSearchParams(window.location.search).get("country")?.trim().toUpperCase();
+  return requested || resolved;
 }
 
 const COMPARE_TABS = new Set<CompareTab>(["indicator", "trend", "ndc", "gcf"]);
@@ -542,6 +555,14 @@ export default function App() {
       ? initialCountryParam
       : null
   );
+
+  // V165: the header's country picker. The registry is read here too so the
+  // home's `?country=` resolves for the header once countries.json arrives.
+  useCountryRegistryV165();
+  const [lastCountryIso3V165, setLastCountryIso3V165] = useState<string | null>(null);
+  // The address changes outside React state on the home and the guide; the
+  // tick renders again so the header and the page key re-read it.
+  const [, setUrlCountryTickV165] = useState(0);
 
   // V158: the address the page was opened at, before the first render rewrote
   // it. A country other than the default is only known once the registry has
@@ -1185,6 +1206,91 @@ export default function App() {
     );
   }
 
+  /**
+   * V165: the country the current screen shows, for the header picker. The
+   * finder and the download keep "전체" as a choice; while it is chosen the
+   * header keeps the country last shown.
+   */
+  const viewCountryIso3V165: string | null = (() => {
+    if (view === "explorer") return explorerCountryIso3 !== "all" ? explorerCountryIso3 : null;
+    if (view === "element-detail") return selectedElementCountryIso3;
+    if (view === "map") return mapViewState.countryIso3 ?? selectedCountryIso3;
+    if (view === "download") return downloadCountryIso3;
+    if (view === "home" || view === "guide") return homeCountryForHeaderV165();
+    return currentUrlCountryIso3();
+  })();
+  useEffect(() => {
+    if (viewCountryIso3V165) {
+      setLastCountryIso3V165((current) => (current === viewCountryIso3V165 ? current : viewCountryIso3V165));
+    }
+  }, [viewCountryIso3V165]);
+  const headerCountryIso3V165 =
+    viewCountryIso3V165 || lastCountryIso3V165 || resolveHomeCountryV161(window.location.search)?.iso3 || null;
+
+  /**
+   * V165: a country picked in the header (or on the home and the guide) goes
+   * to the screen being read, the way that screen's own selector would set
+   * it; the screen stays the same. Back returns to the previous country.
+   */
+  function changeCountryV165(nextIso3: string) {
+    const next = nextIso3.toUpperCase();
+    // The country already shown: nothing to do (on "전체" there is none, so
+    // picking the header's last country applies it).
+    if (!hasCountryDataProviderV122(next) || next === viewCountryIso3V165) return;
+    setLastCountryIso3V165(next);
+    if (view === "explorer") {
+      markNextNavigationAsPush();
+      setExplorerCountryIso3(next);
+      return;
+    }
+    if (view === "element-detail") {
+      markNextNavigationAsPush();
+      setSelectedElementCountryIso3(next);
+      setSelectedCountryIso3(next);
+      return;
+    }
+    if (view === "download") {
+      markNextNavigationAsPush();
+      setDownloadCountryIso3(next);
+      return;
+    }
+    if (view === "map") {
+      markNextNavigationAsPush();
+      setSelectedCountryIso3(next);
+      setMapViewState((current) => ({
+        ...current,
+        countryIso3: next,
+        activeLayerKeys: [],
+        layerOpacities: {},
+        layerYears: {},
+        focusLayerKey: null,
+        primaryLayerId: null,
+        contextLayerIds: [],
+        hiddenLayerIds: [],
+        mapPresetId: null,
+        comparisonMode: false,
+        comparisonLayerIds: [],
+        comparisonCountries: [],
+        comparisonSelectors: [],
+        layerSelectors: {},
+        camera: null,
+      }));
+      return;
+    }
+    // The home and the guide read `?country=` themselves; the default country
+    // goes without one (as the address sync writes it). The page is mounted
+    // again for the new country (its key is the address's country).
+    const params = new URLSearchParams();
+    if (next !== DEFAULT_COUNTRY_ISO3_V158) params.set("country", next);
+    const search = params.toString();
+    const pageView = view === "guide" ? "guide" : "home";
+    window.history.pushState(null, "", `${window.location.pathname}${search ? `?${search}` : ""}#${pageView}`);
+    if (view !== pageView) setView(pageView);
+    setUrlCountryTickV165((tick) => tick + 1);
+    window.scrollTo({ top: 0 });
+  }
+  const pageCountryKeyV165 = homeCountryForHeaderV165() || "default";
+
   const isMapView = view === "map";
 
   return (
@@ -1192,6 +1298,8 @@ export default function App() {
       <Header
         currentView={view}
         onNavigate={navigate}
+        countryIso3={headerCountryIso3V165}
+        onCountryChange={changeCountryV165}
         onOpenElement={openElement}
         onOpenMapElement={openElementOnMap}
         onOpenDownload={(elementId, countryIso3) =>
@@ -1217,6 +1325,8 @@ export default function App() {
       >
         {view === "home" && (
           <HomePage
+            key={pageCountryKeyV165}
+            onCountryChange={changeCountryV165}
             query={query}
             onQueryChange={setQuery}
             onSubmit={submitSearch}
@@ -1315,10 +1425,17 @@ export default function App() {
             initialDatasetId={selectedDatasetId}
             initialElementId={downloadElementId}
             initialCountryIso3={downloadCountryIso3}
+            onCountryChange={(iso3) => {
+              // V165: the page's own selector moves the address and the header too.
+              markNextNavigationAsPush();
+              setDownloadCountryIso3(normalizeDownloadCountryIso3(iso3));
+            }}
           />
         )}
 
-        {view === "guide" && <DataGuidePage onNavigate={navigate} />}
+        {view === "guide" && (
+          <DataGuidePage key={pageCountryKeyV165} onNavigate={navigate} onCountryChange={changeCountryV165} />
+        )}
 
         {view === "not-found" && <NotFoundPage onNavigate={navigate} />}
       </main>

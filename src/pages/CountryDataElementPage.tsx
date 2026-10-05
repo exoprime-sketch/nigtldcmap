@@ -10,6 +10,7 @@ import {
   getCountryDataProviderV122,
 } from "../data/countries/countryDataProviderRegistryV122";
 import { useCountryDataProvidersV158 } from "../data/countries/useCountryDataProvidersV158";
+import CountryOptionsV165 from "../components/country/CountryOptionsV165";
 import type { CountryCatalogItemV122 } from "../data/countries/countryDataTypesV122";
 import {
   publicDataStatusLabelV128,
@@ -1004,11 +1005,7 @@ function CountryDataElementPageV122({
                 value={providers[0].countryIso3}
                 onChange={(event) => onCountryChange(event.target.value)}
               >
-                {providers.map((item) => (
-                  <option key={item.countryIso3} value={item.countryIso3}>
-                    {item.countryNameKo}
-                  </option>
-                ))}
+                <CountryOptionsV165 providers={providers} />
               </select>
             </label>
           )}
@@ -1152,11 +1149,7 @@ function CountryDataElementPageV122({
                     value={countryIso3 || provider.countryIso3}
                     onChange={(event) => onCountryChange(event.target.value)}
                   >
-                    {providers.map((item) => (
-                      <option key={item.countryIso3} value={item.countryIso3}>
-                        {item.countryNameKo}
-                      </option>
-                    ))}
+                    <CountryOptionsV165 providers={providers} />
                   </select>
                 </label>
               )}
