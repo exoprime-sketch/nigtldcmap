@@ -2,8 +2,9 @@ import {
   bundledCountryRegistryV158,
   countryRegistryCacheV158,
   DEFAULT_COUNTRY_ISO3_V158,
+  liveRegistryCountriesV166,
 } from "./countryContext";
-import type { CountryRegistryEntryV158 } from "./countryContext";
+import type { CountryRegistryRowV166 } from "./countryContext";
 
 /**
  * The home's current country. Nothing here names a country: which countries
@@ -25,9 +26,9 @@ export interface HomeCountryV161 {
  */
 export function resolveHomeCountryV161(
   search: string,
-  countries: CountryRegistryEntryV158[] = (countryRegistryCacheV158() || bundledCountryRegistryV158()).countries
+  countries: CountryRegistryRowV166[] = (countryRegistryCacheV158() || bundledCountryRegistryV158()).countries
 ): HomeCountryV161 | null {
-  const live = countries.filter((country) => country.status === "live");
+  const live = liveRegistryCountriesV166({ countries });
   if (live.length === 0) return null;
   const requested = (new URLSearchParams(search).get("country") || "").trim().toUpperCase();
   const chosen =

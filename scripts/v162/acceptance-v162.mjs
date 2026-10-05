@@ -49,6 +49,7 @@ import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
 import { startStaticBuildServer, scaledTimeoutMsV150 } from "../v125/browser-runtime.mjs";
 import { runAuditCommand } from "../ci/run-audit-command.mjs";
+import { countryNameSourceV166 } from "./country-neutral-v162.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 const args = process.argv.slice(2);
@@ -107,9 +108,20 @@ function countryData(iso3) {
   return { row, dir, catalogDoc, catalog, mapIndex, manifest, publicIds, excludedIds, preparingIds, layers, contract };
 }
 
-/** Every other registry country's Korean and English name - words a country's own screens must not carry. */
+/**
+ * Every other registry country's Korean and English name - words a country's own screens must not carry.
+ *
+ * V166 (2026-10-05): the countries with a data tree - the ones whose wording
+ * could leak onto another country's screens. The registry now also names the
+ * priority countries still being prepared (name-only rows, no screens, no
+ * wording of their own); a Viet Nam record naming its neighbours (ASEAN
+ * members, the Mekong station at Kratie, power imported from Laos) is that
+ * country's own data, not another platform country's wording. Measured on the
+ * V166 build: with all ten names the check read 26 such mentions on Viet Nam's
+ * screens, none of them leaked wording (reports/v166/REVIEW_V166.md).
+ */
 const otherCountryTerms = (iso3) =>
-  registryCountries.filter((row) => row.iso3 !== iso3).flatMap((row) => [row.nameKo, row.nameEn]).filter(Boolean);
+  registryCountries.filter((row) => row.iso3 !== iso3 && row.dataRoot).flatMap((row) => [row.nameKo, row.nameEn]).filter(Boolean);
 
 /**
  * V162 PR-D (user decision 2026-10-03): every other registry country's own
@@ -266,8 +278,13 @@ async function finderSortCheck(page, iso3) {
  * context, the context closed after each batch (memory).
  */
 async function otherCountryWalk(iso3, publicIds, words, properNameWords = []) {
+  // V166: a country name is found the way the spec import finds it ('인도'
+  // never inside '인도네시아' or '인도양'); the registry now names all ten.
+  const namePatterns = Object.fromEntries(
+    words.map((term) => [term, countryNameSourceV166(term)]).filter(([term, source]) => source !== term.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&"))
+  );
   const read = (page, words) =>
-    page.evaluate(async ({ terms, properNameAware }) => {
+    page.evaluate(async ({ terms, properNameAware, patterns }) => {
       document.querySelectorAll("details:not([open])").forEach((node) => { node.open = true; });
       await new Promise((done) => setTimeout(done, 300));
       const body = document.body.cloneNode(true);
@@ -283,6 +300,10 @@ async function otherCountryWalk(iso3, publicIds, words, properNameWords = []) {
       // the country's administrative wording - a capitalised word right before
       // it marks the name. Every other term is a plain substring.
       const indexOfTerm = (term) => {
+        if (patterns[term]) {
+          const found = new RegExp(patterns[term], "u").exec(text);
+          return found ? found.index : -1;
+        }
         if (!properNameAware.includes(term)) return text.indexOf(term);
         const match = new RegExp(`(?<![A-Z][A-Za-z]* )\\b${term}\\b`, "u").exec(text);
         return match ? match.index : -1;
@@ -291,7 +312,7 @@ async function otherCountryWalk(iso3, publicIds, words, properNameWords = []) {
         const at = indexOfTerm(term);
         return { term, context: text.slice(Math.max(0, at - 40), at + term.length + 40).trim() };
       });
-    }, { terms: words, properNameAware: properNameWords });
+    }, { terms: words, properNameAware: properNameWords, patterns: namePatterns });
   const hits = [];
   const query = countryQuery(iso3);
   await withPage(async (page) => {

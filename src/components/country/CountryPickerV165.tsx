@@ -2,7 +2,6 @@ import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react"
 import type { KeyboardEvent as ReactKeyboardEvent } from "react";
 import { useCountryRegistryV165 } from "../../data/countries/useCountryRegistryV165";
 import type { RegistryViewV165 } from "../../data/countries/useCountryRegistryV165";
-import { loadCatalogForCountrySelectionV122 } from "../../data/countries/countryDataFacadeV122";
 import {
   countryPickerModelV165,
   filterCountryGroupsV165,
@@ -16,8 +15,6 @@ import "../../styles/country-picker-v165.css";
 
 const EMPTY_REGISTRY_V165: RegistryViewV165 = { countries: [] };
 
-const itemCountCacheV165 = new Map<string, Promise<number>>();
-
 /**
  * The country whose segmented button was just used. The home and the guide
  * are mounted again for the new country, so the button that had the focus is
@@ -25,42 +22,15 @@ const itemCountCacheV165 = new Map<string, Promise<number>>();
  */
 let focusSegmentAfterChangeV165: string | null = null;
 
-/**
- * The public item count of each country, the number its home shows ("전체
- * 데이터 항목"): the length of the same filtered catalog. Read when first
- * needed and kept; nothing is written into the registry by hand.
- */
-function useItemCountsV165(iso3s: string[], enabled: boolean): Record<string, number> {
-  const [counts, setCounts] = useState<Record<string, number>>({});
-  const key = iso3s.join(",");
-  useEffect(() => {
-    if (!enabled) return;
-    let alive = true;
-    key.split(",").filter(Boolean).forEach((iso3) => {
-      let request = itemCountCacheV165.get(iso3);
-      if (!request) {
-        request = loadCatalogForCountrySelectionV122(iso3).then((catalog) => catalog.length);
-        itemCountCacheV165.set(iso3, request);
-        request.catch(() => itemCountCacheV165.delete(iso3));
-      }
-      void request
-        .then((count) => {
-          if (alive) setCounts((current) => (current[iso3] === count ? current : { ...current, [iso3]: count }));
-        })
-        .catch(() => undefined);
-    });
-    return () => {
-      alive = false;
-    };
-  }, [key, enabled]);
-  return counts;
-}
-
 export interface CountryPickerV165Props {
   /** The country now shown; null before one is known. */
   value: string | null;
   onChange: (iso3: string) => void;
-  /** "header": a button and a list at every count; "inline": one button per country up to four. */
+  /**
+   * "header": a button and a list at every count; "inline": one button per
+   * country up to four; "overview" (V166, the home): every country the
+   * platform names, one row per region.
+   */
   variant: CountryPickerVariantV165;
   className?: string;
   /** The words before the control ("국가"); the header shows none. */
@@ -92,8 +62,6 @@ export default function CountryPickerV165({ value, onChange, variant, className,
   const listId = `country-picker-${baseId}-list`;
   const optionId = (iso3: string) => `country-picker-${baseId}-${iso3}`;
 
-  const liveIso3s = model.live.map((entry) => entry.iso3);
-  const counts = useItemCountsV165(liveIso3s, model.mode === "segmented" || open);
   const current = model.live.find((entry) => entry.iso3 === value) || null;
 
   const groups = useMemo(() => filterCountryGroupsV165(model.groups, query), [model.groups, query]);
@@ -134,7 +102,7 @@ export default function CountryPickerV165({ value, onChange, variant, className,
   }, [open, activeIso3]);
 
   useEffect(() => {
-    if (model.mode !== "segmented" || !value || focusSegmentAfterChangeV165 !== value) return;
+    if ((model.mode !== "segmented" && model.mode !== "rows") || !value || focusSegmentAfterChangeV165 !== value) return;
     focusSegmentAfterChangeV165 = null;
     rootRef.current?.querySelector<HTMLButtonElement>(`[data-iso3="${value}"]`)?.focus({ preventScroll: true });
   }, [model.mode, value]);
@@ -208,20 +176,99 @@ export default function CountryPickerV165({ value, onChange, variant, className,
     );
   }
 
+  // Segmented buttons and rows: one radio per public country; the arrow keys
+  // step through the public countries in reading order (a country being
+  // prepared is not a radio and is skipped).
+  const liveIndex = model.live.findIndex((entry) => entry.iso3 === value);
+  const onRadioKey = (event: ReactKeyboardEvent<HTMLButtonElement>, at: number) => {
+    const step = event.key === "ArrowRight" || event.key === "ArrowDown" ? 1 : event.key === "ArrowLeft" || event.key === "ArrowUp" ? -1 : 0;
+    if (!step) return;
+    event.preventDefault();
+    const next = model.live[(at + step + model.live.length) % model.live.length];
+    if (!next) return;
+    focusSegmentAfterChangeV165 = next.iso3;
+    onChange(next.iso3);
+    window.requestAnimationFrame(() =>
+      rootRef.current?.querySelector<HTMLButtonElement>(`[data-iso3="${next.iso3}"]`)?.focus()
+    );
+  };
+  const radio = (entry: CountryPickerEntryV165) => {
+    const at = model.live.findIndex((row) => row.iso3 === entry.iso3);
+    const checked = entry.iso3 === value;
+    return (
+      <button
+        key={entry.iso3}
+        type="button"
+        role="radio"
+        aria-checked={checked}
+        tabIndex={checked || (liveIndex < 0 && at === 0) ? 0 : -1}
+        data-iso3={entry.iso3}
+        className={checked ? "country-picker-v165__segment is-selected" : "country-picker-v165__segment"}
+        onClick={() => {
+          if (checked) return;
+          focusSegmentAfterChangeV165 = entry.iso3;
+          onChange(entry.iso3);
+        }}
+        onKeyDown={(event) => onRadioKey(event, at)}
+      >
+        <span>{entry.nameKo}</span>
+      </button>
+    );
+  };
+
+  if (model.mode === "rows") {
+    // V166 (the home): every country the platform names, one row per region.
+    // The public countries are the radios; a country being prepared is its
+    // name only, greyed, with "공개 예정" written out (not by colour alone).
+    return (
+      <div ref={rootRef} className={rootClass} data-country-picker="true" data-country-selector="v162" data-testid="country-picker-v165" data-mode="rows">
+        {label ? (
+          <span className="country-picker-v165__label" id={`country-picker-${baseId}-label`}>
+            {label}
+          </span>
+        ) : null}
+        <div
+          className="country-picker-v165__rows"
+          role="radiogroup"
+          aria-label={label ? undefined : "국가 선택"}
+          aria-labelledby={label ? `country-picker-${baseId}-label` : undefined}
+        >
+          {model.groups.map((group) => {
+            const soon = group.countries.filter((entry) => !entry.live);
+            return (
+              <div key={group.key || "all"} className="country-picker-v165__row" data-region={group.key || undefined}>
+                {group.nameKo ? <span className="country-picker-v165__region">{group.nameKo}</span> : null}
+                <span className="country-picker-v165__row-body">
+                  {group.countries.filter((entry) => entry.live).map(radio)}
+                  {soon.length ? (
+                    <span className="country-picker-v165__soon" data-testid="country-picker-soon-v166">
+                      {soon.map((entry, at) => (
+                        <span key={entry.iso3} className="country-picker-v165__soon-name" data-iso3={entry.iso3}>
+                          {entry.nameKo}
+                          {/* The separator stays with the name before it, so a line never starts with one. */}
+                          {at < soon.length - 1 ? (
+                            <>
+                              <span className="country-picker-v165__sep" aria-hidden="true">·</span>
+                              <span className="sr-only">, </span>
+                            </>
+                          ) : null}
+                        </span>
+                      ))}
+                      <em className="country-picker-v165__soon-tag">
+                        <span className="sr-only">: </span>공개 예정
+                      </em>
+                    </span>
+                  ) : null}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+
   if (model.mode === "segmented") {
-    const index = model.live.findIndex((entry) => entry.iso3 === value);
-    const onRadioKey = (event: ReactKeyboardEvent<HTMLButtonElement>, at: number) => {
-      const step = event.key === "ArrowRight" || event.key === "ArrowDown" ? 1 : event.key === "ArrowLeft" || event.key === "ArrowUp" ? -1 : 0;
-      if (!step) return;
-      event.preventDefault();
-      const next = model.live[(at + step + model.live.length) % model.live.length];
-      if (!next) return;
-      focusSegmentAfterChangeV165 = next.iso3;
-      onChange(next.iso3);
-      window.requestAnimationFrame(() =>
-        rootRef.current?.querySelector<HTMLButtonElement>(`[data-iso3="${next.iso3}"]`)?.focus()
-      );
-    };
     return (
       <div ref={rootRef} className={rootClass} data-country-picker="true" data-country-selector="v162" data-testid="country-picker-v165" data-mode="segmented">
         {label ? (
@@ -235,30 +282,7 @@ export default function CountryPickerV165({ value, onChange, variant, className,
           aria-label={label ? undefined : "국가 선택"}
           aria-labelledby={label ? `country-picker-${baseId}-label` : undefined}
         >
-          {model.live.map((entry, at) => {
-            const checked = entry.iso3 === value;
-            return (
-              <button
-                key={entry.iso3}
-                type="button"
-                role="radio"
-                aria-checked={checked}
-                tabIndex={checked || (index < 0 && at === 0) ? 0 : -1}
-                data-iso3={entry.iso3}
-                aria-label={typeof counts[entry.iso3] === "number" ? `${entry.nameKo}, 데이터 ${counts[entry.iso3]}개` : undefined}
-                className={checked ? "country-picker-v165__segment is-selected" : "country-picker-v165__segment"}
-                onClick={() => {
-                  if (checked) return;
-                  focusSegmentAfterChangeV165 = entry.iso3;
-                  onChange(entry.iso3);
-                }}
-                onKeyDown={(event) => onRadioKey(event, at)}
-              >
-                <span>{entry.nameKo}</span>
-                {typeof counts[entry.iso3] === "number" ? <small aria-hidden="true">{counts[entry.iso3]}</small> : null}
-              </button>
-            );
-          })}
+          {model.live.map(radio)}
         </div>
       </div>
     );
@@ -352,11 +376,7 @@ export default function CountryPickerV165({ value, onChange, variant, className,
                         <small>{entry.nameEn}</small>
                       </span>
                       <span className="country-picker-v165__meta">
-                        {entry.live
-                          ? typeof counts[entry.iso3] === "number"
-                            ? `${counts[entry.iso3]}개 항목`
-                            : ""
-                          : "공개 예정"}
+                        {entry.live ? "" : "공개 예정"}
                       </span>
                     </li>
                   );

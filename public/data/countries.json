@@ -1,7 +1,7 @@
 {
   "schemaVersion": "countries-v158",
-  "generatedAt": "2026-09-24",
-  "note": "공개 대상 국가 레지스트리. 런타임이 읽는 원본이며, 화면·빌더·감사는 여기서 국가별 데이터 경로와 상태를 얻는다. status=live 국가만 ?country= 파라미터로 선택할 수 있다.",
+  "generatedAt": "2026-10-05",
+  "note": "공개 대상 국가 레지스트리. 런타임이 읽는 원본이며, 화면·빌더·감사는 여기서 국가별 데이터 경로와 상태를 얻는다. status=live 국가만 ?country= 파라미터로 선택할 수 있다. V166(2026-10-05): 우선 협력 10개국을 모두 싣는다 — 공개 예정(status=preparing) 국가는 이름·권역만 두고, 데이터 필드(dataRoot·adm·bbox 등)는 납품·검수 후 공개로 바꿀 때 채운다.",
   "regions": [
     { "key": "sea", "nameKo": "동남아시아", "order": 1 },
     { "key": "sa", "nameKo": "남아시아", "order": 2 },
@@ -49,6 +49,14 @@
       "categoriesAvailable": ["A", "B", "C", "E"],
       "status": "live",
       "region": "sa"
-    }
+    },
+    { "iso3": "PHL", "nameKo": "필리핀", "nameEn": "Philippines", "region": "sea", "status": "preparing" },
+    { "iso3": "KHM", "nameKo": "캄보디아", "nameEn": "Cambodia", "region": "sea", "status": "preparing" },
+    { "iso3": "IDN", "nameKo": "인도네시아", "nameEn": "Indonesia", "region": "sea", "status": "preparing" },
+    { "iso3": "LAO", "nameKo": "라오스", "nameEn": "Lao PDR", "region": "sea", "status": "preparing" },
+    { "iso3": "MYS", "nameKo": "말레이시아", "nameEn": "Malaysia", "region": "sea", "status": "preparing" },
+    { "iso3": "LKA", "nameKo": "스리랑카", "nameEn": "Sri Lanka", "region": "sa", "status": "preparing" },
+    { "iso3": "IND", "nameKo": "인도", "nameEn": "India", "region": "sa", "status": "preparing" },
+    { "iso3": "EGY", "nameKo": "이집트", "nameEn": "Egypt", "region": "mena", "status": "preparing" }
   ]
 }

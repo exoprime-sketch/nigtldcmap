@@ -12,7 +12,13 @@
  * broken somewhere below.
  *
  *   node scripts/v158/fake-country-check-v158.mjs --build tmp/build-x [--source bgd]
- *     [--out reports/v158/fake-country-check-v158.json]
+ *     [--out reports/v158/fake-country-check-v158.json] [--promote PHL]
+ *
+ * V166 `--promote <ISO3>`: instead of a made-up country, a country the
+ * registry names as "공개 예정" (a name-only row) is turned live in the
+ * browser - its row given the data fields and the second country's delivery,
+ * as its own delivery will be - to prove that changing its row alone puts it
+ * on every screen, with no screen code changed.
  *
  * Exit code 1 when any check fails.
  */
@@ -41,12 +47,17 @@ const sourceIso3 = opt("source", registry.countries.find((row) => row.iso3 !== d
 const sourceEntry = registry.countries.find((row) => row.iso3 === sourceIso3);
 if (!sourceEntry) throw new Error(`UNKNOWN_SOURCE_COUNTRY: ${sourceIso3}`);
 
+const PROMOTE = opt("promote", "").toUpperCase();
+const promoted = PROMOTE ? registry.countries.find((row) => row.iso3 === PROMOTE) : null;
+if (PROMOTE && (!promoted || promoted.status !== "preparing")) throw new Error(`NOT_A_PREPARING_COUNTRY: ${PROMOTE}`);
+const fakeRoot = promoted ? `/data/${promoted.iso3.toLowerCase()}/v2` : "/data/xts/v2";
 const FAKE = {
-  iso3: "XTS",
-  nameKo: "시험국",
-  nameEn: "Testland",
-  dataRoot: "/data/xts/v2",
-  adm: { level1: { count: 1, label: "시험 행정구역", asset: "/data/xts/v2/geometry/none.geojson", keyScheme: "test" } },
+  iso3: promoted?.iso3 || "XTS",
+  nameKo: promoted?.nameKo || "시험국",
+  nameEn: promoted?.nameEn || "Testland",
+  ...(promoted?.region ? { region: promoted.region } : {}),
+  dataRoot: fakeRoot,
+  adm: { level1: { count: 1, label: "시험 행정구역", asset: `${fakeRoot}/geometry/none.geojson`, keyScheme: "test" } },
   bbox: sourceEntry.bbox,
   defaultZoom: sourceEntry.defaultZoom,
   boundaryEpoch: "test",
@@ -55,10 +66,9 @@ const FAKE = {
 };
 const fakeRegistry = {
   ...registry,
-  countries: [
-    ...registry.countries.map((row) => (row.iso3 === sourceIso3 ? { ...row, status: "live" } : row)),
-    FAKE,
-  ],
+  countries: promoted
+    ? registry.countries.map((row) => (row.iso3 === sourceIso3 ? { ...row, status: "live" } : row.iso3 === FAKE.iso3 ? FAKE : row))
+    : [...registry.countries.map((row) => (row.iso3 === sourceIso3 ? { ...row, status: "live" } : row)), FAKE],
 };
 const sourceRoot = sourceEntry.dataRoot.replace(/\/$/u, "");
 const sourceProviderId = `${sourceIso3.toLowerCase()}-v158`;
@@ -70,7 +80,9 @@ const notProvided = sourceCatalog.elements.find((row) => row.publicStatus === "n
 
 const server = await startStaticBuildServer(BUILD, { port: PORT });
 const base = server.url.replace(/\/$/u, "");
-const browser = await chromium.launch();
+const browser = await chromium.launch(
+  process.env.V125_BROWSER_EXECUTABLE ? { executablePath: process.env.V125_BROWSER_EXECUTABLE } : {}
+);
 const context = await browser.newContext({ locale: "ko-KR" });
 await context.route(
   (url) => url.pathname.endsWith("/data/countries.json"),
@@ -130,7 +142,7 @@ async function open(path, waitFor) {
   } else {
     await page.waitForTimeout(2500);
   }
-  const state = await page.evaluate(() => {
+  const state = await page.evaluate((fakeIso3) => {
     const main = document.querySelector("main") ?? document.body;
     const compare = document.querySelector('[data-testid="country-compare-v158"]');
     const select = [...document.querySelectorAll("select")].find((node) =>
@@ -143,6 +155,9 @@ async function open(path, waitFor) {
         document.querySelector('[data-testid="finder-results-v136"]')?.getAttribute("data-total-count") ?? -1
       ),
       countryOptions: select ? [...select.options].map((option) => option.textContent.trim()) : [],
+      // V166: the country can be picked where the screen offers countries
+      // (the home's buttons; a "공개 예정" name is not a button).
+      pickable: document.querySelectorAll(`[data-country-picker] button[data-iso3="${fakeIso3}"]`).length,
       compare: compare
         ? {
             state: compare.getAttribute("data-state"),
@@ -152,7 +167,7 @@ async function open(path, waitFor) {
           }
         : null,
     };
-  });
+  }, FAKE.iso3);
   await page.close();
   return { path, errors, ...state, text: undefined, textLength: state.text.length, fakeNameCount: state.text.split(FAKE.nameKo).length - 1 };
 }
@@ -174,6 +189,8 @@ await server.close();
 const checks = {
   // The home screen lists the offered countries from the registry.
   homeListsFakeCountry: results.home.fakeNameCount > 0,
+  // V166: and offers this one as a choice (a button), not as "공개 예정".
+  homeOffersFakeCountry: results.home.pickable > 0,
   homeNoErrors: results.home.errors.length === 0,
   finderKeepsFakeCountry: fakeCountry(results.finder.search),
   finderCountFromFakeCatalog: results.finder.finderTotal === expectedFinder,
@@ -191,7 +208,7 @@ const checks = {
 const report = {
   schema: "fake-country-check-v158",
   build: opt("build", "build"),
-  fakeCountry: { iso3: FAKE.iso3, nameKo: FAKE.nameKo, servedFrom: sourceIso3 },
+  fakeCountry: { iso3: FAKE.iso3, nameKo: FAKE.nameKo, servedFrom: sourceIso3, promoted: Boolean(promoted) },
   expectedFinder,
   checks,
   results,

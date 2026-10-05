@@ -51,6 +51,8 @@ const trackedEnv = trackedFiles.filter((path) => /(?:^|\/)\.env(?:$|\.)/u.test(p
 // with a workbook inside) is still a raw source.
 const publishedZipShas = new Map();
 for (const country of JSON.parse(readFileSync(resolve(PROJECT_ROOT, "public/data/countries.json"), "utf8")).countries || []) {
+  // V166: a country only named so far ("공개 예정") has no data tree yet.
+  if (!country.dataRoot) continue;
   const catalogPath = resolve(PROJECT_ROOT, `public${country.dataRoot}`, "catalog.json");
   if (!existsSync(catalogPath)) continue;
   for (const element of JSON.parse(readFileSync(catalogPath, "utf8")).elements || []) {

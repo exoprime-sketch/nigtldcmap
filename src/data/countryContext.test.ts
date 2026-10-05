@@ -8,7 +8,9 @@ import {
   countryDataRootV158,
   dataCountryParamV158,
   dataUrl,
+  hasCountryDataV166,
   isLiveCountryV158,
+  liveRegistryCountriesV166,
 } from "./countryContext";
 import type { CountryRegistryV158 } from "./countryContext";
 
@@ -33,12 +35,28 @@ describe("country registry V158", () => {
 
   // V162 PR-D (2026-10-03): Bangladesh goes public.
   test("Vietnam and Bangladesh are live", () => {
-    const byIso3 = new Map(registry.countries.map((row) => [row.iso3, row]));
+    const byIso3 = new Map(registry.countries.filter(hasCountryDataV166).map((row) => [row.iso3, row]));
     expect(byIso3.get("VNM")?.status).toBe("live");
     expect(byIso3.get("BGD")?.status).toBe("live");
     // The D category has no Bangladesh delivery yet, so it is not offered there.
     expect(byIso3.get("BGD")?.categoriesAvailable).not.toContain("D");
     expect(byIso3.get("VNM")?.categoriesAvailable).toEqual(["A", "B", "C", "D", "E"]);
+  });
+
+  // V166 (2026-10-05): the registry names the ten priority countries; the ones
+  // still being prepared are name-only rows, their data fields added with their
+  // delivery.
+  test("every live country carries its data fields; a name-only row is always preparing", () => {
+    registry.countries.forEach((row) => {
+      if (row.status === "live") expect(hasCountryDataV166(row)).toBe(true);
+      if (!hasCountryDataV166(row)) {
+        expect(row.status).toBe("preparing");
+        expect(Object.keys(row).sort()).toEqual(["iso3", "nameEn", "nameKo", "region", "status"]);
+      }
+    });
+    expect(liveRegistryCountriesV166(registry).map((row) => row.iso3)).toEqual(
+      registry.countries.filter((row) => row.status === "live").map((row) => row.iso3)
+    );
   });
 
   test("?country= accepts a live country and refuses one that is preparing", () => {

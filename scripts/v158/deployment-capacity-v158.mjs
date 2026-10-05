@@ -117,7 +117,9 @@ function measureDir(dir) {
 }
 
 const registry = JSON.parse(readFileSync(join(ROOT, "public/data/countries.json"), "utf8"));
-const countries = registry.countries.map(measureCountry);
+// V166: a country only named so far ("공개 예정", no data root) has no tree to
+// measure; it is counted among the priority countries not yet loaded.
+const countries = registry.countries.filter((entry) => entry.dataRoot).map(measureCountry);
 const priorityText = readFileSync(join(ROOT, "src/data/priorityCountries.ts"), "utf8");
 const priorityIso3 = [...priorityText.matchAll(/iso3:\s*"([A-Z]{3})"/gu)].map((match) => match[1]);
 const measuredIso3 = new Set(countries.map((item) => item.iso3));

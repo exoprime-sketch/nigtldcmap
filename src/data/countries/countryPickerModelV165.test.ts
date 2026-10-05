@@ -3,7 +3,9 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import type { CountryRegistryEntryV158, CountryRegionV165 } from "../countryContext";
 import {
+  COUNTRY_PICKER_ROWS_MAX_V166,
   countryPickerModelV165,
+  countryRegionTableV166,
   countrySelectGroupsV165,
   filterCountryGroupsV165,
   nextCountryByTypeAheadV165,
@@ -67,10 +69,11 @@ describe("country picker shape follows the number of public countries", () => {
     const model = countryPickerModelV165(registry(2), "header");
     expect(model.mode).toBe("list");
     expect(model.groups.map((group) => group.nameKo)).toEqual(["동남아시아", "남아시아", "중동·북아프리카"]);
+    // V166: within a region the public countries come first (before: by name only).
     expect(model.groups[0].countries.map((row) => row.nameKo)).toEqual([
+      "베트남",
       "라오스",
       "말레이시아",
-      "베트남",
       "인도네시아",
       "캄보디아",
       "필리핀",
@@ -94,6 +97,57 @@ describe("country picker shape follows the number of public countries", () => {
     const groups = countryPickerModelV165(reg, "header").groups;
     expect(groups.at(-1)?.nameKo).toBe("기타");
     expect(groups.at(-1)?.countries.map((row) => row.iso3)).toEqual(["EGY"]);
+  });
+});
+
+describe("V166: the home lays out every listed country in rows", () => {
+  it("two public of ten: three region rows, public first, preparing ones shown but not selectable", () => {
+    const model = countryPickerModelV165(registry(2), "overview");
+    expect(model.mode).toBe("rows");
+    expect(model.groups.map((group) => group.nameKo)).toEqual(["동남아시아", "남아시아", "중동·북아프리카"]);
+    expect(model.groups.map((group) => group.countries.map((row) => row.iso3))).toEqual([
+      ["VNM", "LAO", "MYS", "IDN", "KHM", "PHL"],
+      ["BGD", "LKA", "IND"],
+      ["EGY"],
+    ]);
+    expect(model.live.map((row) => row.iso3)).toEqual(["VNM", "BGD"]);
+    expect(model.groups.flatMap((group) => group.countries).filter((row) => !row.live)).toHaveLength(8);
+  });
+  it("no country being prepared: the buttons alone, as before", () => {
+    expect(countryPickerModelV165(registry(2, 2), "overview").mode).toBe("segmented");
+    expect(countryPickerModelV165(registry(1, 1), "overview").mode).toBe("single");
+  });
+  it("one public country with others being prepared: rows (not the name alone)", () => {
+    const model = countryPickerModelV165(registry(1), "overview");
+    expect(model.mode).toBe("rows");
+    expect(model.live.map((row) => row.iso3)).toEqual(["VNM"]);
+  });
+  it("under five listed: one row without a region name", () => {
+    const model = countryPickerModelV165(registry(2, 4), "overview");
+    expect(model.mode).toBe("rows");
+    expect(model.groups).toHaveLength(1);
+    expect(model.groups[0].nameKo).toBe("");
+  });
+  it("beyond twelve listed: the header's button + list", () => {
+    const extra: Array<[string, string, string, string]> = [
+      ["THA", "태국", "Thailand", "sea"],
+      ["MMR", "미얀마", "Myanmar", "sea"],
+      ["NPL", "네팔", "Nepal", "sa"],
+    ];
+    expect(countryPickerModelV165(registry(3, COUNTRY_PICKER_ROWS_MAX_V166, extra), "overview").mode).toBe("rows");
+    expect(countryPickerModelV165(registry(3, COUNTRY_PICKER_ROWS_MAX_V166 + 1, extra), "overview").mode).toBe("list");
+  });
+  it("the guide keeps its buttons; the header keeps its list", () => {
+    expect(countryPickerModelV165(registry(2), "inline").mode).toBe("segmented");
+    expect(countryPickerModelV165(registry(2), "header").mode).toBe("list");
+  });
+  it("the guide's table lists every country by region, public first", () => {
+    expect(countryRegionTableV166(registry(2)).map((group) => [group.nameKo, group.countries.map((row) => row.iso3)])).toEqual([
+      ["동남아시아", ["VNM", "LAO", "MYS", "IDN", "KHM", "PHL"]],
+      ["남아시아", ["BGD", "LKA", "IND"]],
+      ["중동·북아프리카", ["EGY"]],
+    ]);
+    expect(countryRegionTableV166({ countries: [] })).toEqual([]);
   });
 });
 
@@ -133,8 +187,15 @@ describe("the published registry", () => {
     const keys = new Set(published.regions.map((region) => region.key));
     expect(published.countries.every((country) => country.region && keys.has(country.region))).toBe(true);
   });
-  it("gives the home today's shape: one button per public country", () => {
+  it("gives the guide today's shape: one button per public country", () => {
     const model = countryPickerModelV165(published, "inline");
     expect(model.mode).toBe(model.live.length <= 1 ? "single" : model.live.length <= 4 ? "segmented" : "list");
+  });
+  it("V166: names every country the platform plans, the home showing them all in rows", () => {
+    const listed = published.countries.filter((country) => country.status === "live" || country.status === "preparing");
+    expect(listed).toHaveLength(published.countries.length);
+    const model = countryPickerModelV165(published, "overview");
+    expect(model.mode).toBe(listed.length > model.live.length ? "rows" : model.live.length <= 4 ? "segmented" : "list");
+    expect(model.groups.flatMap((group) => group.countries)).toHaveLength(listed.length);
   });
 });

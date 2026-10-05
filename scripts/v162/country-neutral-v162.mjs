@@ -43,11 +43,20 @@ export function loadCountryNamesV162(root) {
 
 const escape = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
-/** A regex source for country names, longest first; '인도' (India) never inside '인도네시아', '인도양', '인도주의' .... */
+/**
+ * V166: a regex source for one country name - '인도' (India) never inside
+ * '인도네시아', '인도양', '인도주의' ...; any other name as written. Shared with
+ * qa:acceptance:v162, so the import and the acceptance read a name the same way.
+ */
+export function countryNameSourceV166(name) {
+  return name === "인도" ? "인도(?!네시아|양|주의|적|지원|차이나|교|되|하|받)" : escape(name);
+}
+
+/** A regex source for country names, longest first. */
 function nameSource(names) {
   return [...names]
     .sort((a, b) => b.length - a.length)
-    .map((name) => (name === "인도" ? "인도(?!네시아|양|주의|적|지원|차이나|교|되|하|받)" : escape(name)))
+    .map(countryNameSourceV166)
     .join("|");
 }
 

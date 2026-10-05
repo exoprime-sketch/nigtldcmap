@@ -9,6 +9,7 @@ import { ensureCountryRegistryLoadedV158 } from "../data/countries/countryDataPr
 import { resolveHomeCountryV161 } from "../data/homeCountryV161";
 import type { HomeCountryV161 } from "../data/homeCountryV161";
 import CountryPickerV165 from "../components/country/CountryPickerV165";
+import CountryTableV166 from "../components/country/CountryTableV166";
 import { countryLevel1V158 } from "../data/countries/countryLevel1V158";
 import { countryRegistryCacheV158, DEFAULT_COUNTRY_ISO3_V158 } from "../data/countryContext";
 import { PublicTermTextV134 } from "../components/help/PublicTermV134";
@@ -160,6 +161,8 @@ export default function DataGuidePage({ onNavigate, onCountryChange }: DataGuide
             항목 단위로 확인할 수 있습니다.
             {scopeCountry && scopeCountry.live.length > 1 ? " 다른 나라의 데이터는 위 '국가'나 상단 메뉴 옆 국가 버튼에서 고릅니다." : null}
           </p>
+          {/* V166: every country the platform names, by region, from the registry. */}
+          <CountryTableV166 />
         </section>
 
         <section id="guide-status">

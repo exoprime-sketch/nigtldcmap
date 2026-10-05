@@ -18,12 +18,15 @@ const argv = process.argv.slice(2);
 const at = argv.indexOf("--out");
 const OUT = resolve(ROOT, at >= 0 ? argv[at + 1] : "reports/v158/country-literal-scan-v158");
 const registry = JSON.parse(readFileSync(resolve(ROOT, "public/data/countries.json"), "utf8")).countries;
-const terms = registry.flatMap((row) => [
-  { iso3: row.iso3, term: row.iso3, kind: "iso3" },
-  { iso3: row.iso3, term: row.nameKo, kind: "nameKo" },
-  { iso3: row.iso3, term: row.nameEn, kind: "nameEn" },
-  { iso3: row.iso3, term: row.dataRoot, kind: "dataRoot" },
-]);
+// V166: a country only named so far has no data root - no term for it.
+const terms = registry
+  .flatMap((row) => [
+    { iso3: row.iso3, term: row.iso3, kind: "iso3" },
+    { iso3: row.iso3, term: row.nameKo, kind: "nameKo" },
+    { iso3: row.iso3, term: row.nameEn, kind: "nameEn" },
+    { iso3: row.iso3, term: row.dataRoot, kind: "dataRoot" },
+  ])
+  .filter(({ term }) => typeof term === "string" && term.length > 0);
 
 const walk = (dir) =>
   readdirSync(dir).flatMap((name) => {
