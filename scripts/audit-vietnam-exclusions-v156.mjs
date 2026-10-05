@@ -35,6 +35,16 @@ const decisions = Array.isArray(decisionDoc.exclusions) ? decisionDoc.exclusions
 const publicSet = publicListedElementsV156(catalog);
 const excluded = excludedElementsV156(catalog);
 const excludedIds = new Set(excluded.map((element) => String(element.elementId)));
+// V165-2 (user decision 2026-10-05, reports/v165/REVIEW_V165_2.md): an element
+// outside the 2026 collection scope with nothing delivered is "not-provided"
+// (config/data-publication/collection-scope-v165.json). It is unlisted like a
+// decided exclusion - every absence check below still covers it - but no
+// decision names it, and its page is the ordinary detail page marked '현재
+// 제공하지 않음', not the decision's notice card. The decision checks read the
+// decided set (publicStatus "excluded") only.
+const decided = catalog.filter((element) => String(element.publicStatus) === "excluded");
+const decidedIds = new Set(decided.map((element) => String(element.elementId)));
+const notProvidedIds = [...excludedIds].filter((id) => !decidedIds.has(id)).sort();
 const hasDownloadAssets = (element) =>
   Array.isArray(element?.downloadAssets) ? element.downloadAssets.length > 0 : Boolean(element?.downloadAssets && Object.keys(element.downloadAssets).length);
 const publicDownloadable = publicSet.filter(hasDownloadAssets).length;
@@ -44,10 +54,10 @@ const cards = Array.isArray(cardDoc.cards) ? cardDoc.cards : Object.values(cardD
 const decisionIds = new Set(decisions.map((row) => String(row.elementId)));
 audit.check(
   "EXCLUSION_DECISIONS_MATCH_CATALOG",
-  decisionIds.size === excludedIds.size &&
-    [...decisionIds].every((id) => excludedIds.has(id)) &&
+  decisionIds.size === decidedIds.size &&
+    [...decisionIds].every((id) => decidedIds.has(id)) &&
     Number(decisionDoc.exclusionCount) === decisions.length,
-  { decisions: [...decisionIds].sort(), catalogExcluded: [...excludedIds].sort(), declared: decisionDoc.exclusionCount },
+  { decisions: [...decisionIds].sort(), catalogExcluded: [...decidedIds].sort(), notProvided: notProvidedIds, declared: decisionDoc.exclusionCount },
   "same elements, declared count = list"
 );
 const fieldMismatches = decisions
@@ -203,7 +213,7 @@ try {
   downloads = { count: downloadIds.length, excluded: downloadIds.filter((id) => excludedIds.has(id)) };
 
   // Direct URLs: one notice card each.
-  notices = await auditExcludedNoticesV156({ cdp, baseUrl: server.url, elements: excluded, detailUrl: detailUrlV135, navigate, waitForValue, evaluateValue });
+  notices = await auditExcludedNoticesV156({ cdp, baseUrl: server.url, elements: decided, detailUrl: detailUrlV135, navigate, waitForValue, evaluateValue });
 } catch (error) {
   runtimeFailure = error instanceof Error ? error.message : String(error);
 } finally {
@@ -247,7 +257,7 @@ audit.check(
 );
 audit.check(
   "EXCLUDED_DETAIL_NOTICE",
-  notices.length === excluded.length && notices.every((row) => row.pass),
+  notices.length === decided.length && notices.every((row) => row.pass),
   notices.map((row) => ({ elementId: row.elementId, pass: row.pass, problems: row.problems, publicNotice: row.snapshot?.publicNotice, cardText: row.snapshot?.cardText })),
   "title + the decision's public line (V156-E, 기준서 v1.1 표 13); no decision record (reason, basis, date); no chart, table or download"
 );
@@ -255,7 +265,8 @@ audit.check(
 const summary = audit.finish({
   frameworkElements: catalog.length,
   publicElements: publicSet.length,
-  excludedElements: [...excludedIds].sort(),
+  excludedElements: [...decidedIds].sort(),
+  notProvidedElements: notProvidedIds,
   publicDownloadable,
 });
 const out = resolve(PROJECT_ROOT, "reports/v156/exclusions-audit-v156.json");

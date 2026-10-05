@@ -30,7 +30,7 @@ from .download_delivery_v137 import (
     describe_asset as describe_download_asset,
 )
 from .download_zip_v158 import write_element_zip, zip_download_asset
-from . import public_text_v163
+from . import collection_scope_v165, public_text_v163
 from .d018_facts_v137 import (
     AGGREGATES as D018_AGGREGATES,
     derive_d018_facts,
@@ -118,6 +118,9 @@ ALLOWED_STATUSES = {
     # V156: a reviewed decision not to offer the element. The framework still
     # counts it and its data files stay, but the public listing leaves it out.
     "excluded",
+    # V165-2: outside the 2026 collection scope with no populated row
+    # (collection_scope_v165); not listed, like an absent Bangladesh workbook.
+    "not-provided",
 }
 
 
@@ -2596,6 +2599,12 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
             if row["deliveryMode"] == DELIVERY_EXTERNAL:
                 asset["url"] = row["url"]
                 asset["repositoryUrl"] = row["repositoryUrl"]
+
+    # V165-2 (user decision 2026-10-05): an element outside the 2026 collection
+    # scope with no populated row is listed as not provided, as in every country
+    # (config/data-publication/collection-scope-v165.json). Applied before the
+    # packs so the bundle index carries the same status as the catalog.
+    collection_scope_v165.apply_collection_scope_v165(catalog, coverage, repo=repo)
 
     # Element shards: deterministic 8-element packs, except an element whose
     # own payload exceeds SOLO_PACK_CONTENT_BYTES is split into its own pack

@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "collection-scope-v165",
+  "scope": "all-countries",
+  "note": "2026년 수집 대상이 아닌 요소(db_framework '2026_수집여부' = N). 2026-10-05 사용자 결정: 방글라데시 입고분에 '2026 수집 대상 아님'으로 표시된 요소는 베트남도 2026년 수집 대상이 아니다. 규칙(모든 국가): 이 목록의 요소 가운데 값이 든 원자료 행이 없는 요소는 미제공(not-provided)으로 두어 모든 공개 목록·검색·항목 수에서 뺀다. 값이 든 행이 있는 요소는 그대로 공개하고(이미 납품된 자료는 그대로 둠), 공개 제외 결정(common-exclusions-v158)에 있는 요소는 제외 그대로 둔다. ETL(build_public_v2·bgd build_country_v2)과 기존 산출물 보정(tools/etl/collection_scope_v165.py)이 이 파일 하나를 읽는다.",
+  "decidedAt": "2026-10-05",
+  "basis": "db_framework 2026_수집여부 = N(방글라데시 2026-09-30 입고분) + 사용자 결정 2026-10-05",
+  "packageReason": "2026 수집 대상 아님",
+  "elementCount": 9,
+  "elementIds": ["C-020", "C-021", "C-023", "D-001", "D-002", "D-004", "E-013", "E-016", "E-017"]
+}

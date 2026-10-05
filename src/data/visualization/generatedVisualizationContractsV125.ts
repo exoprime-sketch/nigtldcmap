@@ -2633,12 +2633,12 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
   },
   {
     "contractStatus": "status-only",
-    "dataPresenceStatus": "not-collected",
+    "dataPresenceStatus": "not-provided",
     "dimensionLabels": [],
     "downloadAvailable": false,
     "elementId": "C-023",
     "measureLabels": [],
-    "noDataReason": "not-collected",
+    "noDataReason": "not-provided",
     "populatedRecordCount": 0,
     "primaryRenderer": "status-only",
     "spatiallyLinked": false,
@@ -3557,7 +3557,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
   },
   {
     "contractStatus": "status-only",
-    "dataPresenceStatus": "no-populated-record",
+    "dataPresenceStatus": "not-provided",
     "dimensionLabels": [],
     "downloadAvailable": false,
     "elementId": "E-013",
@@ -3568,7 +3568,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "숙련 기술인력 가용성(등급)",
       "예방정비 체계 수준(등급)"
     ],
-    "noDataReason": "schema-only",
+    "noDataReason": "not-provided",
     "populatedRecordCount": 0,
     "primaryRenderer": "status-only",
     "spatiallyLinked": false,

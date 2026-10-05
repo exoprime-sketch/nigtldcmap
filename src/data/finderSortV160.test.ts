@@ -3,7 +3,6 @@ import { readFileSync } from "fs";
 import { resolve } from "path";
 import { compareFinderItemsV160, isPreparingStatusV160 } from "./finderSortV160";
 import { getTypologyForCountryV158 } from "./spec/countrySpecV158";
-import { countryPublicDirV158 } from "./countryContext";
 import type { FinderSortItemV160 } from "./finderSortV160";
 
 const items: FinderSortItemV160[] = [
@@ -40,11 +39,24 @@ test("entry-planned and template-only datasets are not-delivered too, and go las
   expect(sorted.slice(-3).sort()).toEqual(["C-021", "E-011", "E-013"]);
 });
 
-test("the catalogue's not-delivered set is the typology's data-pending set", () => {
-  const catalog = JSON.parse(readFileSync(resolve(__dirname, "../..", countryPublicDirV158("VNM"), "catalog.json"), "utf8")) as {
+// Each country's catalog, from the published registry (the bundled registry
+// knows the default country only).
+const REGISTRY_V165 = JSON.parse(readFileSync(resolve(__dirname, "../../public/data/countries.json"), "utf8")) as {
+  countries: { iso3: string; dataRoot: string }[];
+};
+const catalogPathV165 = (iso3: string) =>
+  resolve(__dirname, "../../public", `.${REGISTRY_V165.countries.find((row) => row.iso3 === iso3)?.dataRoot}`, "catalog.json");
+
+// V165-2 (user decision 2026-10-05): an element outside the 2026 collection
+// scope with nothing delivered is "not-provided" in every country and is not
+// listed at all, so the comparison is over the listed elements (the finder's
+// own set); see reports/v165/REVIEW_V165_2.md.
+test.each(["VNM", "BGD"])("%s: the listed not-delivered set is the typology's data-pending set", (iso3) => {
+  const catalog = JSON.parse(readFileSync(catalogPathV165(iso3), "utf8")) as {
     elements: { elementId: string; publicStatus?: string }[];
   };
-  const preparing = catalog.elements.filter((element) => isPreparingStatusV160(element.publicStatus)).map((element) => element.elementId).sort();
+  const listed = catalog.elements.filter((element) => !["excluded", "not-provided"].includes(element.publicStatus || ""));
+  const preparing = listed.filter((element) => isPreparingStatusV160(element.publicStatus)).map((element) => element.elementId).sort();
   // V162: the '데이터 준비 중' notice a card actually shows is decided from the
   // catalog alone (getTypologyForCountryV158 / statusNoticeFromCatalogV162),
   // per element, not from datasetTypologyV159.json's own statusNotice field -
@@ -52,10 +64,28 @@ test("the catalogue's not-delivered set is the typology's data-pending set", () 
   // arrives (E-011, 2026-09-30) is picked up through the catalog without
   // editing the typology file, so this compares against the notice the
   // typology resolves to for each catalog item, not the file's raw content.
-  const pending = catalog.elements
-    .map((element) => getTypologyForCountryV158(element.elementId, "VNM", element))
+  const pending = listed
+    .map((element) => getTypologyForCountryV158(element.elementId, iso3, element))
     .filter((row) => row?.statusNotice === "data-pending")
     .map((row) => row!.elementId)
     .sort();
   expect(preparing).toEqual(pending);
+});
+
+// V165-2: Viet Nam lists the same 2026 scope as Bangladesh - the elements the
+// framework does not collect in 2026 and no delivery holds are not listed.
+test("an element outside the 2026 collection scope with nothing delivered is listed in no country", () => {
+  const scope = JSON.parse(readFileSync(resolve(__dirname, "../..", "config/data-publication/collection-scope-v165.json"), "utf8")) as {
+    elementIds: string[];
+  };
+  for (const iso3 of ["VNM", "BGD"]) {
+    const catalog = JSON.parse(readFileSync(catalogPathV165(iso3), "utf8")) as {
+      elements: { elementId: string; publicStatus?: string; observationCount?: number; entityCount?: number }[];
+    };
+    for (const element of catalog.elements.filter((row) => scope.elementIds.includes(row.elementId))) {
+      const hasRecords = (element.observationCount || 0) + (element.entityCount || 0) > 0;
+      if (element.publicStatus === "excluded" || hasRecords) continue;
+      expect({ iso3, id: element.elementId, status: element.publicStatus }).toEqual({ iso3, id: element.elementId, status: "not-provided" });
+    }
+  }
 });

@@ -44,7 +44,7 @@ sys.path.insert(0, str(REPO))
 
 from tools.etl import build_public_v2 as v2  # noqa: E402  (pure helpers only)
 from tools.etl.download_zip_v158 import write_element_zip, zip_download_asset  # noqa: E402
-from tools.etl import public_text_v163  # noqa: E402
+from tools.etl import collection_scope_v165, public_text_v163  # noqa: E402
 from tools.etl.download_delivery_v137 import (  # noqa: E402
     DELIVERY_EXTERNAL,
     NullObjectStorageAdapter,
@@ -795,6 +795,12 @@ def build(code: str, out_override: str | None = None) -> dict[str, Any]:
             if row["deliveryMode"] == DELIVERY_EXTERNAL:
                 asset["url"] = row["url"]
                 asset["repositoryUrl"] = row["repositoryUrl"]
+
+    # V165-2 (user decision 2026-10-05): the 2026 collection scope, the same rule
+    # as Viet Nam (config/data-publication/collection-scope-v165.json). An
+    # absent workbook is already "not-provided"; this reaches a delivered
+    # template without populated rows.
+    collection_scope_v165.apply_collection_scope_v165(catalog, coverage, repo=REPO)
 
     # Packs and the bundle index (the file name the loader expects stays v124).
     bundle_elements: dict[str, Any] = {}
