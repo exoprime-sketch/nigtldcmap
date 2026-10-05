@@ -47,10 +47,10 @@ const REGISTRY_V165 = JSON.parse(readFileSync(resolve(__dirname, "../../public/d
 const catalogPathV165 = (iso3: string) =>
   resolve(__dirname, "../../public", `.${REGISTRY_V165.countries.find((row) => row.iso3 === iso3)?.dataRoot}`, "catalog.json");
 
-// V165-2 (user decision 2026-10-05): an element outside the 2026 collection
-// scope with nothing delivered is "not-provided" in every country and is not
-// listed at all, so the comparison is over the listed elements (the finder's
-// own set); see reports/v165/REVIEW_V165_2.md.
+// V165-2: an element not offered ("excluded" by decision, or "not-provided"
+// where a delivery holds nothing) is not listed at all, so the comparison is
+// over the listed elements (the finder's own set), in every country; see
+// reports/v165/REVIEW_V165_2.md.
 test.each(["VNM", "BGD"])("%s: the listed not-delivered set is the typology's data-pending set", (iso3) => {
   const catalog = JSON.parse(readFileSync(catalogPathV165(iso3), "utf8")) as {
     elements: { elementId: string; publicStatus?: string }[];
@@ -72,20 +72,20 @@ test.each(["VNM", "BGD"])("%s: the listed not-delivered set is the typology's da
   expect(preparing).toEqual(pending);
 });
 
-// V165-2: Viet Nam lists the same 2026 scope as Bangladesh - the elements the
-// framework does not collect in 2026 and no delivery holds are not listed.
-test("an element outside the 2026 collection scope with nothing delivered is listed in no country", () => {
-  const scope = JSON.parse(readFileSync(resolve(__dirname, "../..", "config/data-publication/collection-scope-v165.json"), "utf8")) as {
-    elementIds: string[];
-  };
+// V165-2 (user decision 2026-10-05): the decision common to every country
+// (config/data-publication/common-exclusions-v158.json - now with the five
+// elements the framework does not collect in 2026) is applied in every
+// country's catalog, so every country offers the same elements.
+test("every common exclusion is excluded in every country's catalog", () => {
+  const decision = JSON.parse(
+    readFileSync(resolve(__dirname, "../..", "config/data-publication/common-exclusions-v158.json"), "utf8")
+  ) as { exclusions: { elementId: string }[] };
+  const ids = decision.exclusions.map((row) => row.elementId);
   for (const iso3 of ["VNM", "BGD"]) {
     const catalog = JSON.parse(readFileSync(catalogPathV165(iso3), "utf8")) as {
-      elements: { elementId: string; publicStatus?: string; observationCount?: number; entityCount?: number }[];
+      elements: { elementId: string; publicStatus?: string }[];
     };
-    for (const element of catalog.elements.filter((row) => scope.elementIds.includes(row.elementId))) {
-      const hasRecords = (element.observationCount || 0) + (element.entityCount || 0) > 0;
-      if (element.publicStatus === "excluded" || hasRecords) continue;
-      expect({ iso3, id: element.elementId, status: element.publicStatus }).toEqual({ iso3, id: element.elementId, status: "not-provided" });
-    }
+    const statuses = ids.map((id) => [id, catalog.elements.find((row) => row.elementId === id)?.publicStatus]);
+    expect({ iso3, statuses }).toEqual({ iso3, statuses: ids.map((id) => [id, "excluded"]) });
   }
 });

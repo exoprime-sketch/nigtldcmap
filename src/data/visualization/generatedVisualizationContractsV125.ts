@@ -2633,12 +2633,12 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
   },
   {
     "contractStatus": "status-only",
-    "dataPresenceStatus": "not-provided",
+    "dataPresenceStatus": "not-collected",
     "dimensionLabels": [],
     "downloadAvailable": false,
     "elementId": "C-023",
     "measureLabels": [],
-    "noDataReason": "not-provided",
+    "noDataReason": "not-collected",
     "populatedRecordCount": 0,
     "primaryRenderer": "status-only",
     "spatiallyLinked": false,
@@ -2712,7 +2712,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "기술",
       "연도"
     ],
-    "downloadAvailable": true,
+    "downloadAvailable": false,
     "elementId": "D-001",
     "measureLabels": [
       "단위 사업당 CAPEX"
@@ -2735,7 +2735,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "기술",
       "연도"
     ],
-    "downloadAvailable": true,
+    "downloadAvailable": false,
     "elementId": "D-002",
     "measureLabels": [
       "시장 성장률"
@@ -2782,7 +2782,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "기술",
       "연도"
     ],
-    "downloadAvailable": true,
+    "downloadAvailable": false,
     "elementId": "D-004",
     "measureLabels": [
       "크레딧 가격 연동 수익성"
@@ -3557,7 +3557,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
   },
   {
     "contractStatus": "status-only",
-    "dataPresenceStatus": "not-provided",
+    "dataPresenceStatus": "no-populated-record",
     "dimensionLabels": [],
     "downloadAvailable": false,
     "elementId": "E-013",
@@ -3568,7 +3568,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "숙련 기술인력 가용성(등급)",
       "예방정비 체계 수준(등급)"
     ],
-    "noDataReason": "not-provided",
+    "noDataReason": "schema-only",
     "populatedRecordCount": 0,
     "primaryRenderer": "status-only",
     "spatiallyLinked": false,

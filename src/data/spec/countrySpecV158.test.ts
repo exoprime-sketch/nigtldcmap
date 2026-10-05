@@ -116,13 +116,17 @@ describe("country spec layer V158", () => {
   });
 
   test("an element the country did not deliver shows '데이터 준비 중' and keeps its type", () => {
-    const missing = otherCatalog.find((row) => row.publicStatus === "not-provided") as Record<string, unknown>;
-    const elementId = missing.elementId as string;
-    const row = getTypologyForCountryV158(elementId, other.iso3, itemFor(elementId));
+    // V165-2: the elements this country's delivery lacked are now all excluded
+    // by the common decision (2026 collection scope), so the case is staged:
+    // a published element of this catalog read as not delivered.
+    const published = otherCatalog.find((row) => row.publicStatus === "actual" && !getTypologyV159(row.elementId as string)?.statusNotice) as Record<string, unknown>;
+    const elementId = published.elementId as string;
+    const missing = { ...itemFor(elementId), publicStatus: "not-provided" };
+    const row = getTypologyForCountryV158(elementId, other.iso3, missing);
     expect(row?.statusNotice).toBe("data-pending");
     expect(row?.status).toBe("미입고(데이터 준비 중)");
     expect(row?.displayType).toBe(getTypologyV159(elementId)?.displayType);
-    expect(getCardSpecForCountryV158(elementId, other.iso3, itemFor(elementId))?.statusNotice).toBe("data-pending");
+    expect(getCardSpecForCountryV158(elementId, other.iso3, missing)?.statusNotice).toBe("data-pending");
   });
 
   test("spec text for another country drops paragraphs naming other countries and the reference line", async () => {
