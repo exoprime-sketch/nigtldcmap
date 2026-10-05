@@ -1,5 +1,5 @@
 import type { CountryRegistryEntryV158 } from "../countryContext";
-import { bundledCountryRegistryV158, countryRegistryCacheV158, normalizeCountryIso3V158 } from "../countryContext";
+import { bundledCountryRegistryV158, countryRegistryCacheV158, hasCountryDataV166, normalizeCountryIso3V158 } from "../countryContext";
 import {
   composeRegionNameV161,
   formatRegionName,
@@ -72,7 +72,8 @@ function parenLatinFragmentV158(text: string): string | null {
 
 function countryRegistryEntryV158(iso3: string): CountryRegistryEntryV158 | null {
   const registry = countryRegistryCacheV158() ?? bundledCountryRegistryV158();
-  return registry.countries.find((row) => row.iso3 === iso3) ?? null;
+  const row = registry.countries.find((entry) => entry.iso3 === iso3);
+  return row && hasCountryDataV166(row) ? row : null;
 }
 
 /**

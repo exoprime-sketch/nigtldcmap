@@ -2,6 +2,7 @@ import type { CountryDataProviderV122 } from "./countryDataTypesV122";
 import { VietnamCountryDataProviderV122 } from "./vietnamCountryDataProviderV122";
 import {
   countryRegistryCacheV158,
+  hasCountryDataV166,
   isLiveCountryV158,
   loadCountryRegistryV158,
   type CountryRegistryV158,
@@ -30,7 +31,9 @@ function syncRegistryProvidersV158(): void {
   const registry = countryRegistryCacheV158();
   if (!registry || registry === syncedRegistryV158) return;
   syncedRegistryV158 = registry;
-  for (const entry of registry.countries) {
+  // V166: a country only named so far (a "공개 예정" row) has no data root and
+  // no bbox to build a provider from; it gets one when its data fields land.
+  for (const entry of registry.countries.filter(hasCountryDataV166)) {
     if (PROVIDER_BY_COUNTRY.has(entry.iso3)) continue;
     const provider = createRegistryCountryDataProviderV158(entry);
     PROVIDERS.push(provider);

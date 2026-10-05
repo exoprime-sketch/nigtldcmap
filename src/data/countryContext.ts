@@ -46,6 +46,43 @@ export interface CountryRegistryEntryV158 {
   region?: string;
 }
 
+/**
+ * V166: a country the platform names before any of its data is delivered - the
+ * country lists show it as "공개 예정", nothing else reads it. Its data fields
+ * (data root, administrative level, bbox ...) are added with its delivery, when
+ * it turns live; nothing is written for it in advance.
+ */
+export interface CountryNameRowV166 {
+  iso3: string;
+  nameKo: string;
+  nameEn: string;
+  region?: string;
+  status: "preparing";
+  dataRoot?: undefined;
+  adm?: undefined;
+  bbox?: undefined;
+}
+
+/**
+ * V166: a registry row - a country with its data fields (every live country),
+ * or a country only named so far ({@link CountryNameRowV166}). Code that reads
+ * a data field narrows first ({@link hasCountryDataV166}), so a name-only row
+ * can never reach a data path, a map view or a builder.
+ */
+export type CountryRegistryRowV166 = CountryRegistryEntryV158 | CountryNameRowV166;
+
+/** V166: the row carries its data fields (every live country does). */
+export function hasCountryDataV166(row: CountryRegistryRowV166): row is CountryRegistryEntryV158 {
+  return typeof row.dataRoot === "string" && Array.isArray(row.bbox) && Boolean(row.adm);
+}
+
+/** V166: the public countries, in registry order - the only rows any screen reads data for. */
+export function liveRegistryCountriesV166(registry: { countries: CountryRegistryRowV166[] } | null | undefined): CountryRegistryEntryV158[] {
+  return (registry?.countries || []).filter(
+    (row): row is CountryRegistryEntryV158 => row.status === "live" && hasCountryDataV166(row)
+  );
+}
+
 /** V165: a region the country picker groups countries under, in `order`. */
 export interface CountryRegionV165 {
   key: string;
@@ -58,7 +95,8 @@ export interface CountryRegistryV158 {
   generatedAt: string;
   /** V165: the regions of the country picker; absent = no grouping. */
   regions?: CountryRegionV165[];
-  countries: CountryRegistryEntryV158[];
+  /** Every country the platform names: live, or preparing (V166: possibly a name-only row). */
+  countries: CountryRegistryRowV166[];
 }
 
 /** The country used when the URL names none, or names one that is not live. */
@@ -88,6 +126,8 @@ export function normalizeCountryIso3V158(value: string | null | undefined): stri
 export function isLiveCountryV158(value: string | null | undefined): boolean {
   const iso3 = normalizeCountryIso3V158(value);
   const entry = registryCache?.countries.find((row) => row.iso3 === iso3);
+  // V166: a name-only row is always "preparing"; a live row carries its data
+  // fields (countryContext.test.ts checks the registry).
   return entry ? entry.status === "live" : BUNDLED_LIVE_ISO3_V158.includes(iso3);
 }
 

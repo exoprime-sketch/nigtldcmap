@@ -8,7 +8,7 @@ import { readZipMembersV158 } from "./downloadZipV158";
 const ROOT = resolve(__dirname, "../../..");
 const sha256 = (bytes: Buffer) => createHash("sha256").update(bytes).digest("hex");
 const registry = JSON.parse(readFileSync(resolve(ROOT, "public/data/countries.json"), "utf8")) as {
-  countries: { iso3: string; dataRoot: string }[];
+  countries: { iso3: string; dataRoot?: string }[];
 };
 
 interface ZipAssetV158 {
@@ -20,7 +20,8 @@ interface ZipAssetV158 {
 }
 
 describe("per-element download ZIPs V158", () => {
-  for (const country of registry.countries) {
+  // V166: every country with a data tree; a country only named so far ("공개 예정") has none.
+  for (const country of registry.countries.filter((row): row is { iso3: string; dataRoot: string } => Boolean(row.dataRoot))) {
     test(`${country.iso3}: every ZIP holds exactly the files its catalog entry lists`, () => {
       const catalog = JSON.parse(readFileSync(resolve(ROOT, `public${country.dataRoot}`, "catalog.json"), "utf8")) as {
         elements: { elementId: string; downloadAssets?: ZipAssetV158[] | null }[];

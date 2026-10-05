@@ -2,7 +2,8 @@
  * V165: the one country picker (header, home, guide).
  *
  * Shapes (see countryPickerModelV165): "single" (the name only), "segmented"
- * (one button per public country, home and guide, up to four) and "list" (a
+ * (one button per public country, the guide, up to four), "rows" (V166, the
+ * home: every country by region, the public ones as buttons) and "list" (a
  * button that opens a list, by region from five countries, with a search box
  * from eleven). Touch targets: 32px high or more on a desktop, 44px at 768px
  * and below.
@@ -60,12 +61,6 @@
   cursor: pointer;
 }
 
-.country-picker-v165__segment small {
-  font-size: 11px;
-  font-weight: 700;
-  opacity: 0.72;
-}
-
 .country-picker-v165__segment:hover {
   color: var(--navy-900);
   background: rgba(11, 37, 64, 0.06);
@@ -82,6 +77,87 @@
 .country-picker-v165__trigger:focus-visible {
   outline: 2px solid var(--blue-700);
   outline-offset: 2px;
+}
+
+/* --------------------------------------------------------- rows (V166, home) */
+
+/* Every country the platform names, one row per region: the public ones are
+   buttons, the ones being prepared their names in grey with "공개 예정". */
+.country-picker-v165--rows {
+  align-items: flex-start;
+}
+
+.country-picker-v165--rows > .country-picker-v165__label {
+  padding-top: 9px;
+}
+
+.country-picker-v165__rows {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.country-picker-v165__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: 4px 12px;
+  min-width: 0;
+}
+
+.country-picker-v165__row[data-region] {
+  grid-template-columns: 92px minmax(0, 1fr);
+}
+
+.country-picker-v165__region {
+  color: var(--slate-600);
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.country-picker-v165__row-body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  min-width: 0;
+}
+
+.country-picker-v165__rows .country-picker-v165__segment {
+  border: 1px solid var(--slate-300);
+  background: var(--white);
+}
+
+.country-picker-v165__soon {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px 0;
+  min-width: 0;
+  color: var(--slate-500);
+  font-size: 13px;
+}
+
+.country-picker-v165__soon-name {
+  white-space: nowrap;
+}
+
+.country-picker-v165__sep {
+  margin: 0 6px;
+  opacity: 0.7;
+}
+
+.country-picker-v165__soon-tag {
+  margin-left: 8px;
+  padding: 1px 7px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0.85;
 }
 
 /* --------------------------------------------------------------------- list */
@@ -121,7 +197,8 @@
   z-index: 70;
   width: 320px;
   max-width: calc(100vw - 24px);
-  max-height: min(60vh, 520px);
+  /* V166: ten countries in three regions fit without scrolling on a laptop screen. */
+  max-height: min(75vh, 600px);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -326,6 +403,24 @@
   outline-color: #73ddd6;
 }
 
+.country-picker-v165--on-dark .country-picker-v165__region {
+  color: #9fb6c8;
+}
+
+.country-picker-v165--on-dark .country-picker-v165__rows .country-picker-v165__segment {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.country-picker-v165--on-dark .country-picker-v165__rows .country-picker-v165__segment.is-selected {
+  border-color: #73ddd6;
+  background: #73ddd6;
+}
+
+.country-picker-v165--on-dark .country-picker-v165__soon {
+  color: #93a9bb;
+}
+
 /* ------------------------------------------------------------ small screens */
 
 @media (max-width: 768px) {
@@ -366,6 +461,11 @@
   height: 42px;
 }
 
+.country-picker-v165--loading.country-picker-v165--overview {
+  width: 220px;
+  height: 42px;
+}
+
 /* ------------------------------------------------- placement in the header */
 
 /* Wide screens: menu · country · search on one line; the country sits with
@@ -389,6 +489,39 @@
 /* 560px and below the first row holds the name and the search only; the
    country leads the menu row (the menu scrolls beside it). */
 @media (max-width: 560px) {
+  /* V166: the home's rows - one region after another, full width. */
+  .country-picker-v165--rows {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+
+  /* The region names say what the rows are; "국가" stays for screen readers. */
+  .country-picker-v165--rows > .country-picker-v165__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  /* The region name, its buttons and its names flow on as few lines as fit. */
+  .country-picker-v165__row[data-region] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 10px;
+  }
+
+  .country-picker-v165__row[data-region] > .country-picker-v165__row-body {
+    display: contents;
+  }
+
+  .country-picker-v165__rows {
+    gap: 10px;
+  }
+
   .header-inner {
     column-gap: 10px;
   }
@@ -410,4 +543,23 @@
     flex: 1 1 0;
     min-width: 0;
   }
+}
+
+/* ------------------------------------- V166: a country being prepared in the address */
+
+.preparing-country-notice-v166 {
+  width: min(1180px, calc(100% - 32px));
+  margin: 12px auto;
+  padding: 10px 14px;
+  border: 1px solid #ecd49a;
+  border-radius: 10px;
+  background: #fff8e6;
+}
+
+.preparing-country-notice-v166 p {
+  margin: 0;
+  color: #5c4205;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.6;
 }

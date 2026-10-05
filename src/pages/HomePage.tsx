@@ -78,8 +78,9 @@ export default function HomePage({ query, onQueryChange, onSubmit, onSearchExamp
           <span className="home-final-eyebrow">국가별 기후기술 협력 데이터</span>
           <h1 id="home-v128-title">개도국 기후기술 협력 플랫폼</h1>
           <p>{country ? `${country.nameKo}의 ` : ""}정책·에너지·기후위험·사업·협력기관 정보를 검색하고, 지역별 분포와 변화를 확인하세요.</p>
-          {/* V165: one button per public country (a list from five); the country stays on this page. */}
-          <CountryPickerV165 className="home-final-scope country-picker-v165--on-dark" variant="inline" label="국가" value={country?.iso3 || null} onChange={onCountryChange} />
+          {/* V166: every country the platform names, one row per region - the public ones as buttons
+              (the country stays on this page), the ones being prepared greyed with "공개 예정". */}
+          <CountryPickerV165 className="home-final-scope country-picker-v165--on-dark" variant="overview" label="국가" value={country?.iso3 || null} onChange={onCountryChange} />
           <form className="home-final-search" onSubmit={onSubmit} role="search">
             <label className="sr-only" htmlFor="home-search">데이터명·지역·기술·기관 검색</label>
             <input id="home-search" value={query} onChange={event => onQueryChange(event.target.value)} placeholder="데이터명·지역·기술·기관 검색" />
@@ -99,12 +100,6 @@ export default function HomePage({ query, onQueryChange, onSubmit, onSearchExamp
         </aside>
       </div>
     </section>
-    <section className="home-status-v139" aria-label="데이터 현황"><dl className="home-status-v139__inner home-v128-stats" aria-live="polite">
-      <div><dt>전체 데이터 항목</dt><dd>{overview ? overview.publicElementCount + "개" : "—"}</dd></div>
-      <div><dt>지도 제공 항목</dt><dd>{overview ? overview.mapLayerCount + "개" : "—"}</dd></div>
-      <div><dt>다운로드 가능 항목</dt><dd>{overview ? overview.downloadableElementCount + "개" : "—"}</dd></div>
-      <div><dt>데이터 기준일</dt><dd>{overview?.releaseDate ?? "—"}</dd></div>
-    </dl></section>
     <section className="home-featured-v139" aria-labelledby="home-featured-title"><div className="home-featured-v139__inner">
       <div className="home-featured-heading home-featured-v139__heading">
         <h2 id="home-featured-title">주요 데이터</h2>
@@ -135,5 +130,13 @@ export default function HomePage({ query, onQueryChange, onSubmit, onSearchExamp
         })}
       </div> : <div className="home-v128-loading" role="status">{loadError ? "데이터를 불러오지 못했습니다. 데이터 찾기에서 다시 확인해 주세요." : "데이터를 불러오는 중입니다."}</div>}
     </div></section>
+    {/* V166 (user decision 2026-10-05): the inventory figures and the data date are reference
+        information, not a task - a small line at the foot of the home, as data portals place it. */}
+    <section className="home-status-v139" aria-label="데이터 현황"><dl className="home-status-v139__inner home-v128-stats" aria-live="polite">
+      <div><dt>전체 데이터 항목</dt><dd>{overview ? overview.publicElementCount + "개" : "—"}</dd></div>
+      <div><dt>지도 제공 항목</dt><dd>{overview ? overview.mapLayerCount + "개" : "—"}</dd></div>
+      <div><dt>다운로드 가능 항목</dt><dd>{overview ? overview.downloadableElementCount + "개" : "—"}</dd></div>
+      <div><dt>데이터 기준일</dt><dd>{overview?.releaseDate ?? "—"}</dd></div>
+    </dl></section>
   </div>;
 }

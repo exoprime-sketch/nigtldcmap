@@ -73,6 +73,11 @@
   flex-wrap: wrap;
 }
 
+/* V166: the rows sit beside the "국가" label, not under it. */
+.home-final-copy > .home-final-scope.country-picker-v165--rows {
+  flex-wrap: nowrap;
+}
+
 .home-final-search {
   max-width: 640px;
   margin-top: 22px;
@@ -228,38 +233,39 @@
 
 /* ---------------------------------------------------------------- status strip */
 
+/* V166: a small reference line at the foot of the home (it was a band right
+   under the hero). */
 .home-status-v139 {
-  border-bottom: 1px solid #dbe4eb;
-  background: var(--white);
+  border-top: 1px solid #dbe4eb;
+  background: transparent;
 }
 
 .home-status-v139__inner {
   width: min(var(--page-width), calc(100% - 48px));
   margin: 0 auto;
-  padding: 12px 0;
+  padding: 14px 0 20px;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 32px;
+  gap: 4px 24px;
 }
 
 .home-status-v139__inner > div {
   display: flex;
   align-items: baseline;
-  gap: 8px;
+  gap: 6px;
 }
 
 .home-status-v139__inner dt {
-  color: var(--slate-600);
+  color: var(--slate-500);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .home-status-v139__inner dd {
   margin: 0;
-  color: var(--navy-900);
-  font-size: 15px;
-  font-weight: 900;
-  letter-spacing: -0.02em;
+  color: var(--slate-700);
+  font-size: 12px;
+  font-weight: 700;
 }
 
 /* ---------------------------------------------------------------- featured */
@@ -582,7 +588,7 @@
   }
 
   .home-status-v139__inner {
-    gap: 6px 20px;
+    gap: 4px 16px;
   }
 
   .home-featured-v139__grid {

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { countryRegistryCacheV158 } from "../countryContext";
-import type { CountryRegionV165, CountryRegistryEntryV158 } from "../countryContext";
+import type { CountryRegionV165, CountryRegistryRowV166 } from "../countryContext";
 import { ensureCountryRegistryLoadedV158 } from "./countryDataProviderRegistryV122";
 
-export type RegistryViewV165 = { countries: CountryRegistryEntryV158[]; regions?: CountryRegionV165[] };
+export type RegistryViewV165 = { countries: CountryRegistryRowV166[]; regions?: CountryRegionV165[] };
 
 /**
  * The country registry once `countries.json` has been read; null before. The

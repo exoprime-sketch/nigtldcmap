@@ -28,6 +28,7 @@ import { ensureCountryRegistryLoadedV158 } from "./data/countries/countryDataPro
 import { countryRegistryCacheV158, DEFAULT_COUNTRY_ISO3_V158 } from "./data/countryContext";
 import { useCountryRegistryV165 } from "./data/countries/useCountryRegistryV165";
 import { resolveHomeCountryV161 } from "./data/homeCountryV161";
+import PreparingCountryNoticeV166 from "./components/country/PreparingCountryNoticeV166";
 import type { CategoryCode } from "./data/publicTaxonomy";
 import CountryDataElementPage from "./pages/CountryDataElementPage";
 import DataGuidePage from "./pages/DataGuidePage";
@@ -569,6 +570,10 @@ export default function App() {
   // been read; if the address named such a country, it is resolved again then.
   const openedLocationRef = useRef(`${window.location.search}${window.location.hash}`);
   const openedCountryParamRef = useRef(initialCountryParam);
+  // V166: the first render rewrites an address that names a country being
+  // prepared; the country it named is kept for the one-line notice, until the
+  // reader picks a country or moves to another screen.
+  const [preparingRequestV166, setPreparingRequestV166] = useState<string | null>(initialCountryParam);
   const historyModeRef = useRef<HistoryMode>("replace");
   const restoringHistoryRef = useRef(false);
   const mainRef = useRef<HTMLElement>(null);
@@ -906,6 +911,7 @@ export default function App() {
   }
 
   function navigate(nextView: View) {
+    setPreparingRequestV166(null);
     if (nextView === "dataset-detail" || nextView === "country" || nextView === "insights") {
       nextView = "explorer";
     } else if (nextView === "compare") {
@@ -1233,6 +1239,7 @@ export default function App() {
    * it; the screen stays the same. Back returns to the previous country.
    */
   function changeCountryV165(nextIso3: string) {
+    setPreparingRequestV166(null);
     const next = nextIso3.toUpperCase();
     // The country already shown: nothing to do (on "전체" there is none, so
     // picking the header's last country applies it).
@@ -1323,6 +1330,9 @@ export default function App() {
         tabIndex={-1}
         className={isMapView ? "app-main app-main--map" : "app-main"}
       >
+        {/* V166: an address naming a country being prepared opens the default country; one line says so. */}
+        {!isMapView && <PreparingCountryNoticeV166 requested={preparingRequestV166} />}
+
         {view === "home" && (
           <HomePage
             key={pageCountryKeyV165}

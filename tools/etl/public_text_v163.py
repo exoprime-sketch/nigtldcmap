@@ -103,7 +103,14 @@ def _registry_names() -> dict[str, str]:
         rows = json.loads(path.read_text(encoding="utf-8")).get("countries") or []
     except FileNotFoundError:
         return {}
-    return {str(row["iso3"]).upper(): str(row.get("nameKo") or "") for row in rows if row.get("nameKo")}
+    # V166: the countries with a data tree; a country only named so far ("공개
+    # 예정") does not change what a delivery's text keeps (the screens hide
+    # other-country sentences for all priority countries at runtime).
+    return {
+        str(row["iso3"]).upper(): str(row.get("nameKo") or "")
+        for row in rows
+        if row.get("nameKo") and row.get("dataRoot")
+    }
 
 
 REGISTRY_NAMES_V163 = _registry_names()
