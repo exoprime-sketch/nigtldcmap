@@ -111,7 +111,7 @@ test("the whole section is absent when description, usage and cases are all empt
   expect(container.innerHTML).toBe("");
 });
 
-test("활용 사례 disclosure starts collapsed and its aria-expanded toggles on click", () => {
+test("활용 예시 disclosure starts collapsed and its aria-expanded toggles on click", () => {
   act(() =>
     root.render(
       <DataDescriptionV159 availableIndicatorIds={AVAILABLE} cases={CASES} spec={SPEC} />
@@ -129,7 +129,21 @@ test("활용 사례 disclosure starts collapsed and its aria-expanded toggles on
   expect(region.hidden).toBe(true);
 });
 
-test("활용 사례 disclosure is absent entirely when there are no cases", () => {
+test("the disclosure reads '활용 예시 N건' and carries the 'AI 생성' flag (V169)", () => {
+  act(() =>
+    root.render(
+      <DataDescriptionV159 availableIndicatorIds={AVAILABLE} cases={CASES} spec={SPEC} />
+    )
+  );
+  const part = container.querySelector('[data-dd159-part="cases"]') as HTMLElement;
+  const toggle = part.querySelector(".dd159-cases-toggle") as HTMLButtonElement;
+  expect(toggle.textContent).toBe(`활용 예시 ${CASES.length}건`);
+  expect(part.querySelector('[data-testid="use-case-ai-flag-v169"]')!.textContent!.trim()).toBe("AI 생성");
+  expect(part.getAttribute("data-dd159-generated")).toBe("ai");
+  expect(container.textContent).not.toContain("활용 사례");
+});
+
+test("활용 예시 disclosure is absent entirely when there are no cases", () => {
   act(() =>
     root.render(<DataDescriptionV159 availableIndicatorIds={AVAILABLE} cases={[]} spec={SPEC} />)
   );

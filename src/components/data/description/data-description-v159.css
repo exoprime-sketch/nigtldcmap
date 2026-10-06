@@ -33,6 +33,26 @@
   outline-offset: 2px;
 }
 
+.dd159-cases-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+/* V169: marks the examples as AI-written; neutral, not a warning colour. */
+.dd159-badge-ai {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #33507a;
+  background: #eaf0f8;
+  border: 1px solid #cbd8ea;
+  border-radius: 999px;
+  padding: 1px 9px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
 .dd159-cases-region { display: grid; gap: 14px; margin-top: 10px; }
 .dd159-cases-region[hidden] { display: none; }
 
