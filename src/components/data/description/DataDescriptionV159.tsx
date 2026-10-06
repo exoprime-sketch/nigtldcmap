@@ -142,7 +142,12 @@ function UseCaseCardV159({ caseItem, availableIndicatorIds, activeChipKey, onTog
   );
 }
 
-/** '데이터 설명': 상세 설명 / 활용 방법 (always open) + 활용 사례 N건 (disclosure, hidden when N=0). */
+/**
+ * '데이터 설명': 상세 설명 / 활용 방법 (always open) + 활용 예시 N건 (disclosure,
+ * hidden when N=0). V169 (team review 2026-10-06): the framework workbook's
+ * '활용 사례' were written with an AI assistant, not taken from real projects,
+ * so the disclosure reads '활용 예시' and carries an 'AI 생성' flag.
+ */
 export default function DataDescriptionV159({
   spec,
   cases,
@@ -195,8 +200,8 @@ export default function DataDescriptionV159({
         </div>
       )}
       {cases.length > 0 && (
-        <div className="dd159-part" data-dd159-part="cases">
-          <h3>
+        <div className="dd159-part" data-dd159-generated="ai" data-dd159-part="cases">
+          <h3 className="dd159-cases-heading">
             <button
               aria-controls={casesRegionId}
               aria-expanded={casesOpen}
@@ -204,8 +209,11 @@ export default function DataDescriptionV159({
               onClick={() => setCasesOpen((open) => !open)}
               type="button"
             >
-              활용 사례 {cases.length}건
+              활용 예시 {cases.length}건
             </button>
+            <span className="dd159-badge-ai" data-testid="use-case-ai-flag-v169">
+              AI 생성
+            </span>
           </h3>
           <div className="dd159-cases-region" hidden={!casesOpen} id={casesRegionId}>
             {cases.map((caseItem) => (
