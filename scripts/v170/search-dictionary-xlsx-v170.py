@@ -108,12 +108,13 @@ def guide_sheet(wb):
         ("○ 검색어가 주제에 해당하면 검색 결과 위에 주제별 주요 현황을 표시함(국가 1개 선택, 그 밖의 필터 미선택 시)", False),
         ("○ 표시값은 각 데이터의 원자료를 기준으로 산출한 값임. 값이 없는 행은 표시하지 않으며, 3행 미만인 주제는 주요 현황을 표시하지 않음", False),
         ("○ 산출 방식: 대표값(조건 문구가 있는 경우만) / 지표 최신값(지표 1개, 합산 안 함) / 시설 집계(시설 수·용량 합계) / 수록 내용 건수(주제어가 들어간 건수)", False),
-        ("○ 규칙 변경(주제·항목 추가)은 개발 담당자가 scripts/v170/topic-rules-v170.json에 반영함", False),
+        ("○ 규칙 변경(주제·항목 추가)은 이 시트에 기재한 후 플랫폼 운영 절차에 따라 반영함", False),
         ("", False),
-        ("3. 반영 절차(개발 담당)", True),
+        ("3. 반영 절차(참조 코드 기준)", True),
+        ("※ 플랫폼 운영 시에는 운영·유지관리 매뉴얼의 절차를 따름", False),
         ("① python3 scripts/v170/search-dictionary-xlsx-v170.py import <이 파일> --check  (검증)", False),
         ("② python3 scripts/v170/search-dictionary-xlsx-v170.py import <이 파일>  (동의어 사전 반영)", False),
-        ("③ node scripts/v170/build-search-v170.mjs  (검색용 데이터 파일·주요 현황 수치 재생성)", False),
+        ("③ node scripts/v170/build-search-v170.mjs  (수록 내용 문구·주요 현황 수치 재산출)", False),
         ("④ npm run test:unit  (단위 시험) → PR", False),
     ]
     for text, bold in lines:
