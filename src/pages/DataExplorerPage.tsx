@@ -97,7 +97,7 @@ type FinderRestoreStateV136 = {
   sortMode?: FinderSortModeV128;
   deliveryFilter?: FinderDeliveryFilterV140;
   filtersExpanded?: boolean;
-  /** V170: the relevance group shown, the folded group, and 관련도순 off. */
+  /** V170: the relevance group shown, the folded group, and 정확도순 off. */
   tierFilter?: TierFilterV170;
   tier3Open?: boolean;
   relevanceOff?: boolean;
@@ -490,8 +490,8 @@ export default function DataExplorerPage({
       ? specRows?.get(item.elementId.toUpperCase()) ?? null
       : null;
     return [
-      { label: "이름", text: card?.baseName || publicItemNameV164(item), weight: 400 },
-      { label: "자료명", text: item.publicTitle, weight: 380 },
+      { label: "데이터명", text: card?.baseName || publicItemNameV164(item), weight: 400 },
+      { label: "원자료명", text: item.publicTitle, weight: 380 },
       { label: "정의", text: card?.shortDefinitionCard || "", weight: 300 },
       { label: "설명", text: item.publicDescription, weight: 260 },
       { label: "설명", text: spec?.description || "", weight: 250 },
@@ -870,7 +870,7 @@ export default function DataExplorerPage({
         {/* V170 ④: the words searched along with the query (same meaning). */}
         {expandedQuery.addedTerms.length > 0 && (
           <p className="sr170-synonyms" data-testid="search-synonyms-v170">
-            <span className="sr170-synonyms__label">함께 찾은 말</span>
+            <span className="sr170-synonyms__label">동의어 포함 검색</span>
             {expandedQuery.addedTerms.map((term) => (
               <span key={term} className="sr170-synonyms__term">{term}</span>
             ))}
@@ -897,7 +897,7 @@ export default function DataExplorerPage({
               value={sortModeV170}
               data-testid="finder-sort-v160"
               onChange={(event) => {
-                // V170 ②: 관련도순 is the order while a query is typed; the
+                // V170 ②: 정확도순 is the order while a query is typed; the
                 // reader can still pick 가나다순 or 조회순.
                 const value = event.target.value as FinderSortModeV170;
                 if (value === "relevance") {
@@ -908,7 +908,7 @@ export default function DataExplorerPage({
                 onSortChange?.(value);
               }}
             >
-              <option value="relevance" disabled={!normalizedQuery}>관련도순</option>
+              <option value="relevance" disabled={!normalizedQuery}>정확도순</option>
               <option value="name">가나다순</option>
               <option value="views" disabled={!viewsAvailable}>조회순</option>
             </select>
@@ -1136,7 +1136,7 @@ export default function DataExplorerPage({
       {normalizedQuery && !loading && filtered.length > 0 && (
         <div className="sr170-tiers" data-testid="search-tiers-v170">
           <h2 className="sr170-tiers__title">
-            ‘{query.trim()}’ 관련 데이터 {filtered.length.toLocaleString("ko-KR")}개
+            ‘{query.trim()}’ 검색 결과 {filtered.length.toLocaleString("ko-KR")}개
           </h2>
           {(["all", 1, 2, 3] as const).map((value) => {
             const count = value === "all" ? filtered.length : tierCountsV170[value];
@@ -1150,7 +1150,7 @@ export default function DataExplorerPage({
                 data-tier={value}
                 onClick={() => setTierFilter(value)}
               >
-                {value === "all" ? "전체" : tierLabelV170(value, query)} {count.toLocaleString("ko-KR")}
+                {value === "all" ? "전체" : tierLabelV170(value)} {count.toLocaleString("ko-KR")}
               </button>
             );
           })}
@@ -1186,7 +1186,7 @@ export default function DataExplorerPage({
           {sectionStart && (
             <div className="sr170-section" data-testid="search-section-v170" data-tier={tier}>
               <h3>
-                {tierLabelV170(tier, query)} {tierCountsV170[tier].toLocaleString("ko-KR")}개
+                {tierLabelV170(tier)} {tierCountsV170[tier].toLocaleString("ko-KR")}개
               </h3>
               <p>{TIER_NOTES_V170[tier]}</p>
               {tier === 3 && tier3Open && (
@@ -1320,7 +1320,7 @@ export default function DataExplorerPage({
           <div className="sr170-collapsed" data-testid="search-collapsed-v170">
             <div>
               <strong>
-                {tierLabelV170(3, query)} {tierCountsV170[3].toLocaleString("ko-KR")}개
+                {tierLabelV170(3)} {tierCountsV170[3].toLocaleString("ko-KR")}개
               </strong>
               <span>{TIER_NOTES_V170[3]}</span>
             </div>
