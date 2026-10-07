@@ -38,7 +38,7 @@ export function loadSearchRecordsV170(iso3: string): Promise<Map<string, RecordT
   if (!recordCacheV170.has(key)) {
     recordCacheV170.set(
       key,
-      fetchJsonV170<{ elements: Record<string, RecordTextsV170> }>(`/data/search/v170/records-${key}.json`)
+      fetchJsonV170<{ elements: Record<string, RecordTextsV170> }>(`data/search/v170/records-${key}.json`)
         .then((file) => {
           // Normalize every record text once here, not on the first keystroke.
           const entries = Object.entries(file.elements || {});
@@ -61,7 +61,7 @@ export function loadSearchTopicsV170(iso3: string): Promise<TopicV170[]> {
   if (!topicCacheV170.has(key)) {
     topicCacheV170.set(
       key,
-      fetchJsonV170<{ topics: TopicV170[] }>(`/data/search/v170/topics-${key}.json`)
+      fetchJsonV170<{ topics: TopicV170[] }>(`data/search/v170/topics-${key}.json`)
         .then((file) => file.topics || [])
         .catch(() => [])
     );
