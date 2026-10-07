@@ -16,7 +16,7 @@
 - 기대값 변경 없음
 
 ### Preview 확인
-- Preview URL: PREVIEW_URL
+- Preview URL: https://nigtldcmap-git-feat-v170-1-searc-1acfbe-exoprime-5142s-projects.vercel.app
 
 | 화면 | 경로 | 볼 것 |
 |---|---|---|
