@@ -1,10 +1,22 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import {
   countryCatalogKeyV122,
   loadCatalogForCountrySelectionV122,
-  loadSearchIndexForCountrySelectionV122,
   publicCountryDataErrorMessageV122,
 } from "../data/countries/countryDataFacadeV122";
+import {
+  expandQueryV170,
+  matchDatasetV170,
+  TIER_LABELS_V170,
+  TIER_NOTES_V170,
+} from "../data/search/searchMatchV170";
+import type { DatasetMatchV170, MatchFieldV170, MatchTierV170, RecordTextsV170 } from "../data/search/searchMatchV170";
+import { loadSearchRecordsV170, loadSearchTopicsV170, topicForQueryV170 } from "../data/search/searchAssetsV170";
+import type { TopicV170 } from "../data/search/searchAssetsV170";
+import TopicPanelV170 from "../components/search/TopicPanelV170";
+import MatchEvidenceV170 from "../components/search/MatchEvidenceV170";
+import { loadAllDatasetSpecsV159 } from "../data/spec/datasetSpecV159";
+import type { DatasetSpecRowV159 } from "../data/spec/specTypesV159";
 import { useCountryDataProvidersV158 } from "../data/countries/useCountryDataProvidersV158";
 import CountryOptionsV165 from "../components/country/CountryOptionsV165";
 import type { CountryCatalogItemV122 } from "../data/countries/countryDataTypesV122";
@@ -30,7 +42,7 @@ import {
   technologyLabelV121,
 } from "../utils/vietnamActualV121";
 import { matchesTechnologyV153, normalizeTechnologyIdV153, normalizeTechnologyIdsV153, technologyOptionsV153 } from "../utils/technologyIdV153";
-import { getCardSpecForCountryV158, getTypologyForCountryV158 } from "../data/spec/countrySpecV158";
+import { getCardSpecForCountryV158, getTypologyForCountryV158, isCountrySpecificElementV158 } from "../data/spec/countrySpecV158";
 import { statusNoticeLabelV159 } from "../components/data/templates/StatusNoticeV159";
 import { DISPLAY_TYPE_LABELS_V159, DISPLAY_TYPE_MARKS_V159, PRIMARY_USERS_V159 } from "../data/spec/specTypesV159";
 import type { DisplayTypeV159 } from "../data/spec/specTypesV159";
@@ -38,6 +50,7 @@ import DatasetCardTitleV159 from "../components/data/description/DatasetCardTitl
 import { USAGE_API_AVAILABLE_V149, usePublicUsageV149 } from "../data/publicUsageV149";
 import { compareFinderItemsV160, finderSortNoteV164, isPreparingStatusV160 } from "../data/finderSortV160";
 import "../styles/country-data-platform-v122.css";
+import "../styles/search-v170.css";
 
 interface DataExplorerPageProps {
   query: string;
@@ -84,6 +97,10 @@ type FinderRestoreStateV136 = {
   sortMode?: FinderSortModeV128;
   deliveryFilter?: FinderDeliveryFilterV140;
   filtersExpanded?: boolean;
+  /** V170: the relevance group shown, the folded group, and 관련도순 off. */
+  tierFilter?: TierFilterV170;
+  tier3Open?: boolean;
+  relevanceOff?: boolean;
   visibleCount: number;
   scrollY: number;
 };
@@ -156,6 +173,9 @@ function maxScrollYV136(): number {
   return Math.max(0, scroller.scrollHeight - window.innerHeight);
 }
 type FinderSortModeV128 = "name" | "views";
+/** V170: with a query the list is ordered by relevance unless the reader picks another order. */
+type FinderSortModeV170 = FinderSortModeV128 | "relevance";
+type TierFilterV170 = "all" | MatchTierV170;
 
 /** The name the card shows (V159 base name, else the catalogue title) - the key of 가나다순. */
 function finderDisplayTitleV160(item: CountryCatalogItemV122): string {
@@ -225,9 +245,15 @@ export default function DataExplorerPage({
     return saved?.baseKey === baseKey ? saved : null;
   });
   const [catalog, setCatalog] = useState<CountryCatalogItemV122[]>([]);
-  const [searchIndex, setSearchIndex] = useState(
-    new Map<string, { searchText: string; keywords: string[] }>()
-  );
+  // V170: public record text per dataset (search assets v170), keyed
+  // `${iso3}::${elementId}`; the old full-text index (with working notes) is
+  // no longer read by the finder.
+  const [searchIndex, setSearchIndex] = useState(new Map<string, RecordTextsV170>());
+  const [specRows, setSpecRows] = useState<Map<string, DatasetSpecRowV159> | null>(null);
+  const [topics, setTopics] = useState<TopicV170[]>([]);
+  const [relevanceOff, setRelevanceOff] = useState(initialRestore?.relevanceOff || false);
+  const [tierFilter, setTierFilter] = useState<TierFilterV170>(initialRestore?.tierFilter || "all");
+  const [tier3Open, setTier3Open] = useState(initialRestore?.tier3Open || false);
   const [loading, setLoading] = useState(true);
   const [searchIndexLoading, setSearchIndexLoading] = useState(false);
   const [searchIndexLoadedFor, setSearchIndexLoadedFor] = useState("");
@@ -327,30 +353,33 @@ export default function DataExplorerPage({
     };
   }, [normalizedCountry]);
 
+  // The index covers the selected country, or every offered country for
+  // "전체" - so it is reloaded when the offered list itself arrives.
+  const searchScopeV170 = normalizedCountry === "all" ? `all|${providerCountriesV158}` : normalizedCountry;
   useEffect(() => {
     if (
       !normalizedQuery ||
-      searchIndexLoadedFor === normalizedCountry
+      searchIndexLoadedFor === searchScopeV170
     ) {
       return;
     }
     let cancelled = false;
     setSearchIndexLoading(true);
-    void loadSearchIndexForCountrySelectionV122(normalizedCountry)
-      .then((index) => {
+    const countries =
+      normalizedCountry === "all" ? providerCountriesV158.split(",").filter(Boolean) : [normalizedCountry];
+    void Promise.all([
+      Promise.all(countries.map((iso3) => loadSearchRecordsV170(iso3).then((records) => [iso3, records] as const))),
+      loadAllDatasetSpecsV159().catch(() => new Map<string, DatasetSpecRowV159>()),
+    ])
+      .then(([perCountry, spec]) => {
         if (cancelled) return;
-        const next = new Map<
-          string,
-          { searchText: string; keywords: string[] }
-        >();
-        index.forEach((entry, key) =>
-          next.set(key, {
-            searchText: entry.searchText,
-            keywords: entry.keywords,
-          })
+        const next = new Map<string, RecordTextsV170>();
+        perCountry.forEach(([iso3, records]) =>
+          records.forEach((entry, elementId) => next.set(`${iso3.toUpperCase()}::${elementId}`, entry))
         );
         setSearchIndex(next);
-        setSearchIndexLoadedFor(normalizedCountry);
+        setSpecRows(spec);
+        setSearchIndexLoadedFor(searchScopeV170);
       })
       .catch((reason: unknown) => {
         if (!cancelled) {
@@ -368,12 +397,46 @@ export default function DataExplorerPage({
       });
     return () => {
       cancelled = true;
+      // A run that is replaced never reports back; the next one, if it goes
+      // ahead, says it is loading again (a cleared query must not keep the note).
+      setSearchIndexLoading(false);
     };
   }, [
     normalizedCountry,
     normalizedQuery,
+    providerCountriesV158,
     searchIndexLoadedFor,
+    searchScopeV170,
   ]);
+
+  // V170 ①: the topic panel's rows for the selected country.
+  useEffect(() => {
+    if (normalizedCountry === "all") {
+      setTopics([]);
+      return;
+    }
+    let cancelled = false;
+    void loadSearchTopicsV170(normalizedCountry).then((list) => {
+      if (!cancelled) setTopics(list);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [normalizedCountry]);
+
+  // A new query starts with every group shown and the last one folded (a
+  // return trip keeps the groups it left with).
+  const queryScopeV170 = `${normalizedCountry}|${normalizedQuery}`;
+  const queryScopeRefV170 = useRef(queryScopeV170);
+  useEffect(() => {
+    if (queryScopeRefV170.current === queryScopeV170) return;
+    queryScopeRefV170.current = queryScopeV170;
+    setTierFilter("all");
+    setTier3Open(false);
+  }, [queryScopeV170]);
+
+  const expandedQuery = useMemo(() => expandQueryV170(query), [query]);
+  const sortModeV170: FinderSortModeV170 = normalizedQuery && !relevanceOff ? "relevance" : sortMode;
 
   const availableCatalog = useMemo(
     () => catalog.filter((item) => item.isDiscoverable),
@@ -419,7 +482,28 @@ export default function DataExplorerPage({
   );
   const selectedTechnology = normalizeTechnologyIdV153(technologyId) ?? "all";
 
-  const filtered = useMemo(() => {
+  // V170: what a dataset's own text says, for the relevance groups.
+  const fieldsForV170 = (item: CountryCatalogItemV122): MatchFieldV170[] => {
+    const card = getCardSpecForCountryV158(item.elementId, item.countryIso3, item);
+    // The shared spec describes the element; a country-specific element uses its own card text only.
+    const spec = item.countryIso3 === "VNM" || !isCountrySpecificElementV158(item.elementId)
+      ? specRows?.get(item.elementId.toUpperCase()) ?? null
+      : null;
+    return [
+      { label: "이름", text: card?.baseName || publicItemNameV164(item), weight: 400 },
+      { label: "자료명", text: item.publicTitle, weight: 380 },
+      { label: "정의", text: card?.shortDefinitionCard || "", weight: 300 },
+      { label: "설명", text: item.publicDescription, weight: 260 },
+      { label: "설명", text: spec?.description || "", weight: 250 },
+      { label: "활용 방법", text: spec?.usage || "", weight: 200 },
+      { label: "분류", text: [item.categoryLabel, item.sectionLabel, item.groupLabel].filter(Boolean).join(" · "), weight: 150 },
+      { label: "제공기관", text: [card?.sourceLabel, ...item.sourceOrganizations].filter(Boolean).join(" · "), weight: 120, exact: true },
+      { label: "국가", text: item.countryNameKo, weight: 50, exact: true },
+    ];
+  };
+
+  const searchResultV170 = useMemo(() => {
+    const matches = new Map<string, DatasetMatchV170>();
     const matching = availableCatalog.filter((item) => {
       if (category !== "all" && item.categoryCode !== category) return false;
       if (selectedGroup && item.groupCode !== selectedGroup) return false;
@@ -448,34 +532,43 @@ export default function DataExplorerPage({
         return false;
       }
       if (normalizedQuery) {
-        const indexed = searchIndex.get(
-          countryCatalogKeyV122(item.providerId, item.elementId)
+        const match = matchDatasetV170(
+          expandedQuery,
+          fieldsForV170(item),
+          searchIndex.get(`${item.countryIso3.toUpperCase()}::${item.elementId}`),
+          normalizeTechnologyIdsV153(item.technologyIds).map(technologyLabelV121)
         );
-        const haystack = normalizedSearchV121(
-          [
-            item.publicTitle,
-            item.publicDescription,
-            getCardSpecForCountryV158(item.elementId, item.countryIso3, item)?.sourceLabel || "",
-            getCardSpecForCountryV158(item.elementId, item.countryIso3, item)?.baseName || "",
-            getCardSpecForCountryV158(item.elementId, item.countryIso3, item)?.shortDefinitionCard || "",
-            item.categoryLabel,
-            item.sectionLabel,
-            item.groupLabel,
-            item.countryNameKo,
-            ...item.sourceOrganizations,
-            ...normalizeTechnologyIdsV153(item.technologyIds).map(technologyLabelV121),
-            indexed?.searchText || "",
-            ...(indexed?.keywords || []),
-          ].join(" ")
-        );
-        if (!haystack.includes(normalizedQuery)) return false;
+        if (!match) return false;
+        matches.set(countryCatalogKeyV122(item.providerId, item.elementId), match);
       }
       return true;
     });
 
     const key = (item: CountryCatalogItemV122) => ({ elementId: item.elementId, title: finderDisplayTitleV160(item), publicStatus: item.publicStatus });
-    return matching.sort((left, right) => compareFinderItemsV160(key(left), key(right), sortMode, viewCounts));
+    if (sortModeV170 === "relevance") {
+      const matchOf = (item: CountryCatalogItemV122) => matches.get(countryCatalogKeyV122(item.providerId, item.elementId));
+      // Group by tier first so each group is one block on screen; inside a
+      // group a dataset still being prepared goes last, as in 가나다순.
+      matching.sort((left, right) => {
+        const a = matchOf(left);
+        const b = matchOf(right);
+        const tier = (a?.tier ?? 3) - (b?.tier ?? 3);
+        if (tier !== 0) return tier;
+        const preparing = Number(isPreparingV160(left)) - Number(isPreparingV160(right));
+        if (preparing !== 0) return preparing;
+        const score = (b?.score ?? 0) - (a?.score ?? 0);
+        if (score !== 0) return score;
+        return compareFinderItemsV160(key(left), key(right), "name", viewCounts);
+      });
+    } else {
+      matching.sort((left, right) => compareFinderItemsV160(key(left), key(right), sortMode, viewCounts));
+    }
+    return { list: matching, matches };
+    // fieldsForV170 reads specRows, listed below.
   }, [
+    expandedQuery,
+    specRows,
+    sortModeV170,
     availableCatalog,
     category,
     deliveryFilter,
@@ -490,6 +583,54 @@ export default function DataExplorerPage({
     userFilter,
     yearFilter,
   ]);
+  const filtered = searchResultV170.list;
+  const matchesV170 = searchResultV170.matches;
+  const matchOfV170 = (item: CountryCatalogItemV122) => matchesV170.get(countryCatalogKeyV122(item.providerId, item.elementId)) ?? null;
+  const relevanceView = sortModeV170 === "relevance" && Boolean(normalizedQuery);
+  const tierCountsV170 = useMemo(() => {
+    const counts: Record<MatchTierV170, number> = { 1: 0, 2: 0, 3: 0 };
+    matchesV170.forEach((match) => {
+      counts[match.tier] += 1;
+    });
+    return counts;
+  }, [matchesV170]);
+  // V170 ②: one group at a time, or all with '기후기술 분류만 일치' folded.
+  const displayed = useMemo(() => {
+    if (!normalizedQuery) return filtered;
+    return filtered.filter((item) => {
+      const tier = matchesV170.get(countryCatalogKeyV122(item.providerId, item.elementId))?.tier ?? 3;
+      if (tierFilter !== "all") return tier === tierFilter;
+      return !(relevanceView && tier === 3 && !tier3Open);
+    });
+  }, [filtered, matchesV170, normalizedQuery, relevanceView, tier3Open, tierFilter]);
+  // V170 ①: the panel answers a plain topic search for one country; once the
+  // reader narrows the list with another filter, the list alone is shown.
+  const noOtherFiltersV170 =
+    category === "all" &&
+    !selectedGroup &&
+    sourceOrganization === "all" &&
+    selectedTechnology === "all" &&
+    yearFilter === "all" &&
+    deliveryFilter === "all" &&
+    userFilter === "all" &&
+    typeFilter === "all";
+  const topicV170 =
+    normalizedQuery && normalizedCountry !== "all" && noOtherFiltersV170
+      ? topicForQueryV170(topics, expandedQuery.groupIds)
+      : null;
+  // The panel's rows are the topic's datasets offered for the country; a
+  // related one need not hold the query word (송배전 손실률 for 전력망).
+  const topicItemsV170 = useMemo(() => {
+    const items = new Map<string, CountryCatalogItemV122>();
+    if (!topicV170) return items;
+    availableCatalog.forEach((item) => {
+      if (item.countryIso3 === normalizedCountry) items.set(item.elementId, item);
+    });
+    return items;
+  }, [availableCatalog, normalizedCountry, topicV170]);
+  const topicCountryNameV170 =
+    availableCatalog.find((item) => item.countryIso3 === normalizedCountry)?.countryNameKo || "";
+  const sectionedV170 = relevanceView && tierFilter === "all";
 
   const filterKeyV136 = [
     normalizedCountry,
@@ -501,6 +642,8 @@ export default function DataExplorerPage({
     technologyId,
     yearFilter,
     deliveryFilter,
+    sortModeV170,
+    tierFilter,
   ].join("|");
 
   useEffect(() => {
@@ -529,13 +672,13 @@ export default function DataExplorerPage({
     }
   }, [filterKeyV136]);
 
-  const visibleItems = filtered.slice(0, visibleCount);
-  const hasMoreV136 = visibleCount < filtered.length;
+  const visibleItems = displayed.slice(0, visibleCount);
+  const hasMoreV136 = visibleCount < displayed.length;
 
   function rememberFinder(): void {
     if (restorePendingRefV136.current || leavingRef.current) return;
     writeFinderRestoreV136({ filterKey: filterKeyV136, baseKey, yearFilter, sortMode, deliveryFilter,
-      filtersExpanded, visibleCount, scrollY: Math.round(window.scrollY) });
+      filtersExpanded, tierFilter, tier3Open, relevanceOff, visibleCount, scrollY: Math.round(window.scrollY) });
   }
 
   // Record where the reader is so a return trip can resume there.
@@ -549,6 +692,7 @@ export default function DataExplorerPage({
       writeFinderRestoreV136({
         filterKey: filterKeyV136,
         baseKey, yearFilter, sortMode, deliveryFilter, filtersExpanded,
+        tierFilter, tier3Open, relevanceOff,
         visibleCount,
         scrollY: Math.round(window.scrollY),
       });
@@ -563,7 +707,7 @@ export default function DataExplorerPage({
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("pagehide", persist);
     };
-  }, [filterKeyV136, baseKey, yearFilter, sortMode, deliveryFilter, filtersExpanded, visibleCount, loading]);
+  }, [filterKeyV136, baseKey, yearFilter, sortMode, deliveryFilter, filtersExpanded, tierFilter, tier3Open, relevanceOff, visibleCount, loading]);
 
   useEffect(() => {
     const previous = window.history.scrollRestoration;
@@ -584,9 +728,9 @@ export default function DataExplorerPage({
         if (!entries.some((entry) => entry.isIntersecting)) return;
         setAutoLoading(true);
         setVisibleCount((current) =>
-          current >= filtered.length
+          current >= displayed.length
             ? current
-            : Math.min(filtered.length, current + VISIBLE_BATCH_SIZE_V136)
+            : Math.min(displayed.length, current + VISIBLE_BATCH_SIZE_V136)
         );
       },
       { rootMargin: "700px 0px 900px 0px" }
@@ -596,7 +740,7 @@ export default function DataExplorerPage({
       cancelled = true;
       observer.disconnect();
     };
-  }, [filtered.length, hasMoreV136, visibleCount]);
+  }, [displayed.length, hasMoreV136, visibleCount]);
 
   useEffect(() => {
     setAutoLoading(false);
@@ -624,9 +768,9 @@ export default function DataExplorerPage({
     // result mid-load is not yet an answer about how tall the page will be.
     const listReady =
       !loading && summariesReady &&
-      (!normalizedQuery || searchIndexLoadedFor === normalizedCountry);
+      (!normalizedQuery || searchIndexLoadedFor === searchScopeV170);
     if (!listReady) return;
-    if (filtered.length === 0) {
+    if (displayed.length === 0) {
       setRestoreStateV136("settled");
       return;
     }
@@ -635,7 +779,7 @@ export default function DataExplorerPage({
     // nothing to measure until they are rendered. Waiting out here rather than
     // inside the loop also keeps the backstop below measuring the restore
     // itself, not however long the catalog took to arrive.
-    const rowsWanted = Math.min(restoreCountRefV136.current, filtered.length);
+    const rowsWanted = Math.min(restoreCountRefV136.current, displayed.length);
     if (visibleItems.length < rowsWanted) return;
 
     let frame = 0;
@@ -672,13 +816,14 @@ export default function DataExplorerPage({
     frame = window.requestAnimationFrame(step);
     return () => window.cancelAnimationFrame(frame);
   }, [
-    filtered.length,
+    displayed.length,
     loading,
     summariesReady,
     normalizedCountry,
     normalizedQuery,
     restoreStateV136,
     searchIndexLoadedFor,
+    searchScopeV170,
     visibleItems.length,
   ]);
   const showCountryContext =
@@ -702,7 +847,7 @@ export default function DataExplorerPage({
 
   return (
     <div className="page-shell cdp-page" onClickCapture={(event) => {
-      if ((event.target as HTMLElement).closest(".cdp-card__actions button")) {
+      if ((event.target as HTMLElement).closest(".cdp-card__actions button, .tp170__actions button")) {
         rememberFinder();
         leavingRef.current = true;
       }
@@ -722,6 +867,15 @@ export default function DataExplorerPage({
             placeholder="어떤 데이터를 찾으시나요?"
           />
         </label>
+        {/* V170 ④: the words searched along with the query (same meaning). */}
+        {expandedQuery.addedTerms.length > 0 && (
+          <p className="sr170-synonyms" data-testid="search-synonyms-v170">
+            <span className="sr170-synonyms__label">함께 찾은 말</span>
+            {expandedQuery.addedTerms.map((term) => (
+              <span key={term} className="sr170-synonyms__term">{term}</span>
+            ))}
+          </p>
+        )}
 
         <div className="cdp-filter-grid cdp-filter-grid--primary">
           <label className="cdp-field">
@@ -740,16 +894,25 @@ export default function DataExplorerPage({
             <span className="cdp-field__label">정렬</span>
             <select
               className="cdp-select"
-              value={sortMode}
+              value={sortModeV170}
               data-testid="finder-sort-v160"
-              onChange={(event) =>
-                onSortChange?.(event.target.value as FinderSortModeV128)
-              }
+              onChange={(event) => {
+                // V170 ②: 관련도순 is the order while a query is typed; the
+                // reader can still pick 가나다순 or 조회순.
+                const value = event.target.value as FinderSortModeV170;
+                if (value === "relevance") {
+                  setRelevanceOff(false);
+                  return;
+                }
+                setRelevanceOff(true);
+                onSortChange?.(value);
+              }}
             >
+              <option value="relevance" disabled={!normalizedQuery}>관련도순</option>
               <option value="name">가나다순</option>
               <option value="views" disabled={!viewsAvailable}>조회순</option>
             </select>
-            {sortNote ? (
+            {sortNote && sortModeV170 !== "relevance" ? (
               <small className="cdp-field__hint" role="status" data-testid="finder-sort-note-v164">{sortNote}</small>
             ) : null}
           </label>
@@ -930,11 +1093,68 @@ export default function DataExplorerPage({
         </div>
       )}
 
-      {!loading && visibleItems.length === 0 && !error && (
+      {!loading && filtered.length === 0 && !error && (
         <section className="cdp-panel cdp-empty">
           <h2>조건에 맞는 데이터가 없습니다</h2>
           <p>검색어 또는 필터를 조정해 주세요</p>
         </section>
+      )}
+
+      {/* V170 ①: the topic's datasets with their figures, before the list. */}
+      {topicV170 && !loading && searchIndexLoadedFor === searchScopeV170 && (
+        <TopicPanelV170
+          topic={topicV170}
+          countryIso3={normalizedCountry}
+          countryNameKo={topicCountryNameV170}
+          describe={(elementId) => {
+            const item = topicItemsV170.get(elementId);
+            if (!item) return null;
+            const card = getCardSpecForCountryV158(item.elementId, item.countryIso3, item);
+            const summary = cardSummaries?.get(`${item.countryIso3}::${item.elementId}`) ?? null;
+            return {
+              name: card?.baseName || publicItemNameV164(item),
+              source: card?.sourceLabel || summary?.provider || providerLineV164(item.sourceOrganizations, 2),
+            };
+          }}
+          hasMap={(elementId) => Boolean(topicItemsV170.get(elementId)?.hasMapData)}
+          onOpenElement={(elementId) => {
+            onOpenElement(
+              elementId,
+              normalizedCountry,
+              cardSummaries?.get(`${normalizedCountry}::${elementId}`)?.selection ?? undefined
+            );
+          }}
+          onOpenMapElement={
+            onOpenMapElement
+              ? (elementId) => onOpenMapElement(elementId, normalizedCountry)
+              : undefined
+          }
+        />
+      )}
+
+      {/* V170 ②: the result in three groups, by where the query was found. */}
+      {normalizedQuery && !loading && filtered.length > 0 && (
+        <div className="sr170-tiers" data-testid="search-tiers-v170">
+          <h2 className="sr170-tiers__title">
+            ‘{query.trim()}’ 관련 데이터 {filtered.length.toLocaleString("ko-KR")}개
+          </h2>
+          {(["all", 1, 2, 3] as const).map((value) => {
+            const count = value === "all" ? filtered.length : tierCountsV170[value];
+            return (
+              <button
+                key={value}
+                type="button"
+                className="sr170-tier"
+                aria-pressed={tierFilter === value}
+                disabled={value !== "all" && count === 0}
+                data-tier={value}
+                onClick={() => setTierFilter(value)}
+              >
+                {value === "all" ? "전체" : TIER_LABELS_V170[value]} {count.toLocaleString("ko-KR")}
+              </button>
+            );
+          })}
+        </div>
       )}
 
       <section
@@ -943,10 +1163,14 @@ export default function DataExplorerPage({
         aria-busy={autoLoading ? "true" : "false"}
         data-testid="finder-results-v136"
         data-visible-count={visibleItems.length}
-        data-total-count={filtered.length}
+        data-total-count={displayed.length}
         data-finder-restore-state={restoreStateV136}
       >
-        {visibleItems.map((item) => {
+        {visibleItems.map((item, index) => {
+          const match = normalizedQuery ? matchOfV170(item) : null;
+          const tier = match?.tier ?? 3;
+          const previousTier = index > 0 ? matchOfV170(visibleItems[index - 1])?.tier ?? 3 : null;
+          const sectionStart = sectionedV170 && tier !== previousTier;
           const contract = getElementVisualizationSummaryV125(item.elementId, item.countryIso3);
           const downloadStatus = publicDownloadStatusV128(item);
           const semanticYearRange = contract
@@ -958,10 +1182,24 @@ export default function DataExplorerPage({
             : referenceYearRangeV125(item);
           const summary = cardSummaries?.get(`${item.countryIso3}::${item.elementId}`) ?? null;
           return (
+          <Fragment key={countryCatalogKeyV122(item.providerId, item.elementId)}>
+          {sectionStart && (
+            <div className="sr170-section" data-testid="search-section-v170" data-tier={tier}>
+              <h3>
+                {TIER_LABELS_V170[tier]} {tierCountsV170[tier].toLocaleString("ko-KR")}개
+              </h3>
+              <p>{TIER_NOTES_V170[tier]}</p>
+              {tier === 3 && tier3Open && (
+                <button type="button" className="cdp-button cdp-button--secondary" onClick={() => setTier3Open(false)}>
+                  접기
+                </button>
+              )}
+            </div>
+          )}
           <article
             className="cdp-dataset-card"
-            key={countryCatalogKeyV122(item.providerId, item.elementId)}
             data-element-id={item.elementId}
+            data-match-tier={match ? match.tier : undefined}
             data-testid="public-finder-card-v135"
             data-card-kind={summary?.kind ?? "pending"}
           >
@@ -1034,6 +1272,7 @@ export default function DataExplorerPage({
               )}
             </dl>
             )}
+            {match && <MatchEvidenceV170 match={match} query={query} />}
             <div className="cdp-card__actions">
               <button
                 type="button"
@@ -1073,8 +1312,23 @@ export default function DataExplorerPage({
               )}
             </div>
           </article>
+          </Fragment>
           );
         })}
+        {/* V170 ②: '기후기술 분류만 일치' stays folded until asked for. */}
+        {sectionedV170 && !tier3Open && tierCountsV170[3] > 0 && !hasMoreV136 && (
+          <div className="sr170-collapsed" data-testid="search-collapsed-v170">
+            <div>
+              <strong>
+                {TIER_LABELS_V170[3]} {tierCountsV170[3].toLocaleString("ko-KR")}개
+              </strong>
+              <span>{TIER_NOTES_V170[3]}</span>
+            </div>
+            <button type="button" className="cdp-button cdp-button--secondary" onClick={() => setTier3Open(true)}>
+              펼치기
+            </button>
+          </div>
+        )}
       </section>
 
       {hasMoreV136 && (
@@ -1082,7 +1336,7 @@ export default function DataExplorerPage({
           ref={sentinelRefV136}
           className="cdp-finder-sentinel-v136"
           data-testid="finder-scroll-sentinel-v136"
-          data-remaining={filtered.length - visibleCount}
+          data-remaining={displayed.length - visibleCount}
           aria-hidden="true"
         />
       )}
