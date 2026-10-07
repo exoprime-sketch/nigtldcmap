@@ -7,8 +7,8 @@ import {
 import {
   expandQueryV170,
   matchDatasetV170,
-  TIER_LABELS_V170,
   TIER_NOTES_V170,
+  tierLabelV170,
 } from "../data/search/searchMatchV170";
 import type { DatasetMatchV170, MatchFieldV170, MatchTierV170, RecordTextsV170 } from "../data/search/searchMatchV170";
 import { loadSearchRecordsV170, loadSearchTopicsV170, topicForQueryV170 } from "../data/search/searchAssetsV170";
@@ -594,7 +594,7 @@ export default function DataExplorerPage({
     });
     return counts;
   }, [matchesV170]);
-  // V170 ②: one group at a time, or all with '기후기술 분류만 일치' folded.
+  // V170 ②: one group at a time, or all with the technology-label group folded.
   const displayed = useMemo(() => {
     if (!normalizedQuery) return filtered;
     return filtered.filter((item) => {
@@ -1150,7 +1150,7 @@ export default function DataExplorerPage({
                 data-tier={value}
                 onClick={() => setTierFilter(value)}
               >
-                {value === "all" ? "전체" : TIER_LABELS_V170[value]} {count.toLocaleString("ko-KR")}
+                {value === "all" ? "전체" : tierLabelV170(value, query)} {count.toLocaleString("ko-KR")}
               </button>
             );
           })}
@@ -1186,7 +1186,7 @@ export default function DataExplorerPage({
           {sectionStart && (
             <div className="sr170-section" data-testid="search-section-v170" data-tier={tier}>
               <h3>
-                {TIER_LABELS_V170[tier]} {tierCountsV170[tier].toLocaleString("ko-KR")}개
+                {tierLabelV170(tier, query)} {tierCountsV170[tier].toLocaleString("ko-KR")}개
               </h3>
               <p>{TIER_NOTES_V170[tier]}</p>
               {tier === 3 && tier3Open && (
@@ -1315,12 +1315,12 @@ export default function DataExplorerPage({
           </Fragment>
           );
         })}
-        {/* V170 ②: '기후기술 분류만 일치' stays folded until asked for. */}
+        {/* V170 ②: the technology-label group stays folded until asked for. */}
         {sectionedV170 && !tier3Open && tierCountsV170[3] > 0 && !hasMoreV136 && (
           <div className="sr170-collapsed" data-testid="search-collapsed-v170">
             <div>
               <strong>
-                {TIER_LABELS_V170[3]} {tierCountsV170[3].toLocaleString("ko-KR")}개
+                {tierLabelV170(3, query)} {tierCountsV170[3].toLocaleString("ko-KR")}개
               </strong>
               <span>{TIER_NOTES_V170[3]}</span>
             </div>

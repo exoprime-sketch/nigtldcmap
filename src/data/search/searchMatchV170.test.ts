@@ -7,6 +7,7 @@ import {
   matchDatasetV170,
   SYNONYM_GROUPS_V170,
   TermV170,
+  tierLabelV170,
   normalizeV170,
 } from "./searchMatchV170";
 import type { MatchFieldV170, RecordTextsV170 } from "./searchMatchV170";
@@ -137,6 +138,14 @@ describe("V170 relevance tiers", () => {
     const many = matchDatasetV170(solar, [], records([["solar farm", 8], ["wind farm", 2]]), []);
     const few = matchDatasetV170(solar, [], records([["solar farm", 1], ["wind farm", 9]]), []);
     expect(many!.score).toBeGreaterThan(few!.score);
+  });
+});
+
+describe("V170-1 group names say how the data relates to the query", () => {
+  it("puts the query in each group name", () => {
+    expect(tierLabelV170(1, " 태양광 ")).toBe("‘태양광’에 관한 데이터");
+    expect(tierLabelV170(2, "태양광")).toBe("‘태양광’ 내용이 포함된 데이터");
+    expect(tierLabelV170(3, "풍력")).toBe("‘풍력’ 기술로 분류된 데이터");
   });
 });
 
