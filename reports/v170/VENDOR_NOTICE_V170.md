@@ -100,11 +100,11 @@
 | `src/data/search/searchSynonymsV170.json` | 동의어 사전(화면에서 읽는 파일) | 검색사전에서 변환 |
 | `scripts/v170/topic-rules-v170.json` | 주요 현황 규칙(10개 주제) | |
 | `scripts/v170/build-search-v170.mjs` | 검색용 데이터 파일 생성(원자료 → records·topics) | 국가 추가·데이터 갱신 시 재실행 |
-| `public/data/search/v170/*.json` | 검색용 데이터 파일(국가별 2개) | 미제공. NAS 최신 데이터로 위 스크립트를 실행하여 생성 |
+| `public/data/search/v170/*.json` | 검색용 데이터 파일(국가별 2개) | 미제공. 귀사 빌드·배포 절차에서 위 스크립트로 생성 |
 | `src/data/search/searchMatchV170.ts` | 결과 구분·점수·동의어 적용 규칙(참조 코드) | 단위 시험 `searchMatchV170.test.ts` |
 
 - 동의어 사전 갱신 절차: 검색사전 수정 → `python3 scripts/v170/search-dictionary-xlsx-v170.py import <파일> --check`(검증) → `import <파일>`(반영) → `node scripts/v170/build-search-v170.mjs`(검색용 데이터 파일 재생성) → `npm run test:unit`(단위 시험)
-- 국가 추가·원자료 갱신 시 `build-search-v170.mjs`를 실행하면 `public/data/countries.json`의 공개 국가 전체를 다시 생성함
+- 검색용 데이터 파일은 귀사가 생성·관리함. 플랫폼 빌드·배포 절차에 `build-search-v170.mjs` 실행을 포함하여, NAS 데이터 갱신·국가 추가 시 자동으로 다시 생성되도록 구성함(`public/data/countries.json`의 공개 국가 전체 대상)
 - `build-search-v170.mjs`는 참조 코드의 데이터 묶음(packs) 구조를 읽음. 귀사 시스템의 데이터 구조가 다른 경우 읽기 부분만 수정하고, 정제·산출 규칙과 `topic-rules-v170.json`은 그대로 사용함
 - 기존 전문 검색 색인(`search-index-v124`)은 작업 메모가 섞여 있어 공개 화면의 근거로 부적합하므로 '데이터 찾기' 검색에 사용하지 않음
 
