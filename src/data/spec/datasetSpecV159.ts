@@ -76,3 +76,9 @@ export async function loadDatasetSpecV159(elementId: string): Promise<DatasetSpe
   const key = elementId.toUpperCase();
   return { spec: spec.get(key) || null, cases: cases.get(key) || [] };
 }
+
+/** V170: every spec row at once (the finder's search reads description and usage). */
+export async function loadAllDatasetSpecsV159(): Promise<Map<string, DatasetSpecRowV159>> {
+  const { spec } = await loadSpecChunkV159();
+  return spec;
+}
