@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import type { SharedWideValueV164, WideRecordV162, WideValueV162 } from "../../../data/visualization/wideRecordsV162";
 import { koreanTitleV164 } from "../../../data/visualization/publicCategoryLabelV164";
-import { isEnglishSentenceV164, mergeRegionNameValuesV163, sharedWideValuesV164, sourceLinkTextV162 } from "../../../data/visualization/wideRecordsV162";
+import { isEnglishSentenceV164, mergeRegionNameValuesV163, regionBlockShownV171, sharedWideValuesV164, sourceLinkTextV162 } from "../../../data/visualization/wideRecordsV162";
 import { PublicTermExpandedTextV134, PublicTermTextV134 } from "../../help/PublicTermV134";
 import { PolicyDocumentDescriptionV153 } from "./PolicyDescriptionV153";
 import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
@@ -240,6 +240,9 @@ function WideRecordCardV162({ record, elementId, sharedKeys }: { record: WideRec
         {record.type ? <span className="wide162-type-chip">{record.type}</span> : null}
       </header>
       {record.blocks.map((block) => {
+        // V171: a national-scope record (C-009·C-010·C-011·C-019) shows its
+        // [지역] block only when it names a region, never "지역명: 전국".
+        if (block.block === "지역" && !regionBlockShownV171(elementId, block.values)) return null;
         const rows = cardRowsV164(block.block === "지역" && level1 ? mergeRegionNameValuesV163(block.values) : block.values)
           // V164: a field the record leaves empty is not shown as a bare label.
           .filter((value) => value.href || String(value.value ?? "").trim() !== "")

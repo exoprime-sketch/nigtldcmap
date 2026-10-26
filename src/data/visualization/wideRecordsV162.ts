@@ -739,3 +739,34 @@ export function mergeRegionNameValuesV163(values: WideValueV162[]): WideValueV16
     ),
   ];
 }
+
+/**
+ * V171: elements whose records apply to the whole country unless the source
+ * names a region - the law and policy registers (C-009 기후 법제도, C-010 기타
+ * 환경 법제도, C-019 탄소 시장 법률·예산) and the country safety register
+ * (C-011 치안·안전 정보). Decided in the 2026-10-27 spatial-resolution review
+ * of the ten-country delivery: their [지역] block is shown only when it names
+ * a region.
+ */
+export const NATIONAL_SCOPE_RECORD_ELEMENTS_V171: ReadonlySet<string> = new Set(["C-009", "C-010", "C-011", "C-019"]);
+
+const NATIONWIDE_REGION_VALUE_V171 = /^(전국|국가\s*전체|전\s*지역|nationwide|national|whole country|toàn quốc)$/iu;
+
+/** V171: a [지역] place name that only says "the whole country" ("전국"). */
+export function isNationwideRegionValueV171(value: string | null | undefined): boolean {
+  return NATIONWIDE_REGION_VALUE_V171.test(String(value ?? "").trim());
+}
+
+/**
+ * V171: whether a record's [지역] block is shown. For a national-scope element
+ * the block is dropped when none of its place names names a region (all empty
+ * or "전국"), so a nationwide law no longer reads "지역명: 전국" on every card,
+ * while a law that applies to one province (꽝닌 등) keeps its region. Any
+ * other element is untouched.
+ */
+export function regionBlockShownV171(elementId: string | null | undefined, values: WideValueV162[]): boolean {
+  if (!elementId || !NATIONAL_SCOPE_RECORD_ELEMENTS_V171.has(elementId)) return true;
+  return values.some(
+    (value) => /지역명/u.test(value.attribute) && String(value.value ?? "").trim() !== "" && !isNationwideRegionValueV171(value.value)
+  );
+}
