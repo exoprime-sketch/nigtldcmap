@@ -196,3 +196,30 @@
   color: var(--color-text-muted, #475569);
   overflow-wrap: anywhere;
 }
+
+/* V171: where the rows E-001/E-002 used to carry are shown now. */
+.cdp-relocation171 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1rem;
+  margin-top: 1rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid rgba(15, 118, 110, 0.24);
+  border-radius: 14px;
+  background: #f3faf8;
+  min-width: 0;
+}
+
+.cdp-relocation171 p {
+  flex: 1 1 18rem;
+  min-width: 0;
+  margin: 0;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.cdp-relocation171-section {
+  margin-top: 1rem;
+  min-width: 0;
+}

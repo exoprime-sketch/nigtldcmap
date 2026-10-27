@@ -1943,12 +1943,13 @@ const DIRECTORY_CARD_LIMIT_V164 = 30;
  * so they are listed by name with their kind and status, apart from the
  * institutions the heading counts.
  */
-function CdmActivitiesTableV164({ entities }: { entities: VietnamEntityV124[] }) {
+export function CdmActivitiesTableV164({ entities, headed = true }: { entities: VietnamEntityV124[]; headed?: boolean }) {
   const rows = entities.map(cdmActivityRowV164);
+  // V171: under C-025 the list sits in a frame that states its own heading.
   return (
     <section className="sv164-activities" data-testid="directory-cdm-activities-v164" data-activity-count={rows.length} aria-label="CDM 전환 활동">
-      <h5 className="sv164-activities__title">CDM 전환 활동 · {rows.length.toLocaleString("ko-KR")}건</h5>
-      <p className="sv164-activities__note">제6.4조 국가지정기관이 전환 승인 절차를 진행 중인 CDM 사업·프로그램 목록입니다.</p>
+      {headed && <h5 className="sv164-activities__title">CDM 전환 활동 · {rows.length.toLocaleString("ko-KR")}건</h5>}
+      {headed && <p className="sv164-activities__note">제6.4조 국가지정기관이 전환 승인 절차를 진행 중인 CDM 사업·프로그램 목록입니다.</p>}
       <ListFoldV160 total={rows.length} noun="건">
         <ol className="sv164-activities__list">
           {rows.map((row) => (
@@ -2321,7 +2322,7 @@ function InteractiveValueItemV127({
   );
 }
 
-function VisualizationFrameV125({
+export function VisualizationFrameV125({
   eyebrow,
   title,
   block,

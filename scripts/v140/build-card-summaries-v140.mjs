@@ -102,6 +102,20 @@ const REVIEW_PATH = outOverrideIndex < 0 ? resolve(ROOT, `reports/v140/card-summ
 const REPORT_PATH = outOverrideIndex < 0 ? resolve(ROOT, `reports/v140/card-summaries-build-v140${REPORT_SUFFIX}.json`) : resolve(dirname(OUT_PATH), "card-summaries-build-v140.json");
 
 const packs = loadPacks(DATA);
+// V171: the 2026-10-23 decision shows E-001's CTCN network members and
+// technical-assistance proponents under E-005 and E-002's CDM activities under
+// C-025 (src/data/relocation/recordRelocationV171.json, the same file the app
+// reads). The E-001/E-002 cards summarise the designated body they keep, and
+// neither element has a map layer of its own any more.
+const RELOCATION_V171 = readJson(resolve(ROOT, "src/data/relocation/recordRelocationV171.json"));
+for (const rule of RELOCATION_V171.rules) {
+  const pack = packs.get(rule.sourceElementId);
+  if (!pack?.entities?.records) continue;
+  const pattern = new RegExp(rule.indicatorPattern, "iu");
+  const kept = pack.entities.records.filter((row) => !pattern.test(String(row.indicatorId || "")));
+  if (kept.length !== pack.entities.records.length) packs.set(rule.sourceElementId, { ...pack, entities: { ...pack.entities, records: kept, recordCount: kept.length } });
+}
+const MAP_WITHDRAWN_V171 = new Set(RELOCATION_V171.mapWithdrawn);
 const { byElement: semanticByElement, contractByElement } = loadSemantics(DATA);
 const catalog = readJson(resolve(DATA, "catalog.json")).elements;
 const manifest = readJson(resolve(DATA, "manifest.json"));
@@ -128,7 +142,7 @@ function displayUnitV150(unit) {
   if (qualified && UNIT_ALIASES_V150[qualified[1].trim()]) return `${UNIT_ALIASES_V150[qualified[1].trim()]}${qualified[2].trim()}`;
   return raw;
 }
-const mapConnected = new Set(mapIndex.layers.filter((layer) => layer.active !== false && layer.enabled !== false).map((layer) => layer.elementId));
+const mapConnected = new Set(mapIndex.layers.filter((layer) => layer.active !== false && layer.enabled !== false && !MAP_WITHDRAWN_V171.has(layer.elementId)).map((layer) => layer.elementId));
 
 // The detail screen's reviewed default measures, read from the registry so
 // the card opens on what the screen opens on.

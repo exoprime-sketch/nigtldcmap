@@ -60,6 +60,11 @@ import DetailLayerV160 from "../components/data/layers/DetailLayerV160";
 import "../styles/country-data-platform-v122.css";
 import "../styles/detail-layout-v153.css";
 import { DEFAULT_COUNTRY_ISO3_V158 } from "../data/countryContext";
+import RelocationPanelV171 from "../components/data/public/RelocationPanelV171";
+import type { CountryEntityV122 } from "../data/countries/countryDataTypesV122";
+
+/** A stable empty list, so the relocation panel's load runs once per element. */
+const NO_ENTITIES_V171: CountryEntityV122[] = [];
 
 /**
  * V151-2: detail preparation time = the bundle request to the parsed payload.
@@ -1216,6 +1221,14 @@ function CountryDataElementPageV122({
                 spatialUnit={meta.element.spatialUnits[0]}
                 pageTitle={pageTitle}
                 mapSlot={mapSlot}
+              />
+
+              {/* V171: E-001/E-002 say where their moved rows are now; E-005/C-025 list them. */}
+              <RelocationPanelV171
+                elementId={elementId}
+                countryIso3={provider.countryIso3}
+                entities={hasPopulatedRows && bundle ? bundle.entities : NO_ENTITIES_V171}
+                onOpenElement={_onOpenElement}
               />
 
               {showsEmptyStateBlockV164({

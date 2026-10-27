@@ -1,7 +1,7 @@
 {
  "schemaVersion": "v140-card-summaries-1",
  "dataSnapshot": "2026-09-30T00:00:00Z",
- "generatedAt": "2026-10-05T02:24:47.976Z",
+ "generatedAt": "2026-10-26T23:51:44.746Z",
  "generatedFrom": {
   "bundleIndex": "packs/bundle-index-v124.json",
   "semantics": "semantic/element-visualization-contracts-v125.json",
@@ -18096,7 +18096,7 @@
    "title": "CTCN NDE(국가지정기구)[국가, 기관명, 소속 부처, 담당자명(Focal Point), 직함, 이메일, 전화번호]",
    "kind": "facts",
    "headline": {
-    "value": "18곳",
+    "value": "1곳",
     "label": "기관"
    },
    "preview": {
@@ -18104,17 +18104,9 @@
      {
       "label": "Dr. Chu Thi Thanh Huong",
       "value": ""
-     },
-     {
-      "label": "네트워크 회원(연구기관)",
-      "value": ""
-     },
-     {
-      "label": "네트워크 회원(VUSTA 산하 비영리)",
-      "value": ""
      }
     ],
-    "more": 9
+    "more": 0
    },
    "period": "2026-08-14 수집",
    "selection": {
@@ -18128,24 +18120,22 @@
     "unit": "기관",
     "rule": "기관 1건 = 원천 1행",
     "count": {
-     "rows": 18,
-     "distinct": 18,
-     "sourceRows": 18
+     "rows": 1,
+     "distinct": 1,
+     "sourceRows": 1
     }
    },
    "measure": null,
    "periodLabel": "기준 시점",
    "provider": "공개 원천: Climate Technology Centre and Network (CTCN) | 현지조사: 현지 컨설턴트 현지조사(Field Survey Items_vIDGcmt_260408_v2.0)",
-   "mapConnected": true,
+   "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-e597aeac.json",
     "observationCount": 0,
-    "entityCount": 18,
+    "entityCount": 1,
     "indicatorIds": [
-     "E-001_ctcn_nde",
-     "E-001_ctcn_network_member",
-     "E-001_ctcn_ta_proponent"
+     "E-001_ctcn_nde"
     ]
    }
   },
@@ -18154,25 +18144,17 @@
    "title": "DNA(국가지정기관)[국가, 기관명, 소속 부처, 담당자명, 직함, 이메일, 승인 절차 개요, 제6.4조 전환 상태]",
    "kind": "facts",
    "headline": {
-    "value": "46곳",
+    "value": "1곳",
     "label": "기관"
    },
    "preview": {
     "facts": [
      {
-      "label": "70MW Solar Power Plant Project in Ba Ria - Vung Tau, Vietnam",
-      "value": ""
-     },
-     {
-      "label": "AVN08-S-01, Methane Recovery and Biogas Utilization Project, Nghe An Province, Vietnam",
-      "value": ""
-     },
-     {
-      "label": "Bac Lieu Province Wind Power Plant",
+      "label": "Department of Climate Change (기후변화국)",
       "value": ""
      }
     ],
-    "more": 43
+    "more": 0
    },
    "period": "2026-08-14 수집",
    "selection": {
@@ -18186,22 +18168,21 @@
     "unit": "기관",
     "rule": "기관 1건 = 원천 1행",
     "count": {
-     "rows": 46,
-     "distinct": 46,
-     "sourceRows": 46
+     "rows": 1,
+     "distinct": 1,
+     "sourceRows": 1
     }
    },
    "measure": null,
    "periodLabel": "기준 시점",
-   "provider": "UNFCCC | 좌표(행정구역): UNEP Copenhagen Climate Centre — CDM Pipeline | 좌표(발전소): World Resources Institute — Global Power Plant Database v1.3.0 · 공개 원천: United Nations Framework Convention on Climate Change (UNFCCC) | 현지조사: 현지 컨설턴트 현지조사(Field Survey Items_vIDGcmt_260408_v2.0)",
-   "mapConnected": true,
+   "provider": "공개 원천: United Nations Framework Convention on Climate Change (UNFCCC) | 현지조사: 현지 컨설턴트 현지조사(Field Survey Items_vIDGcmt_260408_v2.0)",
+   "mapConnected": false,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-e597aeac.json",
     "observationCount": 0,
-    "entityCount": 46,
+    "entityCount": 1,
     "indicatorIds": [
-     "E-002_cdm_transition",
      "E-002_dna"
     ]
    }

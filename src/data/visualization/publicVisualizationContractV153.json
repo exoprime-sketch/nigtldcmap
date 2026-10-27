@@ -5095,23 +5095,19 @@
       "structure": "S4",
       "archetype": "registry",
       "primary": {
-        "type": "category-bar",
-        "title": "역할별 NDE 관련기관",
-        "xAxis": "기관 수",
-        "yAxis": "기관 분류",
-        "unit": "곳"
+        "type": "cards-list",
+        "title": "NDE 기관 정보",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
       "secondary": [
-        {
-          "type": "cards-list",
-          "title": "기관 카드"
-        },
         {
           "type": "table",
           "title": "담당자 목록 표"
         }
       ],
-      "mapRole": "beside-primary",
+      "mapRole": "none",
       "benchmarks": [
         {
           "name": "CTCN NDE / technical assistance directory",
@@ -5122,8 +5118,8 @@
           "url": "https://unfccc.int/es/node/627860"
         }
       ],
-      "status": "standard",
-      "note": "",
+      "status": "exception",
+      "note": "V171(2026-10-23 결정): 국가별 NDE 1곳만 표시하므로 category-bar 대신 기관 카드로 표시하고 데이터 지도에서 제외함. 네트워크 회원·기술지원 제안기관은 E-005 화면에서 제공",
       "countryCompare": {
         "comparable": false,
         "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
@@ -5147,7 +5143,7 @@
           "title": "담당자 연락처 표"
         }
       ],
-      "mapRole": "beside-primary",
+      "mapRole": "none",
       "benchmarks": [
         {
           "name": "CTCN NDE / technical assistance directory",
@@ -5159,7 +5155,7 @@
         }
       ],
       "status": "exception",
-      "note": "DNA 기관이 1곳만 존재해 category-bar 대신 카드형 정보로 표시함",
+      "note": "DNA 기관이 1곳만 존재해 category-bar 대신 카드형 정보로 표시함. V171(2026-10-23 결정): 데이터 지도에서 제외하고 CDM 전환 활동은 C-025 화면에서 제공",
       "countryCompare": {
         "comparable": false,
         "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"

@@ -261,3 +261,34 @@ describe("V163 (3a): a [지역] block's 개편 전/현행 pair collapses to one 
     expect(mergeRegionNameValuesV163(values)).toBe(values);
   });
 });
+
+describe("V171: a national-scope record's [지역] block is shown only when it names a region", () => {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const { regionBlockShownV171, isNationwideRegionValueV171 } = require("./wideRecordsV162");
+  const nationwide = [
+    { attribute: "지역명 (개편 전)", value: "전국" },
+    { attribute: "지역명 (현행)", value: "전국" },
+  ];
+  const province = [
+    { attribute: "지역명 (원문)", value: "Quảng Ninh" },
+    { attribute: "지역명 (개편 전)", value: "Quảng Ninh" },
+    { attribute: "지역명 (현행)", value: "Quảng Ninh" },
+  ];
+  it("drops a block whose place names all say the whole country (C-009, C-010, C-011, C-019)", () => {
+    for (const id of ["C-009", "C-010", "C-011", "C-019"]) expect(regionBlockShownV171(id, nationwide)).toBe(false);
+    expect(regionBlockShownV171("C-009", [{ attribute: "지역명", value: "" }])).toBe(false);
+  });
+  it("keeps a block that names a province", () => {
+    expect(regionBlockShownV171("C-009", province)).toBe(true);
+  });
+  it("leaves every other element untouched, '전국' included", () => {
+    expect(regionBlockShownV171("D-015", nationwide)).toBe(true);
+    expect(regionBlockShownV171(undefined, nationwide)).toBe(true);
+  });
+  it("reads only whole-country words as nationwide", () => {
+    expect(isNationwideRegionValueV171("전국")).toBe(true);
+    expect(isNationwideRegionValueV171(" Nationwide ")).toBe(true);
+    expect(isNationwideRegionValueV171("전국 3개 성")).toBe(false);
+    expect(isNationwideRegionValueV171("다낭 (Đà Nẵng)")).toBe(false);
+  });
+});

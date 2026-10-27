@@ -6,6 +6,7 @@ import {
 import publicMapTargetsContractV138 from "./publicMapTargetsV138.json";
 import { copyForCountryV158 } from "../countries/countryCopyV158";
 import { DEFAULT_COUNTRY_ISO3_V158 } from "../countryContext";
+import { isMapWithdrawnV171 } from "../relocation/recordRelocationV171";
 
 /**
  * V138: one dataset colours the map; every other ticked dataset is drawn as
@@ -66,8 +67,10 @@ export interface PublicMapTargetV138 {
 export const PUBLIC_MAP_TARGET_CATEGORIES_V138: readonly string[] =
   publicMapTargetsContractV138.categories;
 
+// V171: E-001 and E-002 left the map by decision (one designated body per
+// country); they are not targets waiting for spatial data either.
 export const PUBLIC_MAP_TARGETS_V138: readonly PublicMapTargetV138[] =
-  publicMapTargetsContractV138.targets as PublicMapTargetV138[];
+  (publicMapTargetsContractV138.targets as PublicMapTargetV138[]).filter((target) => !isMapWithdrawnV171(target.elementId));
 
 const PUBLIC_MAP_TARGET_BY_ELEMENT_V138 = new Map(
   PUBLIC_MAP_TARGETS_V138.map((target) => [target.elementId, target])
