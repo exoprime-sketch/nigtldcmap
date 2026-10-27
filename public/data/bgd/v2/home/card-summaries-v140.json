@@ -1,7 +1,7 @@
 {
  "schemaVersion": "v140-card-summaries-1",
  "dataSnapshot": "2026-09-29T00:00:00Z",
- "generatedAt": "2026-10-05T02:24:50.850Z",
+ "generatedAt": "2026-10-26T23:51:47.501Z",
  "generatedFrom": {
   "bundleIndex": "packs/bundle-index-v124.json",
   "semantics": "semantic/element-visualization-contracts-v125.json",
@@ -16542,7 +16542,7 @@
    "title": "CTCN NDE(국가지정기구)[국가, 기관명, 소속 부처, 담당자명(Focal Point), 직함, 이메일, 전화번호]",
    "kind": "facts",
    "headline": {
-    "value": "11곳",
+    "value": "1곳",
     "label": "기관 · 2026년"
    },
    "preview": {
@@ -16550,17 +16550,9 @@
      {
       "label": "NDE(국가지정기구)",
       "value": ""
-     },
-     {
-      "label": "네트워크 회원(연구기관)",
-      "value": ""
-     },
-     {
-      "label": "네트워크 회원(대학 부설 연구소)",
-      "value": ""
      }
     ],
-    "more": 4
+    "more": 0
    },
    "period": "2026년",
    "selection": {
@@ -16574,23 +16566,21 @@
     "unit": "기관",
     "rule": "기관 1건 = 원천 1행",
     "count": {
-     "rows": 11,
-     "distinct": 11,
-     "sourceRows": 11
+     "rows": 1,
+     "distinct": 1,
+     "sourceRows": 1
     }
    },
    "measure": null,
-   "provider": "UNFCCC Technology Mechanism (TT:CLEAR) — National Designated Entities · Climate Technology Centre and Network (CTCN)",
+   "provider": "UNFCCC Technology Mechanism (TT:CLEAR) — National Designated Entities",
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-017-a34ddba9.json",
     "observationCount": 0,
-    "entityCount": 11,
+    "entityCount": 1,
     "indicatorIds": [
-     "E-001_ctcn_nde",
-     "E-001_ctcn_network_member",
-     "E-001_ctcn_ta_proponent"
+     "E-001_ctcn_nde"
     ]
    }
   },
@@ -16599,25 +16589,17 @@
    "title": "DNA(국가지정기관)[국가, 기관명, 소속 부처, 담당자명, 직함, 이메일, 승인 절차 개요, 제6.4조 전환 상태]",
    "kind": "facts",
    "headline": {
-    "value": "12곳",
+    "value": "1곳",
     "label": "기관 · 2024–2026년"
    },
    "preview": {
     "facts": [
      {
-      "label": "Development of a sustainable drinking water supply platform based on clean development mechanism",
-      "value": ""
-     },
-     {
-      "label": "IDCOL Improved Cook Stove Program",
-      "value": ""
-     },
-     {
-      "label": "Improved cookstove program in Bangladesh supported by the Republic of Korea",
+      "label": "Department of Environment, Ministry of Environment, Forest and Climate Change",
       "value": ""
      }
     ],
-    "more": 9
+    "more": 0
    },
    "period": "2024–2026년",
    "selection": {
@@ -16631,21 +16613,20 @@
     "unit": "기관",
     "rule": "기관 1건 = 원천 1행",
     "count": {
-     "rows": 12,
-     "distinct": 12,
-     "sourceRows": 12
+     "rows": 1,
+     "distinct": 1,
+     "sourceRows": 1
     }
    },
    "measure": null,
-   "provider": "UNFCCC | 좌표(행정구역): UNEP Copenhagen Climate Centre — CDM Pipeline | 좌표(발전소): World Resources Institute — Global Power Plant Database v1.3.0 · United Nations Framework Convention on Climate Change (UNFCCC)",
-   "mapConnected": true,
+   "provider": "United Nations Framework Convention on Climate Change (UNFCCC)",
+   "mapConnected": false,
    "downloadable": false,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-017-a34ddba9.json",
     "observationCount": 0,
-    "entityCount": 12,
+    "entityCount": 1,
     "indicatorIds": [
-     "E-002_cdm_transition",
      "E-002_dna"
     ]
    }

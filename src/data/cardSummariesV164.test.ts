@@ -35,7 +35,10 @@ const summariesFile = (iso3: string) => `${countryPublicDirV158(iso3).replace(/^
 describe("card summaries as the public screens read them (V164-4)", () => {
   it("reads Bangladesh's source lines as organisation names, without the compiler's separators", async () => {
     const cards = await loadCardSummariesV140("BGD");
-    expect(cards.get("E-002")?.provider).toBe("UNFCCC");
+    // V171: E-002's card summarises its DNA row only (the CDM activities whose
+    // "UNFCCC | 좌표(…)" line this case was written for are listed under C-025);
+    // the loop below still holds every card to names without separators.
+    expect(cards.get("E-002")?.provider).toBe("United Nations Framework Convention on Climate Change (UNFCCC)");
     expect(cards.get("B-033")?.provider).toBe("Global Forest Watch (UMD/WRI, Hansen et al. 2013)");
     for (const card of cards.values()) {
       expect(card.provider).not.toMatch(/ \| |GADM|좌표\(/u);

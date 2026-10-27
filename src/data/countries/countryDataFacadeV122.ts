@@ -10,6 +10,12 @@ import {
   ensureCountryRegistryLoadedV158,
   listCountryDataProvidersV122,
 } from "./countryDataProviderRegistryV122";
+import {
+  isMapWithdrawnV171,
+  movedRecordsV171,
+  recordsKeptV171,
+  relocationIntoV171,
+} from "../relocation/recordRelocationV171";
 
 export class CountryDataErrorV122 extends Error {
   readonly code: string;
@@ -189,7 +195,8 @@ export async function loadCatalogForCountrySelectionV122(
       }
     })
   );
-  const items = groups.flat();
+  // V171: E-001 and E-002 no longer have a layer of their own on the data map.
+  const items = groups.flat().map((item) => (isMapWithdrawnV171(item.elementId) && (item.hasMapData || item.mapFeatureCount) ? { ...item, hasMapData: false, mapFeatureCount: 0 } : item));
   return options.includeExcluded
     ? items
     : items.filter((item) => !isExcludedCatalogItemV156(item));
@@ -238,7 +245,7 @@ export async function loadCountryMapIndexV122(
   const normalized = normalizeCountry(countryIso3);
   const provider = providerOrThrow(normalized);
   try {
-    return await provider.loadMapIndex();
+    return (await provider.loadMapIndex()).filter((layer) => !isMapWithdrawnV171(layer.elementId));
   } catch (error) {
     return wrapProviderError(error, normalized, "map");
   }
@@ -251,7 +258,45 @@ export async function loadCountryElementBundleV122(
   const normalized = normalizeCountry(countryIso3);
   const provider = providerOrThrow(normalized);
   try {
-    return await provider.loadElementBundle(elementId);
+    return relocatedBundleV171(elementId, await provider.loadElementBundle(elementId));
+  } catch (error) {
+    return wrapProviderError(error, normalized, "data");
+  }
+}
+
+/**
+ * V171: the rows a 2026-10-23 decision shows under another element leave this
+ * element's bundle (E-001 keeps its NDE, E-002 its DNA), and a withdrawn map
+ * layer is not announced by the bundle's own feature count.
+ */
+function relocatedBundleV171(elementId: string, bundle: CountryElementBundleV122): CountryElementBundleV122 {
+  const kept = recordsKeptV171(elementId, bundle.entities.records);
+  const withdrawn = isMapWithdrawnV171(elementId) && bundle.meta.element.mapFeatureCount > 0;
+  if (kept === bundle.entities.records && !withdrawn) return bundle;
+  return {
+    ...bundle,
+    meta: withdrawn ? { ...bundle.meta, element: { ...bundle.meta.element, mapFeatureCount: 0 } } : bundle.meta,
+    entities: { ...bundle.entities, records: kept, recordCount: kept.length },
+  };
+}
+
+/**
+ * V171: the rows another element delivered that this element lists (E-005 the
+ * CTCN institutions filed in E-001, C-025 the CDM activities filed in E-002),
+ * read from the delivered bundles as they are.
+ */
+export async function loadRelocatedRecordsV171(
+  countryIso3: string,
+  targetElementId: string,
+  targetRecords: CountryEntityV122[]
+): Promise<CountryEntityV122[]> {
+  const rule = relocationIntoV171(targetElementId);
+  if (!rule) return [];
+  const normalized = normalizeCountry(countryIso3);
+  const provider = providerOrThrow(normalized);
+  try {
+    const source = await provider.loadElementBundle(rule.sourceElementId);
+    return movedRecordsV171(rule, source.entities.records, targetRecords);
   } catch (error) {
     return wrapProviderError(error, normalized, "data");
   }
@@ -269,7 +314,9 @@ export async function loadCountryElementEntitiesV122(
   const normalized = normalizeCountry(countryIso3);
   const provider = providerOrThrow(normalized);
   try {
-    return await provider.loadElementEntities(elementId);
+    const entities = await provider.loadElementEntities(elementId);
+    const kept = recordsKeptV171(elementId, entities.records);
+    return kept === entities.records ? entities : { ...entities, records: kept, recordCount: kept.length };
   } catch (error) {
     return wrapProviderError(error, normalized, "map");
   }

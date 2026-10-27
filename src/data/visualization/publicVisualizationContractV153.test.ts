@@ -14,11 +14,13 @@ import type { AnalysisBlockTypeV153 } from "./publicVisualizationContractV153";
 import { judgeAxesV153, judgeFirstBlockV153 } from "../../components/data/public/DetailAnalysisFrameV153";
 import { kpiTilesV153, trailingUnitV153 } from "../../components/data/public/DetailKpiStripV153";
 import { countryPublicDirV158 } from "../countryContext";
+import { isMapWithdrawnV171 } from "../relocation/recordRelocationV171";
 
 const ROOT = resolve(__dirname, "../../..");
 const catalogIds = (JSON.parse(readFileSync(resolve(ROOT, `${countryPublicDirV158("VNM")}/catalog.json`), "utf8")).elements as Array<{ elementId: string }>).map((row) => row.elementId).sort();
 const mapIndex = JSON.parse(readFileSync(resolve(ROOT, `${countryPublicDirV158("VNM")}/map-index.json`), "utf8")).layers as Array<{ elementId: string; active?: boolean; enabled?: boolean }>;
-const mapIds = new Set(mapIndex.filter((layer) => layer.active !== false && layer.enabled !== false).map((layer) => layer.elementId));
+// V171: the map index as served - E-001 and E-002 are withdrawn from the data map by decision.
+const mapIds = new Set(mapIndex.filter((layer) => layer.active !== false && layer.enabled !== false && !isMapWithdrawnV171(layer.elementId)).map((layer) => layer.elementId));
 
 // V159: the status screens are the typology's data-pending rows - spec v8
 // (2026-09-29) keeps their U1-U6 type (C-023, E-011, E-013 since the same

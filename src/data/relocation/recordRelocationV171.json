@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "record-relocation-v171",
+  "decision": "2026-10-23 공간해상도·플랫폼 설계 확인(연구소 검토) — E-001·E-002 수정 요청",
+  "evidence": "데이터 수집 용역사 재구조화 자료(2026-10-13~16): C-025 압축본의 'E-002이관_CDM전환활동' 표(베트남 45건·방글라데시 11건, 9/30 E-002 행과 값 일치), E-005 압축본의 레코드 목록(베트남 39건·방글라데시 30건, E-001 네트워크 회원·기술지원 제안기관 전부 포함)",
+  "note": "레코드를 만들거나 바꾸지 않는다. 납품된 행을 결정에 따라 다른 데이터 화면에서 보여 줄 뿐이며, 다운로드 파일은 납품 원본을 유지한다.",
+  "mapWithdrawn": ["E-001", "E-002"],
+  "mapWithdrawnReason": "국가별 지정기관이 1곳뿐이라 지역 비교의 의미가 없어 데이터 지도에서 제외합니다.",
+  "rules": [
+    {
+      "sourceElementId": "E-001",
+      "targetElementId": "E-005",
+      "kind": "institutions",
+      "indicatorPattern": "_ctcn_(network_member|ta_proponent)$",
+      "sourceNotice": "CTCN 네트워크 회원기관과 기술지원 제안기관은 '대학·연구기관·비영리단체(NGO)' 데이터에서 제공합니다.",
+      "targetTitle": "대학·연구기관·비영리단체(NGO)",
+      "sectionEyebrow": "CTCN 참여기관",
+      "sectionTitle": "CTCN 네트워크 회원·기술지원 제안기관",
+      "sectionNote": "기후기술센터·네트워크(CTCN)의 네트워크 회원기관과 CTCN에 기술지원을 제안한 기관입니다. 위 목록에 이미 있는 기관은 한 번만 표시합니다."
+    },
+    {
+      "sourceElementId": "E-002",
+      "targetElementId": "C-025",
+      "kind": "cdm-activities",
+      "indicatorPattern": "cdm[_\\s-]*transition",
+      "sourceNotice": "CDM 사업 목록(파리협정 제6.4조 전환 활동)은 '탄소크레딧 발행·소각 실적' 데이터에서 제공합니다.",
+      "targetTitle": "탄소크레딧 발행·소각 실적",
+      "sectionEyebrow": "파리협정 제6.4조",
+      "sectionTitle": "CDM 전환 활동",
+      "sectionNote": "청정개발체제(CDM) 사업 가운데 파리협정 제6.4조 메커니즘으로 전환을 신청한 사업·프로그램과 전환 상태입니다."
+    }
+  ]
+}
