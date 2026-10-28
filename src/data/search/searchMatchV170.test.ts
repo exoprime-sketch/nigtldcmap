@@ -94,7 +94,7 @@ describe("V170 relevance tiers", () => {
       ]),
       []
     );
-    expect(match).toMatchObject({ tier: 2, where: "원자료", records: { matched: 3, total: 10 } });
+    expect(match).toMatchObject({ tier: 2, where: "수록 내용", records: { matched: 3, total: 10 } });
     expect(match?.snippet?.hit.toLowerCase()).toBe("solar pv");
   });
 
@@ -141,11 +141,11 @@ describe("V170 relevance tiers", () => {
   });
 });
 
-describe("V170-1 group names say how the data relates to the query", () => {
-  it("puts the query in each group name", () => {
-    expect(tierLabelV170(1, " 태양광 ")).toBe("‘태양광’에 관한 데이터");
-    expect(tierLabelV170(2, "태양광")).toBe("‘태양광’ 내용이 포함된 데이터");
-    expect(tierLabelV170(3, "풍력")).toBe("‘풍력’ 기술로 분류된 데이터");
+describe("V170-2 group names say where the query was found", () => {
+  it("names each group by the place of the match", () => {
+    expect(tierLabelV170(1)).toBe("데이터명·설명 일치");
+    expect(tierLabelV170(2)).toBe("수록 내용 일치");
+    expect(tierLabelV170(3)).toBe("기후기술 분류 일치");
   });
 });
 
