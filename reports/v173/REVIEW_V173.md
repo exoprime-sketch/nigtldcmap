@@ -47,14 +47,16 @@
 - 팝업 밖(지도 분석·목록·상세 화면) 변화: 지도 분석의 겹침 선택 목록에서 '주 분석' 글자 삭제. SSP 풀이는 용어가 펼쳐 보이는 모든 화면(지도 레이어 목록·그래프 범례 등)에서 "○○ 배출 경로"로 바뀜
 
 ## 검증(실행 결과)
-- tsc 0 · 단위 시험 165 suites / 1,712 통과 · production 빌드(`GENERATE_SOURCEMAP=false`, `BUILD_PATH=tmp/build-v173-review`) 성공
+- tsc 0 · 단위 시험 165 suites / 1,706 통과(신규 8건) · production 빌드(`GENERATE_SOURCEMAP=false`, `BUILD_PATH=tmp/build-v173-review`) 성공
 - 필터 검사(바뀐 항목, 로컬 production 빌드)
-  - audit:map-popup:v133 — 결과: {MAP_POPUP}
-  - audit:map-tooltip:v132 — 결과: {MAP_TOOLTIP}
-  - audit:glossary:v134 — 결과: {GLOSSARY}
+  - audit:map-popup:v133 — 결과: 11/12 PASS — 실패 1건(CLICK_FEATURE_WITHOUT_DETAIL, GVI 지도 분석의 순위 문구 형식)은 main CI(3121f216)와 같은 기존 실패
+  - audit:map-tooltip:v132 — 결과: 5/8 PASS — 실패 3건(MAP_PLACEHOLDER_PRIMARY_TITLE·MAP_TOOLTIP_MISSING_KEY_FACTS·B033_MAP_REGION_TREND)은 main CI와 같은 기존 실패
+  - audit:glossary:v134 — 결과: 16/17 PASS — VISIBLE_ACRONYM_WITHOUT_GLOSSARY 18건은 main CI와 같음(증감 0). 지도 상호작용 PASS
 - 실제 브라우저(Playwright Chromium, 1440×900): 위 8개 레이어 팝업 전후 문구 확인(운영 vs V173 빌드). 의도한 줄 외 변화 없음
-- 6폭(320·390·768·1024·1440·1920px) 데이터 지도 문서 가로 넘침: {OVERFLOW}
+- 6폭(320·390·768·1024·1440·1920px) 데이터 지도 문서 가로 넘침: 0(320·390·768·1024·1440·1920px, 수력 이론 잠재량 표시 상태)
 - 기대값 변경 없음
+- 로컬 브라우저 감사 실행 환경: 컨테이너가 root라 Chromium을 `--no-sandbox`로 감싸 실행(`V125_BROWSER_EXECUTABLE`), `NODE_OPTIONS=--max-old-space-size=6144`. 감사 스크립트는 수정하지 않았고, 실행 중 갱신된 기존 보고서 JSON(v132·v133·v134)은 커밋하지 않음
+- Preview: https://nigtldcmap-git-v173-popup-core-exoprime-5142s-projects.vercel.app (Vercel 로그인 필요). Preview에서 베트남 수력 이론 잠재량 팝업 확인: "22,204 GWh/년 · 성·시 34개 중 1위"(`reports/v173/screens/preview-vnm-b039-popup.png`)
 
 ## 미완료(다음 단계, 전수검토 결과 중 이번 범위 밖)
 - 팝업에 핵심 값이 없는 지점 레이어: B-008 해수면, B-023 유량 차이, B-028 하천유량, B-025 유역면적

@@ -22,17 +22,17 @@
 
 ### 검증
 - tsc 0
-- 단위 시험 {UNIT}
+- 단위 시험 165 suites / 1,706 통과(신규 8건)
 - production 빌드 성공
 - 필터 검사(로컬 production 빌드)
-  - audit:map-popup:v133 {MAP_POPUP}
-  - audit:map-tooltip:v132 {MAP_TOOLTIP}
-  - audit:glossary:v134 {GLOSSARY}
+  - audit:map-popup:v133 11/12 PASS — 실패 1건(CLICK_FEATURE_WITHOUT_DETAIL, GVI 지도 분석의 순위 문구 형식)은 main CI(3121f216)와 같은 기존 실패
+  - audit:map-tooltip:v132 5/8 PASS — 실패 3건(MAP_PLACEHOLDER_PRIMARY_TITLE·MAP_TOOLTIP_MISSING_KEY_FACTS·B033_MAP_REGION_TREND)은 main CI와 같은 기존 실패
+  - audit:glossary:v134 16/17 PASS — VISIBLE_ACRONYM_WITHOUT_GLOSSARY 18건은 main CI와 같음(증감 0). 지도 상호작용 PASS
 - 실제 브라우저(1440px): 8개 레이어 팝업을 운영과 V173 빌드에서 비교. 의도한 줄 외 변화 없음
-- 6폭 데이터 지도 가로 넘침 {OVERFLOW}
+- 6폭 데이터 지도 가로 넘침 0(320·390·768·1024·1440·1920px, 수력 이론 잠재량 표시 상태)
 
 ### Preview 확인
-- Preview URL: {PREVIEW}
+- Preview URL: https://nigtldcmap-git-v173-popup-core-exoprime-5142s-projects.vercel.app (Vercel 로그인 필요). Preview에서 베트남 수력 이론 잠재량 팝업 확인: "22,204 GWh/년 · 성·시 34개 중 1위"(`reports/v173/screens/preview-vnm-b039-popup.png`)
 
 | 화면 | 확인 경로 | 볼 것 |
 |---|---|---|
