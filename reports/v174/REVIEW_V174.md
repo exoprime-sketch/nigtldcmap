@@ -81,6 +81,7 @@
   - audit:map-tooltip:v132: 5/8 PASS — 실패 3건은 main과 같은 기존 실패
 - 공개 문구 스캔(public-wording-scan-v157): PASS — findings 0 · exceptions 0 · 검사 804
 - 6폭(320·390·768·1024·1440·1920px) 데이터 지도 문서 가로 넘침 0
+- Preview(https://nigtldcmap-git-v174-popup-card-exoprime-5142s-projects.vercel.app)에서 방글라데시 발전소 팝업 문구 확인(국가·명칭 행 없음, "라지샤히 가스발전소 (Ullapara, Summit)")
 
 ## 남은 항목(다음 단계)
 - 카드 행 값의 원어는 그대로 둠(라벨이 한글이라 "라벨 | 원어"로 읽힘)

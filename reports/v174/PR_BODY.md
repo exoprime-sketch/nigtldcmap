@@ -33,7 +33,8 @@
 - 6폭 가로 넘침 0
 
 ### Preview 확인
-- Preview URL: {PREVIEW}
+- Preview URL: https://nigtldcmap-git-v174-popup-card-exoprime-5142s-projects.vercel.app (Vercel 로그인 필요)
+- Preview에서 방글라데시 발전소 팝업 확인: "라지샤히 가스발전소 (Ullapara, Summit) | 발전원 가스 | 소유·운영 … | 설비용량 11 MW | 가동 연도 2009 | 소재지 라지샤히 (Rajshahi Division) | 자료 출처 WRI GPPD (2021) · …"(국가·명칭 행 없음)
 
 | 화면 | 확인 경로 | 볼 것 |
 |---|---|---|
