@@ -44,25 +44,32 @@ export function createMapFeaturePopupV148(input: {
   if (input.rows?.length) {
     facts.className = "map148-popup__card";
     facts.dataset.card = "facility-v153";
-    input.rows.forEach((row) => {
+    // V174: a card without a source row still states its source, as a row.
+    const cardRows = input.rows.some((row) => row.key === "source") || !input.source
+      ? input.rows
+      : [...input.rows, { key: "source", label: "출처", value: input.source, missing: false }];
+    cardRows.forEach((row) => {
       const dt = document.createElement("dt"); dt.textContent = row.label;
       const dd = document.createElement("dd"); dd.textContent = row.value;
       if (row.missing) dd.dataset.missing = "true";
       facts.append(dt, dd);
     });
   } else {
-    input.facts.slice(0, 3).forEach((fact) => {
-      const dt = document.createElement("dt"); dt.textContent = fact.label;
-      const dd = document.createElement("dd"); dd.textContent = fact.value;
+    // V174: the same label·value card as a facility, with the source as a row.
+    facts.className = "map148-popup__card";
+    const factRows = [
+      ...input.facts.slice(0, 4).map((fact) => ({ label: fact.label, value: fact.value })),
+      ...(input.source ? [{ label: "출처", value: input.source }] : []),
+    ];
+    factRows.forEach((row) => {
+      const dt = document.createElement("dt"); dt.textContent = row.label;
+      const dd = document.createElement("dd"); dd.textContent = row.value;
       facts.append(dt, dd);
     });
   }
   root.append(facts);
-  // A card already states its source as a row; the footnote would repeat it.
-  const cardHasSource = Boolean(input.rows?.some((row) => row.key === "source"));
-  for (const text of [input.note, cardHasSource ? undefined : input.source]) {
-    if (!text) continue;
-    const note = document.createElement("small"); note.textContent = text; root.append(note);
+  if (input.note) {
+    const note = document.createElement("small"); note.textContent = input.note; root.append(note);
   }
   return root;
 }
