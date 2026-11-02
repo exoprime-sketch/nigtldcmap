@@ -26,7 +26,9 @@ export function createMapFeaturePopupV148(input: {
   root.dataset.selectionKey = input.selectionKey;
   root.dataset.layerRole = input.primary ? "primary" : "context";
   const label = document.createElement("small");
-  label.textContent = `${input.primary ? "주 분석" : "함께 보기"} · ${input.dataset}`;
+  // V173: the analysis layer's popup names its dataset only; a context layer
+  // still says it is shown alongside ("함께 보기"). "주 분석" was an internal role word.
+  label.textContent = input.primary ? input.dataset : `함께 보기 · ${input.dataset}`;
   const title = document.createElement("strong");
   if (input.iconSvg) {
     const icon = document.createElement("span");

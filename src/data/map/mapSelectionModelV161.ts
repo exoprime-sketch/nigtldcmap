@@ -157,6 +157,49 @@ export function rankLinesV161({ value, peers, unit, peerLabel, withAverage = tru
   return lines;
 }
 
+export interface PopupContextInputV173 {
+  /** The hovered feature's value. */
+  value: number | null | undefined;
+  /** Every value drawn for the same layer, variable and period. */
+  peers: number[];
+  /** What the peers are ("성·시", "평가구역"). */
+  peerLabel: string;
+  /** The group or class the feature's colour stands for ("남부전력총공사(EVNSPC)", "Aw (열대사바나)"). */
+  categoryLabel?: string | null;
+  /** The value belongs to a group (관할·권역·가격권역), repeated on every member region. */
+  groupConstant?: boolean;
+  /** The fill paints classes, not a value ramp. */
+  categorical?: boolean;
+}
+
+/**
+ * V173: the hover popup's second line - where the value sits, in one phrase.
+ *
+ * A group value names its group ("남부전력총공사(EVNSPC) 공통값") and a class
+ * map names the class, because a rank of a repeated or class-share figure says
+ * nothing. Otherwise the rank among the drawn regions ("성·시 34개 중 1위").
+ * Empty when there is nothing to compare: fewer than three values, or all equal.
+ */
+export function popupContextLineV173({
+  value,
+  peers,
+  peerLabel,
+  categoryLabel,
+  groupConstant = false,
+  categorical = false,
+}: PopupContextInputV173): string {
+  const category = String(categoryLabel ?? "").trim();
+  if (category && groupConstant) return `${category} 공통값`;
+  if (category && categorical) return category;
+  if (groupConstant || categorical) return "";
+  if (typeof value !== "number" || !Number.isFinite(value)) return "";
+  const usable = peers.filter((peer) => typeof peer === "number" && Number.isFinite(peer));
+  if (usable.length < 3 || new Set(usable).size < 2) return "";
+  const rank = [...usable].sort((left, right) => right - left).findIndex((peer) => peer <= value) + 1;
+  if (rank < 1) return "";
+  return `${peerLabel} ${usable.length}개 중 ${rank}위`;
+}
+
 /** How many of the peers share the clicked feature's category, as a share. */
 export function categoryShareLinesV161(
   categoryLabel: string,
