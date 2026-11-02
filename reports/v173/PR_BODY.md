@@ -29,6 +29,7 @@
   - audit:map-tooltip:v132 5/8 PASS — 실패 3건(MAP_PLACEHOLDER_PRIMARY_TITLE·MAP_TOOLTIP_MISSING_KEY_FACTS·B033_MAP_REGION_TREND)은 main CI와 같은 기존 실패
   - audit:glossary:v134 16/17 PASS — VISIBLE_ACRONYM_WITHOUT_GLOSSARY 18건은 main CI와 같음(증감 0). 지도 상호작용 PASS
 - 실제 브라우저(1440px): 8개 레이어 팝업을 운영과 V173 빌드에서 비교. 의도한 줄 외 변화 없음
+- 공개 문구 스캔(public-wording-scan-v157, 로컬 production 빌드): PASS — findings 0 · exceptions 0 · 검사 804 · 목록 70행 · 활성 72
 - 6폭 데이터 지도 가로 넘침 0(320·390·768·1024·1440·1920px, 수력 이론 잠재량 표시 상태)
 
 ### Preview 확인
