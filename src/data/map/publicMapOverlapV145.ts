@@ -1,4 +1,5 @@
 import { formatPublicNumberV126 } from "../visualization/publicNumberFormatV126";
+import { factsFromLinesV174, featureKoreanDescriptionV174, koreanNamedV174 } from "./popupCardV174";
 import { publicMapFactValueV163 } from "./mapFactValueLabelsV163";
 
 export interface MapOverlapInputV145 {
@@ -74,11 +75,13 @@ const PLACE_FACT_LABEL_V164 = /^성·시\(2025\)\s+/u;
 function featureIdentityV164(
   properties: Record<string, unknown>,
   label: string,
-  facts: readonly string[]
+  facts: readonly string[],
+  elementId = ""
 ): { title: string; repeats: (fact: string) => boolean } | null {
   if (!Object.prototype.hasOwnProperty.call(properties, "name")) return null;
   const name = text(properties.name);
-  const shown = text(label) || name;
+  // V174: a name in another language reads "한글설명 (원어)" from the feature's own facts.
+  const shown = koreanNamedV174(text(label) || name, featureKoreanDescriptionV174(elementId, factsFromLinesV174(facts)));
   if (name) return { title: shown, repeats: (fact) => NAME_FACT_LABELS_V164.test(fact) && fact.replace(NAME_FACT_LABELS_V164, "").trim() === name };
   const kind = text(properties.kindLabel) || shown;
   if (!kind) return null;
@@ -129,7 +132,7 @@ export function mapOverlapSummariesV145(inputs: MapOverlapInputV145[]): MapOverl
         // V164: a feature that has a name leads with it. The first attribute used
         // to take the bold line ("협력분야·업무 Viet Nam Resident Mission" over
         // "ADB"), so the reader saw an attribute where the title belongs.
-        const identity = featureIdentityV164(p, input.label, facts);
+        const identity = featureIdentityV164(p, input.label, facts, input.elementId);
         if (identity) {
           value = identity.title;
           facts = facts.filter((fact) => !identity.repeats(fact));

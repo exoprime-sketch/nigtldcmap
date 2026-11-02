@@ -73,13 +73,23 @@ import type {
 import { POWER_PLANT_SOURCES_V141, powerPlantFuelV141 } from "../data/map/powerPlantFactsV141";
 import { prepareLayerRecordsV138, attributeText } from "../data/map/prepareLayerRecordsV148";
 import { applyNationalMineJoinV157_2 } from "../data/map/entityAttributeJoinV157_2";
-import { mapFactsV148, mapIndicatorSourceV148, powerCapacitySummaryV148 } from "../data/map/mapPresentationV148";
+import { mapFactsV148, mapIndicatorSourceV148, mapSourceLineV148, powerCapacitySummaryV148 } from "../data/map/mapPresentationV148";
+import {
+  areaContextRowV174,
+  featureKoreanDescriptionV174,
+  koreanNamedV174,
+  popupCardRowsV174,
+  popupPeriodV174,
+  popupSourceV174,
+} from "../data/map/popupCardV174";
+import type { PopupFactV174 } from "../data/map/popupCardV174";
+import { createMapFeaturePopupV148 } from "../components/map/mapFeaturePopupV148";
 import { publicMapFactValueV163 } from "../data/map/mapFactValueLabelsV163";
 import { createMapPointPopupV152 } from "../components/map/mapPointPopupV152";
 import MapIconLegendV152 from "../components/map/MapIconLegendV152";
 import { MapIconBadgeV152 } from "../components/map/MapIconSpriteV152";
 import FacilityCardV153 from "../components/data/public/FacilityCardV153";
-import { facilityCardSpecV153, featureRecordIdsV164, spatialFacilityEntityV164 } from "../data/visualization/facilityCardV153";
+import { facilityCardRowsV153, facilityCardSpecV153, featureRecordIdsV164, spatialFacilityEntityV164 } from "../data/visualization/facilityCardV153";
 import { publicScenarioLabelV164 } from "../data/map/scenarioLabelV164";
 import { pointUnitNameV164 } from "../data/map/pointLocationV164";
 import { A023_CAPACITY_BADGE_RADIUS_V152 } from "../map/layers/pointIconLayer";
@@ -3482,6 +3492,85 @@ export default function RealMapExplorerPage({
           );
           const isGvi = elementId === "B-021" && selector.variable === "gvi-6";
           const boundaryLineV151 = boundaryPopupLineV151(properties, publicUnit);
+          // V174: every popup is the facility card's shape - a title and
+          // label · value rows (value, where it sits, aggregation, reference
+          // year, source). GVI, the budget circles and the regional scope keep
+          // their own short form.
+          const cardV174 = !isGvi && !isBudgetContext && !isRegionalScope;
+          const periodV174 = publicTextV126(properties.period) || publicTextV126(selector.period) || "";
+          // The indicator's own source where the table has it, else the layer's.
+          const sourceV174 = popupSourceV174(
+            mapIndicatorSourceV148(String(properties.sourceIndicatorId || ""), "", countryIso3),
+            mapIndicatorSourceV148("", layer.source, countryIso3)
+          );
+          let cardTitleV174 = "";
+          let cardRowsV174: PopupFactV174[] = [];
+          if (cardV174 && renderer === "point-and-polygon") {
+            const assetFacts = mapFactsV148(layer, properties).filter(
+              (fact) => !/^(?:이름|명칭)$/u.test(fact.label)
+            );
+            const description = featureKoreanDescriptionV174(elementId, assetFacts, layer.publicShortTitle);
+            cardTitleV174 = koreanNamedV174(
+              publicMapFeatureNameV126(assetDisplayNameV163(properties) || properties.kindLabel, "시설·구역"),
+              description
+            );
+            cardRowsV174 = popupCardRowsV174([
+              assetValueV163 !== null && assetUnitV163
+                ? {
+                    key: "value",
+                    label: publicTextV126(properties.valueLabel) || publicTextV126(properties.variableLabel) || "값",
+                    value: `${formatPublicNumberV126(assetValueV163, assetUnitV163)} ${assetUnitV163}`,
+                  }
+                : assetKindV164 && !description.includes(assetKindV164)
+                ? { key: "kind", label: "구분", value: assetKindV164 }
+                : null,
+              ...assetFacts.slice(0, 3),
+              /^\d{4}$/u.test(periodV174)
+                ? { key: "period", label: "자료", value: `${periodV174}년판` }
+                : periodV174
+                ? { key: "period", label: "기준", value: popupPeriodV174(periodV174) }
+                : null,
+              { key: "source", label: "출처", value: mapSourceLineV148(properties) || sourceV174 },
+            ]);
+          } else if (cardV174 && renderer === "line") {
+            cardTitleV174 = koreanNamedV174(publicTextV126(properties.name), "송전선로") || "송전선로";
+            cardRowsV174 = popupCardRowsV174([
+              { key: "value", label: "전압·길이", value: featureLabel },
+              { key: "status", label: "운영 상태", value: publicTextV126(properties.status) || "" },
+              periodV174 ? { key: "period", label: "기준", value: popupPeriodV174(periodV174) } : null,
+              { key: "source", label: "출처", value: sourceV174 },
+            ]);
+          } else if (cardV174) {
+            cardTitleV174 =
+              publicRegionLabelV163(properties.adm1Name || properties.name, countryIso3, properties.boundarySystem) ||
+              regionWordV158(countryIso3).word;
+            cardRowsV174 = popupCardRowsV174([
+              {
+                key: "value",
+                label:
+                  publicTextV126(properties.variableLabel) ||
+                  variablePresentationV129?.label ||
+                  layer.legend?.title ||
+                  "값",
+                value: formattedAreaValue,
+              },
+              areaContextRowV174({
+                contextLine: popupContextLineV173({
+                  value: properties.hasValue ? Number(properties.value) : null,
+                  peers: drawnPeersV173,
+                  peerLabel: peerWordV173,
+                  categoryLabel: publicTextV126(properties.categoryLabel),
+                  groupConstant: groupConstantV173,
+                  categorical: categoricalV173,
+                }),
+                groupConstant: groupConstantV173,
+                categorical: categoricalV173,
+              }),
+              boundaryLineV151 ? { key: "aggregation", label: "집계", value: boundaryLineV151 } : null,
+              periodV174 ? { key: "period", label: "기준", value: popupPeriodV174(periodV174) } : null,
+              { key: "source", label: "출처", value: sourceV174 },
+            ]);
+          }
           popupRef.current?.remove();
           popupOwnerRef.current = popupOwnerKey;
           popupRef.current = new maplibregl.Popup({
@@ -3491,6 +3580,25 @@ export default function RealMapExplorerPage({
           })
             .setLngLat(event.lngLat)
             .setDOMContent(
+              cardV174
+                ? createMapFeaturePopupV148({
+                    elementId,
+                    selectionKey: String(
+                      properties.selectionKey ?? properties.adm1Code ?? properties.featureId ?? ""
+                    ),
+                    title: cardTitleV174,
+                    dataset: publicMapLayerTitleV126(elementId, layer.publicShortTitle),
+                    primary: isPrimary,
+                    facts: [],
+                    source: "",
+                    rows: cardRowsV174.map((row) => ({
+                      key: row.key || row.label,
+                      label: row.label,
+                      value: row.value,
+                      missing: false,
+                    })),
+                  })
+                :
               createPublicMapPopupContentV129(
                 isGvi
                   ? publicMapFeatureNameV126(
@@ -5274,6 +5382,32 @@ export default function RealMapExplorerPage({
                 }
               : {}),
           }) || selectedSpatial.adm1Name
+        : isAsset
+        ? // V174: a site reads "한글설명 (원어)", as its popup does.
+          koreanNamedV174(
+            publicMapFeatureNameV126(
+              (assetDisplayNameV163(properties) || selectedSpatial.adm1Name) as string,
+              "선택 항목"
+            ),
+            featureKoreanDescriptionV174(
+              selectedOwningLayer.elementId,
+              [
+                // A facility drawn from a spatial asset (BGD A-023) is named
+                // from its card, as its popup is.
+                ...(() => {
+                  const entity = spatialFacilityForFeatureV164(
+                    facilityRecordsRefV164.current,
+                    countryIso3,
+                    selectedOwningLayer.elementId,
+                    properties
+                  );
+                  return entity ? facilityCardRowsV153(selectedOwningLayer.elementId, entity) : [];
+                })(),
+                ...mapFactsV148(selectedOwningLayer, properties),
+              ],
+              facilityCardSpecV153(selectedOwningLayer.elementId)?.noun || selectedOwningLayer.publicShortTitle
+            )
+          )
         : publicMapFeatureNameV126(
             (isScope
               ? properties.projectTitle || selectedSpatial.adm1Name
@@ -5598,9 +5732,20 @@ export default function RealMapExplorerPage({
       };
     }
     if (selected && selectedLayer) {
-      const title =
-        selectedEntityTitleResolutionV131?.title ||
-        publicMapEntityTitleV131(selected, selectedLayer);
+      // V174: the panel names the record as the popup does - "한글설명 (원어)".
+      const title = koreanNamedV174(
+        selectedEntityTitleResolutionV131?.title || publicMapEntityTitleV131(selected, selectedLayer),
+        featureKoreanDescriptionV174(
+          selectedLayer.elementId,
+          [
+            ...(facilityCardSpecV153(selectedLayer.elementId)
+              ? facilityCardRowsV153(selectedLayer.elementId, selected)
+              : []),
+            ...mapFactsV148(selectedLayer, selected.normalizedAttributes || {}),
+          ],
+          facilityCardSpecV153(selectedLayer.elementId)?.noun || selectedLayer.publicShortTitle
+        )
+      );
       // The facts themselves are shown by the record's own block below the card
       // (the V153 facility card where one exists), so the card says where the
       // record is and how it compares, without repeating them.

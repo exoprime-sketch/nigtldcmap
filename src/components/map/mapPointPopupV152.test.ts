@@ -21,7 +21,8 @@ describe("a road/rail popup says its name once and reads its route numbers", () 
   });
 
   test("the name is the title, not also a 이름 row", () => {
-    expect(popup.querySelector("strong")?.textContent).toBe("Quốc lộ 14");
+    // V174: a name in another language reads "한글설명 (원어)".
+    expect(popup.querySelector("strong")?.textContent).toBe("간선도로 (Quốc lộ 14)");
     expect(rowsOf(popup).map(([label]) => label)).not.toContain("이름");
     expect(popup.textContent?.match(/Quốc lộ 14/gu)).toHaveLength(1);
   });

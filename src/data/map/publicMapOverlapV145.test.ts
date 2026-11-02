@@ -80,7 +80,8 @@ describe("V164: a feature with a name leads with the name, not its first attribu
   };
   it("puts the organisation name on the bold line and relabels the programme field", () => {
     const [result] = mapOverlapSummariesV145([office]);
-    expect(result.value).toBe("ADB");
+    // V174: a name in another language reads "한글설명 (원어)".
+    expect(result.value).toBe("하노이 다자개발은행 (ADB)");
     expect(result.place).toBe("사무소·프로그램 Viet Nam Resident Mission");
     expect(result.facts).toEqual(["도시 하노이 (Hanoi)", "기관 유형 다자개발은행"]);
   });
@@ -95,7 +96,8 @@ describe("V164: a feature with a name leads with the name, not its first attribu
     const [result] = mapOverlapSummariesV145([
       { ...office, elementId: "A-028", label: "Đập Lìa", properties: { name: "Đập Lìa", kind: "dam" }, facts: ["종류 댐", "이름 Đập Lìa", "면적 0.01 km²"] },
     ]);
-    expect(result.value).toBe("Đập Lìa");
+    // V174: a name in another language reads "한글설명 (원어)".
+    expect(result.value).toBe("댐 (Đập Lìa)");
     expect([result.place, ...result.facts]).toEqual(["종류 댐", "면적 0.01 km²"]);
   });
   it("calls an unnamed dam 이름 없는 댐 and names the place, instead of the bare kind", () => {
