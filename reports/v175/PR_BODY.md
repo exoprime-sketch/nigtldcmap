@@ -33,7 +33,8 @@
 - 6폭 가로 넘침 0(데이터 찾기 2개국, 상세 2개)
 
 ### Preview 확인
-- Preview URL: PREVIEW_URL (Vercel 로그인 필요)
+- Preview URL: https://nigtldcmap-git-v175-card-label-dedupe-exoprime-5142s-projects.vercel.app (Vercel 로그인 필요)
+- Preview에서 확인: 방글라데시 1차 에너지 소비량 상세의 국가 비교 제목·상세 데이터 표 분류 "석탄 1차에너지 소비량", 베트남 SSP 인구 전망 범례 "SSP1(공통사회경제경로 1) … SSP5"
 
 | 화면 | 확인 경로 | 볼 것 |
 |---|---|---|
