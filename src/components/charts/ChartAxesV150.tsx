@@ -16,6 +16,7 @@ export default function ChartAxesV150({ x, y, unit: sourceUnit, composition = fa
     data-contract-x-axis={contract?.primary.xAxis ?? undefined} data-contract-y-axis={contract?.primary.yAxis ?? undefined} data-contract-unit={contract?.primary.unit ?? undefined}>
     {x && <span>가로: <PublicTermTextV134 text={x} /></span>}
     {y && <span>세로: <PublicTermTextV134 text={y} /></span>}
-    <span>단위: <PublicTermTextV134 text={unit || "원자료 미기재"} />{composition ? " · 구성비 %" : ""}</span>
+    {/* V175: a % composition says "%" once, not "단위: % · 구성비 %". */}
+    <span>단위: <PublicTermTextV134 text={unit || "원자료 미기재"} />{composition && unit !== "%" ? " · 구성비 %" : ""}</span>
   </div>;
 }

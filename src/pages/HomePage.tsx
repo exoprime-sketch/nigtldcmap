@@ -119,7 +119,7 @@ export default function HomePage({ query, onQueryChange, onSubmit, onSearchExamp
           return <article key={item.elementId} className="home-featured-v139__card" data-element-id={item.elementId} aria-labelledby={"home-card-" + item.elementId}>
             {spec?.sourceLabel ? <div className="home-featured-v139__source" data-testid="home-card-source-v159"><PublicTermTextV134 text={spec.sourceLabel} /></div> : null}
             <h3 id={"home-card-" + item.elementId}><PublicTermTextV134 text={title} /></h3>
-            {card ? <FinderCardSummaryV140 summary={card} /> : <p className="home-featured-v139__preparing" role="status">데이터 준비 중</p>}
+            {card ? <FinderCardSummaryV140 summary={card} name={title} /> : <p className="home-featured-v139__preparing" role="status">데이터 준비 중</p>}
             <dl className="home-featured-v139__meta">
               <div><dt>{(card?.period && card.periodLabel) || "자료기간"}</dt><dd><PublicTermTextV134 text={card?.period || publicReferencePeriodV128(item)} /></dd></div>
               {(card?.provider || item.sourceOrganizations.length > 0) && <div><dt>제공기관</dt><dd><PublicTermTextV134 text={card?.provider || item.sourceOrganizations.join(" · ")} /></dd></div>}

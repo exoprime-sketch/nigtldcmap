@@ -5,6 +5,7 @@
  */
 import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
 import { prepareTextV170 } from "./searchMatchV170";
+import { compactLabelV175 } from "../visualization/labelCompactV175";
 import type { RecordTextsV170 } from "./searchMatchV170";
 
 export interface TopicRowV170 {
@@ -43,6 +44,10 @@ export function loadSearchRecordsV170(iso3: string): Promise<Map<string, RecordT
           // Normalize every record text once here, not on the first keystroke.
           const entries = Object.entries(file.elements || {});
           entries.forEach(([, entry]) => {
+            // V175: the match line quotes a record as the screens name it -
+            // each part once ("석탄 1차에너지 소비량", not "1차 에너지 소비 · 석탄 —
+            // 석탄 1차에너지 소비량"). Only repeated words go, so every match stays.
+            entry.texts = entry.texts.map(([text, count]) => [compactLabelV175(text), count]);
             entry.prepared = entry.texts.map(([text]) => prepareTextV170(text));
           });
           return new Map(entries);

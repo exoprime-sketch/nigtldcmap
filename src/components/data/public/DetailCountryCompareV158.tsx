@@ -6,6 +6,7 @@ import type { CountryCompareSeriesV158 } from "./CountryCompareBlockV158";
 import { publicAssetUrlV128 } from "../../../utils/publicAssetUrlV128";
 import { isLiveCountryV158 } from "../../../data/countryContext";
 import { observationYearTextV164 } from "../../../data/visualization/barRowsV164";
+import { compactLabelV175 } from "../../../data/visualization/labelCompactV175";
 
 /** One country's slice of a comparable element, as the builder writes it. */
 interface CountryCompareEntryV158 {
@@ -109,7 +110,8 @@ export function publicCompareTitleV164(title: string, countryNames: string[]): s
       .replace(new RegExp(`\\s·\\s${escaped}(?=\\s—|\\s·|$)`, "u"), "")
       .replace(new RegExp(`대${escaped}\\s*`, "u"), "");
   }
-  return text.replace(/\s{2,}/gu, " ").trim();
+  // V175: "1차 에너지 소비 · 석탄 — 석탄 1차에너지 소비량" → "석탄 1차에너지 소비량".
+  return compactLabelV175(text.replace(/\s{2,}/gu, " ").trim());
 }
 
 /**

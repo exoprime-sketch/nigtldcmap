@@ -134,3 +134,21 @@ describe("a series that would flatten the rest", () => {
     expect(Math.max(...numbers)).toBeGreaterThanOrEqual(3);
   });
 });
+
+describe("V175 legend names the shared part once", () => {
+  const area = (name: string) => line(name, `전력 접근률 · ${name}`, "%", years(2015, 2022).map((year) => [year, 80 + year - 2015]));
+
+  test("items read only what tells them apart when the axis already names the shared part", () => {
+    draw([area("농촌"), area("도시"), area("전체")], { yAxisTitle: "전력 접근률" });
+    const legend = Array.from(container.querySelectorAll(".v127-chart-legend-button > span")).map((node) => node.textContent);
+    expect(legend).toEqual(["농촌", "도시", "전체"]);
+    // The spoken label keeps the whole series name.
+    expect(container.querySelector(".v127-chart-legend-button")?.getAttribute("aria-label")).toContain("전력 접근률 · 농촌");
+  });
+
+  test("items keep the shared part when nothing else on the chart names it", () => {
+    draw([area("농촌"), area("도시")], { yAxisTitle: "값" });
+    const legend = Array.from(container.querySelectorAll(".v127-chart-legend-button > span")).map((node) => node.textContent);
+    expect(legend).toEqual(["전력 접근률 · 농촌", "전력 접근률 · 도시"]);
+  });
+});

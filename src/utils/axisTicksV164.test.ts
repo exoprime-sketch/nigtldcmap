@@ -144,7 +144,8 @@ describe("V164 compare title", () => {
     expect(publicCompareTitleV164("한-베트남 교역 · 총 교역액 — 수출액과 수입액의 합", names)).toBe("한국과의 교역 · 총 교역액 — 수출액과 수입액의 합");
   });
   it("reads the remaining English labels in Korean", () => {
-    expect(publicCompareTitleV164("발전 설비용량 · Coal(계통연계) — 기술별 누적 설치 발전설비 용량", names)).toBe("발전 설비용량 · 석탄(계통연계) — 기술별 누적 설치 발전설비 용량");
+    // V175: "발전 설비용량" is said again by "발전설비 용량" at the end, so it is read once.
+    expect(publicCompareTitleV164("발전 설비용량 · Coal(계통연계) — 기술별 누적 설치 발전설비 용량", names)).toBe("석탄(계통연계) — 기술별 누적 설치 발전설비 용량");
     expect(publicCompareTitleV164("중간재 교역 · 수출 중 중간재 국내부가가치 비중 — Trade in Value Added: Domestic value added in gross exports of intermediate products", names)).toBe("중간재 교역 · 수출 중 중간재 국내부가가치 비중");
   });
 });

@@ -88,3 +88,38 @@ test("V164-4: a one-series amount card states its scope next to the dataset's to
     "위 계열 하나의 값입니다 · 같은 자료의 전체 119건은 상세에서"
   );
 });
+
+test("V175: the headline line starts after the card's own name, and a composition states its unit once", () => {
+  const summary: CardSummaryV140 = {
+    ...factsCard({ elementId: "A-004" }),
+    kind: "line",
+    headline: { value: "18.9 %", label: "빈곤율 · 국가빈곤선 · 2022년" },
+    preview: { unit: "%", seriesLabel: "국가 빈곤선 이하 인구 비율", points: [{ year: 2016, value: 20 }, { year: 2022, value: 18.9 }] },
+  };
+  act(() => root.render(<FinderCardSummaryV140 summary={summary} name="빈곤율" />));
+  expect(container.querySelector('[data-testid="finder-card-headline-v140"] span')?.textContent).toBe("국가빈곤선 · 2022년");
+
+  const composition: CardSummaryV140 = {
+    ...factsCard({ elementId: "A-016" }),
+    kind: "composition",
+    headline: { value: "2.57 EJ", label: "석탄 · 2025년" },
+    preview: { unit: "EJ", parts: [{ label: "석탄", value: 2.57 }, { label: "석유", value: 1.37 }], total: 3.94 },
+  };
+  act(() => root.render(<FinderCardSummaryV140 summary={composition} name="1차 에너지 소비량" />));
+  const text = container.textContent || "";
+  expect(text.match(/단위/gu)?.length).toBe(1);
+  expect(text).toContain("구성비 %");
+});
+
+test("V175: bars that all start with the card's name read only what tells them apart", () => {
+  const summary: CardSummaryV140 = {
+    ...factsCard({ elementId: "A-016" }),
+    kind: "bars",
+    headline: { value: "2.57 EJ", label: "석탄 · 2025년" },
+    measure: { key: "m", label: "1차 에너지 소비", unit: "EJ" },
+    preview: { unit: "EJ", parts: [{ label: "1차 에너지 소비 · 석탄", value: 2.57 }, { label: "1차 에너지 소비 · 석유", value: 1.37 }] },
+  };
+  act(() => root.render(<FinderCardSummaryV140 summary={summary} name="1차 에너지 소비량" />));
+  const labels = Array.from(container.querySelectorAll(".fcs140-bars__label")).map((node) => node.textContent);
+  expect(labels).toEqual(["석탄", "석유"]);
+});

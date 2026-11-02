@@ -28,6 +28,7 @@ import "./chart-interactions-v127.css";
 import ChartAxesV150 from "./ChartAxesV150";
 import { allZeroSeriesIdsV164, scaleOutlierSeriesIdsV164 } from "./seriesScaleV164";
 import { estimateLabelWidthV164, markedLabelPlacementV164 } from "./chartLabelLayoutV164";
+import { commonHeadV175, namedInV175, withoutHeadV175 } from "../../data/visualization/labelCompactV175";
 
 const SERIES_COLORS_V127 = [
   "#0f6b4d",
@@ -385,6 +386,12 @@ export function InteractiveTimeSeriesChartV127({
   const legendItemsV164 = normalizedSeries
     .map((item, seriesIndex) => ({ item, seriesIndex }))
     .filter(({ item }) => item.points.length > 0);
+  // V175: when every series starts with the same part and the chart's title or
+  // axis already names it ("인구 전 구간 — SSP1", "인구 전 구간 — SSP2" under
+  // "인구 전 구간 · 2020~2100년 추이"), the legend reads only what tells the
+  // series apart ("SSP1", "SSP2"). The button's spoken label stays whole.
+  const legendHeadCandidateV175 = commonHeadV175(legendItemsV164.map(({ item }) => item.label));
+  const legendHeadV175 = namedInV175(legendHeadCandidateV175, title, yAxisTitle, description) ? legendHeadCandidateV175 : null;
   const legendGroupsV164 = legendItemsV164.length > LEGEND_OPEN_LIMIT_V164
     ? [
         { more: false, items: legendItemsV164.slice(0, LEGEND_OPEN_LIMIT_V164) },
@@ -801,7 +808,7 @@ export function InteractiveTimeSeriesChartV127({
                     style={{ color }}
                   />
                   <span>
-                    <PublicTermExpandedTextV134 text={item.label} />
+                    <PublicTermExpandedTextV134 text={withoutHeadV175(item.label, legendHeadV175)} />
                     {zeroNoteIds.has(item.id) ? <small className="v127-chart-legend-button__note" data-testid="chart-legend-zero-note-v164"> · 모든 연도 0</small> : scaleOutlierOnlyIds.has(item.id) ? <small className="v127-chart-legend-button__note" data-testid="chart-legend-outlier-note-v164"> · 값이 매우 커서 숨김</small> : null}
                   </span>
                 </button>
