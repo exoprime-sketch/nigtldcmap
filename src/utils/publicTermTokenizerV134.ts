@@ -106,6 +106,16 @@ const SSP_PATH_DESCRIPTION_V134: Record<string, string> = {
   "SSP5-8.5": "화석연료 의존 개발 경로와 2100년 복사강제력 8.5 W/m²를 가정한 시나리오입니다.",
 };
 
+// V173: the visible gloss says what the scenario assumes (IPCC AR6 emission
+// levels). "공통사회경제경로 2–4.5" read as a range from 2 to 4.5.
+const SSP_PATH_GLOSS_V173: Record<string, string> = {
+  "SSP1-1.9": "매우 낮은 배출 경로",
+  "SSP1-2.6": "낮은 배출 경로",
+  "SSP2-4.5": "중간 배출 경로",
+  "SSP3-7.0": "높은 배출 경로",
+  "SSP5-8.5": "매우 높은 배출 경로",
+};
+
 function resolveSspV134(value: string): ResolvedPublicTermV134 | null {
   const normalized = normalizePublicTermAliasV134(value);
   const match = normalized.match(/^SSP([1-5])(?:-([0-9](?:\.[0-9])?))?$/);
@@ -127,9 +137,9 @@ function resolveSspV134(value: string): ResolvedPublicTermV134 | null {
     englishName: `Shared Socioeconomic Pathway ${path}${
       forcing ? `-${forcing}` : ""
     }`,
-    koreanName: `공통사회경제경로 ${path}${
-      forcing ? `–${forcing}` : ""
-    }`,
+    koreanName: forcing
+      ? SSP_PATH_GLOSS_V173[code] ?? `공통사회경제경로 ${path}, 복사강제력 ${forcing} W/m²`
+      : `공통사회경제경로 ${path}`,
     definition,
     derivedFrom: "SSP",
   };

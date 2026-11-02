@@ -89,6 +89,13 @@ describe("public glossary v134", () => {
     expect(high?.definition).toContain("화석연료");
   });
 
+  test("glosses SSP scenarios by emission level, not as a number range (V173)", () => {
+    expect(resolvePublicTermV134("SSP2-4.5")?.koreanName).toBe("중간 배출 경로");
+    expect(resolvePublicTermV134("SSP5–8.5")?.koreanName).toBe("매우 높은 배출 경로");
+    expect(resolvePublicTermV134("SSP1-1.9")?.koreanName).toBe("매우 낮은 배출 경로");
+    expect(resolvePublicTermV134("SSP2")?.koreanName).toBe("공통사회경제경로 2");
+  });
+
   test("derives numbered SDG goals", () => {
     expect(resolvePublicTermV134("SDG1")?.id).toBe("sdg-1");
     expect(resolvePublicTermV134("SDG13")?.koreanName).toContain("기후행동");

@@ -18,8 +18,10 @@ export function createMapOverlapPopupV145(summaries: MapOverlapSummaryV145[]): H
     section.dataset.layerRole = summary.role;
     section.dataset.elementId = summary.elementId;
     section.dataset.selectionKey = summary.selectionKey;
-    if (index === 0 || summary.role !== summaries[index - 1].role) {
-      append(section, "small", summary.role === "primary" ? "주 분석" : "함께 보기", "cdp-map-overlap-role-v145");
+    // V173: only a context layer is marked ("함께 보기"); the analysis layer
+    // needs no role word ("주 분석" was internal).
+    if (summary.role !== "primary" && (index === 0 || summary.role !== summaries[index - 1].role)) {
+      append(section, "small", "함께 보기", "cdp-map-overlap-role-v145");
     }
     append(section, "strong", summary.title);
     append(section, "b", summary.value, "cdp-map-overlap-value-v145");

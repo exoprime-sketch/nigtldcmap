@@ -218,6 +218,7 @@ import {
   drawingLabelV161,
   formatRegionListV161,
   metaLineV161,
+  popupContextLineV173,
   rankLinesV161,
   selectionLineV161,
 } from "../data/map/mapSelectionModelV161";
@@ -3328,6 +3329,17 @@ export default function RealMapExplorerPage({
           }
         };
         const popupOwnerKey = `${runtimeKey(countryIso3, elementId)}:${interactiveLayerId}`;
+        // V173: the popup's second line says where the value sits (its rank
+        // among the drawn regions, or the group / class it belongs to), not a
+        // reading instruction. The peers are what this mount draws.
+        const drawnPeersV173 = (prepared.choropleth?.collection ?? prepared.data).features
+          .filter((feature) => feature.properties?.hasValue !== false)
+          .map((feature) => feature.properties?.value)
+          .filter((value): value is number => typeof value === "number" && Number.isFinite(value));
+        const groupConstantV173 =
+          policyKindForVariableV151(layer.boundaryPolicy, selector?.variable) === "group-constant";
+        const categoricalV173 = prepared.categories.length > 0;
+        const peerWordV173 = renderer === "unit-choropleth" ? "평가구역" : regionWordV158(countryIso3).word;
         const onEnter = (event: MapLayerMouseEvent) => {
           if (
             !isTopmostActiveFeatureV129(
@@ -3504,7 +3516,16 @@ export default function RealMapExplorerPage({
                               properties.participatingCountries,
                             "참여국 범위"
                           )
-                        : variablePresentationV129?.directionLabel || "",
+                        : renderer === "point-and-polygon" || renderer === "line"
+                        ? ""
+                        : popupContextLineV173({
+                            value: properties.hasValue ? Number(properties.value) : null,
+                            peers: drawnPeersV173,
+                            peerLabel: peerWordV173,
+                            categoryLabel: publicTextV126(properties.categoryLabel),
+                            groupConstant: groupConstantV173,
+                            categorical: categoricalV173,
+                          }),
                       isBudgetContext
                         ? "실제 사업 위치가 아닌 통계 대표점"
                         : isRegionalScope
@@ -8296,11 +8317,8 @@ export default function RealMapExplorerPage({
                       data-hit-priority={choice.priority}
                       onClick={() => selectOverlapChoiceV133(choice)}
                     >
-                      <span>
-                        {choice.role === "primary"
-                          ? "주 분석"
-                          : "함께 보기"}
-                      </span>
+                      {/* V173: only a context layer carries a role word. */}
+                      {choice.role !== "primary" && <span>함께 보기</span>}
                       <strong>
                         <PublicTermExpandedTextV134 text={summary.title} />
                       </strong>

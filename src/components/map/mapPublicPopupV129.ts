@@ -40,7 +40,10 @@ export function createPublicMapPopupContentV129(
       // already named in the line is not expanded again - no "(SAIDI(…))".
       const insideBrackets = /\([^()]*$/u.test(before);
       const alreadyNamed = value.includes(token.entry.koreanName);
-      if (!insideBrackets && !alreadyNamed) {
+      // V173: a unit after a number ("22,204 GWh/년", "28.9 °C") reads as it is;
+      // spelling it out in brackets only lengthens the popup.
+      const isUnit = token.entry.category === "unit";
+      if (!insideBrackets && !alreadyNamed && !isUnit) {
         const expansion = document.createElement("span");
         expansion.className = "public-term-visible-expansion-v134";
         expansion.setAttribute("data-public-term-expansion-v134", "true");

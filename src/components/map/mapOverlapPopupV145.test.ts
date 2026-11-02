@@ -23,4 +23,10 @@ describe("map overlap popup DOM", () => {
     expect(popup.querySelector("section")?.dataset.layerRole).toBe("primary");
     expect(popup.textContent).toContain("다른 항목 3개");
   });
+  it("marks only context layers with a role word (V173)", () => {
+    const popup = createMapOverlapPopupV145([summary, { ...summary, role: "context" as const, selectionKey: "x" }]);
+    expect(popup.textContent).not.toContain("주 분석");
+    expect(popup.querySelectorAll(".cdp-map-overlap-role-v145")).toHaveLength(1);
+    expect(popup.querySelector(".cdp-map-overlap-role-v145")?.textContent).toBe("함께 보기");
+  });
 });
