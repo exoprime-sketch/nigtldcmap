@@ -8,6 +8,7 @@ import { publicOsmIndicatorLabelV162 } from "./visualization/osmClassLabelsV162"
 import { specNeedsCountryScopeV158 } from "./countries/countryCopyV158";
 import { providerLineV164 } from "./providerNamesV164";
 import { headlineSpacingV164, publicUnitSpellingV164 } from "./cardNotesV164";
+import { compactLabelV175 } from "./visualization/labelCompactV175";
 
 /**
  * The finder's pre-built card summaries (scripts/v140/build-card-summaries-v140.mjs).
@@ -144,7 +145,8 @@ function publicCardSummaryV161(card: CardSummaryV140, countryIso3 = "VNM"): Card
   // detail table - "지물 수", "협궤 철도 (narrow_gauge)" (V162).
   const osm = (text: string) => (card.elementId === "A-027" || card.elementId === "A-028" ? publicOsmIndicatorLabelV162(text) : text);
   // V164-4: unit spellings as printed ("m²", "CO₂") on every card.
-  const region = (text: string) => publicUnitSpellingV164(osm(publicRegionTextV162(text, card.elementId, countryIso3)));
+  // V175: a label says each of its parts once ("통관 · 통관 부문 점수(…)" → "통관 부문 점수(…)").
+  const region = (text: string) => compactLabelV175(publicUnitSpellingV164(osm(publicRegionTextV162(text, card.elementId, countryIso3))));
   const preview = card.preview as CardPreviewV140 | undefined;
   const nextPreview: CardPreviewV140 | undefined = preview
     ? {

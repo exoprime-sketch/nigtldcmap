@@ -7,6 +7,7 @@ import ChartAxesV150 from "../charts/ChartAxesV150";
 import { PublicTermTextV134 } from "../help/PublicTermV134";
 import { regionWordV158 } from "../../data/countries/countryLevel1V158";
 import { factsMoreNoteV164, levelScopeNoteV164 } from "../../data/cardNotesV164";
+import { commonHeadV175, sameNameV175, withoutHeadV175, withoutLeadingNameV175 } from "../../data/visualization/labelCompactV175";
 import "./finder-card-summary-v140.css";
 
 /**
@@ -109,7 +110,7 @@ function Composition({ parts, total, unit }: { parts: CardPartV140[]; total?: nu
           </li>
         ))}
       </ul>
-      {unit && <p className="fcs140-note">단위 {unit}</p>}
+      {/* V175: the unit is stated once, in the axis line above ("단위: EJ · 구성비 %"). */}
     </div>
   );
 }
@@ -131,8 +132,17 @@ function HomeCardPreview({ elementId }: { elementId: string }) {
   return <HomePreviewChartV139 card={card} />;
 }
 
-export default function FinderCardSummaryV140({ summary, country }: { summary: CardSummaryV140; country?: string }) {
-  const { kind, headline, preview } = summary;
+export default function FinderCardSummaryV140({ summary, country, name }: { summary: CardSummaryV140; country?: string; name?: string }) {
+  const { kind, preview: deliveredPreview } = summary;
+  // V175: the card's own name is its title; the figure's line starts after it
+  // ("빈곤율 · 국가빈곤선 · 2022년" under "빈곤율" reads "국가빈곤선 · 2022년"),
+  // and bars that all start with that name read only what tells them apart.
+  const headline = { ...summary.headline, label: withoutLeadingNameV175(summary.headline.label, [name]) };
+  const partsHead = commonHeadV175((deliveredPreview.parts || []).map((part) => part.label));
+  const namedHead = partsHead && [name, summary.measure?.label].some((label) => sameNameV175(partsHead, label)) ? partsHead : null;
+  const preview = namedHead
+    ? { ...deliveredPreview, parts: (deliveredPreview.parts || []).map((part) => ({ ...part, label: withoutHeadV175(part.label, namedHead) })) }
+    : deliveredPreview;
   // The card's country's level-1 word (V158-B2b); the default country when none is given.
   const { word: regionWord } = regionWordV158(country);
   // V164-4: the facts the card lists, and what "the rest" counts (the dropped

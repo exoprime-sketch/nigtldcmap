@@ -73,6 +73,7 @@ import {
 } from "../../../data/visualization/barRowsV164";
 import type { ScaleKindV164 } from "../../../data/visualization/barRowsV164";
 import { barScaleV164, formatBarWithUnitV164 } from "../../charts/barScaleV164";
+import { compactLabelV175 } from "../../../data/visualization/labelCompactV175";
 
 import "./semantic-contract-renderer-v125.css";
 
@@ -1193,7 +1194,9 @@ export function CategoryComparisonV125({ rows, markedYear = null }: { rows: Nume
     const label = rowLabel(row);
     if ((labelCounts.get(label) || 0) < 2) return koreanLegendLabelV164(regionText(label));
     const qualifier = comparisonQualifierV137(row, label);
-    return koreanLegendLabelV164(regionText(qualifier ? `${label} · ${qualifier}` : label));
+    // V175: the qualifier often ends with the label again ("Am (열대몬순) ·
+    // 기후대별 점유 면적 — Am (열대몬순)"); each part is said once.
+    return koreanLegendLabelV164(regionText(qualifier ? compactLabelV175(`${label} · ${qualifier}`) : label));
   };
   // V164: the auxiliary source of an indicator (A-030's KITA rows) is a second value
   // for the same item and year, so it is not drawn beside the main one; it sits

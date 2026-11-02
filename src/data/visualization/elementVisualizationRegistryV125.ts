@@ -7,6 +7,7 @@ import type {
 } from "./semanticTypesV125";
 import { ELEMENT_VISUALIZATION_SUMMARIES_V125 } from "./generatedVisualizationContractsV125";
 import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
+import { compactLabelV175 } from "./labelCompactV175";
 import {
   DEFAULT_COUNTRY_ISO3_V158,
   countryAssetPathV158,
@@ -137,6 +138,21 @@ export function loadIndicatorSemanticsIndexV125(
   return cached;
 }
 
+/**
+ * V175: a series label that says a part twice ("1차 에너지 소비 · 석탄 — 석탄
+ * 1차에너지 소비량") is read once ("석탄 1차에너지 소비량") on every screen that
+ * names the series. The asset itself is unchanged.
+ */
+function compactSemanticsV175(asset: ElementIndicatorSemanticsV125): ElementIndicatorSemanticsV125 {
+  return {
+    ...asset,
+    indicators: (asset.indicators || []).map((indicator) => ({ ...indicator, displayLabel: compactLabelV175(indicator.displayLabel) })),
+    records: (asset.records || []).map((record) =>
+      record.displayLabel ? { ...record, displayLabel: compactLabelV175(record.displayLabel) } : record
+    ),
+  };
+}
+
 /** Only the selected element shard is loaded; Data Finder entry stays light. */
 export async function loadElementIndicatorSemanticsV125(
   elementId: string,
@@ -147,7 +163,7 @@ export async function loadElementIndicatorSemanticsV125(
     const index = await loadIndicatorSemanticsIndexV125(signal, country);
     const entry = index.elements[elementId];
     if (!entry) throw new Error(`Missing V125 semantic index entry: ${elementId}`);
-    return readJsonV125<ElementIndicatorSemanticsV125>(entry.assetUrl, signal);
+    return compactSemanticsV175(await readJsonV125<ElementIndicatorSemanticsV125>(entry.assetUrl, signal));
   }
   const key = `${countryKeyV158(country)}:${elementId}`;
   const cached = elementSemanticPromises.get(key);
@@ -155,7 +171,7 @@ export async function loadElementIndicatorSemanticsV125(
   const promise = loadIndicatorSemanticsIndexV125(undefined, country).then((index) => {
     const entry = index.elements[elementId];
     if (!entry) throw new Error(`Missing V125 semantic index entry: ${elementId}`);
-    return readJsonV125<ElementIndicatorSemanticsV125>(entry.assetUrl);
+    return readJsonV125<ElementIndicatorSemanticsV125>(entry.assetUrl).then(compactSemanticsV175);
   });
   elementSemanticPromises.set(key, promise);
   return promise;

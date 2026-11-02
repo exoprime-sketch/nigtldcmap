@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import type { SharedWideValueV164, WideRecordV162, WideValueV162 } from "../../../data/visualization/wideRecordsV162";
 import { koreanTitleV164 } from "../../../data/visualization/publicCategoryLabelV164";
+import { compactLabelV175 } from "../../../data/visualization/labelCompactV175";
 import { isEnglishSentenceV164, mergeRegionNameValuesV163, regionBlockShownV171, sharedWideValuesV164, sourceLinkTextV162 } from "../../../data/visualization/wideRecordsV162";
 import { PublicTermExpandedTextV134, PublicTermTextV134 } from "../../help/PublicTermV134";
 import { PolicyDocumentDescriptionV153 } from "./PolicyDescriptionV153";
@@ -235,7 +236,8 @@ function WideRecordCardV162({ record, elementId, sharedKeys }: { record: WideRec
     <article className="wide162-card" data-testid="wide-record-card-v162">
       <header className="wide162-card-head">
         <h4 className="wide162-card-title">
-          <PublicTermTextV134 text={koreanTitleV164(record.name)} />
+          {/* V175: a record name says each of its parts once ("전망 — 계절 강수 전망" → "계절 강수 전망"). */}
+          <PublicTermTextV134 text={compactLabelV175(koreanTitleV164(record.name))} />
         </h4>
         {record.type ? <span className="wide162-type-chip">{record.type}</span> : null}
       </header>

@@ -1234,7 +1234,7 @@ export default function DataExplorerPage({
                 <span className="cdp-chip">{statusNoticeLabelV159(getTypologyForCountryV158(item.elementId, item.countryIso3, item) || { status: "", statusNotice: null })}</span>
               </p>
             ) : (
-              summary && <FinderCardSummaryV140 summary={summary} country={item.countryIso3} />
+              summary && <FinderCardSummaryV140 summary={summary} country={item.countryIso3} name={getCardSpecForCountryV158(item.elementId, item.countryIso3, item)?.baseName} />
             )}
             {getCardSpecForCountryV158(item.elementId, item.countryIso3, item)?.statusNotice === "data-pending" ? (
               // V159 data-pending (spec v8): no stand-in text ("미기재",

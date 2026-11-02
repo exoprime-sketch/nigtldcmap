@@ -21,6 +21,7 @@ import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
 import { useDataCountryV158 } from "../../../data/countries/DataCountryContextV158";
 import { displayRegionCellV158, useCountryPresentationV158 } from "../../../data/countries/countryPresentationV158";
+import { compactLabelV175 } from "../../../data/visualization/labelCompactV175";
 
 interface Props {
   elementId: string;
@@ -166,7 +167,8 @@ export default function PublicRawDataTablesV126({
                 return (
                   <tr key={row.recordId}>
                     <td><PublicTermTextV134 text={osmText(publicMeasureLabelV126(row.semanticMeasure.labelKo))} /></td>
-                    <td><PublicTermTextV134 text={osmText(category)} /></td>
+                    {/* V175: "석탄 · 석탄 1차에너지 소비량" reads "석탄 1차에너지 소비량". */}
+                    <td><PublicTermTextV134 text={compactLabelV175(osmText(category))} /></td>
                     <td><PublicTermTextV134 text={context} /></td>
                     <td><PublicTermTextV134 text={publicObservationValueV126(row.value)} /></td>
                     <td><PublicTermTextV134 text={publicTextV126(displayUnitV150(row.unit || row.semanticMeasure.unit)) || ""} /></td>
@@ -224,7 +226,8 @@ export default function PublicRawDataTablesV126({
                 );
                 return (
                   <tr key={row.recordId}>
-                    <td><PublicTermTextV134 text={osmText(regionText(titleResolution.title))} /></td>
+                    {/* V175: a record title says each of its parts once. */}
+                    <td><PublicTermTextV134 text={compactLabelV175(osmText(regionText(titleResolution.title)))} /></td>
                     <td><PublicTermTextV134 text={publicTextV126(row.entityType) || ""} /></td>
                     {entityColumns.map((column) => (
                       <td key={column}><PublicTermTextV134 text={(() => {

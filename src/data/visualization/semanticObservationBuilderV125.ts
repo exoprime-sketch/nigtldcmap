@@ -10,6 +10,7 @@ import type {
   SemanticObservationV125,
   SemanticUnitFamilyV125,
 } from "./semanticTypesV125";
+import { compactLabelV175 } from "./labelCompactV175";
 
 export const E012_MEASURE_KEYS_V125: E012MeasureKeyV125[] = [
   "employment_rate",
@@ -252,7 +253,8 @@ function mergeObservationSemantic(
     dimensions.period = observation.period;
     dimensionLabels.period = observation.period;
   }
-  let displayLabel = recordSemantic?.displayLabel || indicatorSemantic.displayLabel;
+  // V175: each part of the label once (also for semantics not read through the loader).
+  let displayLabel = compactLabelV175(recordSemantic?.displayLabel || indicatorSemantic.displayLabel);
   // V163 (3e): a "currency" dimension is stated by the indicator-id grammar
   // (local-currency vs USD), not read from the record - right for Viet Nam
   // (VND) but wrong for any other country's local-currency series (e.g.
