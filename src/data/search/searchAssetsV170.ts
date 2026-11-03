@@ -1,7 +1,7 @@
 /**
  * V170 search assets built by scripts/v170/build-search-v170.mjs:
  * records-<ISO3>.json (public record text per dataset, for matching and the
- * "일치 근거" line) and topics-<ISO3>.json (the 핵심 데이터 panel).
+ * "검색 근거" line) and topics-<ISO3>.json (the 주요 현황 panel).
  */
 import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
 import { prepareTextV170 } from "./searchMatchV170";

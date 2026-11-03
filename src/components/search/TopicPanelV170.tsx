@@ -61,9 +61,9 @@ export default function TopicPanelV170({
     <section className="tp170" aria-labelledby="tp170-title" data-testid="search-topic-panel-v170" data-topic={topic.id}>
       <header className="tp170__head">
         <h2 id="tp170-title">
-          {topic.label} 핵심 데이터 · {countryNameKo}
+          {countryNameKo} {topic.label} 주요 현황
         </h2>
-        <p>{rows.length}개 데이터에서 {topic.label} 관련 수치만 모아 보기</p>
+        <p>관련 데이터 {rows.length}개의 주요 수치</p>
       </header>
       <ul className="tp170__rows">
         {rows.map(({ row, info }) => (
@@ -95,7 +95,7 @@ export default function TopicPanelV170({
           </li>
         ))}
       </ul>
-      <p className="tp170__note">수치는 각 데이터의 원자료로 계산한 값입니다</p>
+      <p className="tp170__note">수치는 각 데이터의 원자료를 기준으로 산출한 값입니다</p>
     </section>
   );
 }

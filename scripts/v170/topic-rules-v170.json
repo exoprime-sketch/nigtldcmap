@@ -1,6 +1,6 @@
 {
   "schemaVersion": "search-topic-rules-v170",
-  "note": "데이터 찾기 '핵심 데이터' 패널 규칙. 국가별 값은 build-search-v170.mjs가 원자료로 계산한다. card=카드 대표값(require 문구가 있을 때만), indicatorLatest=지표 1개의 최신값(여러 지표 합산 금지), entityAgg=속성 일치 기록 수·합계, recordMatch=주제어가 들어간 공개 기록 수. 값이 없으면 그 행은 빠진다.",
+  "note": "데이터 찾기 '주요 현황' 영역 규칙. 국가별 값은 build-search-v170.mjs가 원자료로 계산한다. card=카드 대표값(require 문구가 있을 때만), indicatorLatest=지표 1개의 최신값(여러 지표 합산 금지), entityAgg=속성 일치 기록 수·합계, recordMatch=주제어가 들어간 공개 기록 수. 값이 없으면 그 행은 빠진다.",
   "minRows": 3,
   "topics": [
     {
@@ -8,7 +8,7 @@
       "rows": [
         { "role": "자원", "type": "card", "elementId": "B-041", "require": "GHI|일사" },
         { "role": "설비용량", "type": "indicatorLatest", "elementId": "A-018", "indicator": "^A-018_capacity_solar_photovoltaic_ongrid$", "label": "태양광(계통연계)", "sub": "{year}년 기준 · {firstYear}년 {first} {unit}" },
-        { "role": "발전소 위치", "type": "entityAgg", "elementId": "A-023", "indicator": "A-023_power_plant_registry",
+        { "role": "발전소 현황", "type": "entityAgg", "elementId": "A-023", "indicator": "A-023_power_plant_registry",
           "attr": ["primaryFuel", "속성2_A_013_정보유형_A_023_주연료_A_024_구간연장_km_A_025_추진상태_A_029_발효일"],
           "sumAttr": ["mw", "속성1_A_013_SDG세부목표코드_A_023_설비용량_MW_A_024_전압_kV_A_025_시설유형_A_029_서명일"],
           "value": "태양광 발전소 {count}곳 · {sum} MW", "sub": "수록 발전소 {total}곳 · {totalSum} MW 중" },
@@ -29,7 +29,7 @@
       "rows": [
         { "role": "자원", "type": "card", "elementId": "B-042", "require": "풍속" },
         { "role": "설비용량", "type": "indicatorLatest", "elementId": "A-018", "indicator": "^A-018_capacity_wind_energy_ongrid$", "label": "풍력(계통연계)", "sub": "{year}년 기준 · {firstYear}년 {first} {unit}" },
-        { "role": "발전소 위치", "type": "entityAgg", "elementId": "A-023", "indicator": "A-023_power_plant_registry",
+        { "role": "발전소 현황", "type": "entityAgg", "elementId": "A-023", "indicator": "A-023_power_plant_registry",
           "attr": ["primaryFuel", "속성2_A_013_정보유형_A_023_주연료_A_024_구간연장_km_A_025_추진상태_A_029_발효일"],
           "sumAttr": ["mw", "속성1_A_013_SDG세부목표코드_A_023_설비용량_MW_A_024_전압_kV_A_025_시설유형_A_029_서명일"],
           "value": "풍력 발전소 {count}곳 · {sum} MW", "sub": "수록 발전소 {total}곳 · {totalSum} MW 중" },
@@ -45,7 +45,7 @@
       "rows": [
         { "role": "자원", "type": "card", "elementId": "B-039", "require": "잠재량" },
         { "role": "설비용량", "type": "indicatorLatest", "elementId": "A-018", "indicator": "^A-018_capacity_renewable_hydropower_ongrid$", "label": "수력(계통연계)", "sub": "{year}년 기준 · {firstYear}년 {first} {unit}" },
-        { "role": "발전소 위치", "type": "entityAgg", "elementId": "A-023", "indicator": "A-023_power_plant_registry",
+        { "role": "발전소 현황", "type": "entityAgg", "elementId": "A-023", "indicator": "A-023_power_plant_registry",
           "attr": ["primaryFuel", "속성2_A_013_정보유형_A_023_주연료_A_024_구간연장_km_A_025_추진상태_A_029_발효일"],
           "sumAttr": ["mw", "속성1_A_013_SDG세부목표코드_A_023_설비용량_MW_A_024_전압_kV_A_025_시설유형_A_029_서명일"],
           "value": "수력 발전소 {count}곳 · {sum} MW", "sub": "수록 발전소 {total}곳 · {totalSum} MW 중" },
@@ -58,7 +58,7 @@
       "id": "bioenergy", "label": "바이오에너지", "groups": ["bioenergy", "biomass"],
       "rows": [
         { "role": "설비용량", "type": "indicatorLatest", "elementId": "A-018", "indicator": "^A-018_capacity_bioenergy_ongrid$", "label": "바이오에너지(계통연계)", "digits": 1, "sub": "{year}년 기준 · {firstYear}년 {first} {unit}" },
-        { "role": "발전소 위치", "type": "entityAgg", "elementId": "A-023", "indicator": "A-023_power_plant_registry",
+        { "role": "발전소 현황", "type": "entityAgg", "elementId": "A-023", "indicator": "A-023_power_plant_registry",
           "attr": ["primaryFuel", "속성2_A_013_정보유형_A_023_주연료_A_024_구간연장_km_A_025_추진상태_A_029_발효일"],
           "sumAttr": ["mw", "속성1_A_013_SDG세부목표코드_A_023_설비용량_MW_A_024_전압_kV_A_025_시설유형_A_029_서명일"],
           "value": "바이오매스 발전소 {count}곳 · {sum} MW", "sub": "수록 발전소 {total}곳 · {totalSum} MW 중" },

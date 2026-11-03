@@ -1,6 +1,6 @@
 /**
- * V170 데이터 찾기 검색: 동의어 확장, 관련도 묶음('…'에 관한 데이터 / '…' 내용이
- * 포함된 데이터 / '…' 기술로 분류된 데이터), 일치 근거.
+ * V170 데이터 찾기 검색: 동의어 포함 검색, 정확도순 결과 구분(데이터명·설명 일치 /
+ * 수록 내용 일치 / 기후기술 분류 일치), 검색 근거.
  *
  * The term matcher mirrors scripts/v170/build-search-v170.mjs, which counts the
  * same records for the topic panel; both must agree (searchMatchV170.test.ts).
@@ -81,7 +81,7 @@ export interface QueryTokenV170 {
 
 export interface ExpandedQueryV170 {
   tokens: QueryTokenV170[];
-  /** Terms added by the synonym dictionary, for "함께 찾은 말". */
+  /** Terms added by the synonym dictionary, for the "동의어 포함 검색" line. */
   addedTerms: string[];
   groupIds: string[];
 }
@@ -154,7 +154,7 @@ export interface MatchSnippetV170 {
 export interface DatasetMatchV170 {
   tier: MatchTierV170;
   score: number;
-  /** Where the strongest token matched: "설명", "원자료", "기후기술 분류" … */
+  /** Where the strongest token matched: "설명", "수록 내용", "기후기술 분류" … */
   where: string;
   snippet: MatchSnippetV170 | null;
   records: { matched: number; total: number } | null;
@@ -252,7 +252,7 @@ export function matchDatasetV170(
       best = {
         tier: 2,
         score: 500 + Math.round(ratio * 400) + Math.min(50, Math.round(Math.log10(counted.matched + 1) * 20)),
-        where: "원자료",
+        where: "수록 내용",
         snippet: snippetV170(counted.first.text, counted.first.hit),
         records: recordInfo,
       };
@@ -270,19 +270,22 @@ export function matchDatasetV170(
 }
 
 /**
- * V170-1: each group says how the data relates to the query, with the query
- * in it ("'태양광'에 관한 데이터"). The words after the quoted query are fixed,
- * so no particle depends on the query's last syllable.
+ * V170-2: each group is named by where the query was found, in the plain
+ * terms of a public search page ("데이터명·설명 일치"). The query itself is
+ * in the result heading ("'태양광' 검색 결과 47개").
  */
-export function tierLabelV170(tier: MatchTierV170, query: string): string {
-  const q = `‘${query.trim()}’`;
-  if (tier === 1) return `${q}에 관한 데이터`;
-  if (tier === 2) return `${q} 내용이 포함된 데이터`;
-  return `${q} 기술로 분류된 데이터`;
+export const TIER_LABELS_V170: Record<MatchTierV170, string> = {
+  1: "데이터명·설명 일치",
+  2: "수록 내용 일치",
+  3: "기후기술 분류 일치",
+};
+
+export function tierLabelV170(tier: MatchTierV170): string {
+  return TIER_LABELS_V170[tier];
 }
 
 export const TIER_NOTES_V170: Record<MatchTierV170, string> = {
-  1: "데이터 이름이나 설명이 이 주제를 다룹니다",
-  2: "데이터 안의 일부 내용에 검색어가 있습니다(포함 비율이 높은 순)",
-  3: "기후기술 분류만 해당하고, 데이터 내용에는 검색어가 없습니다",
+  1: "데이터명·정의·설명 등 기본 정보에 검색어가 있습니다",
+  2: "데이터에 수록된 내용 일부에 검색어가 있습니다(포함 비율이 높은 순)",
+  3: "기후기술 분류만 일치하며, 데이터 내용에는 검색어가 없습니다",
 };
